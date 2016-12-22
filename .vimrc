@@ -1,3 +1,6 @@
+" turn on syntax completion - C-x C-o
+filetype plugin on
+setlocal omnifunc=syntaxcomplete#Complete
 " turn on line numbering
 set number relativenumber
 " auto insert eruby tags
