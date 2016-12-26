@@ -2,8 +2,8 @@
 set path+=**
 
 " modify tabcomplete - insert longest common text
-set completeopt=longest,menuone "somewhat unclear about func here
-set wildmode=longest,full
+" set completeopt=longest,menuone "somewhat unclear about func here
+" set wildmode=longest,full
 set wildmenu
 
 " netrw tree view, banner, winsize
@@ -41,3 +41,6 @@ au FileType php				setl ofu=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
 au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
+
+" show command while typing it
+set showcmd
