@@ -32,6 +32,9 @@ set si
 " text display options; window wrap, linebreak, textwidth
 set wrap linebreak tw=80
 
+" set vim to dark background
+set background=dark
+
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 shiftwidth=4
 
