@@ -26,6 +26,10 @@ imap <% <%= %><left><left>
 " auto insert html tags
 imap <p <p><ENTER></p><up>
 
+" remap semi-colon and colon in normal mode
+nnoremap ; :
+nnoremap : ;
+
 " turn on smart indent
 set si
 
