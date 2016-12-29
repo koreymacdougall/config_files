@@ -39,7 +39,8 @@ set background=dark
 set tabstop=4 softtabstop=0 shiftwidth=4
 
 " turn on syntax completion - C-x C-o
-filetype plugin on
+syntax on
+filetype plugin indent on
 au FileType php				setl ofu=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
 au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
