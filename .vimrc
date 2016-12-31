@@ -25,6 +25,7 @@ set wildmenu
 " show tabs, spaces, and trailing spaces
 set listchars=tab:>~,nbsp:_,trail:.
 set list
+
 " netrw tree view, banner, winsize
 let g:netrw_liststyle=3
 let g:netrw_banner=0
@@ -58,6 +59,9 @@ set background=dark
 
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 shiftwidth=4
+"these aren't working for ruby specific indentation...
+"au BufWrite *.rb set tabstop=4 softtabstop=0 shiftwidth=4
+"au FileType ruby,eruby set tabstop=4 softtabstop=0 shiftwidth=4
 
 " turn on syntax completion - C-x C-o
 syntax on
