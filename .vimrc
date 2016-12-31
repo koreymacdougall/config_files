@@ -38,7 +38,7 @@ let g:netrw_altv = 1
 set number relativenumber
 
 " auto insert eruby tags
-imap <% <%= %><left><left>
+imap <% <%=  %><left><left><left>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
