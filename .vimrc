@@ -9,7 +9,9 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
-Plug 'vim-scripts/xmledit'
+Plug 'vim-scripts/xmledit' 
+"need to go to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
+"otherwise, script won't work on html (and erb) files
 Plug 'vim-scripts/AutoClose'
 call plug#end()
 
