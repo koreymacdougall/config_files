@@ -59,7 +59,8 @@ set background=dark
 
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-au FileType ruby,eruby set shiftwidth=2
+" if filetype is rubu or eruby, use 2 spaces for the tab
+au FileType ruby,eruby set tabstop=2 shiftwidth=2
 
 " turn on syntax completion - C-x C-o
 syntax on
