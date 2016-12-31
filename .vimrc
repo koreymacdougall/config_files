@@ -58,10 +58,8 @@ set wrap linebreak tw=80
 set background=dark
 
 " set tab key to indent 4 spaces
-set tabstop=4 softtabstop=0 shiftwidth=4
-"these aren't working for ruby specific indentation...
-"au BufWrite *.rb set tabstop=4 softtabstop=0 shiftwidth=4
-"au FileType ruby,eruby set tabstop=4 softtabstop=0 shiftwidth=4
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+au FileType ruby,eruby set shiftwidth=2
 
 " turn on syntax completion - C-x C-o
 syntax on
