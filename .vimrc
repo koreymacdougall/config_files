@@ -22,6 +22,9 @@ set path+=**
 " turn on the autocomplete menu
 set wildmenu
 
+" show tabs, spaces, and trailing spaces
+set listchars=tab:>~,nbsp:_,trail:.
+set list
 " netrw tree view, banner, winsize
 let g:netrw_liststyle=3
 let g:netrw_banner=0
