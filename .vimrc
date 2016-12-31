@@ -27,16 +27,21 @@ set listchars=tab:>~,nbsp:_,trail:.
 set list
 
 " netrw tree view, banner, winsize
+" show netrw split in tree style"
 let g:netrw_liststyle=3
+" hide the netrw shortcut banner
 let g:netrw_banner=0
+" set split width to 25%
 let g:netrw_winsize= 25 
+" when opening a file, show it in previous pane
 let g:netrw_browse_split=4
+" shows browser pane on left (I think)
 let g:netrw_altv = 1
 " project drawer view as default when opening vim
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
 
 " turn on line numbering
 set number relativenumber
