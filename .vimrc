@@ -1,9 +1,23 @@
+" Plug - auto install if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+	\	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+"Plug functionality, load the plugings at runtime
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'vim-scripts/xmledit'
+Plug 'vim-scripts/AutoClose'
+call plug#end()
+
 " append project root dir and subdirs to path when opening vim
+" this is useful for filename completion
 set path+=**
 
-" modify tabcomplete - insert longest common text
-" set completeopt=longest,menuone "somewhat unclear about func here
-" set wildmode=longest,full
+" turn on the autocomplete menu
 set wildmenu
 
 " netrw tree view, banner, winsize
@@ -23,9 +37,6 @@ set number relativenumber
 
 " auto insert eruby tags
 imap <% <%= %><left><left>
-
-" auto insert html tags
-imap <p <p><ENTER></p><up>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
