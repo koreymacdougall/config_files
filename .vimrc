@@ -78,5 +78,8 @@ au FileType css				setl ofu=csscomplete#CompleteCSS
 " show command while typing it
 set showcmd
 
+"remap leader to comma ","
+let mapleader=","
+
 "map leader-ev to open .vimrc in a new Vert split - quickly edit vimrc
-:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
