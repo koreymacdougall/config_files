@@ -47,8 +47,9 @@ set number relativenumber
 
 " auto insert eruby tags
 imap <% <%=  %><left><left><left>
+
 " auto complete the def/end typing in ruby files
-au FileType ruby,eruby imap def def<cr><cr>end<up><tab>
+au FileType ruby,eruby imap def def<cr>end<up> 
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
