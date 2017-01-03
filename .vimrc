@@ -11,7 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'vim-scripts/xmledit' 
 "need to go to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
-"otherwise, script won't work on html (and erb) files
 Plug 'vim-scripts/AutoClose'
 call plug#end()
 
@@ -48,6 +47,8 @@ set number relativenumber
 
 " auto insert eruby tags
 imap <% <%=  %><left><left><left>
+" auto complete the def/end typing in ruby files
+au FileType ruby,eruby imap def def<cr><cr>end<up><tab>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
