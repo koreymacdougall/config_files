@@ -49,7 +49,7 @@ set number relativenumber
 imap <% <%=  %><left><left><left>
 
 " auto complete the def/end typing in ruby files
-au FileType ruby,eruby imap def def<cr>end<up> 
+au FileType ruby,eruby imap def<space> def<cr>end<up> 
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
