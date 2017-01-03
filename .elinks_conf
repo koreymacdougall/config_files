@@ -78,7 +78,7 @@
     #    mostly look very impressive, but some sites will appear
     #    really ugly. Note, that obviously if the background is
     #    not black, it will break the behaviour of transparency.
-    set document.colors.use_document_colors = 0
+    set document.colors.use_document_colors = 2
 
 
 
@@ -146,7 +146,7 @@ bind "main" "Shift-Delete" = "scroll-up"
   #  Options specific to this terminal type (according to $TERM value).
 
     ## terminal.xterm.colors <num>
-    set terminal.xterm.colors = 3
+    set terminal.xterm.colors = 1
     ## terminal.xterm.type <num>
     set terminal.xterm.type = 2
 
