@@ -64,6 +64,11 @@ set wrap linebreak tw=80
 " set vim to dark background
 set background=dark
 
+" turn on underline
+set cursorline
+"turn underline into linewise highlighting
+" hi CursorLine cterm=NONE ctermbg=LightMagenta ctermfg=White
+
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " if filetype is rubu or eruby, use 2 spaces for the tab
