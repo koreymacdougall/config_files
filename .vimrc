@@ -100,3 +100,9 @@ set background=dark
 
 "make comments White
 hi comment ctermfg=White
+
+function! FoldText()
+  let foldsize = (v:foldend-v:foldstart)
+  return getline(v:foldstart).' || ('.foldsize.' lines)'
+endfunction
+setlocal foldtext=FoldText()
