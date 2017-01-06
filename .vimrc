@@ -25,6 +25,14 @@ set wildmenu
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
+"use cold folding, syntax-wise
+set foldmethod=syntax
+
+"set default foldlevel to 1
+set foldlevelstart=1
+" use spacebar to toggle folding
+nnoremap <Space> za
+
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
 let g:netrw_liststyle=3
@@ -64,10 +72,12 @@ set wrap linebreak tw=80
 " set vim to dark background
 set background=dark
 
+"make comments Magenta (I'm using light blue for text in Terminator, and this is
+"the default colour for comments)
+hi comment ctermfg=Magenta
+
 " turn on underline
 set cursorline
-"turn underline into linewise highlighting
-" hi CursorLine cterm=NONE ctermbg=LightMagenta ctermfg=White
 
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
