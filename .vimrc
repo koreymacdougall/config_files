@@ -69,12 +69,6 @@ set si
 " text display options; window wrap, linebreak, textwidth
 set wrap linebreak tw=80
 
-" set vim to dark background
-set background=dark
-
-"make comments Magenta (I'm using light blue for text in Terminator, and this is
-"the default colour for comments)
-hi comment ctermfg=Magenta
 
 " turn on underline
 set cursorline
@@ -100,3 +94,9 @@ let mapleader=","
 
 "map leader-ev to open .vimrc in a new Vert split - quickly edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" set vim to dark background
+set background=dark
+
+"make comments White
+hi comment ctermfg=White
