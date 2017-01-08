@@ -56,6 +56,9 @@ set number relativenumber
 " auto insert eruby tags
 imap <% <%=  %><left><left><left>
 
+" auto insert href structure
+imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
+
 " auto complete the def/end typing in ruby files
 au FileType ruby,eruby imap def<space> def<cr>end<up> 
 
