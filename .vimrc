@@ -10,7 +10,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'vim-scripts/xmledit' 
-"need to go to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
+"need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/AutoClose'
 call plug#end()
 
@@ -101,8 +101,12 @@ set background=dark
 "make comments White
 hi comment ctermfg=White
 
+"fold text and rewrite msg
 function! FoldText()
   let foldsize = (v:foldend-v:foldstart)
-  return getline(v:foldstart).' || ('.foldsize.' lines)'
+  return getline(v:foldstart).' || ('.foldsize.' folded lines)'
 endfunction
-setlocal foldtext=FoldText()
+
+"execute folding everytime a file is opened (only rly needed when opening file
+"w netrw)"
+au FileType * setlocal foldtext=FoldText()
