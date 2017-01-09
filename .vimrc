@@ -21,6 +21,10 @@ set path+=**
 " turn on the autocomplete menu
 set wildmenu
 
+" do case sensitive searching if any caps in search string
+set ignorecase
+set smartcase
+
 " show tabs, spaces, and trailing spaces
 set listchars=tab:>~,nbsp:_,trail:.
 set list
