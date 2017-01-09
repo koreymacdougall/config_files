@@ -13,5 +13,5 @@
 [profiles]
   [[default]]
     background_image = None
-    foreground_color = "#06bafc"
+    foreground_color = "#00e5ff"
     show_titlebar = False

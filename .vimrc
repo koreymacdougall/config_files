@@ -25,6 +25,9 @@ set wildmenu
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
+"remap leader to comma ","
+let mapleader=","
+
 "use cold folding, syntax-wise
 set foldmethod=syntax
 
@@ -53,6 +56,8 @@ augroup END
 " turn on line numbering
 set number relativenumber
 
+"SNIPPETS
+
 " auto insert eruby tags
 imap <% <%=  %><left><left><left>
 
@@ -61,6 +66,10 @@ imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
 
 " auto complete the def/end typing in ruby files
 au FileType ruby,eruby imap def<space> def<cr>end<up> 
+
+"Read an empty HTML template and move curosr to title field
+"thanks to mcantor
+nnoremap <leader>html :-1read ~/.vim/.skeleton.html<CR>3jwf>a
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
@@ -71,7 +80,6 @@ set si
 
 " text display options; window wrap, linebreak, textwidth
 set wrap linebreak tw=80
-
 
 " turn on underline
 set cursorline
@@ -92,9 +100,6 @@ au FileType css				setl ofu=csscomplete#CompleteCSS
 " show command while typing it
 set showcmd
 
-"remap leader to comma ","
-let mapleader=","
-
 "map leader-ev to open .vimrc in a new Vert split - quickly edit vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
@@ -113,3 +118,5 @@ endfunction
 "execute folding everytime a file is opened (only rly needed when opening file
 "w netrw)"
 au FileType * setlocal foldtext=FoldText()
+
+nnoremap <leader>oo iTHIS
