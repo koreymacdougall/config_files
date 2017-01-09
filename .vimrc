@@ -122,5 +122,3 @@ endfunction
 "execute folding everytime a file is opened (only rly needed when opening file
 "w netrw)"
 au FileType * setlocal foldtext=FoldText()
-
-nnoremap <leader>oo iTHIS
