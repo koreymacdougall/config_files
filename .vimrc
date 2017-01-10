@@ -40,8 +40,9 @@ set foldlevelstart=1
 " use spacebar to toggle folding
 nnoremap <Space> za
 
-"use tab to jump out of closures (quotes, brackets, etc)
-imap <tab> <esc>)a
+" use tab to jump out of closures (quotes, brackets, etc)
+" thanks to Ingo Karkat
+inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
 
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
