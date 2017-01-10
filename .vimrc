@@ -40,6 +40,9 @@ set foldlevelstart=1
 " use spacebar to toggle folding
 nnoremap <Space> za
 
+"use tab to jump out of closures (quotes, brackets, etc)
+imap <tab> <esc>)a
+
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
 let g:netrw_liststyle=3
