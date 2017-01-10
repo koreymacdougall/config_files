@@ -113,7 +113,13 @@ set background=dark
 "make comments White
 hi comment ctermfg=White
 
-"fold text and rewrite msg
+" highlight serarch results
+set hlsearch
+
+"search highlighting colours
+hi Search ctermfg=green ctermbg=red
+
+" fold text and rewrite msg
 function! FoldText()
   let foldsize = (v:foldend-v:foldstart)
   return getline(v:foldstart).' || ('.foldsize.' folded lines)'
