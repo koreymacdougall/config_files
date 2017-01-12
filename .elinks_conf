@@ -218,3 +218,46 @@ bind "main" "\\" = "scroll-up"
 
 
 
+
+
+
+##############################
+# Automatically saved options
+#
+
+## terminal 
+#  Terminal options.
+
+  ## terminal.linux 
+  #  Options specific to this terminal type (according to $TERM value).
+
+    ## terminal.linux.colors <num>
+    set terminal.linux.colors = 1
+    ## terminal.linux.type <num>
+    set terminal.linux.type = 5
+
+
+## ui 
+#  User interface options.
+
+  ## ui.colors 
+  #  Default user interface color settings.
+
+    ## ui.colors.color 
+    #  Color settings for color terminal.
+
+      ## ui.colors.color.dialog 
+      #  Dialog colors.
+
+        ## ui.colors.color.dialog.field-text 
+        #  Dialog field text colors.
+
+          ## ui.colors.color.dialog.field-text.text <color|#rrggbb>
+          #  Default text color.
+          set ui.colors.color.dialog.field-text.text = "yellow"
+
+
+
+
+
+
