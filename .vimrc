@@ -56,11 +56,11 @@ let g:netrw_browse_split=4
 " shows browser pane on left (I think)
 let g:netrw_altv = 1
 " project drawer view as default when opening vim
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
-
+""augroup ProjectDrawer
+""  autocmd!
+""  autocmd VimEnter * :Vexplore
+""augroup END
+""
 " turn on line numbering
 set number relativenumber
 
@@ -108,8 +108,14 @@ au FileType css				setl ofu=csscomplete#CompleteCSS
 " show command while typing it
 set showcmd
 
-"map leader-ev to open .vimrc in a new Vert split - quickly edit vimrc
+"map leader-ev to open .vimrc in a new Vert split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+"map leader-bs to open .bashrc in a new vert split
+nnoremap <leader>bs :vsplit ~/.bashrc<cr>
+
+"map leader-f to open netrw in vsplit 
+nnoremap <leader>f :Vex<cr>
 
 " set vim to dark background
 set background=dark
