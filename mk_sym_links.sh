@@ -1,6 +1,9 @@
 #!/bin/bash
 ln -sf ~/config_files/.terminator_config ~/.config/terminator/config
 
+#make symlink for bashrc
+ln -sf ~/config_files/.bashrc ~/.bashrc
+
 #rm ~/.vimrc
 ln -sf ~/config_files/.vimrc ~/.vimrc
 
@@ -15,4 +18,5 @@ ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/h
 
 #this currently works on arch... I don't know about bunt/deb derivs
 ln -sf ~/config_files/.us.map.custom.gz /usr/share/kbd/keymaps/i386/qwerty
-sudo localectl set-keymap --no-convert us.map_custom
+
+#sudo localectl set-keymap --no-convert us.map_custom
