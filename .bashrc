@@ -1,6 +1,17 @@
 #
 # ~/.bashrc
 #
+#######################
+####### notes #########
+#######################
+
+#for tab completion case insensitive,
+#add this to /etc/inputrc:
+#set completion-ignore-case on
+
+#######################
+##### end notes #######
+#######################
 
 #activate rbenv 
 eval "$(rbenv init -)"
