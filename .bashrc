@@ -44,4 +44,4 @@ alias 'cd..'='cd_up'
 
 #set terminal colour; is overridden if using a terminal 
 #emulator such as terminator (useful for arch)
-setterm -foreground yellow --bold on --store&>/dev/null
+setterm -foreground yellow --bold on --store
