@@ -42,7 +42,7 @@ nnoremap <Space> za
 
 " use tab to jump out of closures (quotes, brackets, etc)
 " thanks to Ingo Karkat
-inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
+"inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
 
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
@@ -56,11 +56,11 @@ let g:netrw_browse_split=4
 " shows browser pane on left (I think)
 let g:netrw_altv = 1
 " project drawer view as default when opening vim
-""augroup ProjectDrawer
-""  autocmd!
-""  autocmd VimEnter * :Vexplore
-""augroup END
-""
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * :Vexplore
+augroup END
+
 " turn on line numbering
 set number relativenumber
 
@@ -95,7 +95,7 @@ set cursorline
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 " if filetype is rubu or eruby, use 2 spaces for the tab
-au FileType ruby,eruby set tabstop=2 shiftwidth=2
+au FileType ruby,eruby,css,scss set tabstop=2 shiftwidth=2
 
 " turn on syntax completion - C-x C-o
 syntax on
