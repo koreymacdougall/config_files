@@ -30,9 +30,9 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 [[ $- != *i* ]] && return
 
 #Aliases
-alias ls='ls --color=auto'
-alias l='ls --color=auto'
-alias ll='ls -al --color=auto'
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto --group-directories-first'
+alias ll='ls -al --color=auto --group-directories-first'
 
 #Prompt options
 export PS1="\e[1;33m\u@\h \w $ \n--> \e[m"
