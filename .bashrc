@@ -45,3 +45,9 @@ alias 'cd..'='cd_up'
 #set terminal colour; is overridden if using a terminal 
 #emulator such as terminator (useful for arch)
 setterm -foreground yellow --bold on --store
+
+#git command tab completion
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
+fi
+

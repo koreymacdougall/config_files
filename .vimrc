@@ -1,3 +1,4 @@
+" note - add a <%=  %> wrapper for change surround
 " Plug - auto install if not present
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -118,10 +119,8 @@ nnoremap <leader>bs :vsplit ~/.bashrc<cr>
 nnoremap <leader>f :Vex<cr>
 
 " set vim to dark background
-set background=dark
-
-"make comments White
-hi comment ctermfg=White
+set t_Co=256
+colorscheme industry
 
 " highlight serarch results
 set hlsearch
