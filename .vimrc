@@ -10,7 +10,8 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
-Plug 'vim-scripts/xmledit' 
+Plug 'vim-scripts/xmledit'
+Plug 'vim-airline/vim-airline'
 "need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/AutoClose'
 call plug#end()
@@ -105,6 +106,8 @@ au FileType php				setl ofu=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
 au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
+
+set laststatus=2
 
 " show command while typing it
 set showcmd
