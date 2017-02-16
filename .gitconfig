@@ -1,0 +1,9 @@
+[user]
+	email = korey.macdougall@gmail.com
+	name = koreymacdougall
+[merge]
+	tool = vimdiff
+[alias]
+	co = checkout
+	br = branch
+	st = status
