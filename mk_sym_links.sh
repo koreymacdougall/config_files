@@ -7,6 +7,9 @@ ln -sf ~/config_files/.bashrc ~/.bashrc
 #vimrc symlink
 ln -sf ~/config_files/.vimrc ~/.vimrc
 
+#zshrc symlink
+ln -sf ~/config_files/.zshrc ~/.zshrc
+
 #gitconfig symlink
 ln -sf ~/config_files/.gticonfig ~/.gitconfig
 
