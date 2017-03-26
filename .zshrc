@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

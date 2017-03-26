@@ -11,7 +11,7 @@ ln -sf ~/config_files/.vimrc ~/.vimrc
 ln -sf ~/config_files/.zshrc ~/.zshrc
 
 #gitconfig symlink
-ln -sf ~/config_files/.gticonfig ~/.gitconfig
+ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
 #elinks eymlinks
 #first is for mint/lubuntu, second is for arch
