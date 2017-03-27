@@ -131,12 +131,21 @@ set hlsearch
 "search highlighting colours
 hi Search ctermfg=green ctermbg=red
 
-" fold text and rewrite msg
-function! FoldText()
-  let foldsize = (v:foldend-v:foldstart)
-  return getline(v:foldstart).' || ('.foldsize.' folded lines)'
+set foldtext=MyFoldText() 
+function! MyFoldText()
+    let nblines = v:foldend - v:foldstart + 1
+    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0) - 6
+    let line = getline(v:foldstart)
+    let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
+    let txt = '"' . comment . expansionString . nblines . " lines"
+    return txt
 endfunction
+
+
+
+
 
 "execute folding everytime a file is opened (only rly needed when opening file
 "w netrw)"
-au FileType * setlocal foldtext=FoldText()
+au FileType * setlocal foldtext=MyFoldText()
