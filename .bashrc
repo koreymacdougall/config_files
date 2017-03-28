@@ -30,6 +30,7 @@ PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 [[ $- != *i* ]] && return
 
 #Aliases
+alias xmm='xmodmap ~/config_files/.xmodmap'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
