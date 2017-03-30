@@ -10,6 +10,9 @@ ln -sf ~/config_files/.vimrc ~/.vimrc
 #zshrc symlink
 ln -sf ~/config_files/.zshrc ~/.zshrc
 
+#zshenv symlink
+ln -sf ~/config_files/.zshenv ~/.zshenv
+
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
