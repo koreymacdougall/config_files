@@ -6,14 +6,15 @@
   delete others
   
 -Install pacstrap 
-  Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux
+  Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux, firefox
   (if doing on physical machine, also get wireless network pkgs?)
 
 -...follow instructs
 
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
--After reboot:
+  After reboot:
+  
   Create user, set passwd
     useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
 
@@ -37,6 +38,12 @@
   Reboot
 
   startx, if so desired
+  
+  configure xfce4
+    -shortcuts for launch terminal, launch web browser, window snapping, 
+    -launcher icons for web and terminal
+  
+  configure firefox - plugins and privacy settings
 
   clone this repo, run bash mk_sym_links
 
