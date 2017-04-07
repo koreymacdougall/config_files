@@ -1,0 +1,9 @@
+-Run basic first steps
+
+-Sort mirrors:  (moves all US mirrors to bottom)
+  vim /etc/pacman.d/mirrorlist
+  :g/## United States/+1m$
+  delete others
+  
+-Install pacstrap
+
