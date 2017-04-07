@@ -87,4 +87,3 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 source /home/km/.zshenv
-source $HOME/.zshenv
