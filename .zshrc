@@ -76,7 +76,7 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #Aliases
-alias xmm='xmodmap ~/config_files/.xmodmap'
+alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
