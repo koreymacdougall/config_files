@@ -47,6 +47,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     -launcher icons for web and terminal (in preferred applications menu)
   
   configure firefox - plugins and privacy settings
+    pb, ns, ab, hn, vi, ats_ddg
 
   clone this repo, run bash mk_sym_links
   
