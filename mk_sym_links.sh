@@ -11,7 +11,7 @@ ln -sf ~/config_files/.vimrc ~/.vimrc
 ln -sf ~/config_files/.zshrc ~/.zshrc
 
 #zshenv symlink
-ln -sf ~/config_files/.zshenv ~/.zshenv
+ln -sf ~/config_files/.zprofile ~/.zprofile
 
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
