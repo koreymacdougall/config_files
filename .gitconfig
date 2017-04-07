@@ -7,3 +7,5 @@
 	co = checkout
 	br = branch
 	st = status
+    pullom = pull origin master
+    pushom = push origin master
