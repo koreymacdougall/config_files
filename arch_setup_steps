@@ -41,7 +41,7 @@
   
   configure xfce4
     -shortcuts for launch terminal, launch web browser, window snapping, 
-    -launcher icons for web and terminal
+    -launcher icons for web and terminal (in preferred applications menu)
   
   configure firefox - plugins and privacy settings
 
