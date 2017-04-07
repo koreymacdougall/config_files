@@ -1,4 +1,7 @@
--Run basic first steps
+Setting up a new arch vm - total time: approx 2 hours (should be less with this handy list)
+
+
+-Run basic first steps from installation guide
 
 -Sort mirrors:  (moves all US mirrors to bottom)
   vim /etc/pacman.d/mirrorlist
