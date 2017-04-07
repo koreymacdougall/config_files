@@ -13,18 +13,11 @@
 ##### end notes #######
 #######################
 
-#activate rbenv 
-eval "$(rbenv init -)"
 
 set completion-ignore-case on
 
 localectl set-keymap --no-convert us.map_custom
 
-#add rbenv to $PATH
-PATH="$HOME/.rbenv/bin:$PATH"
-
-#add RubyGems path to $PATH
-PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -52,3 +45,13 @@ if [ -f ~/.git-completion.bash ]; then
       . ~/.git-completion.bash
 fi
 
+#Ruby Settings
+
+#add rbenv to $PATH
+#PATH="$HOME/.rbenv/bin:$PATH"
+
+#activate rbenv 
+#eval "$(rbenv init -)"
+
+#add RubyGems path to $PATH
+#PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/km/.oh-my-zsh
+export ZSH=/home/km/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -75,15 +75,19 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#Aliases
+alias xmm='xmodmap ~/config_files/.xmodmap'
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto --group-directories-first'
+alias ll='ls -al --color=auto --group-directories-first'
+
+# Set vim as default editor
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#Ruby Settings
+#activate rbenv
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+#Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
