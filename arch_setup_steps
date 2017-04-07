@@ -57,6 +57,7 @@
     ./install.sh
     cd ..
     rm -rf fonts/
+    (reboot to load fonts)
 
   done
   
