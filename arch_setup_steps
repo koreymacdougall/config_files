@@ -5,5 +5,40 @@
   :g/## United States/+1m$
   delete others
   
--Install pacstrap
+-Install pacstrap 
+  Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux
+  (if doing on physical machine, also get wireless network pkgs?)
 
+-...follow instructs
+
+=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+-After reboot:
+  Create user, set passwd
+    useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
+
+  Add sudo privs - 
+    export VISUAL=vim
+    visudo
+
+  Connect to network (wired):
+    ip link #gets interface name if different from below
+    systemctl start dhcpcd@enps03
+    systemctl enable dhcpcd@enps03
+
+  For VMs, install guest additions:
+    pacman -S virtualbox-guest-utils   
+
+  Install graphical env:
+    pacman -S xorg-server xorg-server-utils
+    pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
+    pacman -S xf86-video-intel   
+    
+  Reboot
+
+  startx, if so desired
+
+  clone this repo, run bash mk_sym_links
+
+  done
+  
