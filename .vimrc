@@ -39,11 +39,14 @@ set list
 "remap leader to comma ","
 let mapleader=","
 
+"folding options
 "use cold folding, syntax-wise
 set foldmethod=syntax
-
 "set default foldlevel to 1
 set foldlevelstart=1
+" make folds reclose when exiting them with curor
+" set foldclose=all
+
 " use spacebar to toggle folding
 nnoremap <Space> za
 
@@ -111,6 +114,14 @@ au FileType php				setl ofu=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
 au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
+
+" turn on syntax folding for various languages
+let javaScript_fold=1         " JavaScript
+let php_folding=1             " PHP
+let ruby_fold=1               " Ruby
+let sh_fold_enabled=1         " sh
+let vimsyn_folding='af'       " Vim script
+let xml_syntax_folding=1      " XML
 
 set laststatus=2
 

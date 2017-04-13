@@ -87,7 +87,7 @@ export VISUAL=/usr/bin/vim
 
 #Ruby Settings
 #activate rbenv
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 #Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
