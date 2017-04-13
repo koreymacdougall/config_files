@@ -10,11 +10,16 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
+"need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/xmledit'
 Plug 'vim-airline/vim-airline'
-"need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
+" gitgutter tracks lines that have been added/removed/changed
+Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoClose'
 call plug#end()
+
+"shorten time (ms) before screen is updated, done for gitgutter
+set updatetime=250
 
 " append project root dir and subdirs to path when opening vim
 " this is useful for filename completion
