@@ -75,7 +75,7 @@ imap <% <%=  %><left><left><left>
 imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
 
 " auto complete the def/end typing in ruby files
-au FileType ruby,eruby imap def<space> def<cr>end<up> 
+"au FileType ruby,eruby imap def<space> def<cr>end<up> 
 
 "Read an empty HTML template and move curosr to title field
 "thanks to mcantor
