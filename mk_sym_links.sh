@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#terminator symlink
 ln -sf ~/config_files/.terminator_config ~/.config/terminator/config
 
 #bashrc symlink
@@ -29,3 +31,6 @@ ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/h
 
 #xinit symlink
 ln -sf ~/config_files/.xinitrc ~/.xinitrc
+
+#xmodmap symlink - for caps/esc
+ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
