@@ -9,3 +9,5 @@
 	st = status
     pullom = pull origin master
     pushom = push origin master
+[diff]
+	tool = vimdiff
