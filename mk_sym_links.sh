@@ -9,6 +9,10 @@ ln -sf ~/config_files/.bashrc ~/.bashrc
 #vimrc symlink
 ln -sf ~/config_files/.vimrc ~/.vimrc
 
+#.vim/after symlink
+mkdir -p ~/.vim/after/plugin
+ln -sf ~/config_files/.vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
+
 #zshrc symlink
 ln -sf ~/config_files/.zshrc ~/.zshrc
 

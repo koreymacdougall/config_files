@@ -36,8 +36,8 @@ set smartcase
 set listchars=tab:>~,nbsp:_,trail:.
 set list
 
-"remap leader to comma ","
-let mapleader=","
+"remap leader to comma space
+let mapleader=' '
 
 "folding options
 "use cold folding, syntax-wise
@@ -48,11 +48,8 @@ set foldlevelstart=1
 " set foldclose=all
 
 " use spacebar to toggle folding
-nnoremap <Space> za
+nnoremap  <leader><leader> za
 
-" use tab to jump out of closures (quotes, brackets, etc)
-" thanks to Ingo Karkat
-"inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
 
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
@@ -66,10 +63,10 @@ let g:netrw_browse_split=4
 " shows browser pane on left (I think)
 let g:netrw_altv = 1
 " project drawer view as default when opening vim
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+"augroup ProjectDrawer
+  "autocmd!
+  "autocmd VimEnter * :Vexplore
+"augroup END
 
 " turn on line numbering
 set number relativenumber
@@ -80,14 +77,14 @@ set number relativenumber
 imap <% <%=  %><left><left><left>
 
 " auto insert href structure
-imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
+" imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
 
 " auto complete the def/end typing in ruby files
 "au FileType ruby,eruby imap def<space> def<cr>end<up> 
 
 "Read an empty HTML template and move curosr to title field
 "thanks to mcantor
-nnoremap <leader>html :-1read ~/.vim/.skeleton.html<CR>3jwf>a
+"nnoremap <leader>html :-1read ~/.vim/.skeleton.html<CR>3jwf>a
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
@@ -128,13 +125,13 @@ set laststatus=2
 " show command while typing it
 set showcmd
 
-"map leader-ev to open .vimrc in a new Vert split
+" map leader-ev to open .vimrc in a new Vert split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
-"map leader-bs to open .bashrc in a new vert split
+" map leader-bs to open .bashrc in a new vert split
 nnoremap <leader>bs :vsplit ~/.bashrc<cr>
 
-"map leader-f to open netrw in vsplit 
+" map leader-f to open netrw in vsplit 
 nnoremap <leader>f :Vex<cr>
 
 " set vim to dark background
@@ -144,8 +141,36 @@ colorscheme industry
 " highlight serarch results
 set hlsearch
 
-"search highlighting colours
+" search highlighting colours
 hi Search ctermfg=green ctermbg=red
+
+" Airline - enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Airline - show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" ##controls for buffer navigation##
+
+" allows buffer to be hidden if you've modified a buffer
+set hidden
+
+" open a new empty buffer
+nnoremap <leader>T :enew<cr>
+
+" move to the next buffer
+nnoremap <leader>l :bnext<cr>
+
+" move to the previous buffer
+nnoremap <leader>h :bprevious<cr>
+"there are multiple mappings from gitgutter
+"using space as their leader key - disabling them here
+" close current buffer and move to previous one
+" similar to closing a tab
+nnoremap <leader>bq :bp <BAR> bd # <CR>
+ 
+" show all open buffers and their status
+nnoremap <leader>bl :ls<CR>
+
 
 set foldtext=MyFoldText() 
 function! MyFoldText()
@@ -157,10 +182,6 @@ function! MyFoldText()
     let txt = '"' . comment . expansionString . nblines . " lines"
     return txt
 endfunction
-
-
-
-
 
 "execute folding everytime a file is opened (only rly needed when opening file
 "w netrw)"
