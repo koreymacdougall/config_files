@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 " gitgutter tracks lines that have been added/removed/changed
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoClose'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "shorten time (ms) before screen is updated, done for gitgutter
