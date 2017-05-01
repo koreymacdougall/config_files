@@ -17,6 +17,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoClose'
 Plug 'junegunn/goyo.vim'
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
 
 "shorten time (ms) before screen is updated, done for gitgutter
@@ -48,6 +50,17 @@ set foldmethod=syntax
 set foldlevelstart=1
 " make folds reclose when exiting them with curor
 " set foldclose=all
+
+function MarkdownLevel()
+    let h = matchstr(getline(v:lnum), '^#\+')
+    if empty(h) 
+        return "="
+    else 
+        return ">" . len(h)
+    endif
+endfunction
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
 
 " use spacebar to toggle folding
 nnoremap  <leader><leader> za
