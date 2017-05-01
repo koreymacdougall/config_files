@@ -33,7 +33,8 @@ set ignorecase
 set smartcase
 
 " show tabs, spaces, and trailing spaces
-set listchars=tab:>~,nbsp:_,trail:.
+" thanks to damian conway - more instantly better vim
+exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
 
 "remap leader to comma space
