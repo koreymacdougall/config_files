@@ -80,6 +80,7 @@ alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
+alias grep='grep --color=always'
 
 # Set vim as default editor
 export EDITOR=/usr/bin/vim
