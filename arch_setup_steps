@@ -47,9 +47,14 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     -launcher icons for web and terminal (in preferred applications menu)
   
   configure firefox - plugins and privacy settings
-    pb, ns, ab, hn, vi, ats_ddg
-                    -set defsearch=ddg
-                    -nnroremap ; :
+    privacy_badger
+    noscript
+    ab
+    https everywhere
+    vimperator, 
+    add_to_search_bar (add duckduckgo.com/html)
+        -set defsearch=ddg
+        -nnroremap ; :
 
   clone this repo, run bash mk_sym_links
   
