@@ -144,7 +144,7 @@ set showcmd
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 " map leader-bs to open .bashrc in a new vert split
-nnoremap <leader>bs :vsplit ~/.bashrc<cr>
+nnoremap <leader>eb :vsplit ~/.bashrc<cr>
 
 " map leader-f to open netrw in vsplit 
 nnoremap <leader>f :Vex<cr>
