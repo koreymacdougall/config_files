@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoClose'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
 
 call plug#end()
@@ -85,6 +86,10 @@ let g:netrw_altv = 1
 
 " turn on line numbering
 set number relativenumber
+
+" toggle LimeLight when entering/leaving Goyo
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 "SNIPPETS
 
