@@ -90,6 +90,9 @@ set number relativenumber
 " toggle LimeLight when entering/leaving Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+" set limelight dim color
+
+let g:limelight_conceal_ctermfg = 'gray'
 
 "SNIPPETS
 
