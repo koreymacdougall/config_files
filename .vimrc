@@ -52,6 +52,7 @@ set foldlevelstart=1
 " make folds reclose when exiting them with curor
 " set foldclose=all
 
+" setup markdwon levels for folding
 function MarkdownLevel()
     let h = matchstr(getline(v:lnum), '^#\+')
     if empty(h) 
@@ -95,19 +96,8 @@ autocmd! User GoyoLeave Limelight!
 let g:limelight_conceal_ctermfg = 'gray'
 
 "SNIPPETS
-
 " auto insert eruby tags
-imap <% <%=  %><left><left><left>
-
-" auto insert href structure
-" imap <a<space>h <a<space>href="http://www..com/"><esc>2bhi
-
-" auto complete the def/end typing in ruby files
-"au FileType ruby,eruby imap def<space> def<cr>end<up> 
-
-"Read an empty HTML template and move curosr to title field
-"thanks to mcantor
-"nnoremap <leader>html :-1read ~/.vim/.skeleton.html<CR>3jwf>a
+imap <leader>er <%=  %><left><left><left>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
@@ -160,6 +150,8 @@ nnoremap <leader>f :Vex<cr>
 " set vim to dark background
 set t_Co=256
 colorscheme industry
+au FileType markdown colorscheme murphy
+
 
 " highlight serarch results
 set hlsearch
