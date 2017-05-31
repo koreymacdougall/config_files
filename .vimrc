@@ -41,8 +41,8 @@ set smartcase
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
 set list
 
-"remap leader to comma space
-let mapleader=' '
+"remap leader to comma
+let mapleader=','
 
 "folding options
 "use cold folding, syntax-wise
@@ -65,7 +65,7 @@ au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 au BufEnter *.md setlocal foldmethod=expr
 
 " use spacebar to toggle folding
-nnoremap  <leader><leader> za
+nnoremap  <space> za
 
 
 " netrw tree view, banner, winsize
