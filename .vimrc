@@ -98,6 +98,7 @@ let g:limelight_conceal_ctermfg = 'gray'
 "SNIPPETS
 " auto insert eruby tags
 imap <leader>er <%=  %><left><left><left>
+imap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
