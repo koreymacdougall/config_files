@@ -36,6 +36,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   #edit profile so that interface name matches
   chmod 600 INTERFACE-ethernet-dhcp
   sudo netctl start INTERFACE-ethernet-dhcp
+  sudo netctl enable INTERFACE-ethernet-dhcp
 
   For VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
