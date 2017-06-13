@@ -17,7 +17,7 @@
 set completion-ignore-case on
 
 #to swap caps and escape
-localectl set-keymap --no-convert us.map_custom
+#localectl set-keymap --no-convert us.map_custom
 
 
 # If not running interactively, don't do anything

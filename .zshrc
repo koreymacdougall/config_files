@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-#Aliases
+# Aliases
 alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
@@ -86,9 +86,14 @@ alias grep='grep --color=always'
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-#Ruby Settings
-#activate rbenv
+# Ruby Settings
+# activate rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-#Not sure if I need to source zshenv, not currently using it
+# Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
+
+#loadkeyboard map / swap caps_lock and escape
+#this is the manual method, instead of using 
+#localectl set-keymap MAPPING
+#sudo /usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
