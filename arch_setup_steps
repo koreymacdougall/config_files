@@ -79,3 +79,9 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
   done
   
+################################################################################
+
+Fedora Notes
+
+-caps-esc swap w/ xmodmap doesn't seem to work
+-use: gnome-tweak-tool

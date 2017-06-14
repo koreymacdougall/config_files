@@ -88,7 +88,9 @@ export VISUAL=/usr/bin/vim
 
 # Ruby Settings
 # activate rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# &> /dev/null redirects stdout and stderr to nowhere
+# effectively supresses error msg when rbenv is not installed
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
 # Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
