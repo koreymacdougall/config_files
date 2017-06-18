@@ -30,6 +30,14 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     systemctl start dhcpcd@enps03
     systemctl enable dhcpcd@enps03
 
+  On t_server:
+  ip link # get interface name
+  cp /etc/netctl/example/ethernet-dhcp /etc/netctl/INTERFACE-ethernet-dhcp
+  #edit profile so that interface name matches
+  chmod 600 INTERFACE-ethernet-dhcp
+  sudo netctl start INTERFACE-ethernet-dhcp
+  sudo netctl enable INTERFACE-ethernet-dhcp
+
   For VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
 
@@ -58,8 +66,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
   clone this repo, run bash mk_sym_links
   
-  set default shell to zsh
-    chsh -s /usr/bin/zsh
+  set default shell to zsh chsh -s /usr/bin/zsh
   setup oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   install powerline fonts
@@ -72,3 +79,9 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
   done
   
+################################################################################
+
+Fedora Notes
+
+-caps-esc swap w/ xmodmap doesn't seem to work
+-use: gnome-tweak-tool

@@ -53,7 +53,8 @@ set foldlevelstart=1
 " make folds reclose when exiting them with curor
 " set foldclose=all
 
-" setup markdwon levels for folding
+" setup markdown levels for folding
+" TODO - find reference for this
 function MarkdownLevel()
     let h = matchstr(getline(v:lnum), '^#\+')
     if empty(h) 
@@ -240,8 +241,11 @@ function! MyFoldText()
     let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0) - 6
     let line = getline(v:foldstart)
     let comment = substitute(line, '/\*\|\*/\|{{{\d\=', '', 'g')
+    #let level = s/\#/line/gn
+    let level = len(matchstr(getline(v:foldstart), '^#\+'))
+    let level2 = repeat("  ", level)
     let expansionString = repeat(".", w - strwidth(nblines.comment.'"'))
-    let txt = '"' . comment . expansionString . nblines . " lines"
+    let txt = '"' . level2  . comment . expansionString . nblines . " lines"
     return txt
 endfunction
 
