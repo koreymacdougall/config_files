@@ -12,5 +12,7 @@
 [plugins]
 [profiles]
   [[default]]
+    cursor_color = "#00e5ff"
+    font = Nimbus Sans Narrow Semi-Condensed 10
     foreground_color = "#00e5ff"
     show_titlebar = False

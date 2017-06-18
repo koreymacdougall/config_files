@@ -10,6 +10,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
 "need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/xmledit'
 Plug 'vim-airline/vim-airline'
@@ -160,10 +161,55 @@ set hlsearch
 " search highlighting colours
 hi Search ctermfg=green ctermbg=red
 
+" air-line
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+""let g:airline_left_sep = '▶'
+""let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+""let g:airline_symbols.crypt = '🔒'
+""let g:airline_symbols.linenr = '␊'
+""let g:airline_symbols.linenr = '␤'
+""let g:airline_symbols.linenr = '¶'
+""let g:airline_symbols.maxlinenr = '☰'
+""let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+""let g:airline_symbols.paste = 'ρ'
+""let g:airline_symbols.paste = 'Þ'
+""let g:airline_symbols.paste = '∥'
+""let g:airline_symbols.spell = 'Ꞩ'
+""let g:airline_symbols.notexists = '∄'
+""let g:airline_symbols.whitespace = 'Ξ'
+""
+""" powerline symbols
+let g:airline_left_sep = ''
+""let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+""let g:airline_right_alt_sep = ''
+""let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+""let g:airline_symbols.linenr = ''
+""
+""" old vim-powerline symbols
+""let g:airline_left_sep = '⮀'
+""let g:airline_left_alt_sep = '⮁'
+""let g:airline_right_sep = '⮂'
+""let g:airline_right_alt_sep = '⮃'
+""let g:airline_symbols.branch = '⭠'
+""let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_powerline_fonts = 1
 " Airline - enable the list of buffers
+"let g:airline_extensions = ['branch', 'tabline']
 let g:airline#extensions#tabline#enabled = 1
 " Airline - show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline_section_b
+let g:airline#extensions#branch#enabled = 1
+
 
 " ##controls for buffer navigation##
 
