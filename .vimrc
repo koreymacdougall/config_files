@@ -106,6 +106,7 @@ imap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
 nnoremap ; :
 nnoremap : ;
 
+nnoremap <leader>q gggqG<C-O><C-O>
 " turn on smart indent
 set si
 
