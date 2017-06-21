@@ -1,0 +1,14 @@
+## for qemu guest (fedora 25g, arch host)
+sudo dnf install xorg-x11-drv-qxl
+sudo dnf install spice-vdagent
+- display settings:
+    - Type: Spice server
+    - Listen Type: address
+    - Address: listen type
+    - openGL NOT checked
+- video settings:
+    - Model: QXL
+
+## caps-esc mapping
+- xmodmap doesn't seem to work
+- install/use gnome-tweak-tool
