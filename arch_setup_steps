@@ -3,16 +3,28 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
 -Run basic first steps from installation guide
 
--Sort mirrors:  (moves all US mirrors to bottom)
-  vim /etc/pacman.d/mirrorlist
-  :g/## United States/+1m$
-  delete others
-  
--Install pacstrap 
-  Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux, firefox
-  (if doing on physical machine, also get wireless network pkgs?)
+    -encryption - LVM on Luks - see forked repo for more detail about pvsetup,
+    lvsetup, etc
+        - crypttab - not used for this scheme
+        - fstab: 
+            root partition: /dev/mapper/*crypt_drive_name*/*crypt_partition_name*
+            boot partition: UUID of partition
+            swap partition: UUID of encrypted swap partition
+            make /tmp a ramdisk
+            - tmpfs /tmp tmpfs defaults,noatime,mode=1777   0   0
+        - mkinitcpio.conf:
+            HOOKS="base systemd udev autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 resume filesystems"
 
--...follow instructs
+    -Sort mirrors:  (moves all US mirrors to bottom)
+      vim /etc/pacman.d/mirrorlist
+      :g/## United States/+1m$
+      delete others
+      
+    -Install pacstrap 
+      Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux, firefox
+      (if doing on physical machine, also get wireless network pkgs?)
+
+    -...follow instructs
 
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
@@ -38,12 +50,13 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   sudo netctl start INTERFACE-ethernet-dhcp
   sudo netctl enable INTERFACE-ethernet-dhcp
 
-  For VMs, install guest additions:
+  For vbox VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
 
   Install graphical env:
     pacman -S xorg-server xorg-server-utils
     pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
+    pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
     pacman -S xf86-video-intel   
     
   Reboot
@@ -53,6 +66,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   configure xfce4
     -shortcuts for launch terminal, launch web browser, window snapping, 
     -launcher icons for web and terminal (in preferred applications menu)
+    - 
   
   configure firefox - plugins and privacy settings
     privacy_badger
@@ -65,6 +79,8 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         -nnroremap ; :
 
   clone this repo, run bash mk_sym_links
+    -if only needing vimrc, or other single file (not whole repo) use curl:
+    - curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
   
   set default shell to zsh chsh -s /usr/bin/zsh
   setup oh-my-zsh
