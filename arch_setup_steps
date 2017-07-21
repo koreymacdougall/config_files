@@ -78,6 +78,12 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         -set defsearch=ddg
         -nnroremap ; :
 
+    if using thunderbird:
+        extensions: 
+        lightning (calendar)
+        manually sort folders (to rearrange accts)
+        send later (specify time to send email)
+
   clone this repo, run bash mk_sym_links
     -if only needing vimrc, or other single file (not whole repo) use curl:
     - curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
