@@ -81,6 +81,7 @@ alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
+alias refresh_clock='timedatectl set-ntp 0 && timedatectl set-ntp 1'
 
 # Set vim as default editor
 export EDITOR=/usr/bin/vim
@@ -99,3 +100,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 #this is the manual method, instead of using 
 #localectl set-keymap MAPPING
 #sudo /usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
