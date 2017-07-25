@@ -261,3 +261,97 @@ bind "main" "\\" = "scroll-up"
 
 
 
+
+
+
+##############################
+# Automatically saved options
+#
+
+## document 
+#  Document options.
+
+  ## document.history 
+  #  History options.
+
+    ## document.history.global 
+    #  Global history options.
+
+      ## document.history.global.enable [0|1]
+      #  Enable global history ("history of all pages visited").
+      set document.history.global.enable = 0
+
+      ## document.history.global.max_items <num>
+      #  Maximum number of entries in the global history.
+      set document.history.global.max_items = 1
+
+      ## document.history.global.display_type <num>
+      #  What to display in global history dialog:
+      #  0 is URLs
+      #  1 is page titles
+      set document.history.global.display_type = 0
+
+
+    ## document.history.keep_unhistory [0|1]
+    #  Keep unhistory ("forward history").
+    set document.history.keep_unhistory = 0
+
+
+
+
+
+
+##############################
+# Automatically saved options
+#
+
+## document 
+#  Document options.
+
+  ## document.colors 
+  #  Default document color settings.
+
+    ## document.colors.text <color|#rrggbb>
+    #  Default text color.
+    set document.colors.text = "yellow"
+
+
+
+## terminal 
+#  Terminal options.
+
+  ## terminal.linux 
+  #  Options specific to this terminal type (according to $TERM value).
+
+    ## terminal.linux.charset <codepage>
+    set terminal.linux.charset = "utf-8"
+
+
+
+
+
+##############################
+# Automatically saved options
+#
+
+## document 
+#  Document options.
+
+  ## document.colors 
+  #  Default document color settings.
+
+    ## document.colors.link <color|#rrggbb>
+    #  Default link color.
+    set document.colors.link = "aqua"
+
+
+
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "l" = "move-link-right"
+bind "main" "h" = "move-link-left"
