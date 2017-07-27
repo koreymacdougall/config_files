@@ -159,6 +159,8 @@ au FileType markdown colorscheme murphy
 
 " highlight serarch results
 set hlsearch
+" start matching pattern while typing
+set incsearch
 
 " search highlighting colours
 hi Search ctermfg=green ctermbg=red
