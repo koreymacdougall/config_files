@@ -81,7 +81,22 @@ alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
-alias refresh_clock='timedatectl set-ntp 0 && timedatectl set-ntp 1'
+
+# Functions
+# ref_clock toggles set-ntp true
+# vm's often don't update clocks properly
+# if suspended for any length of time
+ref_clock () {
+    timedatectl set-ntp 0
+    timedatectl set-ntp 1
+}
+
+#quickly nav to a dir in home dir
+goto () {
+    find ~ -type d -name $1
+    cd ~/$1
+}
+
 
 # Set vim as default editor
 export EDITOR=/usr/bin/vim
