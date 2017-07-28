@@ -92,10 +92,17 @@ ref_clock () {
 }
 
 #quickly nav to a dir in home dir
-goto () {
-    find ~ -type d -name $1
-    cd ~/$1
+goto_base () {
+    p=$(find /home/km/ -type d -name $1 | head -1)
+    echo "p is - "$p
+    echo "1 is - "$1
+    cd "$p"
 }
+
+# need alias to disable globbing from zsh
+# o/w, glob expansion will fail if no match in pwd
+# source - 4 hours grappling with zsh syntax X0
+alias goto='noglob goto_base'
 
 
 # Set vim as default editor
@@ -116,3 +123,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 #localectl set-keymap MAPPING
 #sudo /usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
