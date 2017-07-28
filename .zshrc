@@ -102,7 +102,7 @@ goto_base () {
 # need alias to disable globbing from zsh
 # o/w, glob expansion will fail if no match in pwd
 # source - 4 hours grappling with zsh syntax X0
-alias goto='noglob goto_base'
+alias go='noglob goto_base'
 
 
 # Set vim as default editor
