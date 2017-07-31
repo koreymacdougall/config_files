@@ -39,7 +39,7 @@ set smartcase
 
 " show tabs, spaces, and trailing spaces
 " thanks to damian conway - more instantly better vim
-exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\uB7"
+exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"
 set list
 
 "remap leader to comma
