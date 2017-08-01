@@ -7,7 +7,8 @@ export ZSH=/home/km/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+ZSH_THEME="darkblood"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -82,7 +83,8 @@ alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
 
-# Functions
+# Custom Functions
+
 # ref_clock toggles set-ntp true
 # vm's often don't update clocks properly
 # if suspended for any length of time
@@ -91,11 +93,10 @@ ref_clock () {
     timedatectl set-ntp 1
 }
 
-#quickly nav to a dir in home dir
+## Goto
+# quickly nav to a dir in home dir
 goto_base () {
     p=$(find /home/km/ -type d -name $1 | head -1)
-    echo "p is - "$p
-    echo "1 is - "$1
     cd "$p"
 }
 
@@ -103,6 +104,13 @@ goto_base () {
 # o/w, glob expansion will fail if no match in pwd
 # source - 4 hours grappling with zsh syntax X0
 alias go='noglob goto_base'
+## end Goto
+
+## Vim last
+# quickly open latest version in a writing dir
+ vl () {
+    vim $(ls | tail -n 1)
+}
 
 
 # Set vim as default editor
