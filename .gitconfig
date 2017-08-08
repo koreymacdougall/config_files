@@ -11,5 +11,7 @@
     pushom = push origin master
 [diff]
 	tool = vimdiff
-[url "https://koreymacdougall@github.com"]
-	insteadOf = https://github.com
+
+[credential]
+#set with: git config --global credential.username koreymacdougall
+	username = koreymacdougall
