@@ -24,11 +24,25 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux, firefox
       (if doing on physical machine, also get wireless network pkgs?)
 
-    -...follow instructs
+    -...follow rest of instructs
 
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
   After reboot:
+  
+  install tlp:
+    pacman -S tlp tlp-rdw
+    (thinkpads require couple more; check linerunner.de/tlp/docs for more)
+
+    systemctl enable tlp.service
+    systemctl enable tlp-sleep.service
+
+    systemctl enable NetworkManager-dispatcher.service
+    systemctl mask systemd-rfkill.service
+
+    (to kill bluetooth)
+    rfkill block bluetooth
+
   
   Create user, set passwd
     useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
@@ -43,18 +57,18 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     systemctl enable dhcpcd@enps03
 
   On t_server:
-  ip link # get interface name
-  cp /etc/netctl/example/ethernet-dhcp /etc/netctl/INTERFACE-ethernet-dhcp
-  #edit profile so that interface name matches
-  chmod 600 INTERFACE-ethernet-dhcp
-  sudo netctl start INTERFACE-ethernet-dhcp
-  sudo netctl enable INTERFACE-ethernet-dhcp
+    ip link # get interface name
+    cp /etc/netctl/example/ethernet-dhcp /etc/netctl/INTERFACE-ethernet-dhcp
+    #edit profile so that interface name matches
+    chmod 600 INTERFACE-ethernet-dhcp
+    sudo netctl start INTERFACE-ethernet-dhcp
+    sudo netctl enable INTERFACE-ethernet-dhcp
 
   For vbox VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
 
   Install graphical env:
-    pacman -S xorg-server xorg-server-utils
+    pacman -S xorg-server xorg-server-utils (utils maybe not)
     pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
     pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
     pacman -S xf86-video-intel   
@@ -77,12 +91,13 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     add_to_search_bar (add duckduckgo.com/html)
         -set defsearch=ddg
         -nnroremap ; :
+    (alternates - qutebrowser, dillo, elinks)
 
     if using thunderbird:
         extensions: 
-        lightning (calendar)
-        manually sort folders (to rearrange accts)
-        send later (specify time to send email)
+            lightning (calendar) - now integrated i think
+            manually sort folders (to rearrange accts)
+            send later (specify time to send email)
 
   clone this repo, run bash mk_sym_links
     -if only needing vimrc, or other single file (not whole repo) use curl:
@@ -91,6 +106,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   set default shell to zsh chsh -s /usr/bin/zsh
   setup oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    change .zshrc theme to jonathan/agnoster/bloodred
   install powerline fonts
     git clone https://github.com/powerline/fonts.git
     cd fonts

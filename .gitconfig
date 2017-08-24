@@ -1,17 +1,20 @@
 [user]
-	email = korey@koreymacdougall.com
-	name = koreymacdougall
+    email = korey@koreymacdougall.com
+    name = koreymacdougall
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [alias]
-	co = checkout
-	br = branch
-	st = status
+    co = checkout
+    br = branch
+    st = status
     pullom = pull origin master
     pushom = push origin master
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [credential]
-#set with: git config --global credential.username koreymacdougall
-	username = koreymacdougall
+    # set with: git config --global credential.username koreymacdougall
+    username = koreymacdougall
+[github]
+    user = koreymacdougall
+    # for token, use an env variable; scary intern3ts
