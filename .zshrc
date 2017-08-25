@@ -142,7 +142,6 @@ github-create() {
   echo "Fn will fail otherwise, but you won't get an error -- sneaky"
 
   echo "Also make sure to set export token to env ... "
-  # TODO - optimize this to read from encrypted key file, then unset env var"
 
   repo_name=$1
 
@@ -163,7 +162,10 @@ github-create() {
   invalid_credentials=1
   fi
 
+  #use encrypted github_token in config file repo to set env param
+  gpg -d ~/config_files/github_token.gpg 2>/dev/null | export GITHUB_TOKEN=$(sed -n 2p)
   token=$GITHUB_TOKEN
+
   if [ "$token" = "" ]; then
   echo "Could not find token, run 'git config --global github.token <token>'"
   invalid_credentials=1
@@ -180,5 +182,8 @@ github-create() {
   echo -n "Pushing local code to remote ..."
   git remote add origin https://github.com/$username/$repo_name.git > /dev/null 2>&1
   git push -u origin master > /dev/null 2>&1
+
+  export GITHUB_TOKEN=""
+  echo "clearing env vars..."
   echo " done."
 }
