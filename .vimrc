@@ -256,3 +256,7 @@ endfunction
 "execute folding everytime a file is opened (only rly needed when opening file
 "w netrw)"
 au FileType * setlocal foldtext=MyFoldText()
+
+" save and load folding patterns when exiting/entering a file
+au BufWinLeave *.py mkview
+au BufWinEnter *.py silent loadview
