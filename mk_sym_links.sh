@@ -38,3 +38,6 @@ ln -sf ~/config_files/.xinitrc ~/.xinitrc
 
 #xmodmap symlink - for caps/esc
 ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
+
+# toprc symlink
+ln -sf ~/config_files/.toprc ~/.toprc
