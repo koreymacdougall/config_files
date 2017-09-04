@@ -108,8 +108,8 @@ nnoremap : ;
 
 " reformat entire file - gq is format cmd
 nnoremap <leader>q gggqG<C-O><C-O>
-" turn on smart indent
-set si
+" turn on smart indent and autoindent
+set si ai
 
 " text display options; window wrap, linebreak, textwidth
 set wrap linebreak tw=80
@@ -146,7 +146,7 @@ set showcmd
 " map leader-ev to open .vimrc in a new Vert split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
-" map leader-bs to open .bashrc in a new vert split
+" map leader-eb to open .bashrc in a new vert split
 nnoremap <leader>eb :vsplit ~/.bashrc<cr>
 
 " map leader-f to open netrw in vsplit 
