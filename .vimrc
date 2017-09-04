@@ -6,12 +6,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall
 endif
 
-"Plug functionality, load the plugings at runtime
+" Plug functionality, load the plugings at runtime
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
-"need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
+" need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/xmledit'
 Plug 'vim-airline/vim-airline'
 " gitgutter tracks lines that have been added/removed/changed
@@ -23,7 +23,7 @@ Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
-"shorten time (ms) before screen is updated, done for gitgutter
+" shorten time (ms) before screen is updated, done for gitgutter
 set updatetime=250
 
 " append project root dir and subdirs to path when opening vim
@@ -42,16 +42,20 @@ set smartcase
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"
 set list
 
-"remap leader to comma
+" remap leader to comma
 let mapleader=','
 
-"folding options
-"use cold folding, syntax-wise
+" folding options
+" use cold folding, syntax-wise
 set foldmethod=syntax
-"set default foldlevel to 1
+" set default foldlevel to 1
 set foldlevelstart=1
-" make folds reclose when exiting them with curor
+" make folds reclose when exiting them with cursor
 " set foldclose=all
+
+" save and load folding patterns when exiting/entering a file
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
 " setup markdown levels for folding
 " TODO - find reference for this
@@ -97,10 +101,10 @@ autocmd! User GoyoLeave Limelight!
 
 let g:limelight_conceal_ctermfg = 'gray'
 
-"SNIPPETS
+" SNIPPETS
 " auto insert eruby tags
-imap <leader>er <%=  %><left><left><left>
-imap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
+nmap <leader>er <%=  %><left><left><left>
+nmap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
@@ -172,39 +176,39 @@ if !exists('g:airline_symbols')
 endif
 " unicode symbols
 let g:airline_left_sep = '»'
-""let g:airline_left_sep = '▶'
-""let g:airline_right_sep = '«'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-""let g:airline_symbols.crypt = '🔒'
-""let g:airline_symbols.linenr = '␊'
-""let g:airline_symbols.linenr = '␤'
-""let g:airline_symbols.linenr = '¶'
-""let g:airline_symbols.maxlinenr = '☰'
-""let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.maxlinenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.branch = '⎇'
-""let g:airline_symbols.paste = 'ρ'
-""let g:airline_symbols.paste = 'Þ'
-""let g:airline_symbols.paste = '∥'
-""let g:airline_symbols.spell = 'Ꞩ'
-""let g:airline_symbols.notexists = '∄'
-""let g:airline_symbols.whitespace = 'Ξ'
-""
-""" powerline symbols
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.spell = 'Ꞩ'
+"let g:airline_symbols.notexists = '∄'
+"let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
 let g:airline_left_sep = ''
-""let g:airline_left_alt_sep = ''
+"let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-""let g:airline_right_alt_sep = ''
-""let g:airline_symbols.branch = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-""let g:airline_symbols.linenr = ''
+"let g:airline_symbols.linenr = ''
 ""
-""" old vim-powerline symbols
-""let g:airline_left_sep = '⮀'
-""let g:airline_left_alt_sep = '⮁'
-""let g:airline_right_sep = '⮂'
-""let g:airline_right_alt_sep = '⮃'
-""let g:airline_symbols.branch = '⭠'
-""let g:airline_symbols.readonly = '⭤'
+" old vim-powerline symbols
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
 let g:airline_symbols.linenr = '⭡'
 let g:airline_powerline_fonts = 1
 " Airline - enable the list of buffers
@@ -229,8 +233,9 @@ nnoremap <leader>l :bnext<cr>
 
 " move to the previous buffer
 nnoremap <leader>h :bprevious<cr>
-"there are multiple mappings from gitgutter
-"using space as their leader key - disabling them here
+" there are multiple mappings from gitgutter
+" using space as their leader key - disabling them here
+
 " close current buffer and move to previous one
 " similar to closing a tab
 nnoremap <leader>bq :bp <BAR> bd # <CR>
@@ -253,10 +258,7 @@ function! MyFoldText()
     return txt
 endfunction
 
-"execute folding everytime a file is opened (only rly needed when opening file
-"w netrw)"
+" execute folding everytime a file is opened (only rly needed when opening file
+" w netrw)
 au FileType * setlocal foldtext=MyFoldText()
 
-" save and load folding patterns when exiting/entering a file
-au BufWinLeave *.py mkview
-au BufWinEnter *.py silent loadview
