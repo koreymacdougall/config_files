@@ -106,10 +106,14 @@ let g:limelight_conceal_ctermfg = 'gray'
 nmap <leader>er <%=  %><left><left><left>
 nmap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
 
+" insert html comment
+nmap <leader>wc a<!----><left><left><left>
+" insert css comment
+nmap <leader>cc a/**/<left><left>
+
 " remap semi-colon and colon in normal mode
 nnoremap ; :
 nnoremap : ;
-
 " reformat entire file - gq is format cmd
 nnoremap <leader>q gggqG<C-O><C-O>
 " turn on smart indent and autoindent
