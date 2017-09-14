@@ -18,3 +18,5 @@
 [github]
     user = koreymacdougall
     # for token, use an env variable; scary intern3ts
+[web]
+	browser = firefox

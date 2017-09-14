@@ -10,6 +10,8 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
+" rhubarb provides support for fugitive's Gbrowse fn
+Plug 'tpope/vim-rhubarb'
 " fugitive is a git wrapper
 Plug 'tpope/vim-fugitive'
 " obsolete? need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim

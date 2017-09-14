@@ -21,8 +21,12 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       delete others
       
     -Install pacstrap 
-      Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux, firefox
-      (if doing on physical machine, also get wireless network pkgs?)
+      Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux,
+      firefox, xdg-utils
+        -if doing on physical machine, also get wireless network pkgs?
+        - xdg-utils provides xdg-open, which is needed for fugitive/rhubarb's
+          Gbrowse, which is github integration
+
 
     -...follow rest of instructs
 
