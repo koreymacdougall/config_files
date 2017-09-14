@@ -1,5 +1,5 @@
-" note - add a <%=  %> wrapper for change surround
 " Plug - auto install if not present
+" Note that PlugInstall will manually install any new plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	\	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -10,13 +10,16 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
+" fugitive is a git wrapper
 Plug 'tpope/vim-fugitive'
-" need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
+" obsolete? need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
 Plug 'vim-scripts/xmledit'
+" airline is a status-line plugin, modeled after powerline
 Plug 'vim-airline/vim-airline'
 " gitgutter tracks lines that have been added/removed/changed
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/AutoClose'
+" Goyo and limelight are for minimalist writing views
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
