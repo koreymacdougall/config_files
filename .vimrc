@@ -133,7 +133,7 @@ au FileType ruby,eruby,css,scss set tabstop=2 shiftwidth=2
 " turn on syntax completion - C-x C-o
 syntax on
 filetype plugin indent on
-au FileType php				setl ofu=phpcomplete#CompletePHP
+au FileType php				setl omnifunc=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
 au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
@@ -195,7 +195,7 @@ let g:airline_symbols.branch = '⎇'
 "let g:airline_symbols.paste = 'Þ'
 "let g:airline_symbols.paste = '∥'
 "let g:airline_symbols.spell = 'Ꞩ'
-"let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.notexists = '∄'
 "let g:airline_symbols.whitespace = 'Ξ'
 
 " powerline symbols
