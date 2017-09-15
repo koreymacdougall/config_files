@@ -1,6 +1,7 @@
 [global_config]
   inactive_color_offset = 1.0
 [keybindings]
+  next_tab = <Primary>Tab
 [layouts]
   [[default]]
     [[[child1]]]
