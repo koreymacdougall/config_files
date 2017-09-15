@@ -10,7 +10,7 @@ endif
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
-" rhubarb provides support for fugitive's Gbrowse fn
+" rhubarb provides support for fugitive's Gbrowse for github
 Plug 'tpope/vim-rhubarb'
 " fugitive is a git wrapper
 Plug 'tpope/vim-fugitive'
@@ -25,7 +25,6 @@ Plug 'vim-scripts/AutoClose'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
-
 call plug#end()
 
 " shorten time (ms) before screen is updated, done for gitgutter
@@ -106,21 +105,69 @@ autocmd! User GoyoLeave Limelight!
 
 let g:limelight_conceal_ctermfg = 'gray'
 
-" SNIPPETS
-" auto insert eruby tags
-nmap <leader>er <%=  %><left><left><left>
-nmap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
+"CUSTOM MAPPINGS
 
+"       Snippets
+" auto insert eruby tags
+" insert embedded ruby w/ display tag
+nnoremap <leader>er <%=  %><left><left><left>
+" insert embedded ruby tag
+nnoremap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
 " insert html comment
-nmap <leader>wc a<!----><left><left><left>
+nnoremap <leader>wc a<!----><left><left><left>
 " insert css comment
-nmap <leader>cc a/**/<left><left>
+nnoremap <leader>cc a/**/<left><left>
 
 " remap semi-colon and colon in normal mode
 nnoremap ; :
 nnoremap : ;
 " reformat entire file - gq is format cmd
 nnoremap <leader>q gggqG<C-O><C-O>
+" map leader-ev to open .vimrc in a new Vert split
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" map leader-eb to open .bashrc in a new vert split
+nnoremap <leader>eb :vsplit ~/.bashrc<cr>
+" map leader-f to open netrw in vsplit 
+nnoremap <leader>f :Vex<cr>
+
+" buffer navigation / manipulation
+" open a new empty buffer
+nnoremap <leader>T :enew<cr>
+" move to the next buffer
+nnoremap <leader>l :bnext<cr>
+" move to the previous buffer
+nnoremap <leader>h :bprevious<cr>
+
+" close current buffer and move to previous one
+" similar to closing a tab
+nnoremap <leader>bq :bp <BAR> bd # <CR>
+
+" show all open buffers and their status
+nnoremap <leader>bl :ls<CR>
+
+" mappings to allow quicker navigation of the quickfix list
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cprevious<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
+
+" map .. to go up one tree level in fugitive git browsing
+" this is from vimcasts...but I can't currently get it to work
+" the mapping itself will work, but the conditional doesn't 
+" seem to evalutate to true
+" probably fugitive's implemenation has changed too much since the vimcast
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\(fugitive)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
+" autoclean fugitive objects from buffers
+" thanks to vim casts / Drew Neil
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" allows buffer to be hidden if you've modified the buffer
+set hidden
+
 " turn on smart indent and autoindent
 set si ai
 
@@ -152,25 +199,20 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
+" sets when the last window will have a status line, 2 = always
 set laststatus=2
 
 " show command while typing it
 set showcmd
 
-" map leader-ev to open .vimrc in a new Vert split
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-
-" map leader-eb to open .bashrc in a new vert split
-nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-
-" map leader-f to open netrw in vsplit 
-nnoremap <leader>f :Vex<cr>
-
 " set vim to dark background
+set background=dark
+" set terminal to 256 colors
 set t_Co=256
+
+" default colorschemes: industry for code, murphy for markdown
 colorscheme industry
 au FileType markdown colorscheme murphy
-
 
 " highlight serarch results
 set hlsearch
@@ -184,6 +226,8 @@ hi Search ctermfg=green ctermbg=red
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
+
+" most of these unicode/powerline old powerline symbols just kept for reference
 " unicode symbols
 let g:airline_left_sep = '»'
 "let g:airline_left_sep = '▶'
@@ -228,30 +272,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline_section_b
 let g:airline#extensions#branch#enabled = 1
-
-
-" ##controls for buffer navigation##
-
-" allows buffer to be hidden if you've modified a buffer
-set hidden
-
-" open a new empty buffer
-nnoremap <leader>T :enew<cr>
-
-" move to the next buffer
-nnoremap <leader>l :bnext<cr>
-
-" move to the previous buffer
-nnoremap <leader>h :bprevious<cr>
-" there are multiple mappings from gitgutter
-" using space as their leader key - disabling them here
-
-" close current buffer and move to previous one
-" similar to closing a tab
-nnoremap <leader>bq :bp <BAR> bd # <CR>
- 
-" show all open buffers and their status
-nnoremap <leader>bl :ls<CR>
 
 
 set foldtext=MyFoldText() 
