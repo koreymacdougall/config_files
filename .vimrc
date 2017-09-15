@@ -77,7 +77,6 @@ au BufEnter *.md setlocal foldmethod=expr
 " use spacebar to toggle folding
 nnoremap  <space> za
 
-
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
 let g:netrw_liststyle=3
@@ -127,7 +126,9 @@ nnoremap <leader>q gggqG<C-O><C-O>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " map leader-eb to open .bashrc in a new vert split
 nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-" map leader-f to open netrw in vsplit 
+" map leader-f to open .zshrc in vsplit 
+nnoremap <leader>ez :vsplit ~/.zshrc<cr>
+" map leader-f to open netrw/file broswer in vsplit 
 nnoremap <leader>f :Vex<cr>
 
 " buffer navigation / manipulation
@@ -291,4 +292,3 @@ endfunction
 " execute folding everytime a file is opened (only rly needed when opening file
 " w netrw)
 au FileType * setlocal foldtext=MyFoldText()
-
