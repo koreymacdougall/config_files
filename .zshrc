@@ -93,18 +93,13 @@ ref_clock () {
     timedatectl set-ntp 1
 }
 
-## Goto
+## go fn
 # quickly nav to a dir in home dir
-goto_base () {
-    p=$(find /home/km/ -type d -name $1 | head -1)
+go () {
+    p=$(find /home/$(whoami)/ -type d -name "$1*" | head -1)
     cd "$p"
 }
-
-# need alias to disable globbing from zsh
-# o/w, glob expansion will fail if no match in pwd
-# source - 4 hours grappling with zsh syntax X0
-alias go='noglob goto_base'
-## end Goto
+## end go fn
 
 ## Vim last
 # quickly open latest version in a writing dir
