@@ -83,7 +83,7 @@ let g:netrw_liststyle=3
 " hide the netrw shortcut banner
 let g:netrw_banner=0
 " set split width to 25%
-let g:netrw_winsize= 25 
+let g:netrw_winsize=25
 " when opening a file, show it in previous pane
 let g:netrw_browse_split=4
 " shows browser pane on left (I think)
@@ -151,6 +151,9 @@ nnoremap [q :cprevious<CR>
 nnoremap ]q :cprevious<CR>
 nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
+
+" allow the . to execute once for each line of a visual selection
+vnoremap . :normal .<CR>
 
 " map .. to go up one tree level in fugitive git browsing
 " this is from vimcasts...but I can't currently get it to work
