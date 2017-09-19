@@ -11,7 +11,6 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 " rhubarb provides support for fugitive's Gbrowse for github
-" p> 
 Plug 'tpope/vim-rhubarb'
 " fugitive is a git wrapper
 Plug 'tpope/vim-fugitive'
