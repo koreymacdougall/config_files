@@ -11,6 +11,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 " rhubarb provides support for fugitive's Gbrowse for github
+" p> 
 Plug 'tpope/vim-rhubarb'
 " fugitive is a git wrapper
 Plug 'tpope/vim-fugitive'
@@ -152,6 +153,18 @@ nnoremap ]q :cnext<CR>
 nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 
+" mappings to quickly resize splits
+" thanks to Andy Wokula
+" SID appears to be a unique script ID? 
+" an appended var? 
+ nmap         <C-W>+     <C-W>+<SID>winheight
+ nmap         <C-W>-     <C-W>-<SID>winheight
+ nn <script>  <SID>winheight+   <C-W>+<SID>winheight
+ nn <script>  <SID>winheight-   <C-W>-<SID>winheight
+" i think this last line is to cancel out the script if 
+" no key is pressed in timeout window
+ nmap         <SID>winheight    <Nop> 
+
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
@@ -164,6 +177,9 @@ autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\(fugitive)$' |
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
+    " set previewheight window to 15, as for Gstatus
+    set previewheight=15
+
 
 " autoclean fugitive objects from buffers
 " thanks to vim casts / Drew Neil
@@ -259,7 +275,6 @@ let g:airline_right_sep = ''
 "let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 "let g:airline_symbols.linenr = ''
-""
 " old vim-powerline symbols
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_alt_sep = '⮁'
