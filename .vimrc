@@ -148,7 +148,7 @@ nnoremap <leader>bl :ls<CR>
 
 " mappings to allow quicker navigation of the quickfix list
 nnoremap [q :cprevious<CR>
-nnoremap ]q :cprevious<CR>
+nnoremap ]q :cnext<CR>
 nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 

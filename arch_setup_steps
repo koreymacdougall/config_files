@@ -45,9 +45,10 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     systemctl mask systemd-rfkill.service
 
     (to kill bluetooth)
-    rfkill block bluetooth
+    "permanent" - disable in bios
+    temporarily - rfkill block bluetooth
+        -alternative: systemctl disable bluetooth.service (systemctl start...)
 
-  
   Create user, set passwd
     useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
 
