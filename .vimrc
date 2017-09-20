@@ -156,13 +156,17 @@ nnoremap ]Q :clast<CR>
 " thanks to Andy Wokula
 " SID appears to be a unique script ID? 
 " an appended var? 
- nmap         <C-W>+     <C-W>+<SID>winheight
- nmap         <C-W>-     <C-W>-<SID>winheight
- nn <script>  <SID>winheight+   <C-W>+<SID>winheight
- nn <script>  <SID>winheight-   <C-W>-<SID>winheight
-" i think this last line is to cancel out the script if 
-" no key is pressed in timeout window
- nmap         <SID>winheight    <Nop> 
+nmap         <C-W>+     <C-W>+<SID>winheight
+nmap         <C-W>-     <C-W>-<SID>winheight
+nmap         <C-W>>     <C-W>><SID>winwidth
+nmap         <C-W><     <C-W><<SID>winwidth
+nn <script>  <SID>winheight+   <C-W>+<SID>winheight
+nn <script>  <SID>winheight-   <C-W>-<SID>winheight
+nn <script>  <SID>winwidth>   <C-W>><SID>winwidth
+nn <script>  <SID>winwidth<   <C-W><<SID>winwidth
+"<Nop> is no action, so this disables the mapping from firing too soon?
+nmap         <SID>winheight    <Nop>
+nmap         <SID>winwidth    <Nop>
 
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
@@ -230,7 +234,7 @@ set background=dark
 set t_Co=256
 
 " default colorschemes: industry for code, murphy for markdown
-colorscheme industry
+colorscheme morning
 au FileType markdown colorscheme murphy
 
 " highlight serarch results
