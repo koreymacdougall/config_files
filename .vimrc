@@ -20,11 +20,16 @@ Plug 'vim-scripts/xmledit'
 Plug 'vim-airline/vim-airline'
 " gitgutter tracks lines that have been added/removed/changed
 Plug 'airblade/vim-gitgutter'
+" autoclose completes brackets, quotes, etc
 Plug 'vim-scripts/AutoClose'
 " Goyo and limelight are for minimalist writing views
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+" Provide some functionality for markdown editing
+" TODO - look into this
 Plug 'plasticboy/vim-markdown'
+" tcomment toggles comments
+Plug 'tomtom/tcomment_vim'
 call plug#end()
 
 " shorten time (ms) before screen is updated, done for gitgutter
