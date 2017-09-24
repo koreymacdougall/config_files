@@ -239,7 +239,7 @@ set background=dark
 set t_Co=256
 
 " default colorschemes: industry for code, murphy for markdown
-colorscheme morning
+colorscheme elflord
 au FileType markdown colorscheme murphy
 
 " highlight serarch results
@@ -318,3 +318,6 @@ endfunction
 " execute folding everytime a file is opened (only rly needed when opening file
 " w netrw)
 au FileType * setlocal foldtext=MyFoldText()
+
+"run file: temporary for dol proj
+nnoremap <leader><leader> :! python runner.py<CR>
