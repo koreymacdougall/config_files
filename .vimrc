@@ -114,9 +114,9 @@ let g:limelight_conceal_ctermfg = 'gray'
 "       Snippets
 " auto insert eruby tags
 " insert embedded ruby w/ display tag
-nnoremap <leader>er <%=  %><left><left><left>
+nnoremap <leader>er i<%=  %><left><left><left>
 " insert embedded ruby tag
-nnoremap <leader>ER <%  %><cr><cr><% end %><up><up><left><left><left>
+nnoremap <leader>ER i<%  %><cr><cr><% end %><up><up><left><left><left>
 " insert html comment
 nnoremap <leader>wc a<!----><left><left><left>
 " insert css comment
