@@ -41,3 +41,9 @@ ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
 
 # toprc symlink
 ln -sf ~/config_files/.toprc ~/.toprc
+
+# xfce4 keyboard shortcuts symlink
+ln -sf ~/config_files/xfce4-keyboard-shortcuts.xml \
+    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+
+
