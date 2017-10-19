@@ -323,4 +323,8 @@ endfunction
 au FileType * setlocal foldtext=MyFoldText()
 
 "run file: temporary for dol proj
-nnoremap <leader><leader> :! python runner.py<CR>
+nnoremap <leader><leader> :! python batch_runner.py<CR>
+" comment out all python ##print statements
+nnoremap <leader>p :%s/print(/#print(/<CR>
+" capital P for uncomment all prints
+nnoremap <leader>P :%s/#print(/print(/<CR>
