@@ -181,12 +181,15 @@ vnoremap . :normal .<CR>
 " the mapping itself will work, but the conditional doesn't 
 " seem to evalutate to true
 " probably fugitive's implemenation has changed too much since the vimcast
-autocmd User fugitive
-  \ if fugitive#buffer().type() =~# '^\(fugitive)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
-    " set previewheight window to 15, as for Gstatus
-    set previewheight=15
+" so, just stealing the shortcut idea
+" thanks to Drew Neil
+" autocmd User fugitive
+"     \ if fugitive#buffer().type() =~# '^\(fugitive)$' |
+"     \ nnoremap <buffer>.. :edit %:h<CR> |
+"     \ endif
+nnoremap <buffer> <leader>u :edit %:h<CR>
+" window heght changed for more comfy gstatus
+set previewheight=15
 
 
 " autoclean fugitive objects from buffers

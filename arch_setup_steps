@@ -109,6 +109,9 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             lightning (calendar) - now integrated i think
             manually sort folders (to rearrange accts)
             send later (specify time to send email)
+            editemailsubject - allow editing of subject line
+                - useful for manually threading
+                 - at least in theory...didn't seem to work
 
   clone this repo, run bash mk_sym_links
     -if only needing vimrc, or other single file (not whole repo) use curl:
