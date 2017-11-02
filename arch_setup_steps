@@ -73,6 +73,14 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   For vbox VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
 
+  If using qemu/kvm, libvirtd, and virt-manager:
+    - sound will likely be an issue. As of nov. 2 2017, couldn't get sound to
+      work with spice server. Vnc works however.
+    - May need to edit /etc/libvirt/qemu.conf to include "vnc_allow_host_audio =
+      1", and "user = $whoami"
+    - also need to ensure that "QEMU_AUDIO_DRV=spice" (or w/e is appropriate,
+      spice is default when launching through virt-manager it seems)
+
   Install graphical env:
     pacman -S xorg-server xorg-server-utils (utils maybe not)
     pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
