@@ -76,6 +76,12 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
   If using qemu/kvm, libvirtd, and virt-manager:
     - sound will likely be an issue. As of nov. 2 2017, couldn't get sound to
       work with spice server. Vnc works however.
+        - vnc doesn't play nicely with vim, however... there seems to be a bug
+          that ex commands are initially captured/cancelled.  It's odd and was
+          hard to figure out what was going on.  As an example, <esc>w  to
+          write, would cause vim to enter ex mode (with statusline display of
+          the colon), but the w would then jump to the next word.  Extremely
+          annoying and productivity killing.
     - May need to edit /etc/libvirt/qemu.conf to include "vnc_allow_host_audio =
       1", and "user = $whoami"
     - also need to ensure that "QEMU_AUDIO_DRV=spice" (or w/e is appropriate,
