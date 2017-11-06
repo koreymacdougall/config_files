@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#create tar of file
+backup_filename=em_bk_$(date +"%m-%d-%Y").tar
+echo "creating email backup: ${backup_filename}"
+tar -cvpf ~/${backup_filename} ~/.thunderbird/*profile_dir* (something.default)
+
+# encrypt tarball
+gpg -c ~/${backup_filename}
+
+# remove unencrypted file
+rm ~/${backup_filename}
+
+# scp encrypted backup to server
+scp ~/${backup_filename}.gpg server_address:dir/subdir
+
+# remove encrypted backup
+rm ~/${backup_filename}.gpg
+
+# this is the crontab definition
+# need to export display so X doesn't throw an error
+# can find proper var if need with echo $DISPLAY
+#0 16 * * * export DISPLAY=:0.0 && xfce4-terminal -x /bin/bash ~/email_backup_script.sh 
