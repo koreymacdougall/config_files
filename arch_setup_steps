@@ -27,6 +27,8 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - xdg-utils provides xdg-open, which is needed for fugitive/rhubarb's
           Gbrowse, which is github integration
         - reflector allows easy sorting of best mirrors
+        - for email vm, install thunderbird and cronie
+            - fill in email_backup_script_archive
 
 
     -...follow rest of instructs
