@@ -22,7 +22,7 @@ ln -sf ~/config_files/.zprofile ~/.zprofile
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
-#elinks eymlinks
+#elinks symlinks
 #first is for mint/lubuntu, second is for arch
 ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
 ln -sf ~/config_files/.elinks_conf ~/.elinks.conf
@@ -46,4 +46,8 @@ ln -sf ~/config_files/.toprc ~/.toprc
 ln -sf ~/config_files/xfce4-keyboard-shortcuts.xml \
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
+# i3 config symlink
+ln -sf ~/config_files/i3_config ~/.config/i3/config
 
+# compton config symlink
+ln -sf ~/config_files/compton.conf ~/.config/compton.conf
