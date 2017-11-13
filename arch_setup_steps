@@ -94,6 +94,20 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     - from AUR - redshift-minimal (without geo dependency; redhshift-gtk
     manually)
     pacman -S xf86-video-intel
+
+    - for background:
+        - hsetroot from AUR allows set background
+        - hsetroot -solid "#000000"
+        - (or use feh to set image for bg)
+
+    # if needing custom resoultions:
+    - install xorg-xrandr, and maybe arandr, graphical front end for xrandr
+        - run "cvt 2560 1080" (eg) to get modeline for new reso
+        - xrandr --newmode "whatever was printed out from cvt, minus Modeline"
+        - xrandr --addmode display_name reso_name
+            - running xrandr w/o args will give all displays and resos
+        - xrandr --output display_name reso_name
+
     # if using xfce:
         - pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
         - pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
@@ -110,11 +124,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             - to .i3/config file add:
             - exec --no-startup-id compton -bc &
 
-        2. install arandr, graphical front end for xrandr
 
-        hsetroot from AUR allows set background
-        hsetroot -solid "#000000"
-        (or use feh to set image for bg)
 
 
         3. xterm
