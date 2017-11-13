@@ -90,21 +90,53 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       spice is default when launching through virt-manager it seems)
 
   Install graphical env:
-    pacman -S xorg-server xorg-server-utils (utils maybe not)
-    pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
-    pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
-    pacman -S xf86-video-intel
-    -from AUR - redshift-minimal (without geo dependency; redhshift-gtk
+    - pacman -S xorg-server xorg-server-utils (utils maybe not)
+    - from AUR - redshift-minimal (without geo dependency; redhshift-gtk
     manually)
-    
-  Reboot
-
-  startx, if so desired
+    pacman -S xf86-video-intel
+    # if using xfce:
+        - pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
+        - pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
+    - configure xfce4
+        - shortcuts for launch terminal, launch web browser, window snapping, 
+        - launcher icons for web and terminal (in preferred applications menu)
   
-  configure xfce4
-    -shortcuts for launch terminal, launch web browser, window snapping, 
-    -launcher icons for web and terminal (in preferred applications menu)
-    - 
+    # if using i3:
+        - for i3 navigation:
+        mod movement keys from homerow to vim keys
+
+        supplementary installs:
+        1. install compton to stop screen tearing
+            - to .i3/config file add:
+            - exec --no-startup-id compton -bc &
+
+        2. install arandr, graphical front end for xrandr
+
+        hsetroot from AUR allows set background
+        hsetroot -solid "#000000"
+        (or use feh to set image for bg)
+
+
+        3. xterm
+            - ~/.Xdefaults for config 
+
+        4. ranger - terminal file manager
+            - run  ranger --copy-config=all
+                - setup default configs
+            - enable image preview in ranger
+                - set preview_images_method w3m
+                - install w3m (to render image previews)
+
+        5. install feh (bg pic management)
+            - to set bg picture:
+            - feh --bg-scale backgrounds/1476427.jpg
+
+        6. transset-df, add to .zshrc:
+            - adds transparency effect to xterm
+            [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+          Reboot
+
+          startx, if so desired
   
   configure firefox - plugins and privacy settings
     privacy_badger

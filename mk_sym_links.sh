@@ -51,3 +51,6 @@ ln -sf ~/config_files/i3_config ~/.config/i3/config
 
 # compton config symlink
 ln -sf ~/config_files/compton.conf ~/.config/compton.conf
+
+# ranger config symlink
+ln -sf ~/config_files/rc.conf ~/.config/ranger/rc.conf

@@ -182,3 +182,6 @@ github-create() {
   echo "clearing env vars..."
   echo " done."
 }
+
+# set transparency
+[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
