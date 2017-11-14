@@ -18,3 +18,4 @@ xterm*scrollKey: true
 xterm*alwaysUseMods: true
 xterm*metaSendsEscape: false
 xterm*utf8Title: true 
+xterm*renderFont: true 
