@@ -5,7 +5,7 @@ xterm*termName: xterm-256color
 xterm*VT100*geometry: 94x28
 xterm*font: -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-1
 xterm*background: black
-xterm*foreground: red
+xterm*foreground: orange
 xterm*loginShell: true
 xterm*scrollBar: false
 xterm*rightScrollBar: false
