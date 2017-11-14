@@ -83,6 +83,8 @@ alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
+alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
+alias 2560='xrandr --output Virtual-1 --mode 2560x1080_60.00'
 
 # Custom Functions
 
