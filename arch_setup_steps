@@ -131,6 +131,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - launcher icons for web and terminal (in preferred applications menu)
   
     # if using i3:
+        - mkdir ~/.config/i3
         - for i3 navigation:
         mod movement keys from homerow to vim keys
 
@@ -164,8 +165,6 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
           Reboot
 
-          startx, if so desired
-  
   configure firefox - plugins and privacy settings
     privacy_badger
     noscript
