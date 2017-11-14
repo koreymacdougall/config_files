@@ -163,7 +163,15 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         6. transset-df, add to .zshrc:
             - adds transparency effect to xterm
             [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
-          Reboot
+
+        7. nitrogen
+            - manage wallpapers
+
+        ## 
+        after graphical setup, reboot
+        ## 
+
+
 
   configure firefox - plugins and privacy settings
     privacy_badger
