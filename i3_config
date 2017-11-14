@@ -145,3 +145,6 @@ bindsym $mod+Ctrl+Left resize grow width 10 px or 10 ppt
 exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 #nitrogen for managing wallpapers
 exec --no-startup-id nitrogen --restore
+
+# this turns off title bars for apps
+new_window 1pixel
