@@ -131,11 +131,17 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             - ~/.Xdefaults for config 
 
         4. ranger - terminal file manager
+            - export RANGER_LOAD_DEFAULT_RC=FALSE
             - run  ranger --copy-config=all
                 - setup default configs
-            - enable image preview in ranger
-                - set preview_images_method w3m
-                - install w3m (to render image previews)
+            - all config files are tracked in config_files, but some notes:
+                - enable image preview in ranger
+                    - set preview_images_method w3m
+                    - install w3m (to render image previews)
+                - enable pdf preview in ranger
+                    - done in scope.sh
+                    - install evince; pretty heavy dependency (100mb)
+                    - could try evince-light from AUR
 
         5. install feh (bg pic management)
             - to set bg picture:
