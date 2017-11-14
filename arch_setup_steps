@@ -21,14 +21,27 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       delete others
       
     -Install pacstrap 
-      Also install: base-devel, vim, git, zsh, elinks, terminator, acpi, tmux,
-      firefox, xdg-utils, reflector
-        -if doing on physical machine, also get wireless network pkgs?
-        - xdg-utils provides xdg-open, which is needed for fugitive/rhubarb's
-          Gbrowse, which is github integration
-        - reflector allows easy sorting of best mirrors
-        - for email vm, install thunderbird and cronie
-            - fill in email_backup_script_archive
+      List of primary pacakges to install:
+      base-devel - c compliles and things?
+      vim
+      git
+      zsh
+      elinks
+      acpi - power level display
+      firefox
+      xdg-utils - provides xdg-open, needed for fugutitve/rhubarb for opening github
+      reflector - get fastest mirrors
+      feh - image viewer / cataloguer
+      w3m - web browser; mainly needed for the pager/preview fn in ranger
+      evince - pdf viewer
+      ranger - terminal file manager
+      xterm - terminal emulator
+
+    -notes 
+    -if doing on physical machine, also get wireless network pkgs?
+    - for email vm, install thunderbird and cronie
+        - cronie is cron implementation
+        - fill in email_backup_script_archive
 
 
     -...follow rest of instructs
@@ -37,7 +50,8 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
   After reboot:
   
-  install tlp:
+  - (on physical machine, not vms)
+  install tlp, the linux power manager:
     pacman -S tlp tlp-rdw
     (thinkpads require couple more; check linerunner.de/tlp/docs for more)
 
@@ -51,6 +65,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     "permanent" - disable in bios
     temporarily - rfkill block bluetooth
         -alternative: systemctl disable bluetooth.service (systemctl start...)
+    - note - rfkill has been deprecated / wrapped into core, I think
 
   Create user, set passwd
     useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
@@ -123,9 +138,6 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         1. install compton to stop screen tearing
             - to .i3/config file add:
             - exec --no-startup-id compton -bc &
-
-
-
 
         3. xterm
             - ~/.Xdefaults for config 
