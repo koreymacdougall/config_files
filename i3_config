@@ -37,6 +37,12 @@ bindsym $modq kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+# start firefox
+bindsym $mod+control+f exec firefox
+# start ranger
+bindsym $mod+Control+r exec i3-sensible-terminal -e ranger
+# start vim
+bindsym $mod+Control+v exec i3-sensible-terminal -e vim
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
