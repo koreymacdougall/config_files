@@ -31,7 +31,9 @@ Plug 'plasticboy/vim-markdown'
 " tcomment toggles comments
 Plug 'tomtom/tcomment_vim'
 " vim-latex-live-preview allows realtime preview of latex files
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+" vimtex for compiling latex in vim
+Plug 'lervag/vimtex'
 call plug#end()
 
 " shorten time (ms) before screen is updated, done for gitgutter
@@ -330,3 +332,6 @@ nnoremap <leader><leader> :! python batch_runner.py<CR>
 nnoremap <leader>p :%s/print(/#print(/<CR>
 " capital P for uncomment all prints
 nnoremap <leader>P :%s/#print(/print(/<CR>
+
+let g:vimtex_view_method = 'mupdf'
+" "let g:vimtex_view_forward_search_on_start = 1

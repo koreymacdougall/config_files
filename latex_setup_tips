@@ -1,0 +1,15 @@
+- install texlive-core texlive-bibtexextra texlive-science texlive-latexextra
+texlive-formatsextra
+
+- install biber mupdf xdotool gvim
+    - biber for bibtex backend
+    - mupdf for display
+    - xdotool for command line automation (opening and updating mupdf)
+    - gvim for full featureset, including clientserver
+
+-Add vimtex to vimrc
+
+- IMPORTANT - run vim as:
+vim --servername VIM {filename}
+- this allows mupdf to update after each write
+
