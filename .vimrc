@@ -30,6 +30,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'plasticboy/vim-markdown'
 " tcomment toggles comments
 Plug 'tomtom/tcomment_vim'
+" vim-latex-live-preview allows realtime preview of latex files
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 " shorten time (ms) before screen is updated, done for gitgutter
