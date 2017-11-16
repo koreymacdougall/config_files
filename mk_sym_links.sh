@@ -52,8 +52,11 @@ ln -sf ~/config_files/i3_config ~/.config/i3/config
 # compton config symlink
 ln -sf ~/config_files/compton.conf ~/.config/compton.conf
 
-# Xterm configuration
-ln -sf ~/config_files/.Xdefaults ~/.Xdefaults
+# Xterm configuration -old
+# ln -sf ~/config_files/.Xdefaults ~/.Xdefaults
+
+# Xterm configuration - using Xresources
+ ln -sf ~/config_files/.Xresources ~/.Xresources
 
 # ranger config symlink
 ln -sf ~/config_files/rc.conf ~/.config/ranger/rc.conf
