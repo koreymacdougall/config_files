@@ -9,7 +9,6 @@ export ZSH=/home/km/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="darkblood"
 #ZSH_THEME="random"
-#ZSH_THEME="dpoggi"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -187,4 +186,4 @@ github-create() {
 }
 
 # set transparency
-[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+#[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null

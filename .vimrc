@@ -335,3 +335,4 @@ nnoremap <leader>P :%s/#print(/print(/<CR>
 
 let g:vimtex_view_method = 'mupdf'
 " "let g:vimtex_view_forward_search_on_start = 1
+let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
