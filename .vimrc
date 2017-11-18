@@ -246,7 +246,7 @@ set background=dark
 set t_Co=256
 
 " default colorschemes: industry for code, murphy for markdown
-colorscheme elflord
+colorscheme gruvbox
 au FileType markdown colorscheme murphy
 
 " highlight serarch results

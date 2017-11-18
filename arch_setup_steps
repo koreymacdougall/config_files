@@ -24,6 +24,9 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       List of primary pacakges to install:
       base-devel - c compliles and things?
       vim
+        -gruvbox colorscheme: git clone
+            -http:s//aur.archlinux.org/vim-gruvbox-git.git
+            -http:s//aur.archlinux.org/vim-airline-gruvbox-git.git
       git
       zsh
       elinks
@@ -175,7 +178,8 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             - various dependencies had to be pip-installed:
                 (if pip not installed - sudo pacman -S python-pip)
                 -requests, psutil, netifaces, i3ipc
-            - also, ensure arch install- powerline and powerline-fonts
+            - also, ensure arch install- powerline, powerline-fonts,
+              ttf-font-awesome (for glyphs)
 
 
 
@@ -191,7 +195,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     ab
     https everywhere
     add_to_search_bar (add duckduckgo.com/html)
-    vimfx, // vimperator - stopped working
+    vimfx, // alternats: vimperator, pentadactyl, tridactyl, qutebrowser
         -vimperator settings:
             -set defsearch=ddg
             -nnroremap ; :
