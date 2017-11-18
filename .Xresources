@@ -2,7 +2,7 @@
 !xterm*font: 10x20
 !xterm*boldFont: terminus-16
 xterm*faceName: DejaVu Sans Mono
-xterm*faceSize: 18
+xterm*faceSize: 14
 term*loginShell: true
 !xterm*vt100*geometry: 80x50
 xterm*saveLines: 2000

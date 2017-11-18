@@ -167,6 +167,18 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         7. nitrogen
             - manage wallpapers
 
+        8. pywal - sweet colorscheme generation
+            - git clone httsps://aur.archlinux.org/python-pywal.git
+
+        9. bumblebee status - simple status bar
+            - git clone git://github.com/tobi-wan-kenobi/bumblebee-status
+            - various dependencies had to be pip-installed:
+                (if pip not installed - sudo pacman -S python-pip)
+                -requests, psutil, netifaces, i3ipc
+            - also, ensure arch install- powerline and powerline-fonts
+
+
+
         ## 
         after graphical setup, reboot
         ## 

@@ -137,9 +137,13 @@ bindsym $mod+Ctrl+Down resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Left resize grow width 10 px or 10 ppt
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-#bar {
-        #status_command i3status
-#}
+bar {
+    font pango:Deja Vu Sans Mono 10
+    position top
+    tray_output none
+        status_command /home/km/Downloads/bumblebee-status/bumblebee-status -m title date time cpu  memory disk:root traffic -t solarized-powerline
+}
+
 
 #compton for compositing
 exec --no-startup-id compton --config ~/.config/compton.conf -bc &
