@@ -147,7 +147,7 @@ bar {
     font pango:Deja Vu Sans Mono 10
     position top
     tray_output none
-        status_command ~/.config/i3/bumblebee-status/bumblebee-status -m title date time cpu  memory disk:root traffic -t solarized-powerline
+        status_command ~/.config/i3/bumblebee-status/bumblebee-status -m title date time cpu  memory disk:root traffic -t gruvbox-powerline
 }
 
 

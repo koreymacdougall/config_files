@@ -7,7 +7,7 @@ texlive-formatsextra
     - xdotool for command line automation (opening and updating mupdf)
     - gvim for full featureset, including clientserver
 
--Add vimtex to vimrc
+-Add vimtex package to vimrc (via Plug)
 
 - IMPORTANT - run vim as:
 vim --servername VIM {filename}
