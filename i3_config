@@ -135,8 +135,12 @@ bindsym $mod+Ctrl+Right resize shrink width 10 px or 10 ppt
 bindsym $mod+Ctrl+Up resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+Down resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Left resize grow width 10 px or 10 ppt
+
+# increase /decrease size of gaps
+# tips and inspiration thanks to lukesmith.xyz's dotfiles
+bindsym $mod+g  gaps inner current plus 5
+bindsym $mod+shift+G  gaps inner current minus 5
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 
 # using bumblebee status
 bar {
@@ -153,4 +157,8 @@ exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 exec --no-startup-id nitrogen --restore
 
 # this turns off title bars for apps
-new_window 1pixel
+#new_window 1pixel
+for_window [class="^.*"] border pixel 0
+#i3 gaps settings
+gaps inner 10
+gaps outer 10

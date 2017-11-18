@@ -134,9 +134,15 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - launcher icons for web and terminal (in preferred applications menu)
   
     # if using i3:
-        - mkdir ~/.config/i3
-        - for i3 navigation:
-        mod movement keys from homerow to vim keys
+        - to install:
+            - i3 is in official repos
+            - for i3-gaps:
+                - git clone https://aur.archlinux.org/i3-gaps-git.git
+
+        - to configure
+            - mkdir ~/.config/i3 (else symlinking will faill)
+            - for navigatio, mod movement keys from homerow to vim keys
+                - (handled in dot file)
 
         supplementary installs:
         1. install compton to stop screen tearing
