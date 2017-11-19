@@ -59,8 +59,8 @@ set list
 let mapleader=','
 
 " folding options
-" use cold folding, syntax-wise
-set foldmethod=syntax
+" use manual folding typically
+set foldmethod=manual
 " set default foldlevel to 1
 set foldlevelstart=1
 " make folds reclose when exiting them with cursor
@@ -80,8 +80,16 @@ function MarkdownLevel()
         return ">" . len(h)
     endif
 endfunction
+" use custom folding setup for markdown files
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 au BufEnter *.md setlocal foldmethod=expr
+
+" folding options for .tex files
+au BufEnter *.tex setlocal foldmethod=expr
+au BufEnter *.tex  set foldexpr=vimtex#fold#level(v:lnum)
+au BufEnter *.tex  set foldtext=vimtex#fold#text()
+"au BufEnter *.tex let g:vimtex_fold_enabledmd
+
 
 " use spacebar to toggle folding
 nnoremap  <space> za
