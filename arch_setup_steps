@@ -124,7 +124,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - xrandr --newmode "whatever was printed out from cvt, minus Modeline"
         - xrandr --addmode display_name reso_name
             - running xrandr w/o args will give all displays and resos
-        - xrandr --output display_name reso_name
+        - xrandr --output display_name --mode reso_name
 
     # if using xfce:
         - pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
