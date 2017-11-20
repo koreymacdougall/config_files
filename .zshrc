@@ -85,6 +85,11 @@ alias grep='grep --color=always'
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 alias 2560='xrandr --output Virtual-1 --mode 2560x1080_60.00'
 
+# i3 power management fns
+alias logout='i3-msg exit'
+alias suspend='lock && systemctl suspend'
+
+
 # Custom Functions
 
 # ref_clock toggles set-ntp true
