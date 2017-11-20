@@ -96,8 +96,7 @@ alias suspend='lock && systemctl suspend'
 # vm's often don't update clocks properly
 # if suspended for any length of time
 ref_clock () {
-    timedatectl set-ntp 0
-    timedatectl set-ntp 1
+    systemctl restart systemd-timesyncd.service
 }
 
 ## go fn
