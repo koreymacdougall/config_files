@@ -150,14 +150,18 @@ bar {
     font pango:Deja Vu Sans Mono 10
     position top
     tray_output none
+    # use tray output for network manager or other applets
+    #tray_output primary
         status_command ~/.config/i3/bumblebee-status/bumblebee-status -m title date time cpu  memory disk:root traffic -t gruvbox-powerline
 }
 
 
-#compton for compositing
+# compton for compositing
 exec --no-startup-id compton --config ~/.config/compton.conf -bc &
-#nitrogen for managing wallpapers
+# nitrogen for managing wallpapers
 exec --no-startup-id nitrogen --restore
+# netowrk manager applet; only for physical machine
+#exec --no-startup-id nm-applet --sm-disable
 
 # this turns off title bars for apps
 #new_window 1pixel
