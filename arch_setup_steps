@@ -141,7 +141,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
 
         - to configure
             - mkdir ~/.config/i3 (else symlinking will faill)
-            - for navigatio, mod movement keys from homerow to vim keys
+            - for navigation, mod movement keys from homerow to vim keys
                 - (handled in dot file)
             - in i3 config, uncomment 2 network manager lines (exec and tray)
 
@@ -150,13 +150,16 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             - to .i3/config file add:
             - exec --no-startup-id compton -bc &
         
+        (2 and 3 for physical machine)
         2. For power/suspend management, i3lock or i3lock-fancy
             -might need xss-lock-git; not sure; might just automate some fns
 
-        3. xterm
+        3. Uncomment X86MonBrightnessUp/Down lines in i3 config
+
+        4. xterm
             - ~/.Xdefaults for config 
 
-        4. ranger - terminal file manager
+        5. ranger - terminal file manager
             - export RANGER_LOAD_DEFAULT_RC=FALSE
             - run  ranger --copy-config=all
                 - setup default configs
@@ -169,21 +172,21 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
                     - install evince; pretty heavy dependency (100mb)
                     - could try evince-light from AUR
 
-        5. install feh (bg pic management)
+        6. install feh (bg pic management)
             - to set bg picture:
             - feh --bg-scale backgrounds/1476427.jpg
 
-        6. transset-df, add to .zshrc:
+        7. transset-df, add to .zshrc:
             - adds transparency effect to xterm
             [ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
-        7. nitrogen
+        8. nitrogen
             - manage wallpapers
 
-        8. pywal - sweet colorscheme generation
+        9. pywal - sweet colorscheme generation
             - git clone httsps://aur.archlinux.org/python-pywal.git
 
-        9. bumblebee status - simple status bar
+        10. bumblebee status - simple status bar
             - git clone git://github.com/tobi-wan-kenobi/bumblebee-status
             - various dependencies had to be pip-installed:
                 (if pip not installed - sudo pacman -S python-pip)
