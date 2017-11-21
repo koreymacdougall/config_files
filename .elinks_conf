@@ -122,8 +122,8 @@
 # Automatically saved keybindings
 #
 
-bind "main" "k" = "move-link-up"
-bind "main" "j" = "move-link-down"
+bind "main" "k" = "move-half-page-up"
+bind "main" "j" = "move-half-page-down"
 
 
 
@@ -353,5 +353,142 @@ bind "main" "\\" = "scroll-up"
 # Automatically saved keybindings
 #
 
-bind "main" "l" = "move-link-right"
-bind "main" "h" = "move-link-left"
+bind "main" "l" = "history-move-forward"
+bind "main" "h" = "history-move-back"
+
+
+
+##############################
+# Automatically saved options
+#
+
+## ui 
+#  User interface options.
+
+  ## ui.colors 
+  #  Default user interface color settings.
+
+    ## ui.colors.color 
+    #  Color settings for color terminal.
+
+      ## ui.colors.color.dialog 
+      #  Dialog colors.
+
+        ## ui.colors.color.dialog.frame 
+        #  Dialog frame colors.
+
+          ## ui.colors.color.dialog.frame.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.dialog.frame.background = "white"
+
+
+
+
+
+  ## ui.show_ip [0|1]
+  #  Whether to display IP of the document in the status bar.
+  set ui.show_ip = 1
+
+
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "Right" = "move-link-right-line"
+bind "main" "Left" = "move-link-left-line"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "f" = "toggle-numbered-links"
+bind "main" "." = "none"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "menu" "k" = "up"
+bind "menu" "j" = "down"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "menu" "h" = "left"
+bind "menu" "l" = "right"
+
+
+
+##############################
+# Automatically saved options
+#
+
+## ui 
+#  User interface options.
+
+  ## ui.success_msgbox [0|1]
+  #  When you pressed a [ Save ] button in some manager, this option will make
+  #  sure that a box confirming success of the operation will pop up.
+  set ui.success_msgbox = 0
+
+
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "z" = "move-current-top"
+bind "main" "g" = "goto-url"
+bind "main" "G" = "move-document-end"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "Down" = "move-link-down"
+bind "main" "Up" = "move-link-up"
+
+
+
+##############################
+# Automatically saved options
+#
+
+## protocol 
+#  Protocol specific options.
+
+  ## protocol.rewrite 
+  #  Rules for rewriting URIs entered in the goto dialog. It makes it possible
+  #  to define a set of prefixes that will be expanded if they match a string
+  #  entered in the goto dialog. The prefixes can be dumb, meaning that they
+  #  work only like URI abbreviations, or smart ones, making it possible to pass
+  #  arguments to them like search engine keywords.
+
+    ## protocol.rewrite.smart 
+    #  Smart prefixes, see enable-smart description for details.
+
+      ## protocol.rewrite.smart.a <str>
+      #  Replacement URI for this smartprefix:
+      #  %c in the string means the current URL
+      #  %s in the string means the whole argument to smartprefix
+      #  %0,%1,...,%9 means argument 0, 1, ..., 9
+      #  %% in the string means '%'
+      set protocol.rewrite.smart.a = "https://wiki.archlinux.org/%s"
+
+
+
+
