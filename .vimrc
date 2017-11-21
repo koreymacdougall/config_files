@@ -34,6 +34,9 @@ Plug 'tomtom/tcomment_vim'
 "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " vimtex for compiling latex in vim
 Plug 'lervag/vimtex'
+" gruvbox is a colorscheme 
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 " shorten time (ms) before screen is updated, done for gitgutter
