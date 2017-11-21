@@ -15,6 +15,11 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - mkinitcpio.conf:
             HOOKS="base systemd udev autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 resume filesystems"
 
+    - to enable hibernation, add boot paramater:
+        - to /boot/loader/entries/arch.conf, add 
+            - resume=/dev/mapper/vg0-swap
+            - using correct mapping ^ 
+
     -Sort mirrors:  (moves all US mirrors to bottom)
       vim /etc/pacman.d/mirrorlist
       :g/## United States/+1m$
