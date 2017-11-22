@@ -520,10 +520,77 @@ bind "main" "Up" = "move-link-up"
 
           ## ui.colors.color.title.title-bar.background <color|#rrggbb>
           #  Default background color.
-          set ui.colors.color.title.title-bar.background = "orange"
+          set ui.colors.color.title.title-bar.background = "yellow"
 
 
 
 
 
 
+
+
+
+##############################
+# Automatically saved options
+#
+
+## ui 
+#  User interface options.
+
+  ## ui.colors 
+  #  Default user interface color settings.
+
+    ## ui.colors.color 
+    #  Color settings for color terminal.
+
+      ## ui.colors.color.title 
+      #  Title bar colors.
+
+        ## ui.colors.color.title.title-text 
+        #  Title bar text colors.
+
+          ## ui.colors.color.title.title-text.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.title.title-text.background = "orange"
+
+
+
+      ## ui.colors.color.status 
+      #  Status bar colors.
+
+        ## ui.colors.color.status.showip-text 
+        #  Status bar show ip text colors.
+
+          ## ui.colors.color.status.showip-text.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.status.showip-text.background = "orange"
+
+
+        ## ui.colors.color.status.status-bar 
+        #  Generic status bar colors.
+
+          ## ui.colors.color.status.status-bar.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.status.status-bar.background = "orange"
+
+
+        ## ui.colors.color.status.status-text 
+        #  Status bar text colors.
+
+          ## ui.colors.color.status.status-text.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.status.status-text.background = "orange"
+
+
+
+
+
+
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "Ctrl-K" = "keybinding-manager"
