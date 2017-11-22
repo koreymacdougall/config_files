@@ -603,3 +603,32 @@ bind "main" "Ctrl-K" = "keybinding-manager"
 
 bind "main" "u" = "move-half-page-up"
 bind "main" "d" = "move-half-page-down"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "H" = "scroll-left"
+bind "main" "L" = "scroll-right"
+
+
+
+##############################
+# Automatically saved options
+#
+
+## connection 
+#  Connection options.
+
+  ## connection.ssl 
+  #  SSL options.
+
+    ## connection.ssl.cert_verify [0|1]
+    #  Verify the peer's SSL certificate. Note that this needs extensive
+    #  configuration of OpenSSL by the user.
+    set connection.ssl.cert_verify = 1
+
+
+
