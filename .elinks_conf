@@ -492,3 +492,38 @@ bind "main" "Up" = "move-link-up"
 
 
 
+
+
+
+##############################
+# Automatically saved options
+#
+
+## ui 
+#  User interface options.
+
+  ## ui.colors 
+  #  Default user interface color settings.
+
+    ## ui.colors.color 
+    #  Color settings for color terminal.
+
+      ## ui.colors.color.title 
+      #  Title bar colors.
+
+        ## ui.colors.color.title.title-bar 
+        #  Generic title bar colors.
+
+          ## ui.colors.color.title.title-bar.text <color|#rrggbb>
+          #  Default text color.
+          set ui.colors.color.title.title-bar.text = "black"
+
+          ## ui.colors.color.title.title-bar.background <color|#rrggbb>
+          #  Default background color.
+          set ui.colors.color.title.title-bar.background = "orange"
+
+
+
+
+
+
