@@ -191,6 +191,9 @@ nmap         <SID>winwidth    <Nop>
 " allow the . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
+" use asterisk searching in visual mode
+vnoremap * y/<C-R>"<CR>
+
 " map .. to go up one tree level in fugitive git browsing
 " this is from vimcasts...but I can't currently get it to work
 " the mapping itself will work, but the conditional doesn't 
