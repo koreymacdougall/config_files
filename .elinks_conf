@@ -122,8 +122,8 @@
 # Automatically saved keybindings
 #
 
-bind "main" "k" = "move-half-page-up"
-bind "main" "j" = "move-half-page-down"
+bind "main" "k" = "scroll-up"
+bind "main" "j" = "scroll-down"
 
 
 
@@ -594,3 +594,12 @@ bind "main" "Up" = "move-link-up"
 #
 
 bind "main" "Ctrl-K" = "keybinding-manager"
+
+
+
+##################################
+# Automatically saved keybindings
+#
+
+bind "main" "u" = "move-half-page-up"
+bind "main" "d" = "move-half-page-down"
