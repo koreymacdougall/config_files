@@ -41,7 +41,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       reflector - get fastest mirrors
       feh - image viewer / cataloguer
       w3m - web browser; mainly needed for the pager/preview fn in ranger
-      evince - pdf viewer
+      mupdf or evince - pdf viewer
       ranger - terminal file manager
       xterm - terminal emulator
 
