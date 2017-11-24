@@ -113,7 +113,7 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       spice is default when launching through virt-manager it seems)
 
   Install graphical env:
-    - pacman -S xorg-server xorg-server-utils (utils maybe not)
+    - pacman -S xorg-server xorg-xinit xorg-server-utils (utils maybe not)
     - from AUR - redshift-minimal (without geo dependency; redhshift-gtk
     manually)
     pacman -S xf86-video-intel
@@ -197,7 +197,10 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
                 (if pip not installed - sudo pacman -S python-pip)
                 -requests, psutil, netifaces, i3ipc
             - also, ensure arch install- powerline, powerline-fonts,
-              ttf-font-awesome (for glyphs)
+              ttf-font-awesome (for glyphs; in parabola, use
+              awesome-terminal-fonts)
+        11. Install ttf-dejavu (font)
+              
 
 
 
