@@ -64,3 +64,6 @@ ln -sf ~/config_files/rc.conf ~/.config/ranger/rc.conf
 # ranger scope symlink (scope controls external scripts)
 # mainly changing to enable pdf previews
 ln -sf ~/config_files/scope.sh ~/.config/ranger/scope.sh
+
+# vimperatorrc symlink
+ln -sf ~/config_files/.vimperatorrc ~/.vimperatorrc

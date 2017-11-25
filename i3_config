@@ -37,12 +37,16 @@ bindsym $modq kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
-# start firefox
-bindsym $mod+control+f exec firefox
+
 # start ranger
-bindsym $mod+Control+r exec i3-sensible-terminal -e ranger
+bindsym $mod+r exec i3-sensible-terminal -e ranger
+
+# start browser
+bindsym $mod+w exec icecat
+
 # start vim
 bindsym $mod+Control+v exec i3-sensible-terminal -e vim
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -83,7 +87,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -131,7 +135,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 
 #rezize windows without resize mode
 bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt

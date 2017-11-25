@@ -1,0 +1,7 @@
+nnoremap ; :
+nnoremap K :tabnext<Return>
+nnoremap J :tabprev<Return>
+
+set defsearch=duckduckgo
+
+source! ~/.vimperatorrc.local
