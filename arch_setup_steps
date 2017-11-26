@@ -1,9 +1,12 @@
-Setting up a new arch vm - total time: approx 2 hours (should be less with this handy list)
+Setting up a new arch/parabola vm - total time: approx 2 hours (should be less with this handy list)
 
+legend:
+    H! = run on host machine, but not on VM
+    VH! = run on virtual machine and host machine
 
 -Run basic first steps from installation guide
 
-    -encryption - LVM on Luks - see forked repo for more detail about pvsetup,
+    -!H encryption - LVM on Luks - see forked repo for more detail about pvsetup,
     lvsetup, etc
         - crypttab - not used for this scheme
         - fstab: 
@@ -15,19 +18,19 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
         - mkinitcpio.conf:
             HOOKS="base systemd udev autodetect keyboard sd-vconsole modconf block sd-encrypt sd-lvm2 resume filesystems"
 
-    - to enable hibernation, add boot paramater:
+    -!H to enable hibernation, add boot paramater:
         - to /boot/loader/entries/arch.conf, add 
             - resume=/dev/mapper/vg0-swap
             - using correct mapping ^ 
 
-    -Sort mirrors:  (moves all US mirrors to bottom)
+    -!VH Sort mirrors:  (moves all US mirrors to bottom)
       vim /etc/pacman.d/mirrorlist
       :g/## United States/+1m$
       delete others
       
-    -Install pacstrap 
+    -!VH Install pacstrap 
       List of primary pacakges to install:
-      base-devel - c compliles and things?
+      base-devel - c complilers and things?
       vim
         -gruvbox colorscheme: git clone
             -http:s//aur.archlinux.org/vim-gruvbox-git.git
@@ -36,30 +39,33 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
       zsh
       elinks
       acpi - power level display
-      firefox
+      icecat (or firefox)
       xdg-utils - provides xdg-open, needed for fugutitve/rhubarb for opening github
       reflector - get fastest mirrors
       feh - image viewer / cataloguer
       w3m - web browser; mainly needed for the pager/preview fn in ranger
-      mupdf or evince - pdf viewer
+      mupdf (evince )- pdf viewer
       ranger - terminal file manager
       xterm - terminal emulator
 
-    -notes 
-    -if doing on physical machine, also get wireless network pkgs?
-    - for email vm, install thunderbird and cronie
-        - cronie is cron implementation
-        - fill in email_backup_script_archive
+-!H for host machine, install needed wireless network pkgs? - see wiki
 
+-!VH Create user, set passwd
+    - useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
 
-    -...follow rest of instructs
+-!VH Add sudo privs - 
+    - export VISUAL=vim
+    - visudo
+
+-!V for email vm, install icedove (or thunderbird ) and cronie
+    - cronie is cron implementation
+    - fill in email_backup_script_archive
 
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-  After reboot:
+-!H Configure Host Machine Power / Network management (after rebooting):
   
-  - (on physical machine, not vms)
-  install tlp, the linux power manager:
+  - install tlp, the linux power manager:
     pacman -S tlp tlp-rdw
     (thinkpads require couple more; check linerunner.de/tlp/docs for more)
 
@@ -70,17 +76,11 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     systemctl mask systemd-rfkill.service
 
     (to kill bluetooth)
-    "permanent" - disable in bios
-    temporarily - rfkill block bluetooth
-        -alternative: systemctl disable bluetooth.service (systemctl start...)
-    - note - rfkill has been deprecated / wrapped into core, I think
+        - "permanent" - disable in bios
+        - temporarily - rfkill block bluetooth
+            - note - rfkill has been deprecated / wrapped into core, I think
+            - alternative: systemctl disable bluetooth.service
 
-  Create user, set passwd
-    useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
-
-  Add sudo privs - 
-    export VISUAL=vim
-    visudo
 
   Connect to network (wired):
     ip link #gets interface name if different from below
@@ -112,6 +112,8 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
     - also need to ensure that "QEMU_AUDIO_DRV=spice" (or w/e is appropriate,
       spice is default when launching through virt-manager it seems)
 
+=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
   Install graphical env:
     - pacman -S xorg-server xorg-xinit xorg-server-utils (utils maybe not)
     - from AUR - redshift-minimal (without geo dependency; redhshift-gtk
@@ -131,12 +133,6 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
             - running xrandr w/o args will give all displays and resos
         - xrandr --output display_name --mode reso_name
 
-    # if using xfce:
-        - pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
-        - pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
-    - configure xfce4
-        - shortcuts for launch terminal, launch web browser, window snapping, 
-        - launcher icons for web and terminal (in preferred applications menu)
   
     # if using i3:
         - to install:
@@ -200,54 +196,57 @@ Setting up a new arch vm - total time: approx 2 hours (should be less with this 
               ttf-font-awesome (for glyphs; in parabola, use
               awesome-terminal-fonts)
         11. Install ttf-dejavu (font)
-              
-
-
 
         ## 
         after graphical setup, reboot
         ## 
 
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=
 
+!HV Extra Program configurations:
 
-  configure firefox - plugins and privacy settings
-    privacy_badger
-    noscript
-    ab
-    https everywhere
-    add_to_search_bar (add duckduckgo.com/html)
-    vimfx, // alternats: vimperator, pentadactyl, tridactyl, qutebrowser
+setup oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+Icecat:
+    - install vimperator
+
+-!V for email vm, install icedove (or thunderbird ) and cronie
+    - cronie is cron implementation
+    - fill in email_backup_script_archive
+
+clone this repo, run bash mk_sym_links
+    -if only needing vimrc, or other single file (not whole repo) use curl:
+    - curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=
+
+deprecated steps / kept for reference
+
+!deprecated / firefox - plugins and privacy settings
+    - privacy_badger
+    - noscript
+    - ab
+    - https everywhere
+    - add_to_search_bar (add duckduckgo.com/html)
+    - vimfx, // alternats: vimperator, pentadactyl, tridactyl, qutebrowser
         -vimperator settings:
             -set defsearch=ddg
             -nnroremap ; :
-    Dark background and light text add-on (only working night mode plugin)
+    - Dark background and light text add-on (only working night mode plugin)
 
-    (alternates - qutebrowser, dillo, elinks)
+(alternates - qutebrowser, dillo, elinks)
 
-    if using thunderbird:
-        extensions: 
-            lightning (calendar) - now integrated i think
-            manually sort folders (to rearrange accts)
-            send later (specify time to send email)
-            editemailsubject - allow editing of subject line
-                - useful for manually threading
+!deprecated - thunderbird:
+    extensions: 
+        lightning (calendar) - now integrated i think
+        manually sort folders (to rearrange accts)
+        send later (specify time to send email)
+        editemailsubject - allow editing of subject line
+            - useful for manually threading
                  - at least in theory...didn't seem to work
 
-  clone this repo, run bash mk_sym_links
-    -if only needing vimrc, or other single file (not whole repo) use curl:
-    - curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
-  
-  set default shell to zsh chsh -s /usr/bin/zsh
-  setup oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    change .zshrc theme to jonathan/agnoster/bloodred
-  install powerline fonts
-    git clone https://github.com/powerline/fonts.git
-    cd fonts
-    ./install.sh
-    cd ..
-    rm -rf fonts/
-    (reboot to load fonts)
-
-  done
-
+!deprecated configure xfce:
+Install xfce4
+    - pacman -S xfce4 mousepad xfce4-battery-plugin    #mousepad is simple text editor, add batt icon manually
+    - pacman -S xfce4-power-manager light-locker xscreensaver   # for screen locking, enable manually
