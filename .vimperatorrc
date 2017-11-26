@@ -1,7 +1,10 @@
+"3.16.0 (created: 2017/02/01 00:55:15)
+
+highlight CmdLine background: lightgreen
 nnoremap ; :
 nnoremap K :tabnext<Return>
 nnoremap J :tabprev<Return>
+set hintchars=hjklasdf
+source! ~/config_files/.vimperatorrc.local
 
-set defsearch=duckduckgo
-
-source! ~/.vimperatorrc.local
+" vim: set ft=vimperator:
