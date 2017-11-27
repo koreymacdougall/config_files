@@ -191,3 +191,7 @@ github-create() {
 
 # set transparency
 #[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
+
+# bind ctrl j/k to search command history 
+bindkey "^K" history-beginning-search-backward
+bindkey "^J" history-beginning-search-forward
