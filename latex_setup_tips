@@ -1,5 +1,5 @@
 - install texlive-core texlive-bibtexextra texlive-science texlive-latexextra
-texlive-formatsextra
+texlive-formatsextra texlive-fontsextra poppler
 
 - install biber mupdf xdotool gvim
     - biber for bibtex backend
@@ -12,4 +12,12 @@ texlive-formatsextra
 - IMPORTANT - run vim as:
 vim --servername VIM {filename}
 - this allows mupdf to update after each write
+
+- Dont use T1 / T2 fonts in parabola; they are non free.  Use OT1 instead, via:
+    \usepackage{lmodern}
+    \usepackage[OT1]{fontenc}
+        note: latex files are stored in:
+        /usr/share/texmf-dist/tex/latex/{various}/{prefix}enc.def
+        example, OT1:
+        /usr/share/texmf-dist/tex/latex/base/ot1enc.def
 
