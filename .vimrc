@@ -340,8 +340,11 @@ endfunction
 " w netrw)
 au FileType * setlocal foldtext=MyFoldText()
 
-"run file: temporary for dol proj
-nnoremap <leader><leader> :! python batch_runner.py<CR>
+" run file: temporary for dol proj
+"nnoremap <leader><leader> :! python batch_runner.py<CR>
+"quick spell check; take first suggestion
+nnoremap <leader><leader> z=i1<cr><cr>
+
 " comment out all python ##print statements
 nnoremap <leader>p :%s/print(/#print(/<CR>
 " capital P for uncomment all prints
