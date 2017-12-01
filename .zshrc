@@ -7,7 +7,7 @@ export ZSH=/home/km/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="darkblood"
+ZSH_THEME="jonathan"
 #ZSH_THEME="random"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -52,7 +52,7 @@ ZSH_THEME="darkblood"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git bundler vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,7 +83,11 @@ alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
-alias 2560='xrandr --output Virtual-1 --mode 2560x1080_60.00'
+
+alias 2560="
+xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
+xrandr --addmode Virtual-1 2560x1080_60.00 ; 
+xrandr --output Virtual-1 --mode 2560x1080_60.00"
 
 # i3 power management fns
 alias logout='i3-msg exit'
@@ -192,9 +196,24 @@ github-create() {
 # set transparency
 #[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
+bindkey -e
 # bind ctrl j/k to search command history 
 bindkey "^K" history-beginning-search-backward
-bindkey -M viins "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
-bindkey -M viins "^J" history-beginning-search-forward
+# same for vi mode
+#bindkey -M viins "^K" history-beginning-search-backward
+#bindkey -M viins "^J" history-beginning-search-forward
 
+
+# shorten delay between mode switches
+#export KEYTIMEOUT=1
+
+# precmd() { RPROMPT="" }
+# function zle-line-init zle-keymap-select {
+#   VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+#   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+#   zle reset-prompt
+#}
+
+#zle -N zle-line-init
+#zle -N zle-keymap-select

@@ -340,10 +340,14 @@ endfunction
 " w netrw)
 au FileType * setlocal foldtext=MyFoldText()
 
+" automatically set the pwd to the dir of open file
+" does so for each buffer
+autocmd BufEnter * silent! lcd %:p:h
+
 " run file: temporary for dol proj
-"nnoremap <leader><leader> :! python batch_runner.py<CR>
+nnoremap <leader><leader> :! python batch_runner.py<CR>
 "quick spell check; take first suggestion
-nnoremap <leader><leader> z=i1<cr><cr>
+"nnoremap <leader><leader> z=i1<cr><cr>
 
 " comment out all python ##print statements
 nnoremap <leader>p :%s/print(/#print(/<CR>

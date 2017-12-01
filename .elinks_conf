@@ -61,6 +61,9 @@
   set document.history.global.display_type = 0
   set document.history.keep_unhistory = 0
 
+  set document.cache.format.size = 0
+  set document.cache.memory.size = 0
+
   set document.colors.use_document_colors = 0
   set document.colors.text = "yellow"
   set document.colors.link = "aqua"
@@ -99,3 +102,6 @@ bind "main" "g" = "goto-url"
 bind "main" "z" = "move-current-top"
 bind "main" "G" = "move-document-end"
 bind "main" "Ctrl-K" = "keybinding-manager"
+bind "main" "P" = "save-url-as"
+# save page as source
+bind "main" "S" = "save-as"
