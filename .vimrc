@@ -355,16 +355,14 @@ let g:vimtex_view_method = 'mupdf'
 " "let g:vimtex_view_forward_search_on_start = 1
 let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
 
-"##################################################
-"           ### speed maps ###
-"##################################################
-" run file: temporary for dol proj
-" note that the external call to xfce4-terminal is b/c xterm flickers here
-" the flicker can apparently be fixed if compiling xterm with
-" --enable-double-buffering (not sure of proper form of the flag)
-"  but I've not figured out how to compile xterm from source on arch or parabola
-nnoremap <leader><leader> :! xfce4-terminal -e "python  ./batch_runner.py"  <CR>
+"################################################## ### speed maps ###
+"################################################## run file: temporary for dol
+"proj note that the external call to xfce4-terminal is b/c xterm flickers here
+"the flicker can apparently be fixed if compiling xterm with
+" --enable-double-buffering (not sure of proper form of the flag) but I've not
+"  figured out how to compile xterm from source on arch or parabola
+"nnoremap <leader><leader> :! xfce4-terminal -e 'python  ./batch_runner.py'  <CR>
 
 "quick spell check; take first suggestion
-"nnoremap <leader><leader> z=i1<cr><cr>
+nnoremap <leader><leader> z=i1<cr><cr>
 
