@@ -65,10 +65,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left 40px
-bindsym $mod+Shift+j move down 40px
-bindsym $mod+Shift+k move up 40px
-bindsym $mod+Shift+l move right 40px
+bindsym $mod+u move left 40px
+bindsym $mod+i move down 40px
+bindsym $mod+o move up 40px
+bindsym $mod+p move right 40px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -137,10 +137,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #rezize windows without resize mode
-bindsym $mod+Ctrl+Right resize grow width 20 px or 20 ppt
-bindsym $mod+Ctrl+Left resize shrink width 20 px or 20 ppt
-bindsym $mod+Ctrl+Up resize grow height 20 px or 20 ppt
-bindsym $mod+Ctrl+Down resize shrink height 20 px or 20 ppt
+bindsym $mod+Shift+p resize grow width 20 px or 20 ppt
+bindsym $mod+Shift+u resize shrink width 20 px or 20 ppt
+bindsym $mod+Shift+o resize grow height 20 px or 20 ppt
+bindsym $mod+Shift+i resize shrink height 20 px or 20 ppt
 
 # increase /decrease size of gaps
 # tips and inspiration thanks to lukesmith.xyz's dotfiles
