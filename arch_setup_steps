@@ -147,6 +147,7 @@ legend:
             - in i3 config, uncomment 2 network manager lines (exec and tray)
 
         supplementary installs:
+        0. install dmenu
         1. install compton to stop screen tearing
             - to .i3/config file add:
             - exec --no-startup-id compton -bc &
