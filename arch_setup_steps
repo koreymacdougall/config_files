@@ -189,13 +189,16 @@ legend:
 
         10. bumblebee status - simple status bar
             - git clone git://github.com/tobi-wan-kenobi/bumblebee-status
-            - various dependencies had to be pip-installed:
+            - various dependencies to be pip-installed:
                 (if pip not installed - sudo pacman -S python-pip)
                 -requests, psutil, netifaces, i3ipc
-            - also, ensure arch install- powerline, powerline-fonts,
+            - mv aur_builds/bumblebee-status folder to
+              ~/.config/i3/bumblebee-status (see i3 status command for
+              reference)
+
+        11. Pacman install- powerline, powerline-fonts,
               ttf-font-awesome (for glyphs; in parabola, use
-              awesome-terminal-fonts)
-        11. Install ttf-dejavu (font)
+              awesome-terminal-fonts), ttf-dejavu (terminal font)
 
         ## 
         after graphical setup, reboot
