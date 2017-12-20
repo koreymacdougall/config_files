@@ -108,6 +108,12 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+# for host machine, use named workspaces
+#bindsym $mod+1 workspace 1:virt-m
+#bindsym $mod+2 workspace 2:mail
+#bindsym $mod+3 workspace 3:dev
+#bindsym $mod+4 workspace 4:ent
+#
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
@@ -123,6 +129,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# for host machine, use named workspaces
+#bindsym $mod+Shift+1 move container to workspace 1:virt-m
+#bindsym $mod+Shift+2 move container to workspace 2:mail
+#bindsym $mod+Shift+3 move container to workspace 3:dev
+#bindsym $mod+Shift+4 move container to workspace 4:ent
+#
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
