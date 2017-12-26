@@ -126,7 +126,7 @@ export VISUAL=/usr/bin/vim
 # activate rbenv
 # &> /dev/null redirects stdout and stderr to nowhere
 # effectively supresses error msg when rbenv is not installed
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
 # Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
@@ -134,8 +134,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 #loadkeyboard map / swap caps_lock and escape
 #this is the manual method, instead of using 
 #localectl set-keymap MAPPING
-#sudo /usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#/usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 
 #setup a github-create function to create repos on github 
@@ -215,5 +215,5 @@ bindkey "^J" history-beginning-search-forward
 #   zle reset-prompt
 #}
 
-#zle -N zle-line-init
-#zle -N zle-keymap-select
+zle -N zle-line-init
+zle -N zle-keymap-select
