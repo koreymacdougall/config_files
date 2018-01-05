@@ -42,7 +42,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+r exec i3-sensible-terminal -e ranger
 
 # start browser
-bindsym $mod+w exec iceweasel
+bindsym $mod+w exec firefox
 
 # start vim
 bindsym $mod+Control+v exec i3-sensible-terminal -e vim

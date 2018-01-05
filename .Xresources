@@ -31,7 +31,7 @@ xterm*eightBitInput: false
 
 ! Molokai theme
 *xterm*background: #101010
-*xterm*foreground: #d0d0d0
+*xterm*foreground: lightgreen
 *xterm*cursorColor: #d0d0d0
 *xterm*color0: #101010
 *xterm*color1: #960050
