@@ -31,7 +31,7 @@
 
 #  User interface options.
   set ui.language = "System"
-  set ui.show_ip = 1
+  #set ui.show_ip = 1
   set ui.success_msgbox = 0
 
   set ui.colors.color.dialog.text.text = "black"
@@ -44,7 +44,7 @@
   set ui.colors.color.title.title-bar.background = "yellow"
   set ui.colors.color.title.title-text.background = "orange"
 
-  set ui.colors.color.status.showip-text.background = "orange"
+  #set ui.colors.color.status.showip-text.background = "orange"
   set ui.colors.color.status.status-bar.background = "orange"
   set ui.colors.color.status.status-text.background = "orange"
 
@@ -52,8 +52,9 @@
   set terminal.xterm.colors = 1
   set terminal.xterm.type = 2
   set terminal.linux.colors = 1
-  set terminal.linux.type = 5
+  #set terminal.linux.type = 5
   set terminal.linux.charset = "utf-8"
+  set terminal.screen.colors = 1
 
 #  Document options.
   set document.history.global.enable = 0
@@ -84,8 +85,8 @@ bind "main" "L" = "scroll-right"
 bind "main" "h" = "history-move-back"
 bind "main" "l" = "history-move-forward"
 
-bind "main" "u" = "move-half-page-up"
-bind "main" "d" = "move-half-page-down"
+#bind "main" "u" = "move-half-page-up"
+#bind "main" "d" = "move-half-page-down"
 
 bind "main" "Shift-J" = "tab-prev"
 bind "main" "Shift-k" = "tab-next"
@@ -99,9 +100,11 @@ bind "main" "Up" = "move-link-up"
 # various functions
 bind "main" "f" = "toggle-numbered-links"
 bind "main" "g" = "goto-url"
-bind "main" "z" = "move-current-top"
+#bind "main" "z" = "move-current-top"
 bind "main" "G" = "move-document-end"
 bind "main" "Ctrl-K" = "keybinding-manager"
 bind "main" "P" = "save-url-as"
 # save page as source
 bind "main" "S" = "save-as"
+
+

@@ -1,0 +1,15 @@
+- dynamic dns: ddclient
+    - if not in repo:
+    - find on github / sourceforge
+        - sourceforge.net/projects/ddclient
+        - github.com/ddclient/ddclient
+
+    (some tips, but check current docs, linuxquestions.org)
+        - mkdir /etc/ddclient
+        - mkdir /var/cache/ddclient
+        - cp the samples to correct locs
+        -had to enable 2 extra repos: epel-release and something else....
+            -there are some perl packages that are not in the main repos
+
+
+
