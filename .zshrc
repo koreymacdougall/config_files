@@ -129,7 +129,7 @@ export VISUAL=/usr/bin/vim
 # activate rbenv
 # &> /dev/null redirects stdout and stderr to nowhere
 # effectively supresses error msg when rbenv is not installed
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
 # Not sure if I need to source zshenv, not currently using it
 #source /home/km/.zshenv
@@ -146,6 +146,7 @@ export VISUAL=/usr/bin/vim
 #thanks to eli fatsi on viget.com
 github-create() {
 
+  invalid_credentials = 0
   echo "Make sure to check for pre-existing remotes!!!!"
   echo "Fn will fail otherwise, but you won't get an error -- sneaky"
 
@@ -164,15 +165,19 @@ github-create() {
   repo_name=$dir_name
   fi
 
+  echo "Repo name will be: $repo_name"
+
   username=`git config github.user`
   if [ "$username" = "" ]; then
   echo "Could not find username, run 'git config --global github.user <username>'"
   invalid_credentials=1
   fi
+  echo "User name will be: $username"
 
   #use encrypted github_token in config file repo to set env param
   gpg -d ~/config_files/github_token.gpg 2>/dev/null | export GITHUB_TOKEN=$(sed -n 2p)
   token=$GITHUB_TOKEN
+  echo "Token has been set"
 
   if [ "$token" = "" ]; then
   echo "Could not find token, run 'git config --global github.token <token>'"
@@ -180,6 +185,7 @@ github-create() {
   fi
 
   if [ "$invalid_credentials" = "1" ]; then
+  echo "Invalid credentials"
   return 1
   fi
 
