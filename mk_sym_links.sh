@@ -67,3 +67,6 @@ ln -sf ~/config_files/scope.sh ~/.config/ranger/scope.sh
 
 # vimperatorrc symlink
 ln -sf ~/config_files/.vimperatorrc ~/.vimperatorrc
+
+# zsh theme symlink
+ln -sf ~/config_files/kmac.zsh-theme ~/.oh-my-zsh/themes/kmac.zsh-theme

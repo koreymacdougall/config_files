@@ -7,8 +7,7 @@ export ZSH=/home/km/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="random"
+ZSH_THEME="kmac"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -55,7 +54,9 @@ HISTFILE=~/.zsh_history
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bundler vi-mode)
+# Note:  zsh-syntax-highlighting comes from
+# github.com/zsh-users/zsh-syntax-highlighting
+plugins=(git bundler zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -224,5 +225,5 @@ bindkey "^J" history-beginning-search-forward
 #   zle reset-prompt
 #}
 
-zle -N zle-line-init
-zle -N zle-keymap-select
+#zle -N zle-line-init
+#zle -N zle-keymap-select
