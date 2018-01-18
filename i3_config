@@ -178,8 +178,9 @@ exec --no-startup-id nitrogen --restore
 #exec --no-startup-id nm-applet --sm-disable
 
 # this turns off title bars for apps
-#new_window 1pixel
-for_window [class="^.*"] border pixel 0
+new_window pixel 0
+#wfor_window [class="^.*"] border pixel 0
+#
 #i3 gaps settings
 gaps inner 10
 gaps outer 10
