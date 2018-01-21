@@ -1,8 +1,5 @@
 #!/bin/bash
 
-#terminator symlink
-ln -sf ~/config_files/.terminator_config ~/.config/terminator/config
-
 #bashrc symlink
 ln -sf ~/config_files/.bashrc ~/.bashrc
 
@@ -41,10 +38,6 @@ ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
 
 # toprc symlink
 ln -sf ~/config_files/.toprc ~/.toprc
-
-# xfce4 keyboard shortcuts symlink
-ln -sf ~/config_files/xfce4-keyboard-shortcuts.xml \
-    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 
 # i3 config symlink
 ln -sf ~/config_files/i3_config ~/.config/i3/config
