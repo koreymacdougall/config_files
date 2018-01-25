@@ -36,6 +36,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'lervag/vimtex'
 " gruvbox is a colorscheme 
 Plug 'morhetz/gruvbox'
+" ctrl-p fuzzyfinds files and buffers
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
