@@ -144,14 +144,18 @@ nnoremap ; :
 nnoremap : ;
 " reformat entire file - gq is format cmd
 nnoremap <leader>q gggqG<C-O><C-O>
+" map leader-f to open netrw/file broswer in vsplit 
+nnoremap <leader>f :Vex<cr>
+
+" quick edit configs
 " map leader-ev to open .vimrc in a new Vert split
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " map leader-eb to open .bashrc in a new vert split
 nnoremap <leader>eb :vsplit ~/.bashrc<cr>
 " map leader-f to open .zshrc in vsplit 
 nnoremap <leader>ez :vsplit ~/.zshrc<cr>
-" map leader-f to open netrw/file broswer in vsplit 
-nnoremap <leader>f :Vex<cr>
+" map leader-f to open .zshrc in vsplit 
+nnoremap <leader>ec :vsplit ~/config_files/cheatsheet<cr>
 
 " buffer navigation / manipulation
 " open a new empty buffer
@@ -263,7 +267,7 @@ set t_Co=256
 
 " default colorschemes: industry for code, murphy for markdown
 colorscheme gruvbox
-au FileType markdown colorscheme murphy
+" au FileType markdown colorscheme murphy
 
 " highlight serarch results
 set hlsearch

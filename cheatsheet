@@ -1,10 +1,17 @@
 ####################
 ######  TMUX  ######
 ####################
-leader-z = zoom (fullscreen pane)
 
 ## copying text
     leader-b [ = enter movement/copy mode
     Space = start copy mode
     Enter = copy selection
     leader-b ] = paste
+
+####################
+######  VIM  #######
+####################
+
+## fugitive
+   - search git history for some_pattern
+    :Glog -S *some_pattern* --
