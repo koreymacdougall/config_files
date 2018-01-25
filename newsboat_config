@@ -6,3 +6,5 @@ bind-key l open
 bind-key SPACE open
 
 browser firefox
+
+download-path ~/podcasts
