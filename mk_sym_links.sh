@@ -66,3 +66,6 @@ ln -sf ~/config_files/kmac.zsh-theme ~/.oh-my-zsh/themes/kmac.zsh-theme
 
 # tmux symlink
 ln -sf ~/config_files/.tmux.conf ~/.tmux.conf
+
+# newsboat symlink
+ln -sf ~/config_files/newsboat_config ~/.newsboat/config
