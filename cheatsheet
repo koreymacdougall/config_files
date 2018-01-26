@@ -13,5 +13,5 @@
 ####################
 
 ## fugitive
-   - search git history for some_pattern
-    :Glog -S *some_pattern* --
+    - search git history - :Glog -S *some_pattern* --
+  - make commit = cc in Gstatus window

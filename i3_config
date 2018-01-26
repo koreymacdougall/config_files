@@ -143,10 +143,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #rezize windows without resize mode
-bindsym $mod+Shift+p resize grow width 20 px or 20 ppt
-bindsym $mod+Shift+u resize shrink width 20 px or 20 ppt
-bindsym $mod+Shift+o resize grow height 20 px or 20 ppt
-bindsym $mod+Shift+i resize shrink height 20 px or 20 ppt
+bindsym $mod+Control+l resize grow width 20 px or 20 ppt
+bindsym $mod+Control+h resize shrink width 20 px or 20 ppt
+bindsym $mod+Control+k resize grow height 20 px or 20 ppt
+bindsym $mod+Control+j resize shrink height 20 px or 20 ppt
 
 # increase /decrease size of gaps
 # tips and inspiration thanks to lukesmith.xyz's dotfiles
