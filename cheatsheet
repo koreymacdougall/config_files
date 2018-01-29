@@ -12,6 +12,12 @@
 ######  VIM  #######
 ####################
 
+# command line window (with normal mode powers)
+    ctrl-f - from command mode
+    q:, q/, q? - from normal mode
+
 ## fugitive
     - search git history - :Glog -S *some_pattern* --
-  - make commit = cc in Gstatus window
+    - make commit = cc in Gstatus window
+
+
