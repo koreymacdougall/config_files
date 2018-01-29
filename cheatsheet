@@ -2,6 +2,9 @@
 ######  TMUX  ######
 ####################
 
+# rename window
+prefix + ,
+
 ## copying text
     leader-b [ = enter movement/copy mode
     Space = start copy mode

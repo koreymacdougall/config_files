@@ -166,7 +166,7 @@ bar {
     tray_output none
     # use tray output for network manager or other applets
     #tray_output primary
-        status_command ~/.config/i3/bumblebee-status/bumblebee-status -m title date time cpu  memory disk:root traffic -t gruvbox-powerline
+        status_command i3status -m title date time cpu  memory disk:root traffic -t gruvbox
 }
 
 ## External Programs to Load
