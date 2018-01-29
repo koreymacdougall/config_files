@@ -183,4 +183,4 @@ new_window pixel 0
 #
 #i3 gaps settings
 gaps inner 10
-gaps outer 10
+gaps outer 0
