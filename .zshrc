@@ -1,8 +1,24 @@
-# oh-my-zsh path and load
+####################
+#### SETTINGS ######
+####################
+
+# oh-my-zsh - path and load
 export ZSH=/home/km/.oh-my-zsh
 
-# load my custom zsh theme
+# load custom zsh theme
 ZSH_THEME="kmac"
+
+# make right prompt (NORMAL or INSERT tag) disappear after cmd executes
+setopt transientrprompt
+# expand wildcards and suchlike
+setopt extended_glob
+
+# Set vim as default editor
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+# shorten delay between vi mode switches
+export KEYTIMEOUT=1
 
 # terminal history settings
 HISTSIZE=10000
@@ -10,21 +26,22 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="mm/dd/yyyy"
 
-# Plugins
+####################
+####  PLUGINS  ####
+####################
+
 # plugins found in ~/.oh-my-zsh/plugins/*)
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # note to self:  zsh-syntax-highlighting downloaded from
 # github.com/zsh-users/zsh-syntax-highlighting
 plugins=(git bundler zsh-syntax-highlighting)
 
-# Set vim as default editor
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-
 # Ruby/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
-# Aliases
+####################
+####  ALIASES  #####
+####################
 alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
@@ -37,11 +54,13 @@ xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1
 xrandr --addmode Virtual-1 2560x1080_60.00 ; 
 xrandr --output Virtual-1 --mode 2560x1080_60.00"
 
-# i3 power management fns
+# i3 power management aliases
 alias logout='i3-msg exit'
 alias suspend='lock && systemctl suspend'
 
-# Custom Functions
+####################
+# CUSTOM FUNCTIONS #
+####################
 
 ## ref_clock
 # toggles set-ntp true
@@ -125,6 +144,9 @@ github-create() {
   echo " done."
 }
 
+####################
+####  BINDINGS  ####
+####################
 
 # bind ctrl j/k to search command history 
 bindkey "^K" history-beginning-search-backward
@@ -134,10 +156,11 @@ bindkey -M viins "^K" history-beginning-search-backward
 bindkey -M viins "^J" history-beginning-search-forward
 
 
-# various options for vi-mode
-# shorten delay between mode switches
-export KEYTIMEOUT=1
-
+####################
+#  VI-mode TWEAKS  #
+####################
+#
+# customized prompt for vi-mode
  precmd() { RPROMPT="" }
  function zle-line-init zle-keymap-select {
    VIM_normal_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
@@ -146,14 +169,14 @@ export KEYTIMEOUT=1
    zle reset-prompt
  }
 
-# source theme after resetting prompt
-source $ZSH/oh-my-zsh.sh
-
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# make right prompt (NORMAL or INSERT tag) disappear after cmd executes
-setopt transientrprompt
+# source oh-my-zsh after resetting prompt
+source $ZSH/oh-my-zsh.sh
 
 # bind to vi keys after everything else is loaded
 bindkey -v
+
+
+
