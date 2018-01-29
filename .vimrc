@@ -239,6 +239,13 @@ nnoremap <leader><leader> z=i1<cr><cr>
 " CUSTOM MAPPINGS ""
 """"""""""""""""""""
 
+" remap semi-colon and colon in normal mode
+nnoremap ; :
+nnoremap : ;
+
+" use leader-cc for cursorcolumn
+nnoremap <leader>cc :set cursorcolumn!<CR>
+
 " use tab to jump out of closures (quotes, brackets, etc)
 " thanks to Ingo Karkat
 " had removed....forget why; re-adding jan/25/2018
@@ -250,14 +257,11 @@ inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
     nnoremap <leader>er i<%=  %><left><left><left>
     " insert embedded ruby tag
     nnoremap <leader>ER i<%  %><cr><cr><% end %><up><up><left><left><left>
-    " insert html comment
-    nnoremap <leader>wc a<!----><left><left><left>
-    " insert css comment
-    nnoremap <leader>cc a/**/<left><left>
-
-" remap semi-colon and colon in normal mode
-nnoremap ; :
-nnoremap : ;
+" deprecated (replaced by tcomment plugin)custom comments for html and css deprecated"
+    " " insert html comment
+    " nnoremap <leader>wc a<!----><left><left><left>
+    " " insert css comment
+    " nnoremap <leader>cc a/**/<left><left>
 
 " reformat entire file - gq is format cmd
 nnoremap <leader>q gggqG<C-O><C-O>

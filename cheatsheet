@@ -2,8 +2,14 @@
 ######  TMUX  ######
 ####################
 
-# rename window
-prefix + ,
+# rename-window
+    prefix + ,
+
+# rename-session
+    prefix + $
+
+# detach from sessions
+    prefix + d
 
 ## copying text
     leader-b [ = enter movement/copy mode
