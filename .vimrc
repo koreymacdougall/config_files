@@ -142,6 +142,8 @@ set wrap linebreak tw=80
 
 " turn on underline
 set cursorline
+" turn on cursorcolumn highlight
+set cursorcolumn
 
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab

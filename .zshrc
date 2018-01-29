@@ -1,84 +1,28 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# oh-my-zsh path and load
 export ZSH=/home/km/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# load my custom zsh theme
 ZSH_THEME="kmac"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# terminal history settings
 HISTSIZE=10000
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
- HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# Note:  zsh-syntax-highlighting comes from
+# Plugins
+# plugins found in ~/.oh-my-zsh/plugins/*)
+# custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# note to self:  zsh-syntax-highlighting downloaded from
 # github.com/zsh-users/zsh-syntax-highlighting
 plugins=(git bundler zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
+# Set vim as default editor
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+# Ruby/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
 # Aliases
 alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
@@ -97,23 +41,22 @@ xrandr --output Virtual-1 --mode 2560x1080_60.00"
 alias logout='i3-msg exit'
 alias suspend='lock && systemctl suspend'
 
-
 # Custom Functions
 
-# ref_clock toggles set-ntp true
+## ref_clock
+# toggles set-ntp true
 # vm's often don't update clocks properly
 # if suspended for any length of time
 ref_clock () {
     systemctl restart systemd-timesyncd.service
 }
 
-## go fn
+## go
 # quickly nav to a dir in home dir
 go () {
     p=$(find /home/$(whoami)/ -type d -name "$1*" | head -1)
     cd "$p"
 }
-## end go fn
 
 ## Vim last
 # quickly open latest version in a writing dir
@@ -121,29 +64,8 @@ go () {
     vim $(ls | tail -n 1)
 }
 
-
-# Set vim as default editor
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-
-# Ruby Settings
-# activate rbenv
-# &> /dev/null redirects stdout and stderr to nowhere
-# effectively supresses error msg when rbenv is not installed
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
-
-# Not sure if I need to source zshenv, not currently using it
-#source /home/km/.zshenv
-
-#loadkeyboard map / swap caps_lock and escape
-#this is the manual method, instead of using 
-#localectl set-keymap MAPPING
-#/usr/bin/loadkeys /home/km/config_files/.swap_esc_capslock.kmap
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-
-#setup a github-create function to create repos on github 
-#from the command line
+# github-create
+#create repos on github from the command line
 #thanks to eli fatsi on viget.com
 github-create() {
 
@@ -203,27 +125,35 @@ github-create() {
   echo " done."
 }
 
-# set transparency
-#[ -n "$XTERM_VERSION" ] && transset-df --id "$WINDOWID" >/dev/null
 
-bindkey -e
 # bind ctrl j/k to search command history 
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
 # same for vi mode
-#bindkey -M viins "^K" history-beginning-search-backward
-#bindkey -M viins "^J" history-beginning-search-forward
+bindkey -M viins "^K" history-beginning-search-backward
+bindkey -M viins "^J" history-beginning-search-forward
 
 
+# various options for vi-mode
 # shorten delay between mode switches
-#export KEYTIMEOUT=1
+export KEYTIMEOUT=1
 
-# precmd() { RPROMPT="" }
-# function zle-line-init zle-keymap-select {
-#   VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-#   RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-#   zle reset-prompt
-#}
+ precmd() { RPROMPT="" }
+ function zle-line-init zle-keymap-select {
+   VIM_normal_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+   VIM_insert_PROMPT="%{$fg_bold[cyan]%} [% INSERT]%  %{$reset_color%}"
+   RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
+   zle reset-prompt
+ }
 
-#zle -N zle-line-init
-#zle -N zle-keymap-select
+# source theme after resetting prompt
+source $ZSH/oh-my-zsh.sh
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# make right prompt (NORMAL or INSERT tag) disappear after cmd executes
+setopt transientrprompt
+
+# bind to vi keys after everything else is loaded
+bindkey -v
