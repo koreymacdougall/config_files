@@ -1,0 +1,16 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+}
+
+order += "disk /"
+order += "tztime local"
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
+
+disk "/" {
+    format = "%free"
+}

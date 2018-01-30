@@ -42,6 +42,9 @@ ln -sf ~/config_files/.toprc ~/.toprc
 # i3 config symlink
 ln -sf ~/config_files/i3_config ~/.config/i3/config
 
+# i3status/config symlink
+ln -sf ~/config_files/i3status_config ~/.config/i3status/config
+
 # compton config symlink
 ln -sf ~/config_files/compton.conf ~/.config/compton.conf
 
