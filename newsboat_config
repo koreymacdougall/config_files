@@ -7,5 +7,5 @@ bind-key SPACE open
 
 browser firefox
 
-download-path ~/podcasts
+download-path ~/podcasts/%h/%n
 max-downloads 10

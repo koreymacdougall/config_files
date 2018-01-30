@@ -7,10 +7,10 @@ general {
 order += "disk /"
 order += "tztime local"
 
-tztime local {
-    format = "%Y-%m-%d %H:%M:%S"
-}
-
 disk "/" {
     format = "%free"
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
 }

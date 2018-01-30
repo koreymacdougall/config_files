@@ -159,15 +159,15 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # Start i3bar to display a workspace bar (plus the system information i3status)
-# using bumblebee status
-# bar {
-#     font pango:Deja Vu Sans Mono 10
-#     position top
-#     tray_output none
-#     # use tray output for network manager or other applets
-#     #tray_output primary
-#     status_command i3status 
-# }
+bar {
+    font pango:Deja Vu Sans Mono 10
+    position top
+    tray_output none
+    # use tray output for network manager or other applets
+    #tray_output primary
+    status_command i3status
+    mode hide
+}
 
 ## External Programs to Load
 # compton for compositing
