@@ -8,3 +8,4 @@ bind-key SPACE open
 browser firefox
 
 download-path ~/podcasts
+max-downloads 10
