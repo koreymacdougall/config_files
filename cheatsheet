@@ -40,3 +40,10 @@
 
 # view other mailboxes
     y
+
+####################
+#####  ARCH  #######
+####################
+
+# downgrade pkg
+    pacman -U /var/cache/pacman/pkg/old-pkg-version

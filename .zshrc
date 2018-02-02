@@ -163,6 +163,9 @@ bindkey -M viins "^J" history-beginning-search-forward
 # map Ctrl-U (emacs binding) to vi modes
 bindkey -M viins "^U" backward-kill-line
 bindkey -M vicmd "^U" backward-kill-line
+# map Ctrl-A (emacs binding) to vi modes
+bindkey -M viins "^A" beginning-of-line
+bindkey -M vicmd "^A" beginning-of-line
 
 
 ####################
