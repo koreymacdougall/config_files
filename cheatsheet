@@ -17,6 +17,7 @@
     Enter = copy selection
     leader-b ] = paste
 
+
 ####################
 ######  VIM  #######
 ####################
@@ -30,3 +31,12 @@
     - make commit = cc in Gstatus window
 
 
+####################
+#####  MUTT  #######
+####################
+
+# cancel prompt
+    ctrl-g
+
+# view other mailboxes
+    y

@@ -45,6 +45,8 @@ call plug#begin()
     Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
+" make sure dot files how up in ctrlp
+let g:ctrlp_show_hidden=1
 
 """"""""""""""""""""
 """"" SETTINGS """""
