@@ -2,6 +2,11 @@
 #### SETTINGS ######
 ####################
 
+# run neofetch when opening a shell
+#if [ $(which neofetch) ]; then
+    #neofetch
+#fi
+
 # oh-my-zsh - path and load
 export ZSH=/home/km/.oh-my-zsh
 
@@ -151,9 +156,13 @@ github-create() {
 # bind ctrl j/k to search command history 
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
-# same for vi mode
+# do same for vi mode
 bindkey -M viins "^K" history-beginning-search-backward
 bindkey -M viins "^J" history-beginning-search-forward
+
+# map Ctrl-U (emacs binding) to vi modes
+bindkey -M viins "^U" backward-kill-line
+bindkey -M vicmd "^U" backward-kill-line
 
 
 ####################

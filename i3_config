@@ -158,6 +158,12 @@ bindsym $mod+shift+G  gaps inner current minus 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
     font pango:Deja Vu Sans Mono 10
