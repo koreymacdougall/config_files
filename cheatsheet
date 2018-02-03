@@ -17,6 +17,10 @@
     Enter = copy selection
     leader-b ] = paste
 
+# view settings
+    show-options
+    -g - show global settings
+
 
 ####################
 ######  VIM  #######
