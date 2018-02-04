@@ -45,25 +45,6 @@ plugins=(git bundler zsh-syntax-highlighting)
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
 
 ####################
-####  ALIASES  #####
-####################
-alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
-alias ls='ls --color=auto --group-directories-first'
-alias l='ls --color=auto --group-directories-first'
-alias ll='ls -al --color=auto --group-directories-first'
-alias grep='grep --color=always'
-alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
-
-alias 2560="
-xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
-xrandr --addmode Virtual-1 2560x1080_60.00 ; 
-xrandr --output Virtual-1 --mode 2560x1080_60.00"
-
-# i3 power management aliases
-alias logout='i3-msg exit'
-alias suspend='lock && systemctl suspend'
-
-####################
 # CUSTOM FUNCTIONS #
 ####################
 
@@ -190,5 +171,22 @@ source $ZSH/oh-my-zsh.sh
 # bind to vi keys after everything else is loaded
 bindkey -v
 
+####################
+####  ALIASES  #####
+####################
+alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto --group-directories-first'
+alias ll='ls -al --color=auto --group-directories-first'
+alias grep='grep --color=always'
+alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 
+alias 2560="
+xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
+xrandr --addmode Virtual-1 2560x1080_60.00 ; 
+xrandr --output Virtual-1 --mode 2560x1080_60.00"
+
+# i3 power management aliases
+alias logout='i3-msg exit'
+alias suspend='lock && systemctl suspend'
 
