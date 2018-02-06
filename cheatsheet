@@ -31,6 +31,9 @@
     show-options
     -g - show global settings
 
+# next layout
+    prefix-space
+
 # defaults for pane resizing / default layouts
 # note that M(eta) key is alt, by def(ault)
 prefix M-1  = vertical split, all panes same width
