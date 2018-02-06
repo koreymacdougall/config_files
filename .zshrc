@@ -192,3 +192,8 @@ xrandr --output Virtual-1 --mode 2560x1080_60.00"
 alias logout='i3-msg exit'
 alias suspend='lock && systemctl suspend'
 
+# tmux aliases; lifted from oh-my-zsh plugin
+alias ta="tmux attach -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+
