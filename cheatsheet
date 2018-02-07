@@ -51,3 +51,10 @@
 
 # downgrade pkg
     pacman -U /var/cache/pacman/pkg/old-pkg-version
+
+####################
+#### CALCURSE ######
+####################
+
+# to move date of appt:
+    -specify date as month/day (e.g., 1/1 for jan 1)
