@@ -3,30 +3,82 @@
 ####################
 
 # rename-window
-    prefix + ,
+    prefix-,
 
 # rename-session
-    prefix + $
+    prefix-$
 
 # detach from sessions
-    prefix + d
+    prefix-d
+
+# move another pane to current window
+    join-pane [-hv] -s :1
+    # -h for horizontal stack (i.e., vert split)
+        ## mapped to prefix + V
+    # -v for vert stack (i.e., horizont split)
+        ## mapped to prefix + S
+    
+# break pane into its own window
+    prefix-!
 
 ## copying text
-    leader-b [ = enter movement/copy mode
+    prefix-[ = enter movement/copy mode
     Space = start copy mode
     Enter = copy selection
-    leader-b ] = paste
+    prefix-] = paste
 
 # view settings
     show-options
     -g - show global settings
+
+# next layout
+    prefix-space
+
+# defaults for pane resizing / default layouts
+# note that M(eta) key is alt, by def(ault)
+prefix M-1  = vertical split, all panes same width
+|-------|-------|-------|
+|       |       |       |
+|   0   |   1   |   2   |
+|       |       |       |
+|-------|-------|-------|
+
+prefix M-2  = horizontal split, all panes same height
+|-----------------------|
+|          0            |
+|-----------------------|
+|          1            |
+|-----------------------|
+|          2            |
+|-----------------------|
+
+prefix M-3  = horizontal split, main pane on top
+|-----------------------|
+|          0            |
+|-----------------------|
+|   1  |    2   |   3   |
+|-----------------------|
+
+prefix M-4  = vertical split, main pane left
+|-------|-------|
+|       |   1   |
+|   0   |-------|
+|       |   2   |
+|-------|-------|
+
+prefix M-5  = tile, new panes on bottom, same height before same width
+|-------|-------|
+|   0   |   1   |
+|-------|-------|
+|   2   |   3   |
+|-------|-------|
 
 
 ####################
 ######  VIM  #######
 ####################
 
-# command line window (with normal mode powers)
+# command line window (with normal mode powers like move/cw/etc)
     ctrl-f - from command mode
     q:, q/, q? - from normal mode
 
