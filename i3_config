@@ -136,7 +136,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 #bindsym $mod+Shift+4 move container to workspace 4:ent
 #
 # reload the configuration file
-bindsym $mod+Shift+c reload
+#bindsym $mod+Control+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -164,6 +164,33 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+####################
+# CALCURSE SCRATCH #
+####################
+# Run a calcurse weekly view window scratchpad
+# and a regular view scratchpad
+# They are accessed via different key bindings
+for_window [title="calweek"] floating enable
+for_window [title="calweek"] resize set 600 1000
+for_window [title="calweek"] move scratchpad
+for_window [title="calweek"] border pixel 20
+
+for_window [title="calreg"] floating enable
+for_window [title="calreg"] resize set 1200 800
+for_window [title="calreg"] move scratchpad
+for_window [title="calreg"] border pixel 20
+
+# set up both calcurse scratchpads
+bindsym $mod+Control+c [title="calweek"] exec --no-startup-id xterm -xrm "xterm*allowTitleOps: false" -T "calweek" -e 'echo -e "Appointments for the next 7 days:\n (today is `date`)\n" > ~/tempi && calcurse -d 7 >> ~/tempi && less ~/tempi';  [title="calreg"] exec --no-startup-id xterm -xrm "xterm*allowTitleOps: false" -T "calreg" -e calcurse
+
+# nav to the calcurse scratchpads
+bindsym $mod+Shift+c [title="calweek"]scratchpad show; [title="calweek"]move position center
+bindsym $mod+c [title="calreg"]scratchpad show; [title="calreg"]move position center
+
+####################
+### end calcurse ###
+####################
+
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
     font pango:Deja Vu Sans Mono 10
@@ -185,7 +212,7 @@ exec --no-startup-id nitrogen --restore
 
 # this turns off title bars for apps
 new_window pixel 0
-#wfor_window [class="^.*"] border pixel 0
+#for_window [class="^.*"] border pixel 0
 #
 #i3 gaps settings
 gaps inner 10
