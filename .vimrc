@@ -43,6 +43,8 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
     " ctrl-p fuzzyfinds files and buffers
     Plug 'ctrlpvim/ctrlp.vim'
+    " ultisnips inserts snippets, i.e., predefined chunks
+    Plug 'SirVer/ultisnips'
 call plug#end()
 
 " make sure dot files how up in ctrlp
@@ -254,11 +256,12 @@ nnoremap <leader>cc :set cursorcolumn!<CR>
 inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
 
 " Snippets
+" deprecated; now using ultisnips
     " auto insert eruby tags
     " insert embedded ruby w/ display tag
-    nnoremap <leader>er i<%=  %><left><left><left>
+    " nnoremap <leader>er i<%=  %><left><left><left>
     " insert embedded ruby tag
-    nnoremap <leader>ER i<%  %><cr><cr><% end %><up><up><left><left><left>
+    " nnoremap <leader>ER i<%  %><cr><cr><% end %><up><up><left><left><left>
 " deprecated (replaced by tcomment plugin)custom comments for html and css deprecated"
     " " insert html comment
     " nnoremap <leader>wc a<!----><left><left><left>
@@ -349,6 +352,12 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 """"""""""""""""""""
 " PLUGIN SETTINGS ""
 """"""""""""""""""""
+
+" ultisnips trigger configuration"
+let g:UltiSnipsExpandTrigger="<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+nnoremap <leader>s :UltiSnipsEdit<CR>
 
 " air-line
 if !exists('g:airline_symbols')

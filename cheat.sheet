@@ -11,13 +11,14 @@
 # detach from sessions
     prefix-d
 
+
 # move another pane to current window
     join-pane [-hv] -s :1
     # -h for horizontal stack (i.e., vert split)
         ## mapped to prefix + V
     # -v for vert stack (i.e., horizont split)
         ## mapped to prefix + S
-    
+
 # break pane into its own window
     prefix-!
 
@@ -82,10 +83,12 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     ctrl-f - from command mode
     q:, q/, q? - from normal mode
 
-## fugitive
+# fugitive
     - search git history - :Glog -S *some_pattern* --
     - make commit = cc in Gstatus window
 
+# open alternate file
+    - C-^
 
 ####################
 #####  MUTT  #######
