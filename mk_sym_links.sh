@@ -75,3 +75,6 @@ ln -sf ~/config_files/newsboat_config ~/.newsboat/config
 
 # newsboat url list symlink
 ln -sf ~/config_files/newsboat_urls ~/.newsboat/urls
+
+#ultisnips folder symlink
+ln -sf ~/config_files/UltiSnips/ ~/.vim/UltiSnips
