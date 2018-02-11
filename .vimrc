@@ -283,7 +283,7 @@ nnoremap <leader>f :Vex<cr>
     " map leader-f to open .zshrc in vsplit 
     nnoremap <leader>ez :vsplit ~/.zshrc<cr>
     " map leader-f to open .zshrc in vsplit 
-    nnoremap <leader>ec :vsplit ~/config_files/cheatsheet<cr>
+    nnoremap <leader>ec :vsplit ~/config_files/cheat.sheet<cr>
 
 " buffer navigation / manipulation
     " open a new empty buffer

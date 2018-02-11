@@ -90,6 +90,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 # open alternate file
     - C-^
 
+# end macro in insert mdoe
+   - C-o    -   to enter single normal mode command
+   - q      -   quit
+
+
 ####################
 #####  MUTT  #######
 ####################
