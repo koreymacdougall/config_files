@@ -6,40 +6,22 @@ xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-256color
 xterm*eightBitInput: false
 
-
-! TODO - keep eyes peeled for inline comment synax for Xresources
-! near-black
 *xterm*color0: #101010
-! dark-ish pink
 *xterm*color1: #960050
-! bright green 
 *xterm*color2: #66aa11
-! gold / mustard
 *xterm*color3: #c47f2c
-! royal blue
 *xterm*color4: #30309b
-! purple
 *xterm*color5: #7e40a5
-! light / baby blue
 *xterm*color6: #3579a8
-! light grey
 *xterm*color7: #9999aa
-! dark grey
 *xterm*color8: #303030
-! bright pink
 *xterm*color9: #ff0090
-! lime green
-*xterm*color10: #80ff0
-! pastel peach
-*xterm*color11: #ffba6
-! purple / blue
-*xterm*color12: #5f5fe
-! light purple
-*xterm*color13: #bb88d
-! aqua
-*xterm*color14: #4eb4f
-! extra light grey
-*xterm*color15: #d0d0d
+*xterm*color10: #80ff00
+*xterm*color11: #ffba68
+*xterm*color12: #5f5fee
+*xterm*color13: #bb88dd
+*xterm*color14: #4eb4fa
+*xterm*color15: #d0d0d0
 
 *xterm*background: #101010
 *xterm*foreground: lightgreen

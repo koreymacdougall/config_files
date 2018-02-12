@@ -94,19 +94,38 @@ prefix M-5  = tile, new panes on bottom, same height before same width
    - C-o    -   to enter single normal mode command
    - q      -   quit
 
+# chain multiple commands in vim script
+    - use pipe |
+
+# syntax for UltiSnips to use vimscript
+    `!v execute("command in here | second command")`
+    # note backticks, parens, quotes and optional pipe
+    # execute seems needed to run arbitrary commands, but maybe nt
 
 ####################
 #####  MUTT  #######
 ####################
 
 # cancel prompt
-    ctrl-g
+    - ctrl-g
 
 # view other mailboxes
-    y
+    - y
 
 # sync (i.e., actually delete marked)
-    $
+    - $
+
+# tag all messages matching a pattern <tag-pattern>
+    - l
+
+# apply next function to all tagged messages <tag-prefix>
+    - ;
+
+# clear flag <clear-flag>
+    - W (uppercase adds flags)
+    - w (lowercase is to add flag)
+
+
 
 
 ####################
