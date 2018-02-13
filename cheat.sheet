@@ -115,7 +115,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 # sync (i.e., actually delete marked)
     - $
 
-# tag all messages matching a pattern <tag-pattern>
+# tag all messages matching a pattern
+    - T
+
+# show only messages matching a pattern <tag-pattern>
     - l
 
 # apply next function to all tagged messages <tag-prefix>
