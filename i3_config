@@ -34,10 +34,9 @@ bindsym $mod+Control+v                  exec i3-sensible-terminal -e vim
 # neomutt
 bindsym $mod+m                          exec i3-sensible-terminal -e neomutt
 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+####################
+## END LAUNCHERS ###
+####################
 
 # change focus
 bindsym $mod+h focus left
@@ -151,6 +150,24 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+
+#####################
+# FETCHMAIL SCRATCH #
+#####################
+
+for_window [title="fetch"] floating enable
+for_window [title="fetch"] resize set 1000 800
+for_window [title="fetch"] move scratchpad
+for_window [title="fetch"] border pixel 20
+
+# set up both fetchmail scratchpad
+bindsym $mod+Control+m [title="fetch"] exec --no-startup-id xterm -xrm "xterm*allowTitleOps: false" -T "fetch" -e 'cd ~/mail_configs && sh cryptscript.sh';  [title="fetch"]scratchpad show; [title="fetch"] move position center
+
+####################
+#### end fetch #####
+####################
+
+
 ####################
 # CALCURSE SCRATCH #
 ####################
@@ -201,10 +218,12 @@ exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 # netowrk manager applet; only for physical machine
 #exec --no-startup-id nm-applet --sm-disable
 
-# this turns off title bars for apps
+# title bars for apps
+# new_window pixel 0 for no title
+# new_window normal for basic title bar
 new_window pixel 0
 #for_window [class="^.*"] border pixel 0
-#
+
 #i3 gaps settings
 gaps inner 10
 gaps outer 0
