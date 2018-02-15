@@ -174,6 +174,7 @@ bindkey -v
 ####################
 ####  ALIASES  #####
 ####################
+
 ## note - when these were earlier in the file, the ls aliases
 ## were being clobbered by something.  A plugin?
 alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
@@ -197,3 +198,6 @@ alias ta="tmux attach -t"
 alias ts="tmux new-session -s"
 alias tl="tmux list-sessions"
 
+# movement aliases
+alias mc='cd ~/config_files'
+alias mm='cd ~/mail_configs'
