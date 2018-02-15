@@ -2,12 +2,12 @@ Setting up a new arch/parabola vm - total time: approx 2 hours (should be less w
 
 legend:
     H! = run on host machine, but not on VM
+    V! = run on virtual machine, but not on host
     VH! = run on virtual machine and host machine
 
--Run basic first steps from installation guide
+-Run basic first steps from arch installation guide
 
-    -!H encryption - LVM on Luks - see forked repo for more detail about pvsetup,
-    lvsetup, etc
+    -!H encryption - LVM on Luks - see forked repo for more detail about pvsetup, lvsetup, etc
         - crypttab - not used for this scheme
         - fstab: 
             root partition: /dev/mapper/*crypt_drive_name*/*crypt_partition_name*
@@ -21,13 +21,13 @@ legend:
     -!H to enable hibernation, add boot paramater:
         - to /boot/loader/entries/arch.conf, add 
             - resume=/dev/mapper/vg0-swap
-            - using correct mapping ^ 
+            - using correct mapping ^
 
     -!VH Sort mirrors:  (moves all US mirrors to bottom)
       vim /etc/pacman.d/mirrorlist
       :g/## United States/+1m$
       delete others
-      
+
     -!VH Install pacstrap 
       List of primary pacakges to install:
       base-devel - c complilers and things?
@@ -53,13 +53,20 @@ legend:
 -!VH Create user, set passwd
     - useradd -m -G wheel -s /bin/bash archie   (note default shell and name)
 
--!VH Add sudo privs - 
+-!VH Add sudo privs -
     - export VISUAL=vim
     - visudo
 
--!V for email vm, install icedove (or thunderbird ) and cronie
+-!V for email vm, install mutt and cronie
     - cronie is cron implementation
     - fill in email_backup_script_archive
+
+-!H mousepad tap-touch support:
+    - pacman -S synaptics
+    - sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/
+        - Add to first option block (tap for L click, two-fing tap R click):
+            - Option "TapButton1" "1"
+            - Option "TapButton2" "3"
 
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
@@ -125,7 +132,7 @@ legend:
         - hsetroot -solid "#000000"
         - (or use feh to set image for bg)
 
-    # if needing custom resoultions:
+    # if needing custom resoultions (e.g., extra wide):
     - install xorg-xrandr, and maybe arandr, graphical front end for xrandr
         - run "cvt 2560 1080" (eg) to get modeline for new reso
         - xrandr --newmode "whatever was printed out from cvt, minus Modeline"
