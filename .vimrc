@@ -163,6 +163,11 @@ au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
 au FileType javascipt		setl ofu=js#CompleteJS
 
+" turn on spell checking for emails (mutt)
+au FileType mail            setl spell
+au FileType mail            colorscheme murphy
+au FileType mail            setl nocursorcolumn
+
 " turn on syntax folding for various languages
 let javaScript_fold=1         " JavaScript
 let php_folding=1             " PHP
@@ -275,15 +280,17 @@ nnoremap <leader>q gggqG<C-O><C-O>
 nnoremap <leader>f :Vex<cr>
 
 " quick edit config files
-" vimrc, zshrc, bashrc, cheatsheet
-    " map leader-ev to open .vimrc in a new Vert split
+" vimrc, zshrc, bashrc, cheatsheet, muttrc
+    " vimrc
     nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-    " map leader-eb to open .bashrc in a new vert split
+    " bashrc
     nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-    " map leader-f to open .zshrc in vsplit 
+    " zshrc
     nnoremap <leader>ez :vsplit ~/.zshrc<cr>
-    " map leader-f to open .zshrc in vsplit 
+    " cheat.sheet
     nnoremap <leader>ec :vsplit ~/config_files/cheat.sheet<cr>
+    " muttrc
+    nnoremap <leader>em :vsplit ~/mail_configs/.muttrc<cr>
 
 " buffer navigation / manipulation
     " open a new empty buffer

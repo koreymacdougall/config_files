@@ -13,9 +13,6 @@ ln -sf ~/config_files/.vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin
 #zshrc symlink
 ln -sf ~/config_files/.zshrc ~/.zshrc
 
-#zshenv symlink
-ln -sf ~/config_files/.zprofile ~/.zprofile
-
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
@@ -23,9 +20,6 @@ ln -sf ~/config_files/.gitconfig ~/.gitconfig
 #first is for mint/lubuntu, second is for arch
 ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
 ln -sf ~/config_files/.elinks_conf ~/.elinks.conf
-
-#snippets symlink
-ln -sf  ~/config_files/.vim_snippets/.skeleton.html ~/.vim/.skeleton.html
 
 #xmledit plugin for vim - symlink so it works on html & erb
 ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim
@@ -48,9 +42,6 @@ ln -sf ~/config_files/i3status_config ~/.config/i3status/config
 # compton config symlink
 ln -sf ~/config_files/compton.conf ~/.config/compton.conf
 
-# Xterm configuration -old
-# ln -sf ~/config_files/.Xdefaults ~/.Xdefaults
-
 # Xterm configuration - using Xresources
  ln -sf ~/config_files/.Xresources ~/.Xresources
 
@@ -62,7 +53,7 @@ ln -sf ~/config_files/rc.conf ~/.config/ranger/rc.conf
 ln -sf ~/config_files/scope.sh ~/.config/ranger/scope.sh
 
 # vimperatorrc symlink
-ln -sf ~/config_files/.vimperatorrc ~/.vimperatorrc
+#ln -sf ~/config_files/.vimperatorrc ~/.vimperatorrc
 
 # zsh theme symlink
 ln -sf ~/config_files/kmac.zsh-theme ~/.oh-my-zsh/themes/kmac.zsh-theme
