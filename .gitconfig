@@ -20,3 +20,5 @@
     # for token, use an env variable; scary intern3ts
 [web]
 	browser = firefox
+[push]
+	default = simple
