@@ -13,6 +13,9 @@ export ZSH=/home/km/.oh-my-zsh
 # load custom zsh theme
 ZSH_THEME="kmac"
 
+# set default terminal to xterm
+export TERMINAL=/usr/bin/xterm
+
 # make right prompt (NORMAL or INSERT tag) disappear after cmd executes
 setopt transientrprompt
 # expand wildcards and suchlike

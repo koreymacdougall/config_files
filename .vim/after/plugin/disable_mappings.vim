@@ -4,7 +4,7 @@
 " and make <leader>h unusable
 " i want <leader>h for buffer navigation
 nunmap <leader>hp
-nunmap <leader>hr
+"nunmap <leader>hr
 nunmap <leader>hu
 nunmap <leader>hs
 

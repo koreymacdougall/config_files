@@ -1,0 +1,10 @@
+for screen brightness keys to work under i3 (on xps13), need to add file:
+    /etc/X11/xorg.conf
+
+    with this block:
+    
+    Section      "Device"
+    Identifier   "Card0"
+    Driver       "intel"
+    Option      "Backlight"      "/sys/devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/intel_backlight"
+    EndSection
