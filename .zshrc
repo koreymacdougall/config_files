@@ -140,6 +140,8 @@ github-create() {
 # bind ctrl j/k to search command history 
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
+bindkey "^r" history-incremental-search-backward
+
 # do same for vi mode
 bindkey -M viins "^K" history-beginning-search-backward
 bindkey -M viins "^J" history-beginning-search-forward

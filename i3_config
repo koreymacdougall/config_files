@@ -39,6 +39,11 @@ bindsym $mod+m                          exec i3-sensible-terminal -e neomutt
 ## END LAUNCHERS ###
 ####################
 
+
+####################
+### i3 CONTROLS ####
+####################
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -140,6 +145,11 @@ bindsym $mod+Control+j resize shrink height 10 px or 10 ppt
 bindsym $mod+g  gaps inner current plus 5
 bindsym $mod+shift+G  gaps inner current minus 5
 
+####################
+# end i3 CONTROLS  #
+####################
+
+
 # for physical machine
 # manually map X86MonBrightnessUp and Down keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -207,6 +217,21 @@ bar {
     status_command i3status
     mode hide
 }
+
+########################
+# ALSA audio controls ##
+########################
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5-
+ bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioPrev exec --no-startup-id cmus-remote --prev
+bindsym XF86AudioNext exec --no-startup-id cmus-remote --next
+bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
+
+########################
+## end ALSA controls ###
+########################
 
 ########################################
 ####### External Programs to Load #####
