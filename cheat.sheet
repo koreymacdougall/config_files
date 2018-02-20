@@ -144,3 +144,58 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 
 # to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
+
+####################
+##### Docker #######
+####################
+# largely lifted from https://github.com/wsargent/docker-cheat-sheet
+
+# note that all commands prefixed with "(sudo) docker"
+
+## ## ## ## ##
+# Containers
+## ## ## ## ##
+#
+    ## Lifecyle
+        create - creates a container but does not start it
+        rename - allows the container to be renamed
+        run - creates and starts a container in one operation
+        rm - deletes a container
+        update - updates a container's resource limits
+
+    ## Starting and Stopping
+        start - starts a container so it is running
+        stop - stops a running container
+        restart - stops and starts a container
+        pause - pauses a running container, "freezing" it in place
+        unpause - will unpause a running container
+        wait - blocks until running container stops
+        kill - sends a SIGKILL to a running container
+        attach - will connect to a running container
+
+    ## Info
+        ps - shows running containers
+        logs - gets logs from container
+        inspect - looks at all the info on a container
+        events - gets events from container
+        port - shows public facing port of container
+        top - shows running processes in container
+        stats - shows containers' resource usage statistics
+        diff - shows changed files in the container's FS
+
+## ## ## ## ##
+# Images 
+## ## ## ## ##
+
+    ## Lifecycle
+        images - shows all images
+        import - creates an image from a tarball
+        build - creates image from Dockerfile
+        commit - creates image from a container
+        rmi - removes an image.
+        load - loads an image from a tar archive
+        save - saves an image to a tar archive
+
+    ## Info
+        history - shows history of an image
+        tag - tags an image to a name (local or registry)
