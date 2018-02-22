@@ -148,14 +148,17 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ####################
 ##### Docker #######
 ####################
-# largely lifted from https://github.com/wsargent/docker-cheat-sheet
 
+# detach from running container
+    - ^P ^Q
+
+# following section lifted from https://github.com/wsargent/docker-cheat-sheet
 # note that all commands prefixed with "(sudo) docker"
 
 ## ## ## ## ##
 # Containers
 ## ## ## ## ##
-#
+
     ## Lifecyle
         create - creates a container but does not start it
         rename - allows the container to be renamed

@@ -42,7 +42,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # note to self:  zsh-syntax-highlighting downloaded from
 # github.com/zsh-users/zsh-syntax-highlighting
-plugins=(git bundler zsh-syntax-highlighting)
+plugins=(git bundler zsh-syntax-highlighting docker)
 
 # Ruby/rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null

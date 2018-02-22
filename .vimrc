@@ -164,9 +164,11 @@ au FileType css				setl ofu=csscomplete#CompleteCSS
 au FileType javascipt		setl ofu=js#CompleteJS
 
 " turn on spell checking for emails (mutt)
-au FileType mail            setl spell
-au FileType mail            colorscheme murphy
-au FileType mail            setl nocursorcolumn
+autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
+au FileType mail            setlocal spell
+au FileType mail            setlocal nocursorcolumn
+au FileType mail            setlocal nohlsearch
+
 
 " turn on syntax folding for various languages
 let javaScript_fold=1         " JavaScript
