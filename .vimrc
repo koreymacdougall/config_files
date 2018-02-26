@@ -293,6 +293,8 @@ nnoremap <leader>f :Vex<cr>
     nnoremap <leader>ec :vsplit ~/config_files/cheat.sheet<cr>
     " muttrc
     nnoremap <leader>em :vsplit ~/mail_configs/.muttrc<cr>
+    " i3 config
+    nnoremap <leader>ei :vsplit ~/config_files/i3_config<cr>
 
 " buffer navigation / manipulation
     " open a new empty buffer

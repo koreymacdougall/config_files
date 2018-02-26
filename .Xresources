@@ -44,7 +44,7 @@ xterm*eightBitInput: false
 *xterm*color15: #d0d0d0
 
 *xterm*background: #282828
-*xterm*foreground: lightblue
+*xterm*foreground: yellow
 *xterm*cursorColor: #d0d0d0
 
 xterm*boldMode: true
