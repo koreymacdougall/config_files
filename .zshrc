@@ -207,3 +207,6 @@ alias tl="tmux list-sessions"
 # movement aliases
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
+
+# grab mail alias
+alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
