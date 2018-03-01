@@ -3,7 +3,7 @@
 #create tar of file
 backup_filename=em_bk_$(date +"%m-%d-%Y").tar
 echo "creating email backup: ${backup_filename}"
-tar -cvpf ~/${backup_filename} ~/.thunderbird/*profile_dir* (something.default)
+tar -cvpf ~/${backup_filename} ~/mail
 
 # encrypt tarball
 gpg -c ~/${backup_filename}
@@ -11,8 +11,8 @@ gpg -c ~/${backup_filename}
 # remove unencrypted file
 rm ~/${backup_filename}
 
-# scp encrypted backup to server
-scp ~/${backup_filename}.gpg server_address:dir/subdir
+#server_address:dir/subdir# scp encrypted backup to server
+scp -P 16581 ~/${backup_filename}.gpg 10.0.0.112:stored_files/em_bks
 
 # remove encrypted backup
 rm ~/${backup_filename}.gpg

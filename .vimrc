@@ -284,17 +284,17 @@ nnoremap <leader>f :Vex<cr>
 " quick edit config files
 " vimrc, zshrc, bashrc, cheatsheet, muttrc
     " vimrc
-    nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+    nnoremap <leader>ev :e $MYVIMRC<cr>
     " bashrc
-    nnoremap <leader>eb :vsplit ~/.bashrc<cr>
+    nnoremap <leader>eb :e ~/.bashrc<cr>
     " zshrc
-    nnoremap <leader>ez :vsplit ~/.zshrc<cr>
+    nnoremap <leader>ez :e ~/.zshrc<cr>
     " cheat.sheet
-    nnoremap <leader>ec :vsplit ~/config_files/cheat.sheet<cr>
+    nnoremap <leader>ec :e ~/config_files/cheat.sheet<cr>
     " muttrc
-    nnoremap <leader>em :vsplit ~/mail_configs/.muttrc<cr>
+    nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>
     " i3 config
-    nnoremap <leader>ei :vsplit ~/config_files/i3_config<cr>
+    nnoremap <leader>ei :e ~/config_files/i3_config<cr>
 
 " buffer navigation / manipulation
     " open a new empty buffer
