@@ -69,3 +69,6 @@ ln -sf ~/config_files/newsboat_urls ~/.newsboat/urls
 
 #ultisnips folder symlink
 ln -sf ~/config_files/UltiSnips/ ~/.vim/UltiSnips
+
+# cmus rc symlink
+ln -sf ~/config_files/cmus_rc ~/.config/cmus/rc
