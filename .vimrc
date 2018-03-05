@@ -70,7 +70,7 @@ set smartcase
 
 " show tabs, spaces, and trailing spaces
 " thanks to damian conway - more instantly better vim
-exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"
+exec  "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"
 set list
 
 " remap leader to comma
@@ -189,9 +189,7 @@ set background=dark
 " set terminal to 256 colors
 set t_Co=256
 
-" default colorschemes: industry for code, murphy for markdown
 colorscheme gruvbox
-" au FileType markdown colorscheme murphy
 
 " highlight serarch results
 set hlsearch
@@ -376,8 +374,17 @@ if !exists('g:airline_symbols')
 endif
 
 " toggle LimeLight when entering/leaving Goyo
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+""autocmd! User GoyoEnter Limelight
+
+function! s:goyo_enter()
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    set noshowmode
+    set noshowcmd
+    Limelight
+endfunction
+
+autocmd! User GoyoLeave Limelight! set showmode showcmd
 
 " most of these unicode/powerline old powerline symbols just kept for reference
 " unicode symbols
