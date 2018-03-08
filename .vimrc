@@ -374,17 +374,12 @@ if !exists('g:airline_symbols')
 endif
 
 " toggle LimeLight when entering/leaving Goyo
-""autocmd! User GoyoEnter Limelight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
-function! s:goyo_enter()
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-    set noshowmode
-    set noshowcmd
-    Limelight
-endfunction
-
-autocmd! User GoyoLeave Limelight! set showmode showcmd
+" mappings to further reduce screen clutter/noise in Goyo
+nnoremap <leader>gg :setl noshowmode noshowcmd nocursorline nocursorcolumn<cr>
+nnoremap <leader>GG :setl showmode showcmd cursorline cursorcolumn<cr>
 
 " most of these unicode/powerline old powerline symbols just kept for reference
 " unicode symbols
