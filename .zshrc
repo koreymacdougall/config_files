@@ -213,4 +213,4 @@ alias mm='cd ~/mail_configs'
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
 
 cd ~
-setterm --foreground yellow --bold on --store
+setterm --foreground yellow --bold on --store 2> /dev/null

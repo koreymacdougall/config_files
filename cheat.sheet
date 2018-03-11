@@ -202,3 +202,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     ## Info
         history - shows history of an image
         tag - tags an image to a name (local or registry)
+
+####################
+###### PACMAN ######
+####################
+
+# view dep tree
+    - pactree

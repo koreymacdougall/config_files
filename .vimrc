@@ -378,8 +378,8 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " mappings to further reduce screen clutter/noise in Goyo
-nnoremap <leader>gg :setl noshowmode noshowcmd nocursorline nocursorcolumn<cr>
-nnoremap <leader>GG :setl showmode showcmd cursorline cursorcolumn<cr>
+nnoremap <leader>gg :setl noshowmode noshowcmd nocursorline nocursorcolumn nosi nolist <cr>
+nnoremap <leader>GG :setl showmode showcmd cursorline cursorcolumn si list<cr>
 
 " most of these unicode/powerline old powerline symbols just kept for reference
 " unicode symbols
