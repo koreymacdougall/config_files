@@ -208,6 +208,14 @@ legend:
               ttf-font-awesome (for glyphs; in parabola, use
               awesome-terminal-fonts), ttf-dejavu (terminal font)
 
+        12. cmus - for cli music
+            - with parabola, at least, need to install libmad pkg, which is
+              optional dependency for mp3 (i think b/c mp3 was previously a
+              non-free format)
+              - pacman -S --asdeps libmap
+              - note also the "pacman -Si cmus" command, to see all optional
+                dependecies
+
         ## 
         after graphical setup, reboot
         ## 
