@@ -39,7 +39,7 @@ legend:
       zsh
       elinks
       acpi - power level display
-      icecat (or firefox)
+      iceweasel (or firefox)
       xdg-utils - provides xdg-open, needed for fugutitve/rhubarb for opening github
       reflector - get fastest mirrors
       feh - image viewer / cataloguer
@@ -245,14 +245,20 @@ deprecated steps / kept for reference
 !deprecated / firefox - plugins and privacy settings
     - privacy_badger
     - noscript
-    - ab
+    - ublock origin
     - https everywhere
     - add_to_search_bar (add duckduckgo.com/html)
-    - vimfx, // alternats: vimperator, pentadactyl, tridactyl, qutebrowser
+    - vim vixen, // alternats: vimperator, pentadactyl, tridactyl, qutebrowser
         -vimperator settings:
             -set defsearch=ddg
             -nnroremap ; :
     - Dark background and light text add-on (only working night mode plugin)
+    - for web audio support, need to install pulseaudio and pulseaudio-alsa, b/c 
+      iceweasel (i.e., firefox) no longer supports just alsa
+        - pavucontrol / pulsemixer can be used to configure
+            - pavucontrol easier to use
+            - can't seem to get pulsemixer to connect to daemon
+            - pasystray (from aur) is useful in i3
 
 (alternates - qutebrowser, dillo, elinks)
 
