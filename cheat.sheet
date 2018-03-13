@@ -1,4 +1,18 @@
 ####################
+#####  XTERM  ######
+####################
+
+# resize font temporarily
+    - ctrl-right click
+
+####################
+####  TERMINAL  ####
+####################
+
+# view active shell
+    - echo $0
+
+####################
 ######  TMUX  ######
 ####################
 
@@ -169,6 +183,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         rename - allows the container to be renamed
         run - creates and starts a container in one operation
         rm - deletes a container
+            - shortcut to remove al docker containers:
+                - sudo docker rm $(sudo docker ps -a -q)
         update - updates a container's resource limits
 
     ## Starting and Stopping
@@ -199,6 +215,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         images - shows all images
         import - creates an image from a tarball
         build - creates image from Dockerfile
+            -t - tag iamge
+            -f - specify dockerfile
+            - e.g., docker build -t ThisWillBeTheImageTag -f abnormDockerFileName .
         commit - creates image from a container
         rmi - removes an image.
         load - loads an image from a tar archive

@@ -209,7 +209,7 @@ bindsym $mod+c [title="calreg"]scratchpad show; [title="calreg"]move position ce
 
 # nm-applet when needed
 exec --no-startup-id nm-applet --sm-disable &
-exec --no-startup-id pasystray 
+exec --no-startup-id pasystray
 
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
@@ -217,7 +217,6 @@ bar {
     position top
     tray_output primary
     # use tray output for network manager or other applets
-    tray_output primary
     status_command i3status
     mode hide
 }
@@ -228,13 +227,25 @@ bar {
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5-
- bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 bindsym XF86AudioPrev exec --no-startup-id cmus-remote --prev
 bindsym XF86AudioNext exec --no-startup-id cmus-remote --next
 bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 
 ########################
 ## end ALSA controls ###
+########################
+
+########################
+# PULSEAUDIO controls ##
+########################
+
+#bindcode --release 113 exec --no-startup-id /usr/bin/pulseaudio-ctl mute
+bindsym $mod+Up exec --no-startup-id /usr/bin/pulseaudio-ctl up
+bindsym $mod+Down exec --no-startup-id /usr/bin/pulseaudio-ctl down
+
+########################
+## end PULSEAUDIO ctl ##
 ########################
 
 ########################################
