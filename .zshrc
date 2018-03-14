@@ -212,5 +212,11 @@ alias mm='cd ~/mail_configs'
 # grab mail alias
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
 
+# launch neomutt wth GPG_TTY set
+### there is a gpg/tty issue sometimes when trying to send mail, 
+### error is something like "inapppriate ioctl for device"
+### the fix is to export this shell variable
+alias mutt="export GPG_TTY=$(tty) && neomutt"
+
 cd ~
 setterm --foreground yellow --bold on --store 2> /dev/null
