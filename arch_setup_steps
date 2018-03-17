@@ -44,6 +44,9 @@ legend:
       reflector - get fastest mirrors
       feh - image viewer / cataloguer
       w3m - web browser; mainly needed for the pager/preview fn in ranger
+        - image preview seemed broken in the arch repo vsn; git cloning from
+          source (https://salsa.debian.org/debian/w3m) seemed to repair it on
+          03/17/18
       mupdf (evince )- pdf viewer
       ranger - terminal file manager
       xterm - terminal emulator

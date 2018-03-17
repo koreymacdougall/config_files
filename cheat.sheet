@@ -25,6 +25,9 @@
 # detach from sessions
     prefix-d
 
+# kill window (not full pane)
+    - prefix - &
+
 
 # move another pane to current window
     join-pane [-hv] -s :1

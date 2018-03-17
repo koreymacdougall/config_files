@@ -45,6 +45,8 @@ call plug#begin()
     Plug 'ctrlpvim/ctrlp.vim'
     " ultisnips inserts snippets, i.e., predefined chunks
     Plug 'SirVer/ultisnips'
+    " TableMode for easily generating tables
+    Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 
 " make sure dot files how up in ctrlp
@@ -279,6 +281,7 @@ nnoremap <leader>q gggqG<C-O><C-O>
 " map leader-f to open netrw/file broswer in vsplit 
 nnoremap <leader>f :Vex<cr>
 
+
 " quick edit config files
 " vimrc, zshrc, bashrc, cheatsheet, muttrc
     " vimrc
@@ -361,6 +364,28 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 """"""""""""""""""""
 " PLUGIN SETTINGS ""
 """"""""""""""""""""
+
+" TABLEMODE settings"
+nnoremap <leader>tm :TableModeToggle<CR>
+" ** Table Mode Remappings ** "
+augroup table_mode_on_mappings
+    au!
+    "au User TableModeEnabled :put='table mode on'
+    " remap carriage return while in TableMode to auto-inesrt a pipe on new line
+    au User TableModeEnabled inoremap <CR> \|<CR>\|
+    " remap o (for newline) while in TableMode to new line and auto-inesrt a pipe on new line
+    au User TableModeEnabled nnoremap o o\|
+    " remap tab while in TableMode to auto-insert a pipe
+    au User TableModeEnabled inoremap <TAB> \|
+augroup end
+
+augroup table_mode_off_mappings
+    au!
+    "au User TableModeDisabled :put='table mode off'
+    au User TableModeDisabled iunmap <CR>
+    au User TableModeDisabled nunmap o
+    au User TableModeDisabled iunmap <TAB>
+augroup end
 
 " ultisnips trigger configuration"
 let g:UltiSnipsExpandTrigger="<S-Tab>"
