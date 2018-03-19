@@ -6,11 +6,34 @@
     - ctrl-right click
 
 ####################
-####  TERMINAL  ####
+#####  SHELL  ######
 ####################
 
 # view active shell
     - echo $0
+
+# redo sequence of shell comands
+    - fc - this command lets you manipulate history, but also to run a series of shell comamnds
+        - e.g., fc 10 20 - this will allow you to edit and then run those 11 commands
+
+####################
+#####  PDFs  #######
+####################
+
+# combine pdfs
+    - pdfunite in the poppler library combines pdfs
+    - e.g., pdfunite input1.pdf input2.pdf inputn.pdf output.pdf
+
+# wkhtmltopdf
+    - create a pdf from html pages
+    - .e.g, wkhtmltopdf input.html output.pdf
+    - may need to use a particular header line to render some utf8 chars
+        - include this in the head section of the html:
+        - <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        - and on command line, may need to specify: --encoding='utf-8'
+            - check syntax on that argument
+
+
 
 ####################
 ######  TMUX  ######

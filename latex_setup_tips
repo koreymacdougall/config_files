@@ -21,3 +21,4 @@ vim --servername VIM {filename}
         example, OT1:
         /usr/share/texmf-dist/tex/latex/base/ot1enc.def
 
+- to load live preview - run :LLPStartPreview

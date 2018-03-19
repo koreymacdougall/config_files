@@ -232,11 +232,11 @@ nnoremap <leader>P :%s/#print(/print(/<CR>
 
 " latex helpers; specifically vimtex plugin options
 let g:vimtex_view_method = 'mupdf'
-" "let g:vimtex_view_forward_search_on_start = 1
+let g:livepreview_previewer = 'mupdf'
+"let g:vimtex_view_forward_search_on_start = 1
 let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
+" set default pdf viewer"
 
-"quick spell check; take first suggestion
-nnoremap <leader><leader> z=i1<cr><cr>
 
 "### speed maps ###
 "run file: temporary for dol proj
@@ -245,6 +245,9 @@ nnoremap <leader><leader> z=i1<cr><cr>
 " --enable-double-buffering (not sure of proper form of the flag) but I've not
 "  figured out how to compile xterm from source on arch or parabola
 "nnoremap <leader><leader> :! xfce4-terminal -e 'python  ./batch_runner.py'  <CR>
+"
+"quick spell check; take first suggestion
+nnoremap <leader><leader> z=i1<cr><cr>
 
 """"""""""""""""""""
 " CUSTOM MAPPINGS ""
