@@ -35,8 +35,8 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
     " tcomment toggles comments
     Plug 'tomtom/tcomment_vim'
-    " vim-latex-live-preview allows realtime preview of latex files
-    "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+    "vim-latex-live-preview allows realtime preview of latex files
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     " vimtex for compiling latex in vim
     Plug 'lervag/vimtex'
     " gruvbox is a colorscheme 

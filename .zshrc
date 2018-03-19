@@ -198,7 +198,7 @@ xrandr --output Virtual-1 --mode 2560x1080_60.00"
 # i3 power management aliases
 alias logout='i3-msg exit'
 alias suspend='i3lock -c 112233 && systemctl suspend'
-alias lock='i3lock -c #(112233)'
+alias lock='i3lock -c 112233'
 
 # tmux aliases; lifted from oh-my-zsh plugin
 alias ta="tmux attach -t"
