@@ -56,3 +56,6 @@ fi
 
 #add RubyGems path to $PATH
 #PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+#export PATH="$PATH:$HOME/.rvm/bin"

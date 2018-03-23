@@ -195,6 +195,14 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 # detach from running container
     - ^P ^Q
 
+# remove dangline images (where dangling means you've created a new build of an
+# image, but it wasn't given a name - see:
+# https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
+    - sudo docker rmi $(sudo docker images -a --filter=dangling=true -q)
+    
+    # possible alternative, but check docs
+    sudo docker system prune -a
+
 # (create if needed and then) run container with interactive shell
     docker run -i -t {image name} /bin/bash
         # i - interactive

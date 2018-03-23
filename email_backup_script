@@ -2,22 +2,24 @@
 
 # setup progress bar with pv
 # 1. install pv if not already installed
-if !`which pv` ; then
-   sudo pacman -S pv
-fi
+#if !`which pv` ; then
+   #sudo pacman -S pv
+#fi
 
 # 2. grab size of mail folder, to feed to tar
-SIZE=`du -sk ~/mail | cut -f 1`
-echo "Size of mail dir is ${SIZE}k"
-sleep 1
+#SIZE=`du -sk ~/email | cut -f 1`
+#echo "Size of email dir is ${SIZE}k"
+#sleep 1
 
 
 #create tar of file
 backup_filename=em_bk_$(date +"%m-%d-%Y").tar
 echo "creating email backup: ${backup_filename}"
-sleep 1
+
+#sleep 1
+tar -cvf ~/${backup_filename} ~/email
 # feed SIZE variable to tar for pv to output progress
-tar -cvf ~/${backup_filename} ~/mail | pv -p -s ${SIZE}k
+#tar -cvf ~/${backup_filename} ~/email | pv -p -s ${SIZE}k
 
 # encrypt tarball
 gpg -c ~/${backup_filename}
@@ -26,7 +28,8 @@ gpg -c ~/${backup_filename}
 rm ~/${backup_filename}
 
 #server_address:dir/subdir# scp encrypted backup to server
-scp -P 16581 ~/${backup_filename}.gpg kmac.io:stored_files/em_bks
+#scp -P 16581 ~/${backup_filename}.gpg kmac.io:stored_files/em_bks
+scp -P 16581 ~/${backup_filename}.gpg 10.0.0.112:stored_files/em_bks
 
 # remove encrypted backup
 rm ~/${backup_filename}.gpg

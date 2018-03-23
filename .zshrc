@@ -44,8 +44,10 @@ HIST_STAMPS="mm/dd/yyyy"
 # github.com/zsh-users/zsh-syntax-highlighting
 plugins=(git bundler zsh-syntax-highlighting docker)
 
-# Ruby/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
+# rbenv
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 ####################
 # CUSTOM FUNCTIONS #
@@ -223,3 +225,6 @@ alias m='neomutt'
 
 cd ~
 setterm --foreground yellow --bold on --store 2> /dev/null
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
