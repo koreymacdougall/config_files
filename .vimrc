@@ -4,6 +4,7 @@
 
 " Plug - auto install if not present
 " Note that PlugInstall will manually install any new plugins
+" and that PlugClean will remove any commented out plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
 	\	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -47,6 +48,8 @@ call plug#begin()
     Plug 'SirVer/ultisnips'
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
+    " vim interface to notmuch
+    "Plug 'felipec/notmuch-vim'
 call plug#end()
 
 " make sure dot files how up in ctrlp
@@ -91,15 +94,17 @@ au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
 
 " setup markdown levels for folding
+" the bang was added bc sourcing this file throws a time-wasting error
 " TODO - find reference for this
-function MarkdownLevel()
+function! MarkdownLevel()
     let h = matchstr(getline(v:lnum), '^#\+')
-    if empty(h) 
+    if empty(h)
         return "="
-    else 
+    else
         return ">" . len(h)
     endif
 endfunction
+
 " use custom folding setup for markdown files
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 au BufEnter *.md setlocal foldmethod=expr
@@ -250,12 +255,20 @@ let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
 nnoremap <leader><leader> z=i1<cr><cr>
 
 """"""""""""""""""""
-" CUSTOM MAPPINGS ""
+"" CUSTOM MAPPINGS "
 """"""""""""""""""""
-
 " remap semi-colon and colon in normal mode
 nnoremap ; :
 nnoremap : ;
+
+" source current file
+nnoremap <leader>s :source %<CR>
+
+" notmuch mappings - because I couldn't get notmuch-vim (plugin) to work
+    " search
+    nnoremap <leader>ns :r !notmuch search 
+    " show
+    nnoremap <leader>nn qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt
 
 " use leader-cc for cursorcolumn
 nnoremap <leader>cc :set cursorcolumn!<CR>
@@ -279,11 +292,11 @@ inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
     " nnoremap <leader>cc a/**/<left><left>
 
 " reformat entire file - gq is format cmd
-nnoremap <leader>q gggqG<C-O><C-O>
+" deprecated - use gq%
+"nnoremap <leader>q gggqG<C-O><C-O>
 
 " map leader-f to open netrw/file broswer in vsplit 
 nnoremap <leader>f :Vex<cr>
-
 
 " quick edit config files
 " vimrc, zshrc, bashrc, cheatsheet, muttrc
@@ -394,7 +407,8 @@ augroup end
 let g:UltiSnipsExpandTrigger="<S-Tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-nnoremap <leader>s :UltiSnipsEdit<CR>
+" quickly edit the UltiSnips file for this file type
+nnoremap <leader>es :UltiSnipsEdit<CR>
 
 " air-line
 if !exists('g:airline_symbols')
@@ -453,3 +467,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline_section_b
 let g:airline#extensions#branch#enabled = 1
+
+" Manually add the notuch-vim loc to the runtime path"
+"set runtimepath^=~/.vim/bundle/notmuch-vim/notmuch.vim
+
