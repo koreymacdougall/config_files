@@ -9,6 +9,11 @@
 #####  SHELL  ######
 ####################
 
+# grep with context
+    - -C [n] switch
+    - e.g., grep -C 2 cool_phrase cool_file
+
+
 # view active shell
     - echo $0
 
