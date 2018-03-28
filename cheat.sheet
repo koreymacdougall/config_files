@@ -126,6 +126,13 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ######  VIM  #######
 ####################
 
+# go to first column
+    - 0
+
+# Increment / decrement
+    - Ctrl-a  / Ctrl-x
+    - works anywhere on line
+
 # check which options vim was compiled with
     - :version
 
