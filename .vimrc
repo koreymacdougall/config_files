@@ -11,19 +11,19 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall
 endif
 
+
 " Plug functionality, load the plugings at runtime
 call plug#begin()
     " List of Plugins"
     Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-rails'
+    Plug 'tpope/vim-rails', { 'on': [] }
+    Plug 'vim-ruby/vim-ruby'
     " rhubarb provides support for fugitive's Gbrowse for github
     Plug 'tpope/vim-rhubarb'
     " fugitive is a git wrapper
     Plug 'tpope/vim-fugitive'
     " obsolete? need to simlink to /.vim/plugged/xmledit/ftplugin, ln -s xml.vim html.vim
     Plug 'vim-scripts/xmledit'
-    " airline is a status-line plugin, modeled after powerline
-    Plug 'vim-airline/vim-airline'
     " gitgutter tracks lines that have been added/removed/changed
     Plug 'airblade/vim-gitgutter'
     " autoclose completes brackets, quotes, etc
@@ -48,9 +48,24 @@ call plug#begin()
     Plug 'SirVer/ultisnips'
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
-    " vim interface to notmuch
-    "Plug 'felipec/notmuch-vim'
+    " autocompletion engine
+    " wait to lazy load it (see greg hurrells optimizing screencast)
+    Plug 'Valloric/YouCompleteMe', { 'on': [] }
+    " vim-gitbranch
+    Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
+
+" lax these modules below lazily"
+
+" set time before screen is updated
+set updatetime=500
+""au CursorHold * :echo "ecasdc"
+  ""autocmd CursorHold call plug#load('vim-rails') \ | autocmd! load_vim-rails
+""autocmd CursorHold * call plug#load('YouCompleteMe') | call youcompleteme#Enable() 
+" augroup load_slow_plugins
+"   autocmd CursorHold * call plug#load('vim-airline')
+"   " autocmd! CursorHold
+" augroup END
 
 " make sure dot files how up in ctrlp
 let g:ctrlp_show_hidden=1
@@ -58,9 +73,6 @@ let g:ctrlp_show_hidden=1
 """"""""""""""""""""
 """"" SETTINGS """""
 """"""""""""""""""""
-
-" shorten time (ms) before screen is updated, done for gitgutter
-set updatetime=250
 
 " append project root dir and subdirs to path when opening vim
 " this is useful for filename completion
@@ -81,6 +93,7 @@ set list
 " remap leader to comma
 let mapleader=','
 
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 " folding options
 " use manual folding typically
 set foldmethod=manual
@@ -90,8 +103,9 @@ set foldlevelstart=1
 " set foldclose=all
 
 " save and load folding patterns when exiting/entering a file
-au BufWinLeave *.* mkview
-au BufWinEnter *.* silent loadview
+au BufWinLeave * mkview
+au BufRead * silent! loadview
+" au BufWinEnter * silent! loadview
 
 " setup markdown levels for folding
 " the bang was added bc sourcing this file throws a time-wasting error
@@ -170,6 +184,11 @@ au FileType html,xhtml		setl ofu=htmlcomplete#CompleteTags
 au FileType css				setl ofu=csscomplete#CompleteCSS
 au FileType javascipt		setl ofu=js#CompleteJS
 
+set complete=.,b,u,]
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_rails = 1
+
 " turn on spell checking for emails (mutt)
 autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
 au FileType mail            setlocal spell
@@ -185,6 +204,8 @@ let sh_fold_enabled=1         " sh
 let vimsyn_folding='af'       " Vim script
 let xml_syntax_folding=1      " XML
 
+" define status line - adapted from tpopes
+set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P
 " sets when the last window will have a status line, 2 = always
 set laststatus=2
 
@@ -410,11 +431,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " quickly edit the UltiSnips file for this file type
 nnoremap <leader>es :UltiSnipsEdit<CR>
 
-" air-line
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
 " toggle LimeLight when entering/leaving Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
@@ -422,52 +438,3 @@ autocmd! User GoyoLeave Limelight!
 " mappings to further reduce screen clutter/noise in Goyo
 nnoremap <leader>gg :setl noshowmode noshowcmd nocursorline nocursorcolumn nosi nolist <cr>
 nnoremap <leader>GG :setl showmode showcmd cursorline cursorcolumn si list<cr>
-
-" most of these unicode/powerline old powerline symbols just kept for reference
-" unicode symbols
-let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-"let g:airline_symbols.crypt = '🔒'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.maxlinenr = '☰'
-"let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = ''
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-"let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = ''
-" old vim-powerline symbols
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
-let g:airline_powerline_fonts = 1
-" Airline - enable the list of buffers
-"let g:airline_extensions = ['branch', 'tabline']
-let g:airline#extensions#tabline#enabled = 1
-" Airline - show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline_section_b
-let g:airline#extensions#branch#enabled = 1
-
-" Manually add the notuch-vim loc to the runtime path"
-"set runtimepath^=~/.vim/bundle/notmuch-vim/notmuch.vim
-

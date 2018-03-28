@@ -191,6 +191,7 @@ alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 alias grep='grep --color=always'
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
+alias e='exit'
 
 alias 2560="
 xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
@@ -223,7 +224,8 @@ export GPG_TTY
 
 alias m='neomutt'
 
-cd ~
+# had to disable cd ~ this... was borking my tmux startup script... heh
+#cd ~
 setterm --foreground yellow --bold on --store 2> /dev/null
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

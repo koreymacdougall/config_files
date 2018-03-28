@@ -39,6 +39,13 @@
 ######  TMUX  ######
 ####################
 
+# show pane numbers
+    - prefix - q
+
+# change bg color
+    - set -g window-style 'fg=black,bg=green'
+
+
 # rename-window
     prefix-,
 
