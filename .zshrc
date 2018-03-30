@@ -20,7 +20,7 @@ zstyle ':vcs_info:*' stagedstr "%F{green}●" # default 'S'
 zstyle ':vcs_info:*' unstagedstr "%F{red}●" # default 'U'
 zstyle ':vcs_info:*' use-simple true
 zstyle ':vcs_info:git+set-message:*' hooks git-untracked
-zstyle ':vcs_info:git*:*' formats '[%b%m%c%u%F{6}]' # default ' (%s)-[%b]%c%u-'
+zstyle ':vcs_info:git*:*' formats '[%b %c%u%F{6}]' # default ' (%s)-[%b]%c%u-' %F{6} colorize end bracket
 zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u]' # default ' (%s)-[%b|%a]%c%u-'
 zstyle ':vcs_info:hg*:*' formats '[%m%b]'
 zstyle ':vcs_info:hg*:*' actionformats '[%b|%a%m]'
@@ -30,6 +30,12 @@ zstyle ':vcs_info:hg*:*' get-mq false
 zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks 
 zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
 
++vi-git-untracked(){
+    if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+        git status --porcelain | grep '??' &> /dev/null ; then
+        hook_com[unstaged]+='%F{15}●'
+    fi
+}
 setopt prompt_subst
 # left prompt
 PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f %F{6}${vcs_info_msg_0_}%F{15} '
