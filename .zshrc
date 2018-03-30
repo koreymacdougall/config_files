@@ -2,16 +2,31 @@
 #### SETTINGS ######
 ####################
 
-# run neofetch when opening a shell
-#if [ $(which neofetch) ]; then
-    #neofetch
-#fi
+# much of new settings below are lifted from greg hurrell: 
+# github.com/wincent/wincent/roles/dotfiles/files/zshrc
 
-# oh-my-zsh - path and load
-export ZSH=/home/km/.oh-my-zsh
+# autoload the completion engine
+autoload -U compinit && compinit
+setopt COMPLETE_ALIASES
 
-# load custom zsh theme
-ZSH_THEME="kmac"
+# left prompt
+PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f %# %F{15} '
+
+# right prompt
+ precmd() { RPROMPT="" }
+ function zle-line-init zle-keymap-select {
+   VIM_normal_PROMPT="%F{yellow}%~%f %F{14}[% NORMAL]%  %{$reset_color%}"
+   VIM_insert_PROMPT="%F{yellow}%~%f %F{7}[% INSERT]%  %{$reset_color%}"
+   RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
+   zle reset-prompt
+ }
+
+# Make completion:
+# - Case-insensitive.
+# - Accept abbreviations after . or _ or - (ie. f.b -> foo.bar).
+# - Substring complete (ie. bar -> foobar).
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+setopt nocasematch
 
 # set default terminal to xterm
 export TERMINAL=/usr/bin/xterm
@@ -42,7 +57,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # note to self:  zsh-syntax-highlighting downloaded from
 # github.com/zsh-users/zsh-syntax-highlighting
-plugins=(git bundler zsh-syntax-highlighting docker)
+#plugins=(git bundler zsh-syntax-highlighting docker)
 
 # rbenv
 #if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi &> /dev/null
@@ -160,20 +175,12 @@ bindkey -M vicmd "^A" beginning-of-line
 #  VI-mode TWEAKS  #
 ####################
 #
-# customized prompt for vi-mode
- precmd() { RPROMPT="" }
- function zle-line-init zle-keymap-select {
-   VIM_normal_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-   VIM_insert_PROMPT="%{$fg_bold[cyan]%} [% INSERT]%  %{$reset_color%}"
-   RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
-   zle reset-prompt
- }
 
 zle -N zle-line-init
 zle -N zle-keymap-select
 
 # source oh-my-zsh after resetting prompt
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # bind to vi keys after everything else is loaded
 bindkey -v
@@ -208,6 +215,11 @@ alias ta="tmux attach -t"
 alias ts="tmux new-session -s"
 alias tl="tmux list-sessions"
 
+# git aliases
+alias gst='git status'
+alias gcam='git commit -am'
+alias gd='git diff'
+
 # movement aliases
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
@@ -226,7 +238,7 @@ alias m='neomutt'
 
 # had to disable cd ~ this... was borking my tmux startup script... heh
 #cd ~
-setterm --foreground yellow --bold on --store 2> /dev/null
+#setterm --foreground yellow --bold on --store 2> /dev/null
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

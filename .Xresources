@@ -9,8 +9,8 @@ xterm*eightBitInput: false
 
 ! near black
 *xterm*color0: #282828
-! dark-ish pink
-*xterm*color1: #960050
+! bright pink
+*xterm*color1: #ff0090
 ! bright green 
 *xterm*color2: #66aa11
 ! gold / mustard
@@ -25,8 +25,8 @@ xterm*eightBitInput: false
 *xterm*color7: #9999aa
 ! dark grey
 *xterm*color8: #303030
-! bright pink
-*xterm*color9: #ff0090
+! dark pink
+*xterm*color9: #960050
 ! lime green
 *xterm*color10: #80ff00
 ! pastel peach
@@ -41,10 +41,11 @@ xterm*eightBitInput: false
 ! aqua
 *xterm*color14: #4eb4fa
 ! extra light grey
-*xterm*color15: #d0d0d0
+*xterm*color15: #FFFFFF
+
 
 *xterm*background: #282828
-*xterm*foreground: yellow
+*xterm*foreground: #FFFFFF
 *xterm*cursorColor: #d0d0d0
 
 xterm*boldMode: true
