@@ -9,12 +9,35 @@
 autoload -U compinit && compinit
 setopt COMPLETE_ALIASES
 
-# left prompt
-PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f '
+autoload -U colors && colors
 
-# right prompt
- precmd() { RPROMPT="" }
- function zle-line-init zle-keymap-select {
+# http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
+# via greg hurell
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git hg
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "%F{green}●" # default 'S'
+zstyle ':vcs_info:*' unstagedstr "%F{red}●" # default 'U'
+zstyle ':vcs_info:*' use-simple true
+zstyle ':vcs_info:git+set-message:*' hooks git-untracked
+zstyle ':vcs_info:git*:*' formats '[%b%m%c%u%F{6}]' # default ' (%s)-[%b]%c%u-'
+zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u]' # default ' (%s)-[%b|%a]%c%u-'
+zstyle ':vcs_info:hg*:*' formats '[%m%b]'
+zstyle ':vcs_info:hg*:*' actionformats '[%b|%a%m]'
+zstyle ':vcs_info:hg*:*' branchformat '%b'
+zstyle ':vcs_info:hg*:*' get-revision true
+zstyle ':vcs_info:hg*:*' get-mq false
+zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks 
+zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
+
+setopt prompt_subst
+# left prompt
+PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f %F{6}${vcs_info_msg_0_}%F{15} '
+
+# these commands are run before each prompt refresh
+precmd() { vcs_info RPROMPT="" }
+
+function zle-line-init zle-keymap-select {
    VIM_normal_PROMPT="%F{yellow}%~%f %F{14}[% NORMAL]%  %{$reset_color%}"
    VIM_insert_PROMPT="%F{yellow}%~%f %F{7}[% INSERT]%  %{$reset_color%}"
    RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
@@ -222,6 +245,7 @@ alias gd='git diff'
 alias gp='git push origin master'
 alias gl='git pull origin master'
 alias grv='git remote -v'
+alias co='git checkout'
 
 # movement aliases
 alias mc='cd ~/config_files'
