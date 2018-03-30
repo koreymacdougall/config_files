@@ -10,7 +10,7 @@ autoload -U compinit && compinit
 setopt COMPLETE_ALIASES
 
 # left prompt
-PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f %# %F{15} '
+PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f '
 
 # right prompt
  precmd() { RPROMPT="" }
@@ -219,6 +219,9 @@ alias tl="tmux list-sessions"
 alias gst='git status'
 alias gcam='git commit -am'
 alias gd='git diff'
+alias gp='git push origin master'
+alias gl='git pull origin master'
+alias grv='git remote -v'
 
 # movement aliases
 alias mc='cd ~/config_files'

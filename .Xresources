@@ -26,7 +26,8 @@ xterm*eightBitInput: false
 ! dark grey
 *xterm*color8: #303030
 ! dark pink
-*xterm*color9: #960050
+!*xterm*color9: #960050
+*xterm*color9: #ff6666
 ! lime green
 *xterm*color10: #80ff00
 ! pastel peach
