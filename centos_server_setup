@@ -12,4 +12,9 @@
             -there are some perl packages that are not in the main repos
 
 
-
+- to add a new virtualhost:
+    - (make sure dns is pointing to correct IP)
+    - add a log directory at /var/log/httpd/{site_name}
+    - cp and modify an existing site dir in /var/www/html/
+    - modify /etc/httpd/conf.d/vhost.conf
+    - (generate certs for these sites...)

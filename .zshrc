@@ -2,7 +2,7 @@
 #### SETTINGS ######
 ####################
 
-# much of new settings below are lifted from greg hurrell: 
+# many of the settings (zstyle and some opts) are lifted from greg hurrell:
 # github.com/wincent/wincent/roles/dotfiles/files/zshrc
 
 # autoload the completion engine
@@ -22,13 +22,11 @@ zstyle ':vcs_info:*' use-simple true
 zstyle ':vcs_info:git+set-message:*' hooks git-untracked
 zstyle ':vcs_info:git*:*' formats '[%b %c%u%F{6}]' # default ' (%s)-[%b]%c%u-' %F{6} colorize end bracket
 zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u]' # default ' (%s)-[%b|%a]%c%u-'
-zstyle ':vcs_info:hg*:*' formats '[%m%b]'
-zstyle ':vcs_info:hg*:*' actionformats '[%b|%a%m]'
-zstyle ':vcs_info:hg*:*' branchformat '%b'
-zstyle ':vcs_info:hg*:*' get-revision true
-zstyle ':vcs_info:hg*:*' get-mq false
-zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks 
-zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
+# zstyle ':vcs_info:hg*:*' formats '[%m%b]'
+# zstyle ':vcs_info:hg*:*' actionformats '[%b|%a%m]'
+# zstyle ':vcs_info:hg*:*' branchformat '%b'
+# zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks 
+# zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
 
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
@@ -73,8 +71,8 @@ export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1
 
 # terminal history settings
-HISTSIZE=10000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="mm/dd/yyyy"
 
@@ -222,13 +220,17 @@ bindkey -v
 ## were being clobbered by something.  A plugin?
 alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
 alias lk='sudo loadkeys ~/config_files/.swap_esc_capslock.kmap'
+
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
+
+alias history='history 0'
+
 alias grep='grep --color=always'
-alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 alias e='exit'
 
+alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 alias 2560="
 xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
 xrandr --addmode Virtual-1 2560x1080_60.00 ; 
@@ -252,6 +254,7 @@ alias gp='git push origin master'
 alias gl='git pull origin master'
 alias grv='git remote -v'
 alias co='git checkout'
+alias glog='git log --oneline --decorate --color --graph'
 
 # movement aliases
 alias mc='cd ~/config_files'
@@ -268,10 +271,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 alias m='neomutt'
-
-# had to disable cd ~ this... was borking my tmux startup script... heh
-#cd ~
-#setterm --foreground yellow --bold on --store 2> /dev/null
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
