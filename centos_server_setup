@@ -18,3 +18,7 @@
     - cp and modify an existing site dir in /var/www/html/
     - modify /etc/httpd/conf.d/vhost.conf
     - (generate certs for these sites...)
+
+- to allow msmtp / sending mail, need to enable a security linux bool
+    - getsebool -a
+    - setsebool httpd_can_sendmail 1
