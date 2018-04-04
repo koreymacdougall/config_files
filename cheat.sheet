@@ -49,6 +49,7 @@
 
 # change bg color
     - set -g window-style 'fg=black,bg=green'
+    - set -g window-style default
 
 
 # rename-window

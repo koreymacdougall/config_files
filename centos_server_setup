@@ -21,4 +21,5 @@
 
 - to allow msmtp / sending mail, need to enable a security linux bool
     - getsebool -a
-    - setsebool httpd_can_sendmail 1
+    - setsebool -P httpd_can_sendmail 1
+        - P switch makes the rule permament

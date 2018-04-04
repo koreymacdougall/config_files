@@ -289,7 +289,7 @@ nnoremap <leader>s :source %<CR>
     " search
     nnoremap <leader>ns :r !notmuch search 
     " show
-    nnoremap <leader>nn qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt
+    nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt
 
 " use leader-cc for cursorcolumn
 nnoremap <leader>cc :set cursorcolumn!<CR>

@@ -53,6 +53,7 @@ function zle-line-init zle-keymap-select {
 # - Accept abbreviations after . or _ or - (ie. f.b -> foo.bar).
 # - Substring complete (ie. bar -> foobar).
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*:default' menu select=0
 setopt nocasematch
 
 # set default terminal to xterm
