@@ -261,6 +261,12 @@ alias glog='git log --oneline --decorate --color --graph'
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
 
+# alias # cd by .. or ... or ... or mv file ..../.
+alias ".."='cd ..'
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # grab mail alias
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
 

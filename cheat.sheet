@@ -3,7 +3,7 @@
 ####################
 
 # resize font temporarily
-    - ctrl-right click
+    - ctrl right-click
 
 ####################
 #####  SHELL  ######
@@ -20,6 +20,16 @@
 # redo sequence of shell comands
     - fc - this command lets you manipulate history, but also to run a series of shell comamnds
         - e.g., fc 10 20 - this will allow you to edit and then run those 11 commands
+
+####################
+######  RVM  #######
+####################
+
+# rvm
+    list                    - show installed and selected
+    gemset create {name}    - create new gemset
+    use 2.5.0@{name}        - use gemset
+
 
 ####################
 #####  PDFs  #######
@@ -131,6 +141,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ####################
 ######  VIM  #######
 ####################
+
+# generate a range
+    - put =range((11,15))
+    - could also pipe to seq, e.g., :r! seq 10
 
 # go to first column
     - 0
