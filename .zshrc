@@ -106,10 +106,10 @@ ref_clock () {
 
 ## go
 # quickly nav to a dir in home dir
-go () {
-    p=$(find /home/$(whoami)/ -type d -name "$1*" | head -1)
-    cd "$p"
-}
+# go () {
+#     p=$(find /home/$(whoami)/ -type d -name "$1*" | head -1)
+#     cd "$p"
+# }
 
 ## Vim last
 # quickly open latest version in a writing dir
