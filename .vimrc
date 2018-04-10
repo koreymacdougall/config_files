@@ -282,6 +282,9 @@ nnoremap <leader><leader> z=i1<cr><cr>
 nnoremap ; :
 nnoremap : ;
 
+" remap capital Y to behave as D and C do
+nnoremap Y y$
+
 " source current file
 nnoremap <leader>s :source %<CR>
 

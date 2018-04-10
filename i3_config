@@ -218,6 +218,7 @@ bar {
     tray_output primary
     # use tray output for network manager or other applets
     status_command i3status
+    #mode dock
     mode hide
 }
 

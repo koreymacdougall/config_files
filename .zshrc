@@ -260,6 +260,7 @@ alias glog='git log --oneline --decorate --color --graph'
 # movement aliases
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
+alias me='cd ~/email'
 
 # alias # cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'

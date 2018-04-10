@@ -66,7 +66,7 @@ legend:
 
 -!H mousepad tap-touch support:
     - pacman -S synaptics
-    - sudo cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/
+    ``` # cp /usr/share/X11/xorg.conf.d/70-synaptics.conf /etc/X11/xorg.conf.d/ ```
         - Add to first option block (tap for L click, two-fing tap R click):
             - Option "TapButton1" "1"
             - Option "TapButton2" "3"
@@ -102,8 +102,8 @@ legend:
     cp /etc/netctl/example/ethernet-dhcp /etc/netctl/INTERFACE-ethernet-dhcp
     #edit profile so that interface name matches
     chmod 600 INTERFACE-ethernet-dhcp
-    sudo netctl start INTERFACE-ethernet-dhcp
-    sudo netctl enable INTERFACE-ethernet-dhcp
+    ``` # netctl start INTERFACE-ethernet-dhcp ```
+    ``` # netctl enable INTERFACE-ethernet-dhcp ```
 
   For vbox VMs, install guest additions:
     pacman -S virtualbox-guest-utils   
@@ -201,7 +201,7 @@ legend:
         10. bumblebee status - simple status bar
             - git clone git://github.com/tobi-wan-kenobi/bumblebee-status
             - various dependencies to be pip-installed:
-                (if pip not installed - sudo pacman -S python-pip)
+                (if pip not installed - pacman -S python-pip)
                 -requests, psutil, netifaces, i3ipc
             - mv aur_builds/bumblebee-status folder to
               ~/.config/i3/bumblebee-status (see i3 status command for
@@ -227,19 +227,15 @@ legend:
 
 !HV Extra Program configurations:
 
-setup oh-my-zsh
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-Icecat:
-    - install vimperator
-
--!V for email vm, install icedove (or thunderbird ) and cronie
-    - cronie is cron implementation
-    - fill in email_backup_script_archive
-
 clone this repo, run bash mk_sym_links
-    -if only needing vimrc, or other single file (not whole repo) use curl:
-    - curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
+    - if only needing vimrc, or other single file (not whole repo) use curl:
+        $ curl 'https://raw.githubuesrcontent.com/koreymacdougall/config_files/master/.vimrc' > .vimrc
+
+mariadb
+    # pacman -S mariadb
+    # mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+    # systemctl start mysqld
+    # mysql_secure_installation
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=
 

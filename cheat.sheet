@@ -319,3 +319,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - python3 -m venv {env name}
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
+
+####################
+######  TAR  #######
+####################
+
+# list files in a tarball
+    - -t
+
