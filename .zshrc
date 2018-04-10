@@ -268,6 +268,8 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+alias md="mkdir -p"
+
 # grab mail alias
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
 

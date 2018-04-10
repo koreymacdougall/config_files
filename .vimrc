@@ -194,6 +194,7 @@ autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
 au FileType mail            setlocal spell
 au FileType mail            setlocal nocursorcolumn
 au FileType mail            setlocal nohlsearch
+au FileType mail            colorscheme murphy
 
 
 " turn on syntax folding for various languages
