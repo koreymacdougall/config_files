@@ -4,11 +4,11 @@
 ln -sf ~/config_files/.bashrc ~/.bashrc
 
 #vimrc symlink
-ln -sf ~/config_files/.vimrc ~/.vimrc
+ln -sf ~/config_files/vim/.vimrc ~/.vimrc
 
 #.vim/after symlink
 mkdir -p ~/.vim/after/plugin
-ln -sf ~/config_files/.vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
+ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
 
 #zshrc symlink
 ln -sf ~/config_files/.zshrc ~/.zshrc
@@ -18,11 +18,8 @@ ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
 #elinks symlinks
 #first is for mint/lubuntu, second is for arch
-ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
+#ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
 ln -sf ~/config_files/.elinks_conf ~/.elinks.conf
-
-#xmledit plugin for vim - symlink so it works on html & erb
-ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim
 
 #xinit symlink
 ln -sf ~/config_files/.xinitrc ~/.xinitrc
@@ -34,10 +31,10 @@ ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
 ln -sf ~/config_files/.toprc ~/.toprc
 
 # i3 config symlink
-ln -sf ~/config_files/i3_config ~/.config/i3/config
+ln -sf ~/config_files/i3/i3_config ~/.config/i3/config
 
 # i3status/config symlink
-ln -sf ~/config_files/i3status_config ~/.config/i3status/config
+ln -sf ~/config_files/i3/i3_status_config ~/.config/i3status/config
 
 # compton config symlink
 ln -sf ~/config_files/compton.conf ~/.config/compton.conf
@@ -46,29 +43,19 @@ ln -sf ~/config_files/compton.conf ~/.config/compton.conf
  ln -sf ~/config_files/.Xresources ~/.Xresources
 
 # ranger config symlink
-ln -sf ~/config_files/rc.conf ~/.config/ranger/rc.conf
+ln -sf ~/config_files/ranger/rc.conf ~/.config/ranger/rc.conf
 
-# ranger scope symlink (scope controls external scripts)
-# mainly changing to enable pdf previews
-ln -sf ~/config_files/scope.sh ~/.config/ranger/scope.sh
+# ranger commands symlink
+ln -sf ~/config_files/ranger/commands.py ~/.config/ranger/commands.py
 
-# vimperatorrc symlink
-#ln -sf ~/config_files/.vimperatorrc ~/.vimperatorrc
-
-# zsh theme symlink
-ln -sf ~/config_files/kmac.zsh-theme ~/.oh-my-zsh/themes/kmac.zsh-theme
+# ranger scope symlink (scope controls external scripts) ; mainly changing to enable pdf previews
+ln -sf ~/config_files/ranger/scope.sh ~/.config/ranger/scope.sh
 
 # tmux symlink
 ln -sf ~/config_files/.tmux.conf ~/.tmux.conf
 
-# newsboat config symlink
-ln -sf ~/config_files/newsboat_config ~/.newsboat/config
-
-# newsboat url list symlink
-ln -sf ~/config_files/newsboat_urls ~/.newsboat/urls
-
 #ultisnips folder symlink
-ln -sf ~/config_files/UltiSnips/ ~/.vim/UltiSnips
+ln -sf ~/config_files/vim/UltiSnips/ ~/.vim/UltiSnips
 
 # cmus rc symlink
 ln -sf ~/config_files/cmus_rc ~/.config/cmus/rc

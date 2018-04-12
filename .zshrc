@@ -71,6 +71,11 @@ export VISUAL=/usr/bin/vim
 # shorten delay between vi mode switches
 export KEYTIMEOUT=1
 
+# keep a stack of recent dirs
+setopt AUTO_PUSH_D
+setopt PUSHD_IGNORE_DUPS
+DIRSTACKSIZE=20 
+
 # terminal history settings
 HISTSIZE=100000
 SAVEHIST=100000
@@ -202,7 +207,6 @@ bindkey -M vicmd "^A" beginning-of-line
 ####################
 #  VI-mode TWEAKS  #
 ####################
-#
 
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -254,21 +258,30 @@ alias gd='git diff'
 alias gp='git push origin master'
 alias gl='git pull origin master'
 alias grv='git remote -v'
-alias co='git checkout'
+alias git co='git checkout'
 alias glog='git log --oneline --decorate --color --graph'
 
 # movement aliases
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
+alias md='cd ~/Downloads'
 
-# alias # cd by .. or ... or ... or mv file ..../.
+alias 1='cd ~1'
+alias 2='cd ~2'
+alias 3='cd ~3'
+alias 4='cd ~4'
+alias 5='cd ~5'
+alias 6='cd ~6'
+alias 7='cd ~7'
+alias 8='cd ~8'
+alias 9='cd ~9'
+
+# alias cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
-alias md="mkdir -p"
 
 # grab mail alias
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
@@ -282,5 +295,9 @@ export GPG_TTY
 
 alias m='neomutt'
 
+alias d="dirs -v"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
