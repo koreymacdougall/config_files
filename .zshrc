@@ -36,14 +36,14 @@ zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u]' # default ' (%s)-[%b|%a]
 }
 setopt prompt_subst
 # left prompt
-PROMPT='%F{1}%n%F{15}@%F{13}%m%f %B%F{yellow}%1~%f %F{6}${vcs_info_msg_0_}%F{15} '
+PROMPT='%F{9}%n%F{15}@%F{13}%m%f %B%F{10}%1~%f %F{6}${vcs_info_msg_0_}%F{15} '
 
 # these commands are run before each prompt refresh
 precmd() { vcs_info RPROMPT="" }
 
 function zle-line-init zle-keymap-select {
-   VIM_normal_PROMPT="%F{yellow}%~%f %F{14}[% NORMAL]%  %{$reset_color%}"
-   VIM_insert_PROMPT="%F{yellow}%~%f %F{7}[% INSERT]%  %{$reset_color%}"
+   VIM_normal_PROMPT="%F{10}%~%f %F{14}[% NORMAL]%  %{$reset_color%}"
+   VIM_insert_PROMPT="%F{10}%~%f %F{3}[% INSERT]%  %{$reset_color%}"
    RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
    zle reset-prompt
  }
@@ -74,7 +74,7 @@ export KEYTIMEOUT=1
 # keep a stack of recent dirs
 setopt AUTO_PUSH_D
 setopt PUSHD_IGNORE_DUPS
-DIRSTACKSIZE=20 
+DIRSTACKSIZE=20
 
 # terminal history settings
 HISTSIZE=100000
@@ -82,6 +82,8 @@ SAVEHIST=100000
 HISTFILE=~/.zsh_history
 HIST_STAMPS="mm/dd/yyyy"
 
+# load existing pywal colorscheme to new terminals
+#(cat ~/.cache/wal/sequences &)
 ####################
 ####  PLUGINS  ####
 ####################
@@ -276,6 +278,12 @@ alias 6='cd ~6'
 alias 7='cd ~7'
 alias 8='cd ~8'
 alias 9='cd ~9'
+
+# quickly open various config files
+alias vc='vim ~/.vimrc'
+alias vz='vim ~/.zshrc'
+alias vi='vim ~/.config/i3/config'
+alias vm='vim ~/.muttrc'
 
 # alias cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'
