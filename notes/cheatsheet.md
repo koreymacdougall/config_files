@@ -6,6 +6,9 @@
 # CALCURSE
 ## to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
+# COMPTON
+## manually restart:
+    - pkill compton && comtpon --config ~/.config/compton.conf -bc
 # DOCKER
 ## detach from running container
     - ^P ^Q
@@ -17,8 +20,8 @@
         sudo docker system prune -a
 ## run container with interactive shell (first create if needed)
     docker run -i -t {image name} /bin/bash
-        # i - interactive
-        # t - allocate a psuedo tty (from docker docs, not sure whta this means)
+        // i - interactive
+        // t - allocate a psuedo tty (from docker docs, not sure whta this means)
 ## Container and Image Management
 ### Containers
 #### Lifecyle
@@ -212,9 +215,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## chain multiple commands in vim script
     - use pipe |
 ## syntax for UltiSnips to use vimscript
-    `!v execute("command in here | second command")`
-    # note backticks, parens, quotes and optional pipe
-    # execute seems needed to run arbitrary commands, but maybe nt
+    // `!v execute("command in here | second command")`
+    - note backticks, parens, quotes and optional pipe
+    - execute seems needed to run arbitrary commands, but maybe not
 # XTERM
 ## resize font temporarily
     - ctrl right-click

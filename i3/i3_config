@@ -255,14 +255,13 @@ bindsym $mod+Down exec --no-startup-id /usr/bin/pulseaudio-ctl down
 
 # compton for compositing
 exec --no-startup-id compton --config ~/.config/compton.conf -bc &
-# nitrogen for managing wallpapers
-#exec --no-startup-id nitrogen --restore
-# netowrk manager applet; only for physical machine
-#exec --no-startup-id nm-applet --sm-disable
+# TODO toggle transparency
+#bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 
-# title bars for apps
-# new_window pixel 0 for no title
-# new_window normal for basic title bar
+# netowrk manager applet; only for physical machine
+exec --no-startup-id nm-applet --sm-disable
+
+# title bars for apps, pixel 0 = for no title; normal = basic title bar
 new_window pixel 0
 #for_window [class="^.*"] border pixel 0
 

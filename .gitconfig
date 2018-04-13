@@ -19,6 +19,6 @@
     user = koreymacdougall
     # for token, use an env variable; scary intern3ts
 [web]
-	browser = firefox
+    browser = firefox
 [push]
-	default = simple
+    default = simple

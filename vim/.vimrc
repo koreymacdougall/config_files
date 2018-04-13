@@ -11,6 +11,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 	autocmd VimEnter * PlugInstall
 endif
 
+"adding a comment line"
 
 " Plug functionality, load the plugings at runtime
 call plug#begin()
@@ -50,7 +51,7 @@ call plug#begin()
     Plug 'dhruvasagar/vim-table-mode'
     " autocompletion engine
     " wait to lazy load it (see greg hurrells optimizing screencast)
-    Plug 'Valloric/YouCompleteMe', { 'on': [] }
+    ""Plug 'Valloric/YouCompleteMe', { 'on': [] }
     " vim-gitbranch
     Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
@@ -59,6 +60,8 @@ call plug#end()
 
 " set time before screen is updated
 set updatetime=500
+
+" setup lazy loading
 ""au CursorHold * :echo "ecasdc"
   ""autocmd CursorHold call plug#load('vim-rails') \ | autocmd! load_vim-rails
 ""autocmd CursorHold * call plug#load('YouCompleteMe') | call youcompleteme#Enable() 
@@ -68,7 +71,21 @@ set updatetime=500
 " augroup END
 
 " make sure dot files how up in ctrlp
-let g:ctrlp_show_hidden=1
+" not used if ctrlp_user_command is set
+"let g:ctrlp_show_hidden=1
+
+let g:ctrlp_use_caching = 1
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 0
+
+ let g:ctrlp_follow_symlinks=1
+
+ " can't get ag to work correctly 
+ if executable('ag')
+     set grepprg=ag\ --nogroup\ --nocolor
+     let g:ctrlp_user_command = 'ag %s --hidden --nocolor -l -g ""'
+ endif
+
 
 """"""""""""""""""""
 """"" SETTINGS """""
@@ -177,6 +194,10 @@ au FileType ruby,eruby,css,scss set tabstop=2 shiftwidth=2
 
 " turn on syntax completion - C-x C-o
 syntax on
+
+" set regular expression engine to the old one, as it works faster for ruby
+set re=1
+
 filetype plugin indent on
 au FileType php				setl omnifunc=phpcomplete#CompletePHP
 au FileType ruby,eruby		setl ofu=rubycomplete#Complete
@@ -191,9 +212,7 @@ let g:rubycomplete_rails = 1
 
 " turn on spell checking for emails (mutt)
 autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
-au FileType mail            setlocal spell
-au FileType mail            setlocal nocursorcolumn
-au FileType mail            setlocal nohlsearch
+au FileType mail            setlocal spell nocursorcolumn nohlsearch
 au FileType mail            colorscheme murphy
 
 
@@ -248,9 +267,9 @@ endfunction
 au FileType * setlocal foldtext=MyFoldText()
 
 " automatically set the pwd to the dir of open file
-set autochdir
+" set autochdir
 " or try for each buffer
-"autocmdBufEnter * silent! cd %:p:h
+" autocmdBufEnter * silent! cd %:p:h
 
 " comment out all python ##print statements
 nnoremap <leader>p :%s/print(/#print(/<CR>
@@ -264,24 +283,18 @@ let g:livepreview_previewer = 'mupdf'
 let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
 " set default pdf viewer"
 
-
-"### speed maps ###
-"run file: temporary for dol proj
-"note that the external call to xfce4-terminal is b/c xterm flickers here
-"the flicker can apparently be fixed if compiling xterm with
-" --enable-double-buffering (not sure of proper form of the flag) but I've not
-"  figured out how to compile xterm from source on arch or parabola
-"nnoremap <leader><leader> :! xfce4-terminal -e 'python  ./batch_runner.py'  <CR>
-"
-"quick spell check; take first suggestion
-nnoremap <leader><leader> z=i1<cr><cr>
-
 """"""""""""""""""""
 "" CUSTOM MAPPINGS "
 """"""""""""""""""""
 " remap semi-colon and colon in normal mode
 nnoremap ; :
 nnoremap : ;
+
+"quick spell check; take first suggestion
+nnoremap <leader><leader> z=i1<cr><cr>
+
+" use CtrlP to look through full filesystem"
+nnoremap <C-a> <Esc>:CtrlP ~<CR>
 
 " remap capital Y to behave as D and C do
 nnoremap Y y$
@@ -298,27 +311,46 @@ nnoremap <leader>s :source %<CR>
 " use leader-cc for cursorcolumn
 nnoremap <leader>cc :set cursorcolumn!<CR>
 
-" use tab to jump out of closures (quotes, brackets, etc)
-" thanks to Ingo Karkat
-" had removed....forget why; re-adding jan/25/2018
+" Dim inactive windows using 'colorcolumn' setting
+" This tends to slow down redrawing, but is very useful.
+" Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
+" XXX: this will only work with lines containing text (i.e. not '~')
+" from
+" set textwidth=80
+" let &colorcolumn="80,".join(range(120,999),",")
+" highlight ColorColumn ctermbg=111222 guibg=#2c2d27
+
+" if exists('+colorcolumn')
+"   function! s:DimInactiveWindows()
+"     for i in range(1, tabpagewinnr(tabpagenr(), '$'))
+"       let l:range = ""
+"       if i != winnr()
+"         if &wrap
+"          " HACK: when wrapping lines is enabled, we use the maximum number
+"          " of columns getting highlighted. This might get calculated by
+"          " looking for the longest visible line and using a multiple of
+"          " winwidth().
+"          let l:width=256 " max
+"         else
+"          let l:width=winwidth(i)
+"         endif
+"         let l:range = join(range(1, l:width), ',')
+"       endif
+"       call setwinvar(i, '&colorcolumn', l:range)
+"     endfor
+"   endfunction
+"   augroup DimInactiveWindows
+"     au!
+"     au WinEnter * call s:DimInactiveWindows()
+"     au WinEnter * set cursorline
+"    au WinLeave * set nocursorline
+"   augroup END
+" endif
+
+" use tab to jump out of closures (quotes, brackets, etc) ; thanks to Ingo Karkat
+" had removed bc tabbing on opening closure will not tab code out; should use >> anyway 
+" re-adding jan/25/2018
 inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
-
-" Snippets
-" deprecated; now using ultisnips
-    " auto insert eruby tags
-    " insert embedded ruby w/ display tag
-    " nnoremap <leader>er i<%=  %><left><left><left>
-    " insert embedded ruby tag
-    " nnoremap <leader>ER i<%  %><cr><cr><% end %><up><up><left><left><left>
-" deprecated (replaced by tcomment plugin)custom comments for html and css deprecated"
-    " " insert html comment
-    " nnoremap <leader>wc a<!----><left><left><left>
-    " " insert css comment
-    " nnoremap <leader>cc a/**/<left><left>
-
-" reformat entire file - gq is format cmd
-" deprecated - use gq%
-"nnoremap <leader>q gggqG<C-O><C-O>
 
 " map leader-f to open netrw/file broswer in vsplit 
 nnoremap <leader>f :Vex<cr>
@@ -332,11 +364,11 @@ nnoremap <leader>f :Vex<cr>
     " zshrc
     nnoremap <leader>ez :e ~/.zshrc<cr>
     " cheat.sheet
-    nnoremap <leader>ec :e ~/config_files/cheat.sheet<cr>
+    nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>
     " muttrc
     nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>
     " i3 config
-    nnoremap <leader>ei :e ~/config_files/i3_config<cr>
+    nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>
 
 " buffer navigation / manipulation
     " open a new empty buffer
@@ -408,25 +440,23 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " TABLEMODE settings"
 nnoremap <leader>tm :TableModeToggle<CR>
-" ** Table Mode Remappings ** "
-augroup table_mode_on_mappings
-    au!
-    "au User TableModeEnabled :put='table mode on'
-    " remap carriage return while in TableMode to auto-inesrt a pipe on new line
-    au User TableModeEnabled inoremap <CR> \|<CR>\|
-    " remap o (for newline) while in TableMode to new line and auto-inesrt a pipe on new line
-    au User TableModeEnabled nnoremap o o\|
-    " remap tab while in TableMode to auto-insert a pipe
-    au User TableModeEnabled inoremap <TAB> \|
-augroup end
+"Key Remappings
+  augroup table_mode_on_mappings
+      au!
+      " remap carriage return while in TableMode to auto-inesrt a pipe on new line
+      au User TableModeEnabled inoremap <CR> \|<CR>\|
+      " remap o (for newline) while in TableMode to new line and auto-inesrt a pipe on new line
+      au User TableModeEnabled nnoremap o o\|
+      " remap tab while in TableMode to auto-insert a pipe
+      au User TableModeEnabled inoremap <TAB> \|
+  augroup end
 
-augroup table_mode_off_mappings
-    au!
-    "au User TableModeDisabled :put='table mode off'
-    au User TableModeDisabled iunmap <CR>
-    au User TableModeDisabled nunmap o
-    au User TableModeDisabled iunmap <TAB>
-augroup end
+  augroup table_mode_off_mappings
+      au!
+      au User TableModeDisabled iunmap <CR>
+      au User TableModeDisabled nunmap o
+      au User TableModeDisabled iunmap <TAB>
+  augroup end
 
 " ultisnips trigger configuration"
 let g:UltiSnipsExpandTrigger="<S-Tab>"

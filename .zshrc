@@ -280,10 +280,13 @@ alias 8='cd ~8'
 alias 9='cd ~9'
 
 # quickly open various config files
-alias vc='vim ~/.vimrc'
+alias vv='vim ~/.vimrc'
+alias vc='vim ~/config_files/notes/cheatsheet.md'
 alias vz='vim ~/.zshrc'
 alias vi='vim ~/.config/i3/config'
 alias vm='vim ~/.muttrc'
+alias vr='vim ~/.config/ranger/rc.conf'
+alias vt='vim ~/.tmux.conf"
 
 # alias cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'

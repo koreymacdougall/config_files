@@ -41,7 +41,7 @@ xterm*eightBitInput: false
 *xterm*color13: #bb88dd
 ! aqua
 *xterm*color14: #4eb4fa
-! extra light grey
+! white
 *xterm*color15: #FFFFFF
 
 
