@@ -16,6 +16,7 @@ endif
 " Plug functionality, load the plugings at runtime
 call plug#begin()
     " List of Plugins"
+    " note that { 'on': []}  is syntax for lazy loading
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-rails', { 'on': [] }
     Plug 'vim-ruby/vim-ruby'
@@ -50,10 +51,10 @@ call plug#begin()
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
     " autocompletion engine
-    " wait to lazy load it (see greg hurrells optimizing screencast)
     ""Plug 'Valloric/YouCompleteMe', { 'on': [] }
-    " vim-gitbranch
-    Plug 'dhruvasagar/vim-table-mode'
+    " syntax highlighting for solidity
+    Plug 'tomlion/vim-solidity'
+
 call plug#end()
 
 " lax these modules below lazily"

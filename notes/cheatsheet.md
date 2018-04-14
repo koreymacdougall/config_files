@@ -218,6 +218,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     // `!v execute("command in here | second command")`
     - note backticks, parens, quotes and optional pipe
     - execute seems needed to run arbitrary commands, but maybe not
+## convert dos/mac to unix file endings 
+    - useful when ^M or other non LF eol chars show up in files
+        - :e ++ff=dos         - Edit file, using dos file format ('fileformats' is ignored)
+        - :setlocal ff=unix   - This buffer will use LF-only line endings when written
+        - :w
 # XTERM
 ## resize font temporarily
     - ctrl right-click
