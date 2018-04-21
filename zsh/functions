@@ -1,0 +1,91 @@
+function zle-line-init zle-keymap-select {
+   VIM_normal_PROMPT="%F{10}%~%f %F{14}[% NORMAL]%  %{$reset_color%}"
+   VIM_insert_PROMPT="%F{10}%~%f %F{3}[% INSERT]%  %{$reset_color%}"
+   RPS1="${${KEYMAP/vicmd/$VIM_normal_PROMPT}/(main|viins)/$VIM_insert_PROMPT} $EPS1"
+   zle reset-prompt
+ }
+
+# github-create
+## create repos on github from the command line
+## thanks to eli fatsi on viget.com
+
+github-create() {
+
+  invalid_credentials = 0
+  echo "Make sure to check for pre-existing remotes!!!!"
+  echo "Fn will fail otherwise, but you won't get an error -- sneaky"
+
+  echo "Also make sure to set export token to env ... "
+
+  repo_name=$1
+
+  dir_name=`basename $(pwd)`
+
+  if [ "$repo_name" = "" ]; then
+  echo "Repo name (hit enter to use '$dir_name')?"
+  read repo_name
+  fi
+
+  if [ "$repo_name" = "" ]; then
+  repo_name=$dir_name
+  fi
+
+  echo "Repo name will be: $repo_name"
+
+  username=`git config github.user`
+  if [ "$username" = "" ]; then
+  echo "Could not find username, run 'git config --global github.user <username>'"
+  invalid_credentials=1
+  fi
+  echo "User name will be: $username"
+
+  #use encrypted github_token in config file repo to set env param
+  gpg -d ~/config_files/github_token.gpg 2>/dev/null | export GITHUB_TOKEN=$(sed -n 2p)
+  token=$GITHUB_TOKEN
+  echo "Token has been set"
+
+  if [ "$token" = "" ]; then
+  echo "Could not find token, run 'git config --global github.token <token>'"
+  invalid_credentials=1
+  fi
+
+  if [ "$invalid_credentials" = "1" ]; then
+  echo "Invalid credentials"
+  return 1
+  fi
+
+  echo -n "Creating Github repository '$repo_name' ..."
+  curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}' > /dev/null 2>&1
+  echo " done."
+
+  echo -n "Pushing local code to remote ..."
+  git remote add origin https://github.com/$username/$repo_name.git > /dev/null 2>&1
+  git push -u origin master > /dev/null 2>&1
+
+  export GITHUB_TOKEN=""
+  echo "clearing env vars..."
+  echo " done."
+}
+
+# ref_clock
+## toggles set-ntp true
+## vm's often don't update clocks properly
+## if suspended for any length of time
+
+ref_clock () {
+    systemctl restart systemd-timesyncd.service
+}
+
+# load nvm
+if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
+  function __init_nvm() {
+    for i in "${__node_commands[@]}"; do unalias $i; done
+    . "$NVM_DIR"/nvm.sh
+    unset __node_commands
+    unset -f __init_nvm
+  }
+  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
+fi

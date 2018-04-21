@@ -11,7 +11,7 @@ mkdir -p ~/.vim/after/plugin
 ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
 
 #zshrc symlink
-ln -sf ~/config_files/.zshrc ~/.zshrc
+ln -sf ~/config_files/zsh/.zshrc ~/.zshrc
 
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
@@ -55,7 +55,9 @@ ln -sf ~/config_files/ranger/scope.sh ~/.config/ranger/scope.sh
 ln -sf ~/config_files/.tmux.conf ~/.tmux.conf
 
 #ultisnips folder symlink
-ln -sf ~/config_files/vim/UltiSnips/ ~/.vim/UltiSnips
+# T switch tells ln to treat any existing link as just a file (stop recursive
+# nesting of UltiSnips dir)
+ln -sfT ~/config_files/vim/UltiSnips/ ~/.vim/UltiSnips
 
 # cmus rc symlink
 ln -sf ~/config_files/cmus_rc ~/.config/cmus/rc

@@ -65,6 +65,10 @@
 #### Info
     history - shows history of an image
     tag - tags an image to a name (local or registry)
+# METADATA
+## mp3 files
+  - strip with id3lib
+  - $ id3convert -s {filename}
 # MUTT
 ## cancel prompt
     - ctrl-g
@@ -223,6 +227,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - :e ++ff=dos         - Edit file, using dos file format ('fileformats' is ignored)
         - :setlocal ff=unix   - This buffer will use LF-only line endings when written
         - :w
+## disable automatic end-of-line insert
+    - open file with "vim -b filename"
+    - :set noeol
+    - save
+    - or add to vimrc - :set nofixendofline
 # XTERM
 ## resize font temporarily
     - ctrl right-click

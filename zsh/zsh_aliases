@@ -1,0 +1,75 @@
+alias xmm='xmodmap ~/config_files/.xmodmap_custom_mappings'
+alias lk='sudo loadkeys ~/config_files/.swap_esc_capslock.kmap'
+
+alias ls='ls --color=auto --group-directories-first'
+alias l='ls --color=auto --group-directories-first'
+alias ll='ls -al --color=auto --group-directories-first'
+
+alias history='history 0'
+
+alias grep='grep --color=always'
+alias e='exit'
+
+alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
+alias 2560="
+xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
+xrandr --addmode Virtual-1 2560x1080_60.00 ; 
+xrandr --output Virtual-1 --mode 2560x1080_60.00"
+
+# i3 power management aliases
+alias logout='i3-msg exit'
+alias suspend='i3lock -c 112233 && systemctl suspend'
+alias lock='i3lock -c 112233'
+
+# tmux aliases; lifted from oh-my-zsh plugin
+alias ta="tmux attach -t"
+alias ts="tmux new-session -s"
+alias tl="tmux list-sessions"
+
+# git aliases
+alias gst='git status'
+alias gcam='git commit -am'
+alias gd='git diff'
+alias gp='git push origin master'
+alias gl='git pull origin master'
+alias grv='git remote -v'
+alias git co='git checkout'
+alias glog='git log --oneline --decorate --color --graph'
+
+# movement aliases
+alias mc='cd ~/config_files'
+alias mm='cd ~/mail_configs'
+alias me='cd ~/email'
+alias md='cd ~/Downloads'
+
+alias 1='cd ~1'
+alias 2='cd ~2'
+alias 3='cd ~3'
+alias 4='cd ~4'
+alias 5='cd ~5'
+alias 6='cd ~6'
+alias 7='cd ~7'
+alias 8='cd ~8'
+alias 9='cd ~9'
+
+# quickly open various config files
+alias vv='vim ~/.vimrc'
+alias vc='vim ~/config_files/notes/cheatsheet.md'
+alias vz='vim ~/.zshrc'
+alias vi='vim ~/.config/i3/config'
+alias vm='vim ~/.muttrc'
+alias vr='vim ~/.config/ranger/rc.conf'
+alias vt='vim ~/.tmux.conf'
+
+# alias cd by .. or ... or ... or mv file ..../.
+alias ".."='cd ..'
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# grab mail alias
+alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
+alias m='neomutt'
+
+alias d="dirs -v"
+

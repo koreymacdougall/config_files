@@ -51,7 +51,7 @@ call plug#begin()
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
     " autocompletion engine
-    ""Plug 'Valloric/YouCompleteMe', { 'on': [] }
+    "Plug 'Valloric/YouCompleteMe', { 'on': [] }
     " syntax highlighting for solidity
     Plug 'tomlion/vim-solidity'
 
@@ -190,8 +190,8 @@ set cursorcolumn
 
 " set tab key to indent 4 spaces
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
-" if filetype is rubu or eruby, use 2 spaces for the tab
-au FileType ruby,eruby,css,scss set tabstop=2 shiftwidth=2
+" if filetype is one of these, use 2 spaces for the tab
+au FileType ruby,eruby,css,scss,javascript,solidity set tabstop=2 shiftwidth=2
 
 " turn on syntax completion - C-x C-o
 syntax on
