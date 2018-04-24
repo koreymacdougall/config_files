@@ -259,11 +259,12 @@ exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 #bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 
 # netowrk manager applet; only for physical machine
-exec --no-startup-id nm-applet --sm-disable
+#exec --no-startup-id nm-applet --sm-disable
 
 # title bars for apps, pixel 0 = for no title; normal = basic title bar
 new_window pixel 0
 #for_window [class="^.*"] border pixel 0
+# i3 upstream (not gaps atm, has default_border to replace new_window)
 
 #i3 gaps settings
 #gaps inner 10

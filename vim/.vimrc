@@ -1,3 +1,5 @@
+source ~/config_files/vim/mappings
+
 """"""""""""""""""""
 " PLUGINS w/ PLUG  "
 """"""""""""""""""""
@@ -148,8 +150,6 @@ au BufEnter *.tex  set foldtext=vimtex#fold#text()
 "au BufEnter *.tex let g:vimtex_fold_enabledmd
 
 
-" use spacebar to toggle folding
-nnoremap  <space> za
 
 " netrw tree view, banner, winsize
 " show netrw split in tree style"
@@ -272,164 +272,14 @@ au FileType * setlocal foldtext=MyFoldText()
 " or try for each buffer
 " autocmdBufEnter * silent! cd %:p:h
 
-" comment out all python ##print statements
-nnoremap <leader>p :%s/print(/#print(/<CR>
-" capital P for uncomment all prints
-nnoremap <leader>P :%s/#print(/print(/<CR>
-
 " latex helpers; specifically vimtex plugin options
 let g:vimtex_view_method = 'mupdf'
 let g:livepreview_previewer = 'mupdf'
 "let g:vimtex_view_forward_search_on_start = 1
 let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
-" set default pdf viewer"
 
-""""""""""""""""""""
-"" CUSTOM MAPPINGS "
-""""""""""""""""""""
-" remap semi-colon and colon in normal mode
-nnoremap ; :
-nnoremap : ;
-
-"quick spell check; take first suggestion
-nnoremap <leader><leader> z=i1<cr><cr>
-
-" use CtrlP to look through full filesystem"
-nnoremap <C-a> <Esc>:CtrlP ~<CR>
-
-" remap capital Y to behave as D and C do
-nnoremap Y y$
-
-" source current file
-nnoremap <leader>s :source %<CR>
-
-" notmuch mappings - because I couldn't get notmuch-vim (plugin) to work
-    " search
-    nnoremap <leader>ns :r !notmuch search 
-    " show
-    nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt
-
-" use leader-cc for cursorcolumn
-nnoremap <leader>cc :set cursorcolumn!<CR>
-
-" Dim inactive windows using 'colorcolumn' setting
-" This tends to slow down redrawing, but is very useful.
-" Based on https://groups.google.com/d/msg/vim_use/IJU-Vk-QLJE/xz4hjPjCRBUJ
-" XXX: this will only work with lines containing text (i.e. not '~')
-" from
-" set textwidth=80
-" let &colorcolumn="80,".join(range(120,999),",")
-" highlight ColorColumn ctermbg=111222 guibg=#2c2d27
-
-" if exists('+colorcolumn')
-"   function! s:DimInactiveWindows()
-"     for i in range(1, tabpagewinnr(tabpagenr(), '$'))
-"       let l:range = ""
-"       if i != winnr()
-"         if &wrap
-"          " HACK: when wrapping lines is enabled, we use the maximum number
-"          " of columns getting highlighted. This might get calculated by
-"          " looking for the longest visible line and using a multiple of
-"          " winwidth().
-"          let l:width=256 " max
-"         else
-"          let l:width=winwidth(i)
-"         endif
-"         let l:range = join(range(1, l:width), ',')
-"       endif
-"       call setwinvar(i, '&colorcolumn', l:range)
-"     endfor
-"   endfunction
-"   augroup DimInactiveWindows
-"     au!
-"     au WinEnter * call s:DimInactiveWindows()
-"     au WinEnter * set cursorline
-"    au WinLeave * set nocursorline
-"   augroup END
-" endif
-
-" use tab to jump out of closures (quotes, brackets, etc) ; thanks to Ingo Karkat
-" had removed bc tabbing on opening closure will not tab code out; should use >> anyway 
-" re-adding jan/25/2018
-inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'
-
-" map leader-f to open netrw/file broswer in vsplit 
-nnoremap <leader>f :Vex<cr>
-
-" quick edit config files
-" vimrc, zshrc, bashrc, cheatsheet, muttrc
-    " vimrc
-    nnoremap <leader>ev :e $MYVIMRC<cr>
-    " bashrc
-    nnoremap <leader>eb :e ~/.bashrc<cr>
-    " zshrc
-    nnoremap <leader>ez :e ~/.zshrc<cr>
-    " cheat.sheet
-    nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>
-    " muttrc
-    nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>
-    " i3 config
-    nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>
-
-" buffer navigation / manipulation
-    " open a new empty buffer
-    nnoremap <leader>T :enew<cr>
-    " move to the next buffer
-    nnoremap <leader>l :bnext<cr>
-    " move to the previous buffer
-    nnoremap <leader>h :bprevious<cr>
-    " close current buffer and move to previous one
-    " similar to closing a tab
-    nnoremap <leader>bq :bp <BAR> bd # <CR>
-
-    " show all open buffers and their status
-    nnoremap <leader>bl :ls<CR>
-
-" mappings to allow quicker navigation of the quickfix list
-" also found in tpope's unimpaired; forget where I grabbed em
-    nnoremap [q :cprevious<CR>
-    nnoremap ]q :cnext<CR>
-    nnoremap [Q :cfirst<CR>
-    nnoremap ]Q :clast<CR>
-
-" mappings to quickly resize splits
-" thanks to Andy Wokula
-" SID appears to be a unique script ID? 
-" an appended var? 
-    nmap         <C-W>+     <C-W>+<SID>winheight
-    nmap         <C-W>-     <C-W>-<SID>winheight
-    nmap         <C-W>>     <C-W>><SID>winwidth
-    nmap         <C-W><     <C-W><<SID>winwidth
-    nn <script>  <SID>winheight+   <C-W>+<SID>winheight
-    nn <script>  <SID>winheight-   <C-W>-<SID>winheight
-    nn <script>  <SID>winwidth>   <C-W>><SID>winwidth
-    nn <script>  <SID>winwidth<   <C-W><<SID>winwidth
-
-    "<Nop> is no action, so this disables the mapping from firing too soon?
-    nmap         <SID>winheight    <Nop>
-    nmap         <SID>winwidth    <Nop>
-
-" allow the . to execute once for each line of a visual selection
-vnoremap . :normal .<CR>
-
-" use asterisk searching in visual mode
-vnoremap * y/<C-R>"<CR>
-
-" map .. to go up one tree level in fugitive git browsing
-" this is from vimcasts...but I can't currently get it to work
-" the mapping itself will work, but the conditional doesn't 
-" seem to evalutate to true
-" probably fugitive's implemenation has changed too much since the vimcast
-" so, just stealing the shortcut idea
-" thanks to Drew Neil
-" autocmd User fugitive
-"     \ if fugitive#buffer().type() =~# '^\(fugitive)$' |
-"     \ nnoremap <buffer>.. :edit %:h<CR> |
-"     \ endif
-nnoremap <buffer> <leader>u :edit %:h<CR>
 " window heght changed for more comfy gstatus
 set previewheight=15
-
 
 " autoclean fugitive objects from buffers
 " thanks to vim casts / Drew Neil
@@ -440,7 +290,6 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 """"""""""""""""""""
 
 " TABLEMODE settings"
-nnoremap <leader>tm :TableModeToggle<CR>
 "Key Remappings
   augroup table_mode_on_mappings
       au!
@@ -464,12 +313,7 @@ let g:UltiSnipsExpandTrigger="<S-Tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " quickly edit the UltiSnips file for this file type
-nnoremap <leader>es :UltiSnipsEdit<CR>
 
 " toggle LimeLight when entering/leaving Goyo
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-
-" mappings to further reduce screen clutter/noise in Goyo
-nnoremap <leader>gg :setl noshowmode noshowcmd nocursorline nocursorcolumn nosi nolist <cr>
-nnoremap <leader>GG :setl showmode showcmd cursorline cursorcolumn si list<cr>
