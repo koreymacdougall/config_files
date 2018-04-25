@@ -85,6 +85,12 @@
 ## clear flag <clear-flag>
     - W (uppercase clears flags)
     - w (lowercase is to add flag)
+## resend a message that was bounced
+  - Esc-e
+## Detach a file (i.e., delete an attachment)
+  - D
+      
+        
 # PDFs
 ## combine pdfs
     - pdfunite in the poppler library combines pdfs
@@ -198,6 +204,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - works anywhere on line
 ## check which options vim was compiled with
     - :version
+## manually install all Plugins
+  - PlugInstall
 ## remove plugin (using vim-plug)
     - comment out unwanted plugin
     - reload vimrc
