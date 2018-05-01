@@ -17,7 +17,7 @@ nnoremap <buffer> <leader>u :edit %:h<CR>|                                      
 nnoremap <leader>tm :TableModeToggle<CR>|                                             "toggle tablemode plugin
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                    "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                 "reenable displays"
-"quick file editing
+"--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                  "edit vimrc
 nnoremap <leader>eb :e ~/.bashrc<cr>|                                                 "edit bashrc
 nnoremap <leader>ez :e ~/.zshrc<cr>|                                                  "edit zshrc
@@ -25,16 +25,16 @@ nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>|                  
 nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>|                                    "edit muttrc
 nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>|                               "edit i3 config
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                               "edit snippets file
-"buffer navigation
+"--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                        "move to the next buffer
 nnoremap <leader>h :bprevious<cr>|                                                    "move to the previous buffer
-"navigate quickfix list,; also found in tpope's unimpaired
+"--navigate quickfix list,; also found in tpope's unimpaired
 nnoremap [q :cprevious<CR>|                                                           "previous quickfix item
 nnoremap ]q :cnext<CR>|                                                               "next quickfix item
 nnoremap [Q :cfirst<CR>|                                                              "first quickfix item
 nnoremap ]Q :clast<CR>|                                                               "last quickfix item
-"resize splits; thanks to Andy Wokula
-"SID appears to be a unique script ID?  an appended var? 
+"--resize splits; thanks to Andy Wokula
+"--SID appears to be a unique script ID?  an appended var? 
 nmap        <C-W>+     <C-W>+<SID>winheight
 nmap        <C-W>-     <C-W>-<SID>winheight
 nmap        <C-W>>     <C-W>><SID>winwidth

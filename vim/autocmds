@@ -1,28 +1,28 @@
-"views
+"--views
 autocmd BufWinLeave * mkview                                                            "save view/folding pattern
 autocmd BufRead * silent! loadview                                                      "load view/folding pattern
-"folding
+"--folding
 autocmd FileType * setlocal foldtext=MyFoldText()                                        "apply foldtext pattern
 autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()                                  "custom folding for markdown files
 autocmd BufEnter *.md setlocal foldmethod=expr
 autocmd FileType ruby,eruby,css,scss,javascript,solidity set tabstop=2 shiftwidth=2      "for these ft's, use 2 spaces for tab
-"omnicomplete engine
+"--omnicomplete engine
 autocmd FileType php                setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby,eruby         setlocal omnifunc=rubycomplete#Complete
 autocmd FileType html,xhtml         setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css                setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType javascipt          setlocal omnifunc=js#CompleteJS
-"fugitive
-autocmd BufReadPost fugitive://* set bufhidden=delete                                    "clean fugitive objects from buffers, thx Drew Neil
-"folding options for .tex files
+"--fugitive
+autocmd BufReadPost fugitive://* set bufhidden=delete                                    "clean fugitive objs from bufferss, thx Drew Neil
+"--folding options for .tex files
 autocmd BufEnter *.tex setlocal foldmethod=expr
 autocmd BufEnter *.tex setlocal foldexpr=vimtex#fold#level(v:lnum)
 autocmd BufEnter *.tex setlocal foldtext=vimtex#fold#text()
-"Mutt settings
+"--Mutt settings
 autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
 autocmd FileType mail            setlocal spell nocursorcolumn nohlsearch
 autocmd FileType mail            colorscheme murphy
-"TABLEMODE settings
+"--TABLEMODE settings
 augroup table_mode_on_mappings
   autocmd!
   autocmd User TableModeEnabled inoremap <CR> \|<CR>\|                                   "map CR to inesrt pipe on new line
@@ -35,6 +35,6 @@ augroup table_mode_off_mappings
   autocmd User TableModeDisabled nunmap o
   autocmd User TableModeDisabled iunmap <TAB>
 augroup end
-"Goyo/Limelight
+"--Goyo/Limelight
 autocmd! User GoyoEnter Limelight                                                       
 autocmd! User GoyoLeave Limelight!
