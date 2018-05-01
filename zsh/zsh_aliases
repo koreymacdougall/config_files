@@ -33,7 +33,6 @@ alias gd='git diff'
 alias gp='git push origin master'
 alias gl='git pull origin master'
 alias grv='git remote -v'
-alias git co='git checkout'
 alias glog='git log --oneline --decorate --color --graph'
 
 # movement aliases
