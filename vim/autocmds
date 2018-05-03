@@ -25,15 +25,17 @@ autocmd FileType mail            colorscheme murphy
 "--TABLEMODE settings
 augroup table_mode_on_mappings
   autocmd!
-  autocmd User TableModeEnabled inoremap <CR> \|<CR>\|                                   "map CR to inesrt pipe on new line
-  autocmd User TableModeEnabled nnoremap o o\| "                                         "map o to new line and insert pipe on new line
-  autocmd User TableModeEnabled inoremap <TAB> \|                                        "map tab TableMode to auto-insert a pipe
+  autocmd User TableModeEnabled inoremap <CR> \|<CR>\||                                   "map CR to inesrt pipe on new line
+  autocmd User TableModeEnabled nnoremap o o\||                                           "map o to new line and insert pipe on new line
+  autocmd User TableModeEnabled inoremap <TAB> \||                                        "map tab TableMode to auto-insert a pipe
+  autocmd User TableModeEnabled set tw=900|                                               "set high tw to stop wrapping
 augroup end
 augroup table_mode_off_mappings
   autocmd!
   autocmd User TableModeDisabled iunmap <CR>
   autocmd User TableModeDisabled nunmap o
   autocmd User TableModeDisabled iunmap <TAB>
+  autocmd User TableModeEnabled set tw=80|                                                "set tw back to 80
 augroup end
 "--Goyo/Limelight
 autocmd! User GoyoEnter Limelight                                                       

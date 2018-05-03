@@ -25,6 +25,7 @@ set previewheight=15                                                            
 set re=1                                                                                         "use old regex engine; better w ruby
 set list                                                                                         "enable listchars
 exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"|                                           "specify listchars
+let g:gitgutter_override_sign_column_highlight = 1                                               "tell git-gutter to leave sign column alone
 let g:limelight_conceal_ctermfg = 'gray'                                                         "set limelight dim color
 let g:ycm_server_python_interpreter = '/usr/bin/python2'                                         "set youcompleteme interpreter
 let mapleader=','                                                                                "use comma as leader key

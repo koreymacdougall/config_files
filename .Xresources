@@ -1,5 +1,5 @@
-xterm*faceName: DejaVu Sans Mono for Powerline
-!xterm*faceName: Hack
+!xterm*faceName: DejaVu Sans Mono for Powerline
+xterm*faceName: Hack
 xterm*faceSize: 9
 term*loginShell: true
 xterm*saveLines: 5000

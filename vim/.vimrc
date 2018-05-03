@@ -6,5 +6,6 @@ source ~/config_files/vim/plug
 
 syntax on|                                           "turn on syntax completion - C-x C-o
 filetype plugin indent on|                           "enable filetype detection, load plugins and indent files
-hi Search ctermfg=green ctermbg=red|                 "search highlighting colours
+highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
+highlight clear SignColumn
 colorscheme gruvbox
