@@ -107,4 +107,5 @@ bind "main" "P" = "save-url-as"
 # save page as source
 bind "main" "S" = "save-as"
 
-
+# show currentl url in goto window
+bind "main" "Ctrl-G" = "goto-url-current"

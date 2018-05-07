@@ -118,10 +118,36 @@
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file
+## pause/resume
+    - ^S / ^Q
+## job control 
+    - ^Z        - suspend process
+    - bg        - continue running process in background
+    - fg        - foreground process
+    - jobs      - list all jobs
+
+    - reptyr - utility to reparent a process
+        2 different methods to use:
+        - method 1:
+            1. ^Z to suspend
+            2. sudo reptyr $PID
+            3. this will hang terminal; ctrl-c, then fg
+            4. process should now be running in new tty
+            5. initial terminal will hang, will close only when you close new
+               terminal
+        - method 2:
+            1. ^Z to suspend
+            2. bg
+            3. disown
+            4. edit these two files to be the same (i.e., contain only a 0):
+                - /etc/sysctl.d/10-ptrace.conf 
+                - /proc/sys/kernel/yama/ptrace_scope
+            5. reptyr $PID
 ## view active shell
     - echo $0
 ## redo sequence of shell comands
-    - fc - this command lets you manipulate history, but also to run a series of shell comamnds
+    - fc = fix command: 
+        - this command lets you manipulate history, but also to run a series of shell comamnds
         - e.g., fc 10 20 - this will allow you to edit and then run those 11 commands
 # TAR
 ## list files in a tarball
@@ -152,7 +178,10 @@ space   -   next layout
 ## view settings
     show-options
     - g - show global settings
-## defaults for pane resizing / default layouts
+## pane resizing
+    :resize-pane -[D,U,L,R] number_of_cells
+    - e.g.,   resize-pane -D 10
+## default pane layouts
     - note that M(eta) key is alt, by def(ault)
 
 prefix M-1  = vertical split, all panes same width
