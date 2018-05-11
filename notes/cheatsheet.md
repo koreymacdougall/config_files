@@ -88,9 +88,29 @@
 ## resend a message that was bounced
   - Esc-e
 ## Detach a file (i.e., delete an attachment)
-  - D
-      
-        
+    - D
+# NODE, NPM, NVM
+## install nvm
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+## nvm - install node
+    - nvm install node
+## nvm - list installed npm versions
+    - nvm ls
+## npm - install package
+    - npm install -g pkg_name
+## npm - uninstall package
+    - npm uninstall -g pkg_name
+## npm - search
+    - npm search pkg_name
+## npm - list pkgs
+    - npm ls (must be in dir where pkg installed)
+    - npm ls -g (list global packages)
+    - npm ls -gl (list global packages detail)
+## npm - update packages
+    - npm update 
+    - npm update -g (update global pkgs)
+## npm - run executables
+    - npm run pkg_name
 # PDFs
 ## combine pdfs
     - pdfunite in the poppler library combines pdfs
@@ -149,6 +169,10 @@
     - fc = fix command: 
         - this command lets you manipulate history, but also to run a series of shell comamnds
         - e.g., fc 10 20 - this will allow you to edit and then run those 11 commands
+## modify brightness
+    - xrandr --output LVDS1 --brightness 0.3
+    - note: doesn't reduce battery usage; mainly useful for external monitor
+
 # TAR
 ## list files in a tarball
     - -t
@@ -220,6 +244,12 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 |-------|-------|
 |   2   |   3   |
 |-------|-------|
+#TRUFFLE
+## migrations
+    - truffle migrate --reset
+        - will reset a running blockchain
+        - migrate will run compile first (saving a step)
+        - after running this, may need to restart console session
 # VIM
 ## disable wrapping
     - set textwidth=0 wrapmargin=0
@@ -269,6 +299,16 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :set noeol
     - save
     - or add to vimrc - :set nofixendofline
+## open files in split
+    - vim -o file1.ext file2.ext
+    - use O (capital O) for vertical splits
+## change tab name
+    - body
+## open with different config / vimrc
+    - vim -u {filename}
+    - vim -u NONE    #don't load vimrc or plugins
+    - vim -u NORC    #load plugins but not vimrc
+
 # XTERM
 ## resize font temporarily
     - ctrl right-click

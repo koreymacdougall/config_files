@@ -5,11 +5,14 @@ alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 
-alias history='history 0'
-
 alias grep='grep --color=always'
-alias e='exit'
 
+alias e='exit'
+alias a='arandr'
+# history 1 will grab all history; without the 1, only last 16
+alias history='history 1'
+
+# resolution shortcuts
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 alias 2560="
 xrandr --newmode '2560x1080_60.00'  230.00  2560 2720 2992 3424 1080 1083 1093 1120 -hsync +vsync; 
@@ -67,7 +70,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # grab mail alias
-alias gm='cd ~/mail_configs && bash ./cryptscript.sh'
+alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
 alias m='neomutt'
 
 alias d="dirs -v"

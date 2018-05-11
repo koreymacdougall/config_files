@@ -1,4 +1,3 @@
-!xterm*faceName: DejaVu Sans Mono for Powerline
 xterm*faceName: Hack
 xterm*faceSize: 9
 term*loginShell: true
@@ -7,43 +6,42 @@ xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*termName: xterm-256color
 xterm*eightBitInput: false
 
-! near black
+! color0 :near black
 *xterm*color0: #282828
-! bright pink
+! color1 :bright pink
 *xterm*color1: #ff0090
-! bright green 
+! color2 :bright green 
 *xterm*color2: #66aa11
-! gold / mustard
+! color3 :gold / mustard
 *xterm*color3: #c47f2c
-! royal blue
-*xterm*color4: #30309b
-! purple
+! color4 :royal blue
+! *xterm*color4: #30309b
+! color4 :red
+*xterm*color4: #AA0000
+! color5 :purple
 *xterm*color5: #7e40a5
-! light / baby blue
+! color6 :light / baby blue
 *xterm*color6: #3579a8
-! light grey
+! color7 :! light grey
 *xterm*color7: #9999aa
-! dark grey
+! color8 :dark grey
 *xterm*color8: #303030
-! dark pink
-!*xterm*color9: #960050
+! color9 :dark pink
 *xterm*color9: #ff6666
-! lime green
+! color10 :lime green
 *xterm*color10: #80ff00
-! pastel peach
+! color11 :pastel peach
 *xterm*color11: #ffba68
 ! purple / blue
-! *xterm*color12: #5f5fee
+! color12 :#fabd2f is gold/yellow
 ! 12 is used by ls for dirs
-! #fabd2f is gold/yellow
 *xterm*color12: #fabd2f
-! light purple
+! color13 :light purple
 *xterm*color13: #bb88dd
-! aqua
+! color14 :aqua
 *xterm*color14: #4eb4fa
-! white
+! color15 :white
 *xterm*color15: #FFFFFF
-
 
 *xterm*background: #282828
 *xterm*foreground: #FFFFFF
