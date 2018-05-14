@@ -10,6 +10,7 @@ set number                                                                      
 set relativenumber                                                                               "relative line numbering
 set hidden                                                                                       "allows buffer to be hidden if modified
 set smartindent autoindent                                                                       "smart indent and autoindent
+set autochdir                                                                                    "change pwd when opening a file
 set wrap linebreak tw=80                                                                         "window wrap, linebreak, textwidth
 set cursorline                                                                                   "highlight active line
 set cursorcolumn                                                                                 "cursorcolumn highlight

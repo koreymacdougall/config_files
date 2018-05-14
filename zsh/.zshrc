@@ -32,7 +32,6 @@ export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
 export TERM=xterm-256color
-[ -n "$TMUX" ] && export TERM=tmux-256color
 
 # setopts
 setopt AUTO_PUSH_D          # keep a stack of recent dirs
