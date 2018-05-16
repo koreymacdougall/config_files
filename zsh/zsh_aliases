@@ -38,6 +38,10 @@ alias gl='git pull origin master'
 alias grv='git remote -v'
 alias glog='git log --oneline --decorate --color --graph'
 
+# rails aliases
+alias rs='rails server'
+alias rc='rails console'
+
 # movement aliases
 alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'

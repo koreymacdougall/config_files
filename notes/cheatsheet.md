@@ -130,10 +130,11 @@
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
 # RVM
-## rvm
-    list                    - show installed and selected
-    gemset create {name}    - create new gemset
-    use 2.5.0@{name}        - use gemset
+    rvm list                    - show installed and selected
+    rvm gemset create {name}    - create new gemset
+    rvm use 2.5.0@{name}        - use gemset
+    rvm 2.5.0 --default     - set deafult ruby
+                     -
 # SHELL
 ## grep with context
     - -C [n] switch
@@ -150,11 +151,13 @@
         2 different methods to use:
         - method 1:
             1. ^Z to suspend
-            2. sudo reptyr $PID
-            3. this will hang terminal; ctrl-c, then fg
-            4. process should now be running in new tty
-            5. initial terminal will hang, will close only when you close new
-               terminal
+            2. in new (target) terminal, run:
+                sudo reptyr -T $PID
+                note: this will hang the new terminal 
+            3. in new terminal, run:
+                ctrl-c, then fg
+                note: process should now be running in new terminal
+                note: initial terminal will hang, will close when you close new terminal
         - method 2:
             1. ^Z to suspend
             2. bg
@@ -187,11 +190,13 @@
     S   -   vertical stack /horizontal split
     q   -   show pane numbers
 space   -   next layout
+ UDLR   -   move to pane, up/down/left/right
 ## change bg color
     - set -g window-style 'fg=black,bg=green'
     - set -g window-style default
 ## move another pane to current window
-    join-pane [-hv] -s :1
+    - prefix V / S
+    - join-pane [-hv] -s :1
     - h for horizontal stack (i.e., vert split) (prefix+V)
     - v for vert stack (i.e., horizont split) (prefix+S)
 ## copying text
@@ -199,6 +204,8 @@ space   -   next layout
     Space = start copy mode
     Enter = copy selection
     prefix-] = paste
+## enable clock mode
+    prefix-t
 ## view settings
     show-options
     - g - show global settings

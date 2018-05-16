@@ -13,6 +13,8 @@ ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/
 #zshrc symlink
 ln -sf ~/config_files/zsh/.zshrc ~/.zshrc
 
+# inputrc - added so that IRB will use vi-mode
+ln -sf ~/config_files/.inputrc ~/.inputrc
 #gitconfig symlink
 ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
