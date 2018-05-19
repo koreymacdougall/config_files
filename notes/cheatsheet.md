@@ -1,6 +1,12 @@
 # ARCH
 ## downgrade pkg
-    pacman -U /var/cache/pacman/pkg/old-pkg-version
+    - if previously intstalled:
+        -pacman -U /var/cache/pacman/pkg/old-pkg-version
+    - if not previously installed:
+        - pacman -U https://archive.archlinux.org/packages/{some_letter}/some_pkg_name.tar.gz
+
+    - to temporarily ignore updates to a pkg that has been downgraded, add pkg to IgnorePkg section of /etc/pacman.conf
+
 ## view dep tree
     - pactree
 # CALCURSE
@@ -65,6 +71,8 @@
 #### Info
     history - shows history of an image
     tag - tags an image to a name (local or registry)
+# FLASH
+    - can use lightspark, available as standalone and broswer extensoin
 # METADATA
 ## mp3 files
   - strip with id3lib

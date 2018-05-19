@@ -30,7 +30,9 @@ exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"|                          
 let g:gitgutter_override_sign_column_highlight = 1                                               "tell git-gutter to leave sign column alone
 let g:limelight_conceal_ctermfg = 'gray'                                                         "set limelight dim color
 let g:ycm_server_python_interpreter = '/usr/bin/python2'                                         "set youcompleteme interpreter
+let g:ycm_seed_identifiers_with_syntax = 1
 let mapleader=','                                                                                "use comma as leader key
+
 "syntax folding
 let javaScript_fold=1                                                                            "JavaScript
 let php_folding=1                                                                                "PHP

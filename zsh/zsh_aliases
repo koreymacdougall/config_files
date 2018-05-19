@@ -25,9 +25,14 @@ alias suspend='i3lock -c 112233 && systemctl suspend'
 alias lock='i3lock -c 112233'
 
 # tmux aliases; lifted from oh-my-zsh plugin
+alias t="tmux"
 alias ta="tmux attach -t"
 alias ts="tmux new-session -s"
 alias tl="tmux list-sessions"
+
+# pacman aliases
+alias sps='sudo pacman -S'
+alias pss='pacman -Ss'
 
 # git aliases
 alias gst='git status'
@@ -37,10 +42,6 @@ alias gp='git push origin master'
 alias gl='git pull origin master'
 alias grv='git remote -v'
 alias glog='git log --oneline --decorate --color --graph'
-
-# rails aliases
-alias rs='rails server'
-alias rc='rails console'
 
 # movement aliases
 alias mc='cd ~/config_files'
@@ -66,6 +67,10 @@ alias vi='vim ~/.config/i3/config'
 alias vm='vim ~/.muttrc'
 alias vr='vim ~/.config/ranger/rc.conf'
 alias vt='vim ~/.tmux.conf'
+
+# rails aliases
+alias rs='rails server'
+alias rc='rails console'
 
 # alias cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'
