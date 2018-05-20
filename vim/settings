@@ -57,9 +57,10 @@ let g:livepreview_previewer = 'mupdf'
 let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
 "let g:vimtex_view_forward_search_on_start = 1
 " ultisnips
-let g:UltiSnipsExpandTrigger="<S-Tab>"|                                                          "trigger key
-let g:UltiSnipsJumpForwardTrigger="<c-j>"|                                                       "move to next field
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"                                                       "move to previous field
+let g:UltiSnipsExpandTrigger="<S-Tab>"                                                          "trigger key
+let g:UltiSnipsJumpForwardTrigger="<c-j>"                                                       "move to next field
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"                                                      "move to previous field
+let g:UltiSnipsSnippetDirectories=['/home/km/config_files/vim/UltiSnips/']                              "use custom dir for snippets
 "ctrlp
 let g:ctrlp_use_caching = 1|                                                                     "cache filelist
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'|                                                   "store cache in home

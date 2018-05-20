@@ -14,7 +14,7 @@
     -specify date as month/day (e.g., 1/1 for jan 1)
 # COMPTON
 ## manually restart:
-    - pkill compton && comtpon --config ~/.config/compton.conf -bc
+    - pkill compton && compton --config ~/.config/compton.conf -bc
 # DOCKER
 ## detach from running container
     - ^P ^Q
@@ -138,18 +138,24 @@
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
 # RVM
-    rvm list                    - show installed and selected
+    rvm list/ls                 - show installed and selected
+    rvm install {version}       - install new ruby
     rvm gemset create {name}    - create new gemset
     rvm use 2.5.0@{name}        - use gemset
-    rvm 2.5.0 --default     - set deafult ruby
-                     -
+    rvm 2.5.0 --default         - set deafult ruby
+
+
 # SHELL
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file
 ## pause/resume
     - ^S / ^Q
+## open link from terminal
+    xdg-open {link address}
+    can be combined, e.g.: cat file | tail -n 1 | xargs xdg-open 
 ## job control 
+
     - ^Z        - suspend process
     - bg        - continue running process in background
     - fg        - foreground process
@@ -266,6 +272,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## grab next/prev keyword
+    - ^n / ^ p
+    - like ^x- ^n/^p but faster if only grabbing from current buffer
 ## disable wrapping
     - set textwidth=0 wrapmargin=0
 ## generate a range

@@ -71,6 +71,9 @@ legend:
             - Option "TapButton1" "1"
             - Option "TapButton2" "3"
 
+        - for horizontal scrolling:
+            Option "HorizTwoFingerScroll" true
+
 =#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
 -!H Configure Host Machine Power / Network management (after rebooting):
@@ -223,6 +226,19 @@ legend:
         after graphical setup, reboot
         ## 
 
+        13. xterm may not fully work without some work with the fonts.  If
+        crashing on ctrl-right click, do this:
+
+        cd /usr/share/fonts/100dpi/
+        sudo mkfontdir
+        xset fp+ /usr/share/fonts/100dpi
+
+        To add the path permanently, add
+        FontPath /usr/share/fonts/100dpi
+        to .xintrc
+
+        note:
+        install xorg-xprop and xorg-xbacklight
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=
 
 !HV Extra Program configurations:

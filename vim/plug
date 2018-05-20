@@ -42,7 +42,7 @@ call plug#begin()
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
     " autocompletion engine
-    Plug 'Valloric/YouCompleteMe'
+    " Plug 'Valloric/YouCompleteMe'
     " syntax highlighting for solidity
     Plug 'tomlion/vim-solidity'
     " gruvbox colortheme

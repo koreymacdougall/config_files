@@ -18,7 +18,6 @@ nnoremap <buffer> <leader>u :edit %:h<CR>|                                      
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
-" nnoremap <leader>ac :
 "--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                 "edit vimrc
 nnoremap <leader>eb :e ~/.bashrc<cr>|                                                "edit bashrc

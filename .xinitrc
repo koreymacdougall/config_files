@@ -17,6 +17,8 @@ xinput set-button-map 10 1 2 3 5 4 6 7 8 9 10 11 12
 # this reduces the defaut sensitivty of the trackpad
 xinput set-prop "DLL0704:01 06CB:76AE Touchpad" "Synaptics Finger" 25 30 30
 
+FontPath /usr/share/fonts/100dpi
+
 # running WM after remapping keys seems to work better
 exec i3
 

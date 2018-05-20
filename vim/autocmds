@@ -7,6 +7,7 @@ autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()                         
 autocmd BufEnter *.md setlocal foldmethod=expr
 "autocmd FileType ruby,eruby,css,scss,javascript,solidity set tabstop=2 shiftwidth=2      "for these ft's, use 2 spaces for tab
 autocmd FileType ruby,eruby,css,scss,javascript set tabstop=2 shiftwidth=2 expandtab      "for these ft's, use 2 spaces for tab
+autocmd FileType ruby nnoremap <leader>r :! clear &&  ruby %<CR>|               "execute ruby file and show output
 "--omnicomplete engine
 autocmd FileType php                setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType ruby,eruby         set omnifunc=rubycomplete#Complete
