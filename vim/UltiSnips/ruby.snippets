@@ -1,7 +1,21 @@
-snippet d "insert a new ruby function"
+snippet def "insert a new ruby function"
 def ${1:fn_name}(${2:fn_args})
 	$0
 end
 endsnippet
 
+snippet concern "insert concern template"
+module Concerns::${1:Name_of_Concern}
+  extend ActiveSupport::Concern
+
+  included do
+    has_many :foos, as: :fooable, dependent: :destroy
+  end
+
+  def func1
+    func_logic
+  end
+end
+$0
+endsnippet
 

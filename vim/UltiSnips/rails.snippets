@@ -1,0 +1,25 @@
+snippet rails_test "insert a new rails test"
+require 'test_helper'
+
+# Example: UserTest w/ 3 tests
+
+class UserTest < ActiveSupport::TestCase
+  test 'valid user' do
+    user = User.new(name: 'John', email: 'john@example.com')
+    assert user.valid?
+  end
+
+  test 'invalid without name' do
+    user = User.new(email: 'john@example.com')
+    refute user.valid?, 'user is valid without a name'
+    assert_not_nil user.errors[:name], 'no validation error for name present'
+  end
+
+  test 'invalid without email' do
+    user = User.new(name: 'John')
+    refute user.valid?
+    assert_not_nil user.errors[:email]
+  end
+end
+endsnippet
+

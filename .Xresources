@@ -1,6 +1,5 @@
-# face - DejaVu Sans Mono for non-free systems
-#      - hack for free systems (with ttf-liberation-fonts, i think)
-xterm*faceName: DejaVu Sans Mono
+! face - DejaVu Sans Mono for non-free systems
+!      - hack for free systems (with ttf-liberation-fonts, i think)
 xterm*faceName: DejaVu Sans Mono
 xterm*faceSize: 12
 term*loginShell: true

@@ -137,10 +137,13 @@
         - python3 -m venv {env name}
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
+# RUBY
+    gem query --local           - list installed gems
 # RVM
     rvm list/ls                 - show installed and selected
     rvm install {version}       - install new ruby
     rvm gemset create {name}    - create new gemset
+    rvm gemset list             - list all gemsets
     rvm use 2.5.0@{name}        - use gemset
     rvm 2.5.0 --default         - set deafult ruby
 

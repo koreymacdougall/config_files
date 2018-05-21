@@ -239,6 +239,11 @@ legend:
 
         note:
         install xorg-xprop and xorg-xbacklight
+
+        note:
+        install fzf for awesome fuzzy search in command line
+        - git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+        - ~/.fzf/install
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=
 
 !HV Extra Program configurations:
