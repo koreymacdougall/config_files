@@ -213,9 +213,9 @@ space   -   next layout
     - set -g window-style default
 ## move another pane to current window
     - prefix V / S
-    - join-pane [-hv] -s :1
-    - h for horizontal stack (i.e., vert split) (prefix+V)
-    - v for vert stack (i.e., horizont split) (prefix+S)
+        - command: join-pane [-hv] -s :1
+        - h for horizontal stack (i.e., vert split) (prefix+V)
+        - v for vert stack (i.e., horizont split) (prefix+S)
 ## copying text
     prefix-[ = enter movement/copy mode
     Space = start copy mode

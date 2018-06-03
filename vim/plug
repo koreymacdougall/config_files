@@ -47,6 +47,8 @@ call plug#begin()
     Plug 'tomlion/vim-solidity'
     " gruvbox colortheme
     Plug 'morhetz/gruvbox'
+    " calendar mode for vim
+    Plug 'mattn/calendar-vim'
 call plug#end()
 
 "lazy loading

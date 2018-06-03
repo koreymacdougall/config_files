@@ -67,6 +67,7 @@ alias vi='vim ~/.config/i3/config'
 alias vm='vim ~/.muttrc'
 alias vr='vim ~/.config/ranger/rc.conf'
 alias vt='vim ~/.tmux.conf'
+alias vn='vim ~/notes'
 
 # rails aliases
 alias rs='rails server'
