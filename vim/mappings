@@ -8,6 +8,7 @@ nnoremap Y y$|                                                                  
 nnoremap <c-n> :%s///g<left><left>|                                                  "use ctrl-n to replace all star-searched terms
 nnoremap <space> za|                                                                 "use spacebar to toggle folding
 nnoremap <leader><leader> z=i1<cr><cr>|                                              "quick spell check; take first suggestion
+nnoremap <leader>d :read ! date --iso-8601<cr>|                                      "insert date YYYY-MM-DD
 nnoremap <leader>p :%s/print(/#print(/<CR>|                                          "comment out all python ##print statements
 nnoremap <leader>P :%s/#print(/print(/<CR>|                                          "uncomment all prints
 nnoremap <leader>ns :r !notmuch search|                                              "notmuchsearch
@@ -55,4 +56,5 @@ vnoremap * y/<C-R>"<CR>|                                                        
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "INSERT MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'|             "tab out of closures; thanks to Ingo Karkat
+inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'|               "tab out of closures; thanks to Ingo Karkat
+inoremap <C-d> <esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>a <C-r>x| "insert date inline
