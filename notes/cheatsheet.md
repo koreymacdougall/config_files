@@ -23,7 +23,7 @@
     see: https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
     - sudo docker rmi $(sudo docker images -a --filter=dangling=true -q)
     - possible alternative, but check docs
-        sudo docker system prune -a
+        = sudo docker system prune -a
 ## run container with interactive shell (first create if needed)
     docker run -i -t {image name} /bin/bash
         // i - interactive
@@ -193,6 +193,10 @@
     - xrandr --output LVDS1 --brightness 0.3
     - note: doesn't reduce battery usage; mainly useful for external monitor
 
+# SFTP
+    - if trying to recursively put directory(ies), the dirs must already exist
+        on target
+    - good to know for sftp management of web hosts
 # TAR
 ## list files in a tarball
     - -t
@@ -268,7 +272,7 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 |-------|-------|
 |   2   |   3   |
 |-------|-------|
-#TRUFFLE
+# TRUFFLE
 ## migrations
     - truffle migrate --reset
         - will reset a running blockchain
@@ -300,6 +304,12 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :scriptnames
 ## open link under cursor in browser
     - gx
+## TableMode
+    - to align, use : in desired spot in header. e.g.,
+        | header left |       header center       | header right |
+        |-------------+:-------------------------:+-------------:|
+        | col left    | col center very long text |    col_right |
+        | left        |           center          |        right |
 ## command line window (with normal mode powers like move/cw/etc)
     ctrl-f - from command mode
     q:, q/, q? - from normal mode
