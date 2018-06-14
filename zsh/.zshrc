@@ -92,3 +92,4 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # tabtab source for electron-forge package
 # uninstall by removing these lines or running `tabtab uninstall electron-forge`
 [[ -f /home/km/dev/blockchain/test2/ganache/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/km/dev/blockchain/test2/ganache/node_modules/tabtab/.completions/electron-forge.zsh
+!

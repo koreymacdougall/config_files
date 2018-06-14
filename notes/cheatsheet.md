@@ -4,8 +4,9 @@
         -pacman -U /var/cache/pacman/pkg/old-pkg-version
     - if not previously installed:
         - pacman -U https://archive.archlinux.org/packages/{some_letter}/some_pkg_name.tar.gz
-
     - to temporarily ignore updates to a pkg that has been downgraded, add pkg to IgnorePkg section of /etc/pacman.conf
+    - if can't update b/c of pacman, run:
+        - pacman-key --refresh-keys
 
 ## view dep tree
     - pactree
@@ -137,15 +138,30 @@
         - python3 -m venv {env name}
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
+# RAILS
+    - caching / precompiling assets in development (for complex asset pipelines)
+        - clear cache - Rails.cache.clear
+        - make sprocket concatenate css&js:
+            - in config/environments/development:
+                - config.assets.debug = false
+        - precompile assets
+            - RAILS_ENV=development rails assets:precompile
+        - not sure what the diff between 2 and 3 is
 # RUBY
     gem query --local           - list installed gems
 # RVM
-    rvm list/ls                 - show installed and selected
+    rvm list (or ls)            - show installed and selected
     rvm install {version}       - install new ruby
     rvm gemset create {name}    - create new gemset
+    rvm gemset delete {name}    - delete gemset
     rvm gemset list             - list all gemsets
     rvm use 2.5.0@{name}        - use gemset
     rvm 2.5.0 --default         - set deafult ruby
+
+    specify ruby version and gemset whenever cd'ing into dir
+        - use rvm helper:
+        - rvm --ruby-version use 2.5.0@dotbox
+        - creates 2 files: .ruby-version and a .ruby-gemset
 
 
 # SHELL
@@ -304,6 +320,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :scriptnames
 ## open link under cursor in browser
     - gx
+## ctrl-p rescan files
+    - f5 from ctrl-p mode
 ## TableMode
     - to align, use : in desired spot in header. e.g.,
         | header left |       header center       | header right |
@@ -346,6 +364,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - vim -u NONE    #don't load vimrc or plugins
     - vim -u NORC    #load plugins but not vimrc
 
+# Vim Vixen (Firefox add-on)
+    - open new tab in background:
+        - modify plain json in settings, for "F", to include:
+        - "background": true
 # XTERM
 ## resize font temporarily
     - ctrl right-click
