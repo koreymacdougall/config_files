@@ -298,6 +298,12 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## grab next/prev keyword
     - ^n / ^ p
     - like ^x- ^n/^p but faster if only grabbing from current buffer
+## copy a range of line to current pos in buffer
+    - -8,-4co.
+## close all buffers except current one
+    - :%bd|e#
+## create a file in netrw at cursor position
+    - %
 ## disable wrapping
     - set textwidth=0 wrapmargin=0
 ## generate a range
@@ -305,19 +311,22 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - could also pipe to seq, e.g., :r! seq 10
 ## go to first column
     - 0
-## Increment / decrement
+## go to first char on line
+    - ^
+## Increment / decrement integers
     - Ctrl-a  / Ctrl-x
-    - works anywhere on line
+    - works anywhere on line (sometimes?)
 ## check which options vim was compiled with
     - :version
-## manually install all Plugins
+## show loaded plugins
+    - :scriptnames
+## Plug Commands 
+### manually install all Plugins
   - PlugInstall
-## remove plugin (using vim-plug)
+### remove a plugin
     - comment out unwanted plugin
     - reload vimrc
     - :PlugClean
-## show loaded plugins
-    - :scriptnames
 ## open link under cursor in browser
     - gx
 ## ctrl-p rescan files
@@ -354,11 +363,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :set noeol
     - save
     - or add to vimrc - :set nofixendofline
-## open files in split
+## open files in split, from terminal
     - vim -o file1.ext file2.ext
     - use O (capital O) for vertical splits
-## change tab name
-    - body
 ## open with different config / vimrc
     - vim -u {filename}
     - vim -u NONE    #don't load vimrc or plugins
