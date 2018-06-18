@@ -14,6 +14,7 @@ nnoremap <leader>P :%s/#print(/print(/<CR>|                                     
 nnoremap <leader>ns :r !notmuch search|                                              "notmuchsearch
 nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt|           "notmuch show
 nnoremap <leader>cc :set cursorcolumn!<CR>|                                          "cursorcolumn
+nnoremap <leader>nh :nohlsearch<CR>|                                                 "turn off search highlight
 nnoremap <leader>f :Vex<cr>|                                                         "open netrw/file broswer in vsplit 
 nnoremap <buffer> <leader>u :edit %:h<CR>|                                           "move up one level in fugitive
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin

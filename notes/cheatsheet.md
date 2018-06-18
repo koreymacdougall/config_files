@@ -148,7 +148,75 @@
             - RAILS_ENV=development rails assets:precompile
         - not sure what the diff between 2 and 3 is
 # RUBY
-    gem query --local           - list installed gems
+## notes
+    - proc - reusable block
+        - e.g.,
+            ```ruby
+            several = Proc.new {|number|number>3&&number<8}
+            many = Proc.new { |number| number > 3 && number < 8 }
+            ```
+
+## useful instance methods
+### compact
+    - remove nils from array
+        - example:
+            ```ruby
+            [ "a", nil, "b", nil, "c", nil ].compact #=> [ "a", "b", "c" ]
+            ```
+
+### drop
+    - drop first n elements from array
+        - example:
+            ```ruby
+            - a = [1, 2, 3, 4, 5, 0]
+            - a.drop(3)   #=> [4, 5, 0]
+            ```
+
+### drop_while
+    - drop elements up to, but not including, the first element for which the
+      block retuns nil or false; then return array containing the remaining
+      elements
+          - example:
+              ```ruby
+              -- a = [1, 2, 3, 4, 5, 0]
+              => a.drop_while {|i| i < 3 }   #=> [3, 4, 5, 0]
+              ```
+
+### map/collect
+    - invoke block once for each element of self
+        - example:
+            ```ruby
+            -  ['a', 'b', 'c'].collect{|letter| letter.capitalize} #=> ["A", "B", "C"]
+            ```
+            - or more compactly/elegantly:
+            ```ruby
+            - ['a', 'b', 'c'].collect(&:capitalize)     #=> ["A", "B", "C"]
+            ```
+
+### select
+    - Invoke the block passing in successive elements from self, returning an
+        array containing those elements for which the block returns a true value
+        - example:
+            ```ruby
+            -  a = %w{ a b c d e f } 
+            -  a.select {|v| v =~ /[aeiou]/}   #=> ["a", "e"]
+            ```
+
+## upto
+    - enum for range from start "upto" argument
+        - example
+            ```ruby
+            - 4.upto(8) { |n| p n }
+            -> 4, 5, 6, 7,8
+            ```
+### yield
+    - TODO
+
+    #### block_given?
+        - useful to check whether block was passed to yield
+
+## list installed gems
+    - gem query --local           
 # RVM
     rvm list (or ls)            - show installed and selected
     rvm install {version}       - install new ruby
@@ -164,7 +232,7 @@
         - creates 2 files: .ruby-version and a .ruby-gemset
 
 
-# SHELL
+# SHELL / Unix
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file
@@ -201,6 +269,8 @@
             5. reptyr $PID
 ## view active shell
     - echo $0
+## convert text into column formatted text
+    - column -t
 ## redo sequence of shell comands
     - fc = fix command: 
         - this command lets you manipulate history, but also to run a series of shell comamnds
@@ -375,6 +445,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - open new tab in background:
         - modify plain json in settings, for "F", to include:
         - "background": true
+# X11
+    - xprop - get window manager class name
 # XTERM
 ## resize font temporarily
     - ctrl right-click
