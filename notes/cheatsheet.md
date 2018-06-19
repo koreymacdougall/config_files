@@ -376,6 +376,12 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - %
 ## disable wrapping
     - set textwidth=0 wrapmargin=0
+## run command on all open buffers
+    - bufdo
+    - example: run a replace on all open buffers, and save files
+        bufdo %s/old/new/ge | update
+        - e, no error raised if pattern not found, 
+        - update - save if file was changed
 ## generate a range
     - put =range((11,15))
     - could also pipe to seq, e.g., :r! seq 10

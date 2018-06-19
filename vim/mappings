@@ -20,6 +20,9 @@ nnoremap <buffer> <leader>u :edit %:h<CR>|                                      
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
+"-- run seeing_is_ believing on current buffer
+nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
+
 "--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                 "edit vimrc
 nnoremap <leader>eb :e ~/.bashrc<cr>|                                                "edit bashrc
