@@ -32,7 +32,7 @@ nnoremap <leader>ez :e ~/.zshrc<cr>|                                            
 nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>|                       "edit cheat.sheet
 nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>|                                   "edit muttrc
 nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>|                              "edit i3 config
-nnoremap <leader>en :e ~/notes/notes.md|                                             "edit notes file
+nnoremap <leader>en :e ~/notes/notes.md<cr>|                                             "edit notes file
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
 "--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                       "move to the next buffer

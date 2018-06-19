@@ -149,14 +149,31 @@
         - not sure what the diff between 2 and 3 is
 # RUBY
 ## notes
-    - proc - reusable block
+    ### - proc - reusable block
         - e.g.,
             ```ruby
-            several = Proc.new {|number|number>3&&number<8}
-            many = Proc.new { |number| number > 3 && number < 8 }
+
+            def run_two_procs(a, b)
+                a.call
+                b.call
+            end
+
+            proc1 = Proc.new do
+                puts "Hello from proc1"
+            end
+
+            proc2 = Proc.new { p "Hello from Proc2"}
+            end
+
+            run_two_procs proc1, proc2    #=> "Hello from proc1", \n "Hello from proc2"
+
+            # alternate ampersand syntax
+            x = [2,4,6]
+            double = Proc.new { |n| n*2}
+            dubbed = x.map(&double)  #=> [4,8,12]
             ```
 
-## useful instance methods
+##juseful instance methods
 ### compact
     - remove nils from array
         - example:
@@ -202,12 +219,22 @@
             -  a.select {|v| v =~ /[aeiou]/}   #=> ["a", "e"]
             ```
 
-## upto
+### tr(p1, p2)   (short for translate, same utility exists in Unix)
+    - Returns a copy of str with the characters in from_str replaced by the corresponding characters in to_str.
+        - example:
+            ```ruby
+            "hello".tr('el', 'ip')      #=> "hippo"
+
+            def rot13(secret_messages)
+            secret_messages.map { |c| c.tr("a-z", "n-za-m") }
+            end
+            ```
+
+### upto
     - enum for range from start "upto" argument
         - example
             ```ruby
-            - 4.upto(8) { |n| p n }
-            -> 4, 5, 6, 7,8
+            4.upto(8) { |n| p n } #=>4, 5, 6, 7,8
             ```
 ### yield
     - TODO
@@ -232,7 +259,7 @@
         - creates 2 files: .ruby-version and a .ruby-gemset
 
 
-# SHELL / Unix
+# SHELL / UNIX
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file
@@ -242,7 +269,6 @@
     xdg-open {link address}
     can be combined, e.g.: cat file | tail -n 1 | xargs xdg-open 
 ## job control 
-
     - ^Z        - suspend process
     - bg        - continue running process in background
     - fg        - foreground process
@@ -267,6 +293,7 @@
                 - /etc/sysctl.d/10-ptrace.conf 
                 - /proc/sys/kernel/yama/ptrace_scope
             5. reptyr $PID
+
 ## view active shell
     - echo $0
 ## convert text into column formatted text
@@ -365,6 +392,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## rot13 a selection
+    - g?
 ## grab next/prev keyword
     - ^n / ^ p
     - like ^x- ^n/^p but faster if only grabbing from current buffer
