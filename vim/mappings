@@ -22,6 +22,8 @@ nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|              
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
 "-- run seeing_is_ believing on current buffer
 nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
+"-- clear seeing is believing in current buffer
+nnoremap <leader>c :%.!seeing_is_believing --clean<CR>;
 
 "--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                 "edit vimrc
