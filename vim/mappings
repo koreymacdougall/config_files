@@ -59,6 +59,7 @@ nmap         <SID>winwidth      <Nop>|                                          
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap . :normal .<CR>|                                                            "dot repeat for visual selection
 vnoremap * y/<C-R>"<CR>|                                                             "use asterisk searching in visual mode
+vnoremap ; :|                                                                        "remap semi-colon to colon
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "INSERT MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -88,3 +88,9 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
   }
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+
+# setup tmux session name
+# just need this fn to return the var to the alias
+tmux_session_name_set() {
+    source ~/config_files/zsh/tmux_session_name_gen
+}
