@@ -260,6 +260,11 @@
 
 
 # SHELL / UNIX
+## show all man pages for a given command
+    - whatis {command}
+        - will list all available man pages
+    - man -a {command}
+        - will show all available man pages
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file

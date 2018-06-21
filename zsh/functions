@@ -8,7 +8,6 @@ function zle-line-init zle-keymap-select {
 # github-create
 ## create repos on github from the command line
 ## thanks to eli fatsi on viget.com
-
 github-create() {
 
   echo "Make sure to check for pre-existing remotes!!!!"
@@ -70,7 +69,6 @@ github-create() {
 ## toggles set-ntp true
 ## vm's often don't update clocks properly
 ## if suspended for any length of time
-
 ref_clock () {
     systemctl restart systemd-timesyncd.service
 }
@@ -89,8 +87,10 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; the
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
-# setup tmux session name
-# just need this fn to return the var to the alias
+# setup tmux session name for 'ts' alias
 tmux_session_name_set() {
-    source ~/config_files/zsh/tmux_session_name_gen
+    titles=(Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India 
+    Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra 
+    Tango Uniform Victor Whiskey Xray Yankee Zulu)
+    tmux_session_name=${titles[$RANDOM % ${#titles[@]} ]}
 }
