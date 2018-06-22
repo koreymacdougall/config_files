@@ -67,3 +67,6 @@ ln -sfT ~/config_files/vim/UltiSnips/ ~/.vim/UltiSnips
 
 # cmus rc symlink
 ln -sf ~/config_files/cmus_rc ~/.config/cmus/rc
+
+# urlview symlink
+ln -sf ~/config_files/.urlview ~/.urlview
