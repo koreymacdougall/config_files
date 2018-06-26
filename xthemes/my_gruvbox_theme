@@ -1,0 +1,55 @@
+! face - DejaVu Sans Mono for non-free systems
+!      - hack for free systems (with ttf-liberation-fonts, i think)
+xterm*faceName: DejaVu Sans Mono
+xterm*faceSize: 10
+term*loginShell: true
+xterm*saveLines: 5000
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+xterm*termName: xterm-256color
+xterm*eightBitInput: false
+
+! color0 :near black
+*xterm*color0: #282828
+! color1 :bright pink
+*xterm*color1: #ff0090
+! color2 :bright green 
+*xterm*color2: #66aa11
+! color3 :gold / mustard
+*xterm*color3: #c47f2c
+! color4 :royal blue
+! *xterm*color4: #30309b
+! color4 :red
+*xterm*color4: #AA0000
+! color5 :purple
+*xterm*color5: #7e40a5
+! color6 :light / baby blue
+*xterm*color6: #3579a8
+! color7 :! light grey
+*xterm*color7: #9999aa
+! color8 :dark grey
+*xterm*color8: #303030
+! color9 :dark pink
+*xterm*color9: #ff6666
+! color10 :lime green
+*xterm*color10: #80ff00
+! color11 :pastel peach
+*xterm*color11: #ffba68
+! purple / blue
+! color12 :#fabd2f is gold/yellow
+! 12 is used by ls for dirs
+*xterm*color12: #fabd2f
+! color13 :light purple
+*xterm*color13: #bb88dd
+! color14 :aqua
+*xterm*color14: #4eb4fa
+! color15 :white
+*xterm*color15: #FFFFFF
+
+*xterm*background: #282828
+*xterm*foreground: #FFFFFF
+*xterm*cursorColor: #d0d0d0
+
+xterm*boldMode: true
+xterm*colorBDMode: true
+xterm*colorBD: rgb:fc/fc/fc
+

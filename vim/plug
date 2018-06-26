@@ -44,13 +44,14 @@ call plug#begin()
     " Plug 'Valloric/YouCompleteMe'
     " syntax highlighting for solidity
     Plug 'tomlion/vim-solidity'
-    " gruvbox colortheme
-    Plug 'morhetz/gruvbox'
     " calendar mode for vim
     Plug 'mattn/calendar-vim'
     " generate markdown table of contents
     Plug 'mzlogin/vim-markdown-toc'
-
+    " gruvbox colortheme
+    Plug 'morhetz/gruvbox'
+    " dracula colortheme
+    Plug 'dracula/vim'
 call plug#end()
 
 "lazy loading

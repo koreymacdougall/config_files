@@ -397,6 +397,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## preview method/class definition (via ctags)
+    - ^W }
+    - this will pop up the definition in a small-ish split
 ## rot13 a selection
     - g?
 ## grab next/prev keyword
