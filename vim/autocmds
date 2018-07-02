@@ -4,7 +4,7 @@ autocmd BufRead * silent! loadview                                              
 "--folding
 autocmd BufEnter *.md setlocal foldmethod=expr
 autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()                                  "custom folding for markdown files
-autocmd BufEnter *.md setlocal foldtext=MyFoldText()                                        "apply foldtext pattern
+autocmd BufEnter *.md setlocal foldtext=MyFoldText()                                     "apply foldtext pattern
 "autocmd FileType ruby,eruby,css,scss,javascript,solidity set tabstop=2 shiftwidth=2      "for these ft's, use 2 spaces for tab
 autocmd FileType ruby,eruby,css,scss,javascript set tabstop=2 shiftwidth=2 expandtab      "for these ft's, use 2 spaces for tab
 autocmd FileType ruby nnoremap <leader>r :! clear &&  ruby %<CR>|               "execute ruby file and show output

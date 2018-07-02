@@ -13,18 +13,18 @@ nnoremap <leader>p :%s/print(/#print(/<CR>|                                     
 nnoremap <leader>P :%s/#print(/print(/<CR>|                                          "uncomment all prints
 nnoremap <leader>ns :r !notmuch search|                                              "notmuchsearch
 nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt|           "notmuch show
-nnoremap <leader>cc :set cursorcolumn!<CR>|                                          "cursorcolumn
+nnoremap <leader>cc :set cursorcolumn! cursorline! <CR>|                             "cursorcolumn
 nnoremap <leader>nh :nohlsearch<CR>|                                                 "turn off search highlight
 nnoremap <leader>f :Vex<cr>|                                                         "open netrw/file broswer in vsplit 
 nnoremap <buffer> <leader>u :edit %:h<CR>|                                           "move up one level in fugitive
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin
+nnoremap <leader>rw :%s/\s\+$//e                                                     "clear trailing whitespace
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
 "-- run seeing_is_ believing on current buffer
 nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
 "-- clear seeing is believing in current buffer
 nnoremap <leader>c :%.!seeing_is_believing --clean<CR>;
-
 "--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                 "edit vimrc
 nnoremap <leader>eb :e ~/.bashrc<cr>|                                                "edit bashrc
@@ -32,7 +32,8 @@ nnoremap <leader>ez :e ~/.zshrc<cr>|                                            
 nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>|                       "edit cheat.sheet
 nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>|                                   "edit muttrc
 nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>|                              "edit i3 config
-nnoremap <leader>en :e ~/notes/notes.md<cr>|                                             "edit notes file
+nnoremap <leader>et :e ~/config_files/.tmux.conf<cr>|                                    "edit tmux config
+nnoremap <leader>en :e ~/notes/notes.md<cr>|                                         "edit notes file
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
 "--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                       "move to the next buffer

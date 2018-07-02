@@ -1,0 +1,20 @@
+! gruvbox Xresources palette
+*.background: #282828
+*.foreground: #FFFFFF
+*.cursorColor: #d0d0d0
+*.color0: #282828
+*.color1: #ff0090
+*.color2: #66aa11
+*.color3: #c47f2c
+*.color4: #AA0000
+*.color5: #7e40a5
+*.color6: #3579a8
+*.color7: #9999aa
+*.color8: #303030
+*.color9: #ff6666
+*.color10: #80ff00
+*.color11: #ffba68
+*.color12: #fabd2f
+*.color13: #bb88dd
+*.color14: #4eb4fa
+*.color15: #FFFFFF

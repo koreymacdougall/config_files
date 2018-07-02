@@ -70,6 +70,7 @@ alias vr='vim ~/.config/ranger/rc.conf'
 alias vt='vim ~/.tmux.conf'
 alias vn='vim ~/notes/notes.md'
 alias vp="vim ~/mov/playlist"
+alias vx="vim ~/.Xresources"
 
 # rails aliases
 alias rs='rails server'

@@ -21,7 +21,9 @@ xinput set-prop "DLL0704:01 06CB:76AE Touchpad" "Synaptics Finger" 25 30 30
 FontPath /usr/share/fonts/100dpi
 
 # set background colour to match the gruvbox
-hsetroot -solid '#282828'
+#hsetroot -solid '#282828'
+hsetroot -solid $bg_color
+
 #
 # running WM after remapping keys seems to work better
 exec i3

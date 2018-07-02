@@ -32,6 +32,7 @@ export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
 export TERM=xterm-256color
+export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
 
 # setopts
 setopt auto_pushd           # keep a stack of recent dirs
