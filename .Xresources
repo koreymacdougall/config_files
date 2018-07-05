@@ -10,23 +10,23 @@ xterm*termName: xterm-256color
 xterm*eightBitInput: false
 XTerm*allowBoldFonts: false
 
-! gruvbox Xresources palette
-*.background: #282828
-*.foreground: #FFFFFF
-*.cursorColor: #d0d0d0
-*.color0: #282828
-*.color1: #ff0090
-*.color2: #66aa11
-*.color3: #c47f2c
-*.color4: #AA0000
-*.color5: #7e40a5
-*.color6: #3579a8
-*.color7: #9999aa
-*.color8: #303030
-*.color9: #ff6666
-*.color10: #80ff00
-*.color11: #ffba68
-*.color12: #fabd2f
-*.color13: #bb88dd
-*.color14: #4eb4fa
-*.color15: #FFFFFF
+
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #282A36
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6

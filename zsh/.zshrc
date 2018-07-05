@@ -33,6 +33,7 @@ export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
 export TERM=xterm-256color
 export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
+# export LS_COLORS='di=1:fi=0:ln=31:pi=2:so=2:bd=2:cd=2:or=31:mi=0:ex=35:*.rpm=90'
 
 # setopts
 setopt auto_pushd           # keep a stack of recent dirs
