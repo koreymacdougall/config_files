@@ -2,15 +2,19 @@
 #### SETTINGS ######
 ####################
 
-#
+# Maybe shouldn't be setting this within shell rc, but if I don't, 
+# tmux doesn't read dir_colors correctly for completion
+export TERM=xterm-256color
+
 # source other files
-source ~/config_files/zsh/zsh_aliases
 source ~/config_files/zsh/functions
 source ~/config_files/zsh/styles
+source ~/config_files/zsh/zsh_aliases
 
-autoload -U compinit && compinit        # the completion engine
+autoload -Uz compinit && compinit        # the completion engine
 autoload -U colors && colors
 autoload -Uz vcs_info
+#
 
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
@@ -31,9 +35,7 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
-export TERM=xterm-256color
 export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
-# export LS_COLORS='di=1:fi=0:ln=31:pi=2:so=2:bd=2:cd=2:or=31:mi=0:ex=35:*.rpm=90'
 
 # setopts
 setopt auto_pushd           # keep a stack of recent dirs
@@ -75,6 +77,9 @@ zle -N zle-keymap-select
 # source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# resource dircolors...b/c tmux is not picking up LS_COLORS
+eval "$(dircolors ~/config_files/dircolors)"
+
 # deferred nvm loading - using bc default (above) was quite slow
 # see https://github.com/creationix/nvm/issues/1277
 # Defer initialization of nvm until nvm, node or a node-dependent command is
@@ -85,13 +90,3 @@ zle -N zle-keymap-select
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# credits:
-# http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
-# via greg hurell
-# github.com/wincent/wincent/roles/dotfiles/files/zshrc
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /home/km/dev/blockchain/test2/ganache/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/km/dev/blockchain/test2/ganache/node_modules/tabtab/.completions/electron-forge.zsh
-!
