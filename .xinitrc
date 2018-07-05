@@ -20,8 +20,7 @@ xinput set-prop "DLL0704:01 06CB:76AE Touchpad" "Synaptics Finger" 25 30 30
 # these fonts were mainly for wayland, I think
 FontPath /usr/share/fonts/100dpi
 
-# set background colour to match the gruvbox
-#hsetroot -solid '#282828'
+# set background colour to match color scheme
 hsetroot -solid $bg_color
 
 #
