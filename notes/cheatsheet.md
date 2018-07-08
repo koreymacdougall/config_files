@@ -139,6 +139,8 @@
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
 # RAILS
+    - redo a migration (for example, if botched the structure & have fixed it)
+        - rails db:migrate:redo
     - caching / precompiling assets in development (for complex asset pipelines)
         - clear cache - Rails.cache.clear
         - make sprocket concatenate css&js:
@@ -457,6 +459,7 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         |-------------+:-------------------------:+-------------:|
         | col left    | col center very long text |    col_right |
         | left        |           center          |        right |
+
 ## command line window (with normal mode powers like move/cw/etc)
     ctrl-f - from command mode
     q:, q/, q? - from normal mode

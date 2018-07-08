@@ -14,6 +14,10 @@ ln -s ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/ht
 mkdir -p ~/.vim/after/plugin
 ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
 
+#dracula theme
+ln -sf ~/config_files/vim/dracula.vim  ~/.vim/plugged/vim/colors/dracula.vim
+
+
 #zshrc symlink
 ln -sf ~/config_files/zsh/.zshrc ~/.zshrc
 

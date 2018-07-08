@@ -48,6 +48,7 @@ alias mc='cd ~/config_files'
 alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
 alias md='cd ~/Downloads'
+alias mw='cd ~/dev/websites'
 
 alias 1='cd ~1'
 alias 2='cd ~2'

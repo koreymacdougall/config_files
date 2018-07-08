@@ -10,7 +10,6 @@ xterm*termName: xterm-256color
 xterm*eightBitInput: false
 XTerm*allowBoldFonts: false
 
-
 ! Dracula Xresources palette
 *.foreground: #F8F8F2
 *.background: #282A36
