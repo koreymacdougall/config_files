@@ -74,6 +74,10 @@
     tag - tags an image to a name (local or registry)
 # FLASH
     - can use lightspark, available as standalone and broswer extensoin
+# GIT
+    - to sync a forked, local repo, can use the rebase command, which will avoid
+      the ugly merge commit added when doing a normal pull.
+        - git pull --rebase <remote name> <branch name>
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -418,7 +422,7 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - -8,-4co.
 ## close all buffers except current one
     - :%bd|e#
-## create a file in netrw at cursor position
+## create a new file in netrw at cursor position
     - %
 ## disable wrapping
     - set textwidth=0 wrapmargin=0

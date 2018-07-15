@@ -87,5 +87,11 @@ alias .....="cd ../../../.."
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
 alias m='neomutt'
 
+# list dirs alias
 alias d="dirs -v"
+
+# call a script to list the largest files in a git repo
+alias gitrev="sh ~/config_files/git_revision_script"
+
+
 
