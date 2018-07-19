@@ -11,7 +11,8 @@ call plug#begin()
     " note that { 'on': []}  is syntax for lazy loading
     Plug 'tpope/vim-surround'
     " Plug 'tpope/vim-rails', { 'on': [] }
-    Plug 'tpope/vim-rails', { 'for': ['rails', 'ruby']}
+    " Plug 'tpope/vim-rails', { 'for': ['rails', 'ruby']}
+    Plug 'tpope/vim-rails'
     Plug 'vim-ruby/vim-ruby'
     " rhubarb provides support for fugitive's Gbrowse for github
     Plug 'tpope/vim-rhubarb'
@@ -52,6 +53,8 @@ call plug#begin()
     Plug 'morhetz/gruvbox'
     " dracula colortheme
     Plug 'dracula/vim'
+    " molokai colortheme
+    Plug 'koreymacdougall/molokai'
 call plug#end()
 
 "lazy loading

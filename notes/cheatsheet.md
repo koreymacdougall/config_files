@@ -16,6 +16,10 @@
 # COMPTON
 ## manually restart:
     - pkill compton && compton --config ~/.config/compton.conf -bc
+# CMUS
+## remove cached metadata (e.g., after running id3convert -s **/*)
+    - :update-cache
+    - can use -f flag if not co-operating
 # DOCKER
 ## detach from running container
     - ^P ^Q
@@ -75,9 +79,14 @@
 # FLASH
     - can use lightspark, available as standalone and broswer extensoin
 # GIT
-    - to sync a forked, local repo, can use the rebase command, which will avoid
-      the ugly merge commit added when doing a normal pull.
-        - git pull --rebase <remote name> <branch name>
+## to sync a forked, local repo, can use the rebase command, which will avoid the ugly merge commit added when doing a normal pull.
+    - git pull --rebase <remote name> <branch name>
+## rename a local branch
+    - git branch -m <oldname> <newname>
+
+# LINUX
+## reset failed login count (to reenable acct after failed logins)
+    - faillog -r -u <user>
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -136,6 +145,20 @@
         - <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         - and on command line, may need to specify: --encoding='utf-8'
             - check syntax on that argument
+# POSTGRES
+## note: run these commands as the postgres user
+## enter postgres console:
+    - psql
+## quit pg console
+    - \quit
+## Start / stop a server
+    - pg_ctl -D /var/lib/postgres/data -l ~/logfile {start/stop}
+## create new PG user (on arch):
+    - createuser --interactive
+## create new PG db (on arch):
+    - createdb myDatabaseName
+## change user/role pw:
+    - \password {username}
 # PYTHON
 ## create virtual env
     - python 3.6+
@@ -143,16 +166,21 @@
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
 # RAILS
-    - redo a migration (for example, if botched the structure & have fixed it)
-        - rails db:migrate:redo
-    - caching / precompiling assets in development (for complex asset pipelines)
-        - clear cache - Rails.cache.clear
-        - make sprocket concatenate css&js:
-            - in config/environments/development:
-                - config.assets.debug = false
-        - precompile assets
-            - RAILS_ENV=development rails assets:precompile
-        - not sure what the diff between 2 and 3 is
+## redo a migration (for example, if botched the structure & have fixed it)
+    - rails db:migrate:redo
+## recreate database
+    1. rake db:reset (loads from schema.rb)
+    2. rake db:drop db:create db:migrate db:seed (loads from migrations)
+
+## caching / precompiling assets in development (for complex asset pipelines)
+    1. clear cache - Rails.cache.clear
+    2. make sprocket concatenate css&js:
+        - in config/environments/development:
+            - config.assets.debug = false
+    3. precompile assets
+        - RAILS_ENV=development rails assets:precompile
+    - not sure what the diff between 2 and 3 is
+## 
 # RUBY
 ## notes
     ### - proc - reusable block
@@ -314,6 +342,31 @@
 
 ## view active shell
     - echo $0
+## change to new user and move to their home dir
+    - su - {uname}
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+        - note the dash
 ## convert text into column formatted text
     - column -t
 ## redo sequence of shell comands

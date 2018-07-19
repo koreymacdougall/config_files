@@ -49,6 +49,7 @@ alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
 alias md='cd ~/Downloads'
 alias mw='cd ~/dev/websites'
+alias md2='cd ~/dev/D2P2/D2P2-App'
 
 alias 1='cd ~1'
 alias 2='cd ~2'
@@ -76,6 +77,9 @@ alias vx="vim ~/.Xresources"
 # rails aliases
 alias rs='rails server'
 alias rc='rails console'
+alias rdbm='rails db:migrate'
+alias rdbs='rails db:migrate:status'
+alias rdbr='rails db:reset'
 
 # alias cd by .. or ... or ... or mv file ..../.
 alias ".."='cd ..'

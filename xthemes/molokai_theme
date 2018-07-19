@@ -1,16 +1,3 @@
-! Xterm settings
-! face - DejaVu Sans Mono for non-free systems
-!      - hack for free systems (with ttf-liberation-fonts, i think)
-xterm*faceName: Hack
-xterm*faceSize: 10
-term*loginShell: true
-xterm*saveLines: 5000
-xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
-xterm*termName: xterm-256color
-xterm*eightBitInput: false
-XTerm*allowBoldFonts: false
-
-
 ! Molokai theme
 *xterm*background: #101010
 *xterm*foreground: #d0d0d0
@@ -31,4 +18,3 @@ XTerm*allowBoldFonts: false
 *xterm*color13: #bb88dd
 *xterm*color14: #4eb4fa
 *xterm*color15: #d0d0d0
-
