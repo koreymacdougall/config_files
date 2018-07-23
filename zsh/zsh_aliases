@@ -89,6 +89,7 @@ alias .....="cd ../../../.."
 
 # grab mail alias
 alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
+alias gmf='cd ~/mail_configs && bash ./cryptscript_full.sh && cd -'
 alias m='neomutt'
 
 # list dirs alias

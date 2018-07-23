@@ -477,6 +477,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :%bd|e#
 ## create a new file in netrw at cursor position
     - %
+## create a new directory/dir in netrw at cursor position
+    - d
 ## disable wrapping
     - set textwidth=0 wrapmargin=0
 ## run command on all open buffers

@@ -52,7 +52,7 @@ call plug#begin()
     " gruvbox colortheme
     Plug 'morhetz/gruvbox'
     " dracula colortheme
-    Plug 'dracula/vim'
+    Plug 'koreymacdougall/dracula'
     " molokai colortheme
     Plug 'koreymacdougall/molokai'
 call plug#end()
