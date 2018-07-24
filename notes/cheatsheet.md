@@ -153,6 +153,8 @@
     - \quit
 ## Start / stop a server
     - pg_ctl -D /var/lib/postgres/data -l ~/logfile {start/stop}
+        - if server won't start, may need to run:
+        - sudo chown postgres: /run/postgresql
 ## create new PG user (on arch):
     - createuser --interactive
 ## create new PG db (on arch):
