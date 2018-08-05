@@ -465,6 +465,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## if vim freezes, try Ctrl-Q to unfreeze
+    - technically this is a shell / tty problem.  Ctrl-S stops output, ^Q
+        restores it
 ## preview method/class definition (via ctags)
     - ^W }
     - this will pop up the definition in a small-ish split

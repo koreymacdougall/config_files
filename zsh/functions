@@ -92,5 +92,5 @@ tmux_session_name_set() {
     titles=(Alfa Bravo Charlie Delta Echo Foxtrot Golf Hotel India 
     Juliett Kilo Lima Mike November Oscar Papa Quebec Romeo Sierra 
     Tango Uniform Victor Whiskey Xray Yankee Zulu)
-    tmux_session_name=${titles[$RANDOM % ${#titles[@]} ]}
+    tmux_session_name=${titles[$RANDOM % ${#titles[@]} + 1]}
 }

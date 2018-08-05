@@ -26,5 +26,5 @@ hsetroot -solid $bg_color
 #
 # running WM after remapping keys seems to work better
 exec i3
-# exec startxfce4
+#exec startxfce4
 
