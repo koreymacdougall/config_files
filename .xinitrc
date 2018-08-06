@@ -23,6 +23,8 @@ FontPath /usr/share/fonts/100dpi
 # set background colour to match color scheme
 hsetroot -solid $bg_color
 
+# set bg as last image set with feh
+source '/home/km/.fehbg'
 #
 # running WM after remapping keys seems to work better
 exec i3
