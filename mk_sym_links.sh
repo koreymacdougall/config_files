@@ -8,7 +8,7 @@ ln -sf ~/config_files/vim/.vimrc ~/.vimrc
 
 #for xmledit in vim, link the xml.vim file to html.vim
 #otherwise, tag completions won't work in erb and the like
-ln -s ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim
+ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim
 
 #.vim/after symlink
 mkdir -p ~/.vim/after/plugin
@@ -74,3 +74,6 @@ ln -sf ~/config_files/cmus_rc ~/.config/cmus/rc
 
 # urlview symlink
 ln -sf ~/config_files/.urlview ~/.urlview
+
+# fzf (fuzzyfinder) symlink
+ln -sf ~/config_files/.fzf.zsh ~/.fzf.zsh

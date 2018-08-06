@@ -62,6 +62,7 @@ HIST_STAMPS="mm/dd/yyyy"    # timestamps for history / unused?
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
 bindkey "^r" history-incremental-search-backward
+bindkey "^f" FZF_CTRL_T_COMMAND
 bindkey -M viins "^K" history-beginning-search-backward
 bindkey -M viins "^J" history-beginning-search-forward
 bindkey -M viins "^U" backward-kill-line
