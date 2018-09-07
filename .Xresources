@@ -10,7 +10,6 @@ xterm*termName: xterm-256color
 xterm*eightBitInput: false
 XTerm*allowBoldFonts: false
 
-
 ! gruvbox Xresources palette
 *.background: #282828
 *.foreground: #FFFFFF
@@ -31,4 +30,3 @@ XTerm*allowBoldFonts: false
 *.color13: #bb88dd
 *.color14: #4eb4fa
 *.color15: #FFFFFF
-

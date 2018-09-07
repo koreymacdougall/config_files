@@ -6,7 +6,8 @@ alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 
 alias grep='grep --color=always'
-alias hg='history | grep'
+alias hg='history | grep -i'
+alias lg='ls -al | grep -i'
 
 alias e='exit'
 alias a='arandr'
@@ -46,9 +47,10 @@ alias glog='git log --oneline --decorate --color --graph'
 
 # movement aliases
 alias mc='cd ~/config_files'
+alias md='cd ~/documents'
+alias mD='cd ~/Downloads'
 alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
-alias md='cd ~/Downloads'
 alias mw='cd ~/dev/websites'
 alias md2='cd ~/dev/D2P2/D2P2-App'
 

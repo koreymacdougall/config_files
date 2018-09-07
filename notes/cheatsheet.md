@@ -78,15 +78,27 @@
     tag - tags an image to a name (local or registry)
 # FLASH
     - can use lightspark, available as standalone and broswer extensoin
+# GENTOO
+## Portage tips
+    - --noreplace stops re-installing of default packages
+    - to make this default...
 # GIT
 ## to sync a forked, local repo, can use the rebase command, which will avoid the ugly merge commit added when doing a normal pull.
     - git pull --rebase <remote name> <branch name>
 ## rename a local branch
     - git branch -m <oldname> <newname>
 
+## Modify last, unpushed commit:
+    - first, make needed changes, stage them with "git add file2" then run
+    - git commit --amend
 # LINUX
 ## reset failed login count (to reenable acct after failed logins)
     - faillog -r -u <user>
+## capture screenshot
+    - imagemagick / ImageMagick 
+    - provides the 'import' function:
+        - `import test.jpg` - click for window, drag for selection
+        - `import -window root screenshot.png` - full desktop, multiple monitors
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -182,6 +194,8 @@
     3. precompile assets
         - RAILS_ENV=development rails assets:precompile
     - not sure what the diff between 2 and 3 is
+## extract partial with rails-vim
+    - :Extract partial_name
 ## 
 # RUBY
 ## notes
@@ -553,6 +567,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## open files in split, from terminal
     - vim -o file1.ext file2.ext
     - use O (capital O) for vertical splits
+## open file under cursor in a split
+    - Ctrl-w f
 ## open with different config / vimrc
     - vim -u {filename}
     - vim -u NONE    #don't load vimrc or plugins
