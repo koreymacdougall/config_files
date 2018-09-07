@@ -80,14 +80,3 @@ zle -N zle-keymap-select
 
 # resource dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
-
-# deferred nvm loading - using bc default (above) was quite slow
-# see https://github.com/creationix/nvm/issues/1277
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
