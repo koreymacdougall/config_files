@@ -24,7 +24,7 @@ autoload -Uz vcs_info
 }
 
 # left prompt
-PROMPT='%F{9}%n%F{15}@%F{13}%m%f %B%F{10}%1~%f %F{6}${vcs_info_msg_0_}%F{15} '
+PROMPT='%F{9}%n%F{15}@%F{13}%m%f %B%F{10}%1~%f %F{6}${vcs_info_msg_0_}%F{foreground} '
 
 # these commands are run before each prompt refresh
 precmd() { vcs_info RPROMPT="" }
@@ -78,5 +78,5 @@ zle -N zle-keymap-select
 # source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# resource dircolors...b/c tmux is not picking up LS_COLORS
+# re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
