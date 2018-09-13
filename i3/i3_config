@@ -156,7 +156,7 @@ for_window [title="kalendar"] move scratchpad
 exec --no-startup-id nm-applet --sm-disable &
 
 # pulseaudio system tray
-#exec --no-startup-id pasystray
+exec --no-startup-id pasystray
 
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
