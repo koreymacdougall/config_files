@@ -2,10 +2,6 @@
 #### SETTINGS ######
 ####################
 
-# Maybe shouldn't be setting this within shell rc, but if I don't, 
-# tmux doesn't read dir_colors correctly for completion
-export TERM=xterm-256color
-
 # source other files
 source ~/config_files/zsh/functions
 source ~/config_files/zsh/styles
@@ -14,7 +10,6 @@ source ~/config_files/zsh/zsh_aliases
 autoload -Uz compinit && compinit        # the completion engine
 autoload -U colors && colors
 autoload -Uz vcs_info
-#
 
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
@@ -45,7 +40,6 @@ setopt extended_glob        # expand wildcards and suchlike
 setopt transientrprompt     # transient right prompt
 setopt prompt_subst         # allow string subs
 setopt nocasematch          # case insensitive
-setopt inc_append_history   # append history as you execute commands
 setopt share_history        # share history between shells
 
 # settings

@@ -36,6 +36,7 @@ nnoremap <leader>et :e ~/config_files/.tmux.conf<cr>|                           
 nnoremap <leader>en :e ~/notes/notes.md<cr>|                                         "edit notes file
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
 nnoremap <leader>eq :e ~/config_files/quotes.md<CR>|                                    "edit quotes file
+nnoremap <leader>ex :e ~/config_files/.Xresources<CR>|                                    "edit quotes file
 
 "--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                       "move to the next buffer

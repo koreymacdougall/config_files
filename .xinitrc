@@ -27,6 +27,8 @@ hsetroot -solid $bg_color
 source '/home/km/.fehbg'
 #
 # running WM after remapping keys seems to work better
-exec i3
+# launch a console kit session and dbus
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
+# exec i3
 #exec startxfce4
 

@@ -76,10 +76,10 @@ alias vm='vim ~/.muttrc'
 alias vr='vim ~/.config/ranger/rc.conf'
 alias vt='vim ~/.tmux.conf'
 alias vn='vim ~/notes/notes.md'
-alias vp="vim ~/mov/playlist"
 alias vq="vim ~/config_files/quotes.md"
 alias vx="vim ~/.Xresources"
 
+alias k="~/source_packes/kalendar-master/src/Kalendar"
 
 # launch x server
 alias x='startx'
