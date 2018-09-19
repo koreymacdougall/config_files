@@ -82,6 +82,7 @@
 ## Portage tips
     - --noreplace stops re-installing of default packages
     - to make this default...
+    - --jobs=X to run parallel installs
 # GIT
 ## to sync a forked, local repo, can use the rebase command, which will avoid the ugly merge commit added when doing a normal pull.
     - git pull --rebase <remote name> <branch name>

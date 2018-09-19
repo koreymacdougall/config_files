@@ -8,7 +8,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # kill focused window
-bindsym $modq kill
+bindsym $mod+q kill
 
 ####################
 #### LAUNCHERS ####
@@ -22,10 +22,10 @@ bindsym $mod+Return                     exec i3-sensible-terminal
 bindsym $mod+d                          exec dmenu_run
 
 # ranger
-bindsym $mod+rol+r                      exec i3-sensible-terminal -e ranger
+bindsym $mod+r                      exec i3-sensible-terminal -e ranger
 
 # browser
-set $browser firefox
+set $browser "firejail firefox"
 bindsym $mod+w                          exec $browser
 
 # vim
@@ -36,6 +36,9 @@ bindsym $mod+m                          exec i3-sensible-terminal -e neomutt
 
 # kalendar
 bindsym $mod+p                          exec ~/source_packages/kalendar-master/src/Kalendar
+
+# run display select script
+bindsym $mod+F5                         exec --no-startup-id ~/config_files/dmenu_scripts/display_select.sh
 
 ####################
 ## END LAUNCHERS ###
