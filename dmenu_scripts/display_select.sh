@@ -12,4 +12,4 @@ case "$chosen" in
     Dual) xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1;;
 esac
 
-feh --bg-scale "$HOME/.fehbg"
+sh ~/.fehbg

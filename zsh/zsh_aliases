@@ -27,6 +27,8 @@ xrandr --output Virtual-1 --mode 2560x1080_60.00"
 alias logout='i3-msg exit'
 alias suspend='i3lock -c 112233 && systemctl suspend'
 alias lock='i3lock -c 112233'
+alias freeze='sudo sh -c "echo freeze > /sys/power/state"'
+alias hib='sudo sh -c "echo disk > /sys/power/state"'
 
 # tmux aliases; lifted from oh-my-zsh plugin
 alias t="tmux"
@@ -48,7 +50,7 @@ alias grv='git remote -v'
 alias glog='git log --oneline --decorate --color --graph'
 
 # movement aliases
-alias mb='cd ~/dev/websites/blog'
+alias mb='cd ~/dev/websites/HumbleBlog'
 alias mc='cd ~/config_files'
 alias md='cd ~/documents'
 alias md2='cd ~/dev/D2P2/D2P2-App'
@@ -109,6 +111,9 @@ alias d="dirs -v"
 
 # call a script to list the largest files in a git repo
 alias gitrev="sh ~/config_files/git_revision_script"
+
+# generate blog
+alias gb="cd ~/Downloads/HumbleBlog/scripts && sh generate_blog.sh"
 
 
 
