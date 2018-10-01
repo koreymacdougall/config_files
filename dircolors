@@ -89,8 +89,8 @@ TERM tmux-256color
 
 ## Special files
 
-# NORMAL 00;38;5;255       # use color 15 (the bright foreground)
-NORMAL 00;38;5;0       # use color 15 (the bright foreground)
+NORMAL 00;38;5;15       # use color 15 (the bright foreground)
+# NORMAL 00;38;5;0       # use color 15 (the bright foreground)
 FILE 00                 # regular file: use no color at all
 RESET 0                 # reset to "normal" color
 DIR 00;38;5;12          # directory
