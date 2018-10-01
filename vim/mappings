@@ -19,6 +19,7 @@ nnoremap <leader>f :Vex<cr>|                                                    
 nnoremap <buffer> <leader>u :edit %:h<CR>|                                           "move up one level in fugitive
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin
 nnoremap <leader>rw :%s/\s\+$//e                                                     "clear trailing whitespace
+nnoremap <leader>t :! rails test<CR>|                                                "run test suite
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
 "-- run seeing_is_ believing on current buffer

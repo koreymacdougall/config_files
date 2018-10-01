@@ -9,3 +9,4 @@ filetype plugin indent on|                           "enable filetype detection,
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
 highlight clear SignColumn|                          "don't highlight the git gutter
 colorscheme molokai
+

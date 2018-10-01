@@ -72,6 +72,9 @@ zle -N zle-keymap-select
 # source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# re-source dircolors...b/c tmux is not picking up LS_COLORS
+eval "$(dircolors ~/config_files/dircolors)"
+
 # source chruby
 source /usr/local/share/chruby/chruby.sh
 # automatically load specific ruby version if specified in a .ruby-version file
@@ -79,5 +82,3 @@ source /usr/local/share/chruby/auto.sh
 # on load, change to specified ruby (i.e., my current default is 2.5.1)
 chruby 2.5.1
 
-# re-source dircolors...b/c tmux is not picking up LS_COLORS
-eval "$(dircolors ~/config_files/dircolors)"

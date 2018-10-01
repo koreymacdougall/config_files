@@ -67,6 +67,8 @@ TERM xterm-color
 TERM xterm-debian
 TERM xterm-termite
 
+TERM tmux-256color
+
 ## Documentation
 #
 # standard colors
@@ -87,7 +89,8 @@ TERM xterm-termite
 
 ## Special files
 
-NORMAL 00;38;5;256      # no color code at all
+# NORMAL 00;38;5;255       # use color 15 (the bright foreground)
+NORMAL 00;38;5;0       # use color 15 (the bright foreground)
 FILE 00                 # regular file: use no color at all
 RESET 0                 # reset to "normal" color
 DIR 00;38;5;12          # directory

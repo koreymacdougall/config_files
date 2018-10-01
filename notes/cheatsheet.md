@@ -521,6 +521,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - :version
 ## show loaded plugins
     - :scriptnames
+## redirect output of a command to a buffer
+    - redir >buffername
+    - :command
+    - redir END
+    - e buffername
 ## Plug Commands 
 ### manually install all Plugins
   - PlugInstall
