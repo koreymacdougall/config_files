@@ -75,6 +75,9 @@ zle -N zle-keymap-select
 # re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
 
+# set gPodder to download to my podcasts dir
+export GPODDER_DOWNLOAD_DIR=~/podcasts
+
 # source chruby
 source /usr/local/share/chruby/chruby.sh
 # automatically load specific ruby version if specified in a .ruby-version file

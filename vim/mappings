@@ -4,6 +4,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap ; :|                                                                        "remap semi-colon to colon
 nnoremap : ;|                                                                        "remap colon to semi-colon
+nnoremap <CR> :nohlsearch<CR>|                                                       "use enter to clear search hl
 nnoremap Y y$|                                                                       "Y to behave as D and C do
 nnoremap <c-n> :%s///g<left><left>|                                                  "use ctrl-n to replace all star-searched terms
 nnoremap <space> za|                                                                 "use spacebar to toggle folding
