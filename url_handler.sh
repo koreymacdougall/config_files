@@ -23,5 +23,5 @@ elif echo $wgetFiles | grep -w $ext > /dev/null; then
 # elif echo "$@" | grep "$vidsites">/dev/null; then
 #  mpv -quiet "$1" > /dev/null & disown
 else
- iceweasel "$1" 2>/dev/null & disown
+    firefox "$1" 2>/dev/null & disown
 fi
