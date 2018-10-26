@@ -100,6 +100,9 @@
     - provides the 'import' function:
         - `import test.jpg` - click for window, drag for selection
         - `import -window root screenshot.png` - full desktop, multiple monitors
+## find out which system you are on
+    - lsb_release -a
+    - cat /etc/issue.logo
 # METADATA
 ## mp3 files
   - strip with id3lib

@@ -59,7 +59,6 @@ alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
 alias mw='cd ~/dev/websites'
 
-
 alias 1='cd ~1'
 alias 2='cd ~2'
 alias 3='cd ~3'
@@ -115,6 +114,4 @@ alias gitrev="sh ~/config_files/git_revision_script"
 
 # generate blog
 alias gb="cd ~/Downloads/HumbleBlog/scripts && sh generate_blog.sh"
-
-
 
