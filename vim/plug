@@ -53,6 +53,9 @@ call plug#begin()
     Plug 'koreymacdougall/molokai'
     " Calendar mode
     Plug 'mattn/calendar-vim'
+    " speed up folding
+    Plug 'Konfekt/FastFold'
+
 call plug#end()
 
 "lazy loading

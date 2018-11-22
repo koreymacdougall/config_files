@@ -80,9 +80,10 @@
     - can use lightspark, available as standalone and broswer extensoin
 # GENTOO
 ## Portage tips
-    - --noreplace stops re-installing of default packages
-    - to make this default...
-    - --jobs=X to run parallel installs
+    * --noreplace stops re-installing of default packages
+    * --jobs=X to run parallel installs
+    * for full system/world update: 
+        * sudo emerge --update --changed-use --deep --ask --with-bdeps=y @world
 # GIT
 ## to sync a forked, local repo, can use the rebase command, which will avoid the ugly merge commit added when doing a normal pull.
     - git pull --rebase <remote name> <branch name>
@@ -103,6 +104,8 @@
 ## find out which system you are on
     - lsb_release -a
     - cat /etc/issue.logo
+## generate random password from terminal/CLI
+    - openssl rand -base 64 14
 # METADATA
 ## mp3 files
   - strip with id3lib

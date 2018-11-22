@@ -87,6 +87,13 @@ alias k="~/source_packes/kalendar-master/src/Kalendar"
 # launch x server
 alias x='startx'
 
+# launch youtube-dl, pip installed with --user flag
+alias youtube-dl='/home/km/.local/bin/youtube-dl'
+
+# notmuch aliases
+alias ns='notmuch show'
+alias nse='notmuch search'
+
 # rails aliases
 alias rs='rails server'
 alias rc='rails console'
