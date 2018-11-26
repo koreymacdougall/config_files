@@ -156,6 +156,10 @@
 ## combine pdfs
     - pdfunite in the poppler library combines pdfs
     - e.g., pdfunite input1.pdf input2.pdf inputn.pdf output.pdf
+## resize /scale pdfs
+    - cpdf (for coherent pdf)
+## rotate, modify, insert pages etc into pdfs
+    - pdfshuffler
 ## wkhtmltopdf
     - create a pdf from html pages
     - .e.g, wkhtmltopdf input.html output.pdf
@@ -400,6 +404,11 @@ Things you may want to cover:
     - xrandr --output LVDS1 --brightness 0.3
     - note: doesn't reduce battery usage; mainly useful for external monitor
 
+## recover corrupt .zsh_history file
+    - mv .zsh_history .zsh_history_bad
+    - strings .zsh_history_bad > .zsh_history
+    - fc -R .zsh_history
+        - fc -R = read history from file 
 # SFTP
     - if trying to recursively put directory(ies), the dirs must already exist
         on target
