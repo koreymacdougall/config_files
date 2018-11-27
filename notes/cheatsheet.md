@@ -94,6 +94,11 @@
     - first, make needed changes, stage them with "git add file2" then run
     - git commit --amend
 # LINUX
+## full system backup (from linux.com/learn/full-metal-backup-using-dd-command)
+    - backup to a compressed image file:
+        - sudo dd if=/dev/sda conv=sync,noerror status=progress, bs=64k | gzip -c > /PATH/TO/DRIVE/backup_image.img.gz
+    - restore from image file:
+        - gunzip -c /PATH/TO/DRIVE/backup_image.img.gz | dd of=/dev/sda
 ## reset failed login count (to reenable acct after failed logins)
     - faillog -r -u <user>
 ## capture screenshot
@@ -168,6 +173,8 @@
         - <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         - and on command line, may need to specify: --encoding='utf-8'
             - check syntax on that argument
+## paid programs to edit
+    - pdf studio and masterpdf
 # POSTGRES
 ## note: run these commands as the postgres user
 ## enter postgres console:
