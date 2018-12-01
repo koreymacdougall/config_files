@@ -134,6 +134,8 @@
     - `make menuconfig`
 5. build kernel (may need to install bc first...)
     - `make && modules install`
+6. install new kernel
+    - `make install`
 ---- currently at the point of creating a initramfs... need to find a libre solution
 
 note: to resume install process
