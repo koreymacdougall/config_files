@@ -134,6 +134,9 @@
     - `make menuconfig`
 5. build kernel (may need to install bc first...)
     - `make && modules install`
+    - note that BOTH make and modules install need to be sudo/root
+    - i.e., sudo make && sudo make modules install
+    - 'sudo make && modules install' will fail to install kernel modules
 6. install new kernel
     - `make install`
 ---- currently at the point of creating a initramfs... need to find a libre solution
