@@ -203,9 +203,16 @@ exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 #exec --no-startup-id nm-applet --sm-disable
 
 # title bars for apps, pixel 0 = for no title; normal = basic title bar
-new_window pixel 0
+# new_window pixel 0
+default_border pixel 1
 #for_window [class="^.*"] border pixel 0
 # i3 upstream (not gaps atm, has default_border to replace new_window)
+
+# make border and split indicator around windows orange (ffa500), other vals are default
+client.focused          #4c7899 #285577 #ffffff #ffa500   #ffa500
+
+# hide borders when only a single window open
+hide_edge_borders smart
 
 #i3 gaps settings
 #gaps inner 10

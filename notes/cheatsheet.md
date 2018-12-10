@@ -110,7 +110,7 @@
     - lsb_release -a
     - cat /etc/issue.logo
 ## generate random password from terminal/CLI
-    - openssl rand -base 64 14
+    - openssl rand -base64 14
 # METADATA
 ## mp3 files
   - strip with id3lib
