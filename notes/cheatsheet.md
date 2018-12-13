@@ -135,6 +135,9 @@
   - Esc-e
 ## Detach a file (i.e., delete an attachment)
     - D
+## move message to another mailbox
+    - s (for save)
+    - ? to choose mailbox
 # NODE, NPM, NVM
 ## install nvm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
