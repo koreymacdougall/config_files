@@ -15,24 +15,26 @@ bindsym $mod+q kill
 ####################
 
 # terminal
-bindsym $mod+Return                     exec i3-sensible-terminal
-# bindsym $mod+Return                     exec /usr/bin/xterm
+bindsym $mod+Return                     exec /usr/bin/xterm
 
 # dmenu
 bindsym $mod+d                          exec dmenu_run
 
 # ranger
-bindsym $mod+r                      exec i3-sensible-terminal -e ranger
+bindsym $mod+r                      exec /usr/bin/xterm -e ranger
 
 # browser
 set $browser "firejail firefox"
 bindsym $mod+w                          exec $browser
 
 # vim
-bindsym $mod+Control+v                  exec i3-sensible-terminal -e vim
+bindsym $mod+Control+v                  exec /usr/bin/xterm -e vim
+
+# notes in vim
+bindsym $mod+n                          exec /usr/bin/xterm -e vim ~/notes.md
 
 # neomutt
-bindsym $mod+m                          exec i3-sensible-terminal -e neomutt
+bindsym $mod+m                          exec /usr/bin/xterm -e neomutt
 
 # kalendar
 bindsym $mod+p                          exec ~/source_packages/kalendar-master/src/Kalendar
@@ -215,8 +217,8 @@ client.focused          #4c7899 #285577 #ffffff #ffa500   #ffa500
 hide_edge_borders smart
 
 #i3 gaps settings
-#gaps inner 10
-#gaps outer 0
+gaps inner 5
+gaps outer 0
 #
 ################################################################################
 # Deprecated Settings

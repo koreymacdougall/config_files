@@ -58,6 +58,7 @@ alias mD='cd ~/Downloads'
 alias mm='cd ~/mail_configs'
 alias me='cd ~/email'
 alias mw='cd ~/dev/websites'
+alias mf="cd /home/km/projects/formid_project/"
 
 alias 1='cd ~1'
 alias 2='cd ~2'
@@ -78,7 +79,7 @@ alias vi='vim ~/.config/i3/config'
 alias vm='vim ~/.muttrc'
 alias vr='vim ~/.config/ranger/rc.conf'
 alias vt='vim ~/.tmux.conf'
-alias vn='vim ~/notes/notes.md'
+alias vn='vim ~/notes.md'
 alias vq="vim ~/config_files/quotes.md"
 alias vx="vim ~/.Xresources"
 
@@ -121,4 +122,9 @@ alias gitrev="sh ~/config_files/git_revision_script"
 
 # generate blog
 alias gb="cd ~/Downloads/HumbleBlog/scripts && sh generate_blog.sh"
+
+# launch UwTerminalX, accept disclaimer
+alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
+
+alias z="/home/km/source_packages/Zotero_linux-x86_64/zotero & disown"
 
