@@ -77,3 +77,6 @@ ln -sf ~/config_files/.urlview ~/.urlview
 
 # fzf (fuzzyfinder) symlink
 ln -sf ~/config_files/.fzf.zsh ~/.fzf.zsh
+
+# pman symlink
+echo "Make the pman symlink manually"
