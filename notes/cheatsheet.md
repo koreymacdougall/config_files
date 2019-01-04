@@ -93,6 +93,10 @@
 ## Modify last, unpushed commit:
     - first, make needed changes, stage them with "git add file2" then run
     - git commit --amend
+# LaTeX
+    - cancel a compilation: 
+        - x <enter>
+
 # LINUX
 ## full system backup (from linux.com/learn/full-metal-backup-using-dd-command)
     - backup to a compressed image file:

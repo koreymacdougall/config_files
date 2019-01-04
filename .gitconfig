@@ -22,3 +22,5 @@
     browser = firefox
 [push]
     default = simple
+[credential]
+	helper = cache

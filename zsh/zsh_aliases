@@ -56,6 +56,7 @@ alias md='cd ~/documents'
 alias mn='cd ~/dev/websites/rails_sites/nurse_cert'
 alias mD='cd ~/Downloads'
 alias mm='cd ~/mail_configs'
+alias mM='cd ~/music'
 alias me='cd ~/email'
 alias mw='cd ~/dev/websites'
 alias mf="cd /home/km/projects/formid_project/"
@@ -96,6 +97,9 @@ alias youtube-dl='/home/km/.local/bin/youtube-dl'
 # notmuch aliases
 alias ns='notmuch show'
 alias nse='notmuch search'
+
+# calcurse launcher alias
+alias c='calcurse'
 
 # rails aliases
 alias rs='rails server'
