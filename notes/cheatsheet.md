@@ -115,6 +115,10 @@
     - cat /etc/issue.logo
 ## generate random password from terminal/CLI
     - openssl rand -base64 14
+## reset terminal
+    - if terminal goes bananas, with a bunch of crazy characters, can use the
+        'reset' command to clear screen and reload.  Sometimes helps on headless
+        machines.
 # METADATA
 ## mp3 files
   - strip with id3lib

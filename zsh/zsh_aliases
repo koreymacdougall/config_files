@@ -10,6 +10,7 @@ alias grep='grep --color=always'
 alias hg='history | grep -i'
 alias pg='ps aux | grep -i'
 alias lg='ls -al | grep -i'
+alias ag='alias | grep -i'
 
 alias e='exit'
 alias a='arandr'
