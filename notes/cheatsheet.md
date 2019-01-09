@@ -90,9 +90,15 @@
 ## rename a local branch
     - git branch -m <oldname> <newname>
 
+## fix merge conflicts with binary files:
+    - can choose local or remote with:
+    - git checkout --theirs path/to/file.png, for remote
+    - or --ours, for local
 ## Modify last, unpushed commit:
     - first, make needed changes, stage them with "git add file2" then run
     - git commit --amend
+## unstage added, but uncommitted, changes:
+    - git reset
 # LaTeX
     - cancel a compilation: 
         - x <enter>
@@ -103,6 +109,13 @@
         - sudo dd if=/dev/sda conv=sync,noerror status=progress, bs=64k | gzip -c > /PATH/TO/DRIVE/backup_image.img.gz
     - restore from image file:
         - gunzip -c /PATH/TO/DRIVE/backup_image.img.gz | dd of=/dev/sda
+## home dir backup
+    - create it:
+        - nav to location where backup will store, eg /mnt/ultrabay_hdd
+        - tar -cz /home/km | gpg -c -o home_dir_backup_DATE.tgz.gpg
+    - restore it:
+        - gpg -d home_dir_backup_DATE.tgz.gpg | tar -xz
+
 ## reset failed login count (to reenable acct after failed logins)
     - faillog -r -u <user>
 ## capture screenshot
@@ -113,12 +126,17 @@
 ## find out which system you are on
     - lsb_release -a
     - cat /etc/issue.logo
+## kernel options format
+    - tips/portage output with the following appearance are often kernel options:
+        - CONFIG_SNG_HDA_PREALLOC_SIZE=64
 ## generate random password from terminal/CLI
     - openssl rand -base64 14
 ## reset terminal
     - if terminal goes bananas, with a bunch of crazy characters, can use the
         'reset' command to clear screen and reload.  Sometimes helps on headless
         machines.
+## unfreeze a terminal (when you accidentally press Ctrl-S)
+    - Ctrl-Q
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -571,12 +589,11 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## ctrl-p rescan files
     - f5 from ctrl-p mode
 ## TableMode
-    - to align, use : in desired spot in header. e.g.,
+- to align, use : in desired spot in header. e.g.,
         | header left |       header center       | header right |
         |-------------+:-------------------------:+-------------:|
         | col left    | col center very long text |    col_right |
         | left        |           center          |        right |
-
 ## command line window (with normal mode powers like move/cw/etc)
     ctrl-f - from command mode
     q:, q/, q? - from normal mode

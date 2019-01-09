@@ -23,6 +23,7 @@ nnoremap <leader>rw :%s/\s\+$//e<CR>|                                           
 nnoremap <leader>t :! rails test<CR>|                                                "run test suite
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
+nnoremap <leader>!p :!python3 %<cr>|                                                     "shell out to run this program in python3
 "-- run seeing_is_ believing on current buffer
 nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
 "-- clear seeing is believing in current buffer
@@ -39,6 +40,7 @@ nnoremap <leader>en :e ~/notes/notes.md<cr>|                                    
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
 nnoremap <leader>eq :e ~/config_files/quotes.md<CR>|                                    "edit quotes file
 nnoremap <leader>ex :e ~/config_files/.Xresources<CR>|                                    "edit quotes file
+
 
 "--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                       "move to the next buffer

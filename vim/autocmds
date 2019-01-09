@@ -34,7 +34,7 @@ augroup END
 "--Mutt settings
 autocmd BufNewFile,BufRead,BufEnter /tmp/neomutt* set filetype=mail
 autocmd FileType mail            setlocal spell nocursorcolumn nohlsearch
-autocmd FileType mail            colorscheme murphy
+"autocmd FileType mail            colorscheme murphy
 
 "--TABLEMODE settings
 augroup table_mode_on_mappings

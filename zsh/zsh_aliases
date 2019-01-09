@@ -128,7 +128,7 @@ alias d="dirs -v"
 alias gitrev="sh ~/config_files/git_revision_script"
 
 # generate blog
-alias gb="cd ~/Downloads/HumbleBlog/scripts && sh generate_blog.sh"
+alias gb="cd ~/dev/websites/HumbleBlog/scripts && sh generate_blog.sh"
 
 # launch UwTerminalX, accept disclaimer
 alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
