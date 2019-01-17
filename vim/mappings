@@ -36,7 +36,7 @@ nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>|                  
 nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>|                                   "edit muttrc
 nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>|                              "edit i3 config
 nnoremap <leader>et :e ~/config_files/.tmux.conf<cr>|                                    "edit tmux config
-nnoremap <leader>en :e ~/notes/notes.md<cr>|                                         "edit notes file
+nnoremap <leader>en :e ~/notes.md<cr>|                                         "edit notes file
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
 nnoremap <leader>eq :e ~/config_files/quotes.md<CR>|                                    "edit quotes file
 nnoremap <leader>ex :e ~/config_files/.Xresources<CR>|                                    "edit quotes file

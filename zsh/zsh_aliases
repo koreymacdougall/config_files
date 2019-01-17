@@ -60,7 +60,6 @@ alias mm='cd ~/mail_configs'
 alias mM='cd ~/music'
 alias me='cd ~/email'
 alias mw='cd ~/dev/websites'
-alias mf="cd /home/km/projects/formid_project/"
 
 alias 1='cd ~1'
 alias 2='cd ~2'
@@ -128,10 +127,18 @@ alias d="dirs -v"
 alias gitrev="sh ~/config_files/git_revision_script"
 
 # generate blog
-alias gb="cd ~/dev/websites/HumbleBlog/scripts && sh generate_blog.sh"
+alias gb="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/HumbleBlog/scripts && sh generate_blog.sh && cp -r ../output ../assets ~/Downloads && cd -"
+# generate ncs site
+alias gncs="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/ncs/scripts && sh generate_website.sh && cp -r ../output ../assets ~/Downloads && cd -"
 
-# launch UwTerminalX, accept disclaimer
+# -
+
+
+
+# formid aliases, move, UwTerminal, stop
+alias mf="cd /home/km/projects/formid_project/"
 alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
+alias s="python3 /home/km/projects/formid_project/dev/python_hfs_code/stop.py"
 
 alias z="/home/km/source_packages/Zotero_linux-x86_64/zotero & disown"
 
