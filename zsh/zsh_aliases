@@ -95,8 +95,8 @@ alias x='startx'
 alias youtube-dl='/home/km/.local/bin/youtube-dl'
 
 # notmuch aliases
-alias ns='notmuch show'
-alias nse='notmuch search'
+alias ns='notmuch search'
+alias nsh='notmuch show'
 
 # calcurse launcher alias
 alias c='calcurse'
