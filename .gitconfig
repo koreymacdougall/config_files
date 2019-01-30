@@ -12,9 +12,9 @@
 [diff]
     tool = vimdiff
 
-#[credential]
+# [credential]
     # set with: git config --global credential.username koreymacdougall
-    #username = kmac
+    # username = kmac
 [github]
     user = koreymacdougall
     # for token, use an env variable; scary intern3ts
