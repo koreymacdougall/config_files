@@ -99,6 +99,9 @@
     - git commit --amend
 ## unstage added, but uncommitted, changes:
     - git reset
+# Javascript
+## Run Prettier for code formatting, w/in vim
+    - :Prettier
 # LaTeX
     - cancel a compilation: 
         - x <enter>
@@ -205,6 +208,8 @@
 ## paid programs to edit
     - pdf studio and masterpdf
 # POSTGRES
+## launch the postgres cluster:
+    - sudo /etc/init.d/postgresql-10 start
 ## note: run these commands as the postgres user
 ## enter postgres console:
     - psql
@@ -243,7 +248,7 @@
     - not sure what the diff between 2 and 3 is
 ## extract partial with rails-vim
     - :Extract partial_name
-## 
+
 # RUBY
 ## notes
     ### - proc - reusable block
@@ -270,7 +275,7 @@
             dubbed = x.map(&double)  #=> [4,8,12]
             ```
 
-##juseful instance methods
+## useful instance methods
 ### compact
     - remove nils from array
         - example:
@@ -325,6 +330,27 @@
             def rot13(secret_messages)
             secret_messages.map { |c| c.tr("a-z", "n-za-m") }
             end
+
+#### blog post for tr method:
+
+            - What it does: Return a copy of a string with some characters replaced.  The
+            method name, tr, is short for Translate, and similar to the tr utility in
+            Unix-like operating systems.  In example 1, "e" is replaced by "i" (the value in the corresponding index of the second argument), and "l" is replaced by "p".  Example 1:
+
+            ```bash
+            "hello".tr('el', 'ip')      #=> "hippo"
+            ```
+
+            Example 2 is a bit more complex: here we use the tr method to implement a [ROT13
+            cipher](https://en.wikipedia.org/wiki/ROT13), which, for the uninitiated, is
+            a common cipher used to encrypt/scramble text.  (protip: you can ROT13 encipher
+            text within vim by using the g? command.  Try g?ap to scramble a paragraph).
+            Example 2:
+
+            ```ruby
+            def rot13(secret_messages)
+                secret_messages.map { |c| c.tr("a-z", "n-za-m") }
+            end
             ```
 
 ### upto
@@ -333,6 +359,14 @@
             ```ruby
             4.upto(8) { |n| p n } #=>4, 5, 6, 7,8
             ```
+        ##### blog post for [upto] method
+
+            What it does: Generate an Enum for a range, from start value (i.e., the object
+            *upto* is being called on), to end value.  Example:
+
+            ```ruby
+            4.upto(8) { |n| p n } #=> 4, 5, 6, 7,8
+            ```
 ### yield
     - TODO
 
@@ -340,8 +374,12 @@
         - useful to check whether block was passed to yield
 
 ## list installed gems
-    - gem query --local           
-# RVM
+    - gem query --local
+## use ri to view local documentation
+    - ri {class/method/etc name}
+    - ri -i   #=> interactive mode
+
+## RVM
     rvm list (or ls)            - show installed and selected
     rvm install {version}       - install new ruby
     rvm gemset create {name}    - create new gemset

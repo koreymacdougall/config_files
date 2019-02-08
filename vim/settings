@@ -82,3 +82,11 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s --hidden --nocolor -l -g ""'   "use ag as search command
 endif
+
+"ESlint and ALE settings"
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+let g:ale_sign_error = 'N'
+let g:ale_sign_warning = 'O'
+let g:ale_fix_on_save = 1

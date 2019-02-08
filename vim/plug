@@ -56,6 +56,16 @@ call plug#begin()
     " speed up folding
     Plug 'Konfekt/FastFold'
 
+    " ------------------------------------- "
+    " ---- Javascript-specific plugins ---- "
+    " ------------------------------------- "
+    " Prettier - Opionated JS formatting tool
+    " Using npm installed version atm
+    " post install (yarn install | npm install)
+    " Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    " Ale - Asynchronous Linting Engine
+    Plug 'w0rp/ale', { 'do': 'npm install' }
+
 call plug#end()
 
 "lazy loading
