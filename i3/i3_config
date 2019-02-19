@@ -217,7 +217,7 @@ client.focused          #4c7899 #285577 #ffffff #ffa500   #ffa500
 hide_edge_borders smart
 
 #i3 gaps settings
-gaps inner 5
+gaps inner 0
 gaps outer 0
 #
 ################################################################################

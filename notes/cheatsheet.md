@@ -99,6 +99,8 @@
     - git commit --amend
 ## unstage added, but uncommitted, changes:
     - git reset
+## abort failed merge (e.g., pulling from wrong branch, now merge conflicts)
+    - git merge --abort
 # Javascript
 ## Run Prettier for code formatting, w/in vim
     - :Prettier
@@ -114,13 +116,22 @@
         - gunzip -c /PATH/TO/DRIVE/backup_image.img.gz | dd of=/dev/sda
 ## home dir backup
     - create it:
-        - nav to location where backup will store, eg /mnt/ultrabay_hdd
+        - nav to location where backup will store, eg /mnt/ultrabay_hdd,
+          (so as not to cause tar failure/warning)
         - tar -cz /home/km | gpg -c -o home_dir_backup_DATE.tgz.gpg
     - restore it:
         - gpg -d home_dir_backup_DATE.tgz.gpg | tar -xz
+## email backup
+    - nav to where backup will be stored (so as not to cause tar failure/warning)
+    - tar -cz /home/km/email /home/km/mail_configs | gpg -c -o /mnt/dock_hdd/em_bk_190218.tgz.gpg
 
 ## reset failed login count (to reenable acct after failed logins)
     - faillog -r -u <user>
+## logfiles
+    - /var/log is main dir
+    - /var/log/syslog is main file
+    - use grc, the generic colouriser, to colourise log files, e.g.:
+        - sudo grc less /var/log/syslog
 ## capture screenshot
     - imagemagick / ImageMagick 
     - provides the 'import' function:
@@ -140,6 +151,13 @@
         machines.
 ## unfreeze a terminal (when you accidentally press Ctrl-S)
     - Ctrl-Q
+## video capture & webcam, kernel modules/setup
+    - great information at https://nlug.ml1.co.uk/2013/02/gentoo-kernel-3-7-9-webcams-v4l-uvc-video-kernel-config/3965
+    - modules needed (for logitech c270, uvc-based cam):
+        - CONFIG_MEDIA_SUPPORT
+        - CONFIG_MEDIA_CAMERA_SUPPORT
+        - CONFIG_MEDIA_USB_SUPPORT
+        - CONFIG_USB_VIDEO_CLASS
 # METADATA
 ## mp3 files
   - strip with id3lib
