@@ -109,6 +109,11 @@
         - x <enter>
 
 # LINUX
+## print daemon (CUPS - common unix print system)
+    - start daemon on openRC
+        - rc-service cupsd start
+    - http interface
+        - http://localhost:631/
 ## full system backup (from linux.com/learn/full-metal-backup-using-dd-command)
     - backup to a compressed image file:
         - sudo dd if=/dev/sda conv=sync,noerror status=progress, bs=64k | gzip -c > /PATH/TO/DRIVE/backup_image.img.gz
@@ -487,6 +492,13 @@
 ## list files in a tarball
     - -t
 # TMUX
+## make selected pane full screen temporarily
+    - leader-z  (for zoom)
+## renumber windows
+    - after closing windows, ending up with gaps, can use:
+        - movew -r
+        - shortform of "move-window -r"
+        - can specify individual windows, too
 ## prefix mappings
     ,   -   rename-window
     $   -   rename-session

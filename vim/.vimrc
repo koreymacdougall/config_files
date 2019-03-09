@@ -9,6 +9,6 @@ syntax on|                                           "turn on syntax completion 
 filetype plugin indent on|                           "enable filetype detection, load plugins and indent files
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
 highlight clear SignColumn|                          "don't highlight the git gutter
-colorscheme gruvbox
+colorscheme molokai
 
 

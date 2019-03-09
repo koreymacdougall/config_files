@@ -131,13 +131,15 @@
     - from within root of chroot, note no trailing slashes for dirs:
     - `ln -s /linux-3.19.1 /usr/src/linux`
 4. configure kernel:
-    - `make menuconfig`
-5. build kernel (may need to install bc first...)
-    - `sudo make && sudo modules_install`
-    - note that BOTH make and modules_install need to be sudo/root
-    - 'sudo make && modules_install' will fail to install kernel modules
-6. install new kernel
-    - `make install`
+    - `sudo make menuconfig`
+    - for dark BG:
+        -  sudo make MENUCONFIG_COLOR=blackbg menuconfig
+5. build kernel w/ modules(may need to install bc first...)
+    - `sudo make`
+    - `sudo make modules`
+6. install new kernel and modules
+    - `sudo make install`
+    - `sudo make modules install`
 ---- currently at the point of creating a initramfs... need to find a libre solution
 
 note: to resume install process
