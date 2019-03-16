@@ -109,11 +109,27 @@
         - x <enter>
 
 # LINUX
-## print daemon (CUPS - common unix print system)
+## printing  (CUPS - common unix print system)
     - start daemon on openRC
         - rc-service cupsd start
     - http interface
         - http://localhost:631/
+    - if not detecting usb printer, could be permissions/ownership issue (see
+        https://wiki.gentoo.org/wiki/Printing#Configuration)
+        - lsusb will show bus and device
+            - e.g., Bus 001 Device 004: ID 03f0:ce11 Hewlett-Packard 
+        - the character device for this will be at:
+            - ls /dev/bus/usb/001/004
+        - fix ownership and permissions
+            - # chgrp lp /dev/bus/usb/001/004
+            - # chmod 660 /dev/bus/usb/001/004
+        - printer should appear now
+
+    - problem with printing pdfs with forms in evince (apparently in okular too)
+        - one workaround is to open the pdf in firefox, print to pdf, then print
+            from evince (ugh; maybe can compile firefox with print support on
+            gentoo? )
+
 ## full system backup (from linux.com/learn/full-metal-backup-using-dd-command)
     - backup to a compressed image file:
         - sudo dd if=/dev/sda conv=sync,noerror status=progress, bs=64k | gzip -c > /PATH/TO/DRIVE/backup_image.img.gz
