@@ -91,9 +91,6 @@ alias k="~/source_packes/kalendar-master/src/Kalendar"
 # launch x server
 alias x='startx'
 
-# launch youtube-dl, pip installed with --user flag
-alias youtube-dl='/home/km/.local/bin/youtube-dl'
-
 # notmuch aliases
 alias ns='notmuch search'
 alias nsh='notmuch show'
@@ -116,8 +113,9 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # grab mail alias
-alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
-alias gmf='cd ~/mail_configs && bash ./cryptscript_full.sh && cd -'
+alias gm='getmail -d'
+# alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
+# alias gmf='cd ~/mail_configs && bash ./cryptscript_full.sh && cd -'
 alias m='neomutt'
 
 # list dirs alias

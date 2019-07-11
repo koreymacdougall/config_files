@@ -56,7 +56,7 @@ HIST_STAMPS="mm/dd/yyyy"    # timestamps for history / unused?
 bindkey "^K" history-beginning-search-backward
 bindkey "^J" history-beginning-search-forward
 bindkey "^r" history-incremental-search-backward
-bindkey "^f" FZF_CTRL_T_COMMAND
+# bindkey "^f" FZF_CTRL_T_COMMAND
 bindkey -M viins "^K" history-beginning-search-backward
 bindkey -M viins "^J" history-beginning-search-forward
 bindkey -M viins "^U" backward-kill-line
@@ -69,8 +69,8 @@ bindkey -v                  # use vi mode
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# source fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# # source fuzzy finder
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
@@ -79,9 +79,9 @@ eval "$(dircolors ~/config_files/dircolors)"
 export GPODDER_DOWNLOAD_DIR=~/podcasts
 
 # source chruby
-source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/chruby.sh
 # automatically load specific ruby version if specified in a .ruby-version file
-source /usr/local/share/chruby/auto.sh
+# source /usr/local/share/chruby/auto.sh
 # on load, change to specified ruby (i.e., my current default is 2.5.1)
-chruby 2.5.1
+# chruby 2.5.1
 

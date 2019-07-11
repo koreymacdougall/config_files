@@ -3,7 +3,7 @@
 !      - hack for free systems (with ttf-liberation-fonts, i think)
 ! xterm*faceName: DejaVu Sans Mono
 xterm*faceName: Hack
-xterm*faceSize: 10
+xterm*faceSize: 14
 term*loginShell: true
 xterm*saveLines: 5000
 xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48

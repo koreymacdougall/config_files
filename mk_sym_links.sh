@@ -78,5 +78,9 @@ ln -sf ~/config_files/.urlview ~/.urlview
 # fzf (fuzzyfinder) symlink
 ln -sf ~/config_files/.fzf.zsh ~/.fzf.zsh
 
+# libinput - trackpad config
+sudo ln -sf ~/config_files/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
 # pman symlink
 echo "Make the pman symlink manually"
+
