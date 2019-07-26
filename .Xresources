@@ -10,7 +10,10 @@ xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
 xterm*eightBitInput: false
 XTerm*allowBoldFonts: false
 xterm*termName: xterm-256color
-
+! XTerm.vt100.font: 7x13
+XTerm.vt100.translations: #override \n\
+  Ctrl <Key> minus: smaller-vt-font() \n\
+  Ctrl <Key> plus: larger-vt-font()
 
 ! gruvbox Xresources palette
 *.background: #000000
