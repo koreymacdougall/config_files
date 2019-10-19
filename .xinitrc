@@ -1,8 +1,6 @@
 # remap caps to escape <3 vim
 xmodmap .Xmodmap
 
-# using xkbmap may be redundant...
-setxkbmap -option "caps:escape"
 
 # load .Xresources
 #[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
@@ -23,12 +21,17 @@ FontPath /usr/share/fonts/100dpi
 # set background colour to match color scheme
 hsetroot -solid $bg_color
 
+# swap caps and escape
+# using xkbmap may be redundant...
+setxkbmap -option "caps:escape"
+
 # set bg as last image set with feh
 source '/home/km/.fehbg'
 #
 # running WM after remapping keys seems to work better
 # launch a console kit session and dbus
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
-# exec i3
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3
+
+exec i3
 #exec startxfce4
 

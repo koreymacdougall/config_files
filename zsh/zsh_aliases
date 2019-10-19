@@ -37,6 +37,9 @@ alias ta="tmux attach -t"
 alias ts='tmux_session_name_set ; tmux new-session -s "$tmux_session_name"'
 alias tl="tmux list-sessions"
 
+# apt aliases
+alias sai='sudo apt install'
+
 # pacman aliases
 alias sps='sudo pacman -S'
 alias pss='pacman -Ss'
@@ -78,6 +81,7 @@ alias v='vim'
 alias vv='vim ~/.vimrc'
 alias vc='vim ~/config_files/notes/cheatsheet.md'
 alias vz='vim ~/.zshrc'
+alias vza='vim ~/config_files/zsh/zsh_aliases'
 alias vi='vim ~/.config/i3/config'
 alias vm='vim ~/.muttrc'
 alias vr='vim ~/.config/ranger/rc.conf'
@@ -138,5 +142,9 @@ alias mf="cd /home/km/projects/formid_project/"
 alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
 alias s="python3 /home/km/projects/formid_project/dev/python_hfs_code/stop.py"
 
+alias sz='source ~/.zshrc'
+
 alias z="/home/km/source_packages/Zotero_linux-x86_64/zotero & disown"
 
+alias dsv='source ~/dev/podcast_project/audio_extraction_subproject/deepspeech_venv/bin/activate'
+alias mds='cd ~/dev/podcast_project && dsv'

@@ -57,8 +57,6 @@ if [ "$preview_images" = "True" ]; then
         # unsupported types.
         image/*)
             exit 7;;
-        application/pdf)
-            evince-thumbnailer -s "$2" "$path" "$cached" && exit 6;;
         # Image preview for video, disabled by default.:
         ###video/*)
         ###    ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
@@ -81,9 +79,11 @@ case "$extension" in
         try 7z -p l "$path" && { dump | trim; exit 0; } || exit 1;;
     # PDF documents:
     pdf)
-        #try pdftotext -l 10 -nopgbrk -q "$path" - && \
-            #{ dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
-        #try pdftoppm -png "$path" && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+        try pdftoppm -jpeg -singlefile "$path" "$cached" -scale-to-x -1 && mv "$cached.jpg" "$cached" && exit 6 || exit 1;;
+        # try pdftoppm -png "$path" && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+        # try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;
+        # evince-thumbnailer -s "$2" "$path" "$cached" && exit 6;;
+        # try pdftotext -l 10 -nopgbrk -q "$path" - && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
     # BitTorrent Files
     torrent)
         try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;

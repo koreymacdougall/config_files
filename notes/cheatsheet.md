@@ -179,6 +179,11 @@
         - CONFIG_MEDIA_CAMERA_SUPPORT
         - CONFIG_MEDIA_USB_SUPPORT
         - CONFIG_USB_VIDEO_CLASS
+## wifi restart (wifi issues)
+    - restart service - # systecmtl restart networking
+    - check dmesg logs for messages
+    - remove/re-add kernel module - # modprobe brcmfmac
+
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -288,6 +293,10 @@
 ## extract partial with rails-vim
     - :Extract partial_name
 
+# RANGER
+## Redraw window
+    - ctrl-l
+    - useful for pdf previews overlapping/cluttering
 # RUBY
 ## notes
     ### - proc - reusable block
@@ -608,6 +617,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - -8,-4co.
 ## close all buffers except current one
     - :%bd|e#
+## Delete or Rename a file
+    - In file explorer (:Explore or :Sex or :Vex), D / R
 ## create a new file in netrw at cursor position
     - %
 ## create a new directory/dir in netrw at cursor position

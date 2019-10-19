@@ -28,7 +28,7 @@ call plug#begin()
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
     " Provide some functionality for markdown editing
-    Plug 'plasticboy/vim-markdown'
+    ""Plug 'plasticboy/vim-markdown'
     " tcomment toggles comments
     Plug 'tomtom/tcomment_vim'
     "vim-latex-live-preview allows realtime preview of latex files

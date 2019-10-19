@@ -69,8 +69,8 @@ bindkey -v                  # use vi mode
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# # source fuzzy finder
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# source fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
