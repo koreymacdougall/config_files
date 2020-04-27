@@ -28,8 +28,8 @@ ln -sf ~/config_files/.gitconfig ~/.gitconfig
 
 #elinks symlinks
 #first is for mint/lubuntu, second is for arch
-#ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
-ln -sf ~/config_files/.elinks_conf ~/.elinks.conf
+ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
+# ln -sf ~/config_files/.elinks_conf ~/.elinks.conf
 
 #xinit symlink
 ln -sf ~/config_files/.xinitrc ~/.xinitrc

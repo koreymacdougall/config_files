@@ -78,6 +78,9 @@ eval "$(dircolors ~/config_files/dircolors)"
 # set gPodder to download to my podcasts dir
 export GPODDER_DOWNLOAD_DIR=~/podcasts
 
+# add youtube-dl to path
+PATH="$PATH:/home/km/.local/bin";export PATH
+
 # source chruby
 # source /usr/local/share/chruby/chruby.sh
 # automatically load specific ruby version if specified in a .ruby-version file
@@ -85,3 +88,5 @@ export GPODDER_DOWNLOAD_DIR=~/podcasts
 # on load, change to specified ruby (i.e., my current default is 2.5.1)
 # chruby 2.5.1
 
+export LESS=r
+export LESS=R

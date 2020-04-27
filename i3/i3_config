@@ -133,8 +133,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # increase /decrease size of gaps
 # tips and inspiration thanks to lukesmith.xyz's dotfiles
-#bindsym $mod+g  gaps inner current plus 5
-#bindsym $mod+shift+G  gaps inner current minus 5
+bindsym $mod+g  gaps inner current plus 5
+bindsym $mod+shift+G  gaps inner current minus 5
 
 ####################
 # end i3 CONTROLS  #
@@ -162,6 +162,9 @@ exec --no-startup-id nm-applet --sm-disable &
 
 # pulseaudio system tray
 exec --no-startup-id pasystray
+
+# set bg as last image set with feh
+exec --no-startup-id source '/home/km/.fehbg'
 
 # Start i3bar to display a workspace bar (plus the system information i3status)
 bar {
@@ -217,8 +220,8 @@ client.focused          #4c7899 #285577 #ffffff #ffa500   #ffa500
 hide_edge_borders smart
 
 #i3 gaps settings
-#gaps inner 0
-#gaps outer 0
+gaps inner 0
+gaps outer 0
 #
 ################################################################################
 # Deprecated Settings

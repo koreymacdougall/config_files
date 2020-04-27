@@ -74,7 +74,7 @@ alias 7='cd ~7'
 alias 8='cd ~8'
 alias 9='cd ~9'
 
-alias pw="/home/km/config_files/pman "
+alias pw="/home/km/kttk/pman "
 
 # quickly open various config files
 alias v='vim'
@@ -133,18 +133,14 @@ alias gb="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/Humb
 # generate ncs site
 alias gncs="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/ncs/scripts && sh generate_website.sh && cp -r ../output ../assets ~/Downloads && cd -"
 
-# -
-
-
-
-# formid aliases, move, UwTerminal, stop
-alias mf="cd /home/km/projects/formid_project/"
-alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
-alias s="python3 /home/km/projects/formid_project/dev/python_hfs_code/stop.py"
-
 alias sz='source ~/.zshrc'
 
 alias z="/home/km/source_packages/Zotero_linux-x86_64/zotero & disown"
 
-alias dsv='source ~/dev/podcast_project/audio_extraction_subproject/deepspeech_venv/bin/activate'
-alias mds='cd ~/dev/podcast_project && dsv'
+alias ppv='source ~/dev/podcast_project/audio_extraction_subproject/podcast_project_venv/bin/activate'
+alias mpp='cd ~/dev/podcast_project/ && ppv'
+
+# formid aliases, move, UwTerminal, stop
+alias mf="cd /home/km/projects/formid_project/"
+alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
+#alias s="python3 /home/km/projects/formid_project/dev/python_hfs_code/stop.py"

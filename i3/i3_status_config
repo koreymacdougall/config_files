@@ -5,11 +5,17 @@ general {
 }
 
 order += "disk /"
+order += "disk /home/"
+
 order += "tztime local"
 order += "battery 0"
 
 disk "/" {
-    format = "%free"
+    format = "/ %free"
+}
+
+disk "/home/" {
+    format = "/home %free"
 }
 
 tztime local {

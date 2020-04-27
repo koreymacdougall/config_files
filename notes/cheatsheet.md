@@ -10,6 +10,9 @@
 
 ## view dep tree
     - pactree
+# Audio
+- To find the duration of all audio files in a directory,use this command:
+    - soxi -D /path/to/files/* | awk 'a+=$1; END{print a}'
 # CALCURSE
 ## to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
@@ -20,12 +23,35 @@
 ## remove cached metadata (e.g., after running id3convert -s **/*)
     - :update-cache
     - can use -f flag if not co-operating
+# DJANGO
+## commands
+### create a new project
+- django-admin startproject {proj name}
+### create a new app
+- python manage.py startapp {app name}
+### start the development webserver
+- python manage.py runserver
 # DOCKER
+## stop and delete all containers
+- sudo docker stop $(sudo docker ps -a -q)
+- sudo docker rm $(sudo docker ps -a -q)
+
 ## detach from running container
     - ^P ^Q
 ## remove dangling images
+    - is this deprecated by --remove-orphans?
+    - note: docker docs refer to these as both orphans and dangling
+        - https://forums.docker.com/t/how-do-i-remove-orphaned-images/1172
     where dangling = you've created a new build of an image, but it wasn't named
     see: https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
+        -
+        - or (according to my understanding of
+          http://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/),
+          a dangling image is an intermediate image that is no longer the parent
+          of any child image.  e.g., if you build hello-world image with fedora,
+          and then later the fedora image gets updated, the intermediate OLD
+          fedora layer for the hello world image no longer points to any
+          child/final image.  I think...
     - sudo docker rmi $(sudo docker images -a --filter=dangling=true -q)
     - possible alternative, but check docs
         = sudo docker system prune -a
@@ -142,6 +168,10 @@
         - tar -cz /home/km | gpg -c -o home_dir_backup_DATE.tgz.gpg
     - restore it:
         - gpg -d home_dir_backup_DATE.tgz.gpg | tar -xz
+## view csv files on command line
+### use column
+- column -s, -t < {filename}
+### use csvtool
 ## email backup
     - nav to where backup will be stored (so as not to cause tar failure/warning)
     - tar -cz /home/km/email /home/km/mail_configs | gpg -c -o /mnt/dock_hdd/em_bk_190218.tgz.gpg
@@ -180,9 +210,15 @@
         - CONFIG_MEDIA_USB_SUPPORT
         - CONFIG_USB_VIDEO_CLASS
 ## wifi restart (wifi issues)
-    - restart service - # systecmtl restart networking
+    - restart service
+        - disconnect from connection
+        - # systecmtl stop networking
+        - # rmmod brcmfmac
+        - # modprobe brcmfmac
+        - # systemctl start networking.service
+
     - check dmesg logs for messages
-    - remove/re-add kernel module - # modprobe brcmfmac
+    - remove/re-add kernel module - # rmmod brcmfmac & # modprobe brcmfmac
 
 # METADATA
 ## mp3 files
@@ -211,6 +247,8 @@
 ## move message to another mailbox
     - s (for save)
     - ? to choose mailbox
+## redraw screen (clear artifacts)
+    - Ctrl-t (function is redraw-screen in index)
 # NODE, NPM, NVM
 ## install nvm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -275,6 +313,13 @@
         - python3 -m venv {env name}
     - python 2.7
         - virtualenv --python=/usr/bin/{version} {env name}
+## using venv + pip + bpython
+    - after installing bpython in venv, needed to deactivate/reactivate the
+      venv for it to see pip3 installed pkgs within bpython... I dunno
+## use jupyter lab with venv
+      - create, activate venv
+      - install kernel: ipython kernel install --user --name={venv name}
+      - select kernel in notebook/lab
 # RAILS
 ## redo a migration (for example, if botched the structure & have fixed it)
     - rails db:migrate:redo
@@ -442,6 +487,10 @@
         - creates 2 files: .ruby-version and a .ruby-gemset
 
 
+## bundler error - bundle (Gem::GemNotFoundException
+- shows up with rbenv
+- multiple fixes on SO
+- my fix - move or delete Gemfile.lock 
 # SHELL / UNIX
     ## list all 256 colors
         for i in {0..255} ; do
@@ -509,10 +558,15 @@
     - strings .zsh_history_bad > .zsh_history
     - fc -R .zsh_history
         - fc -R = read history from file 
+## unset/remove/clobber an env variable
+    - unset {VAR NAME}
 # SFTP
     - if trying to recursively put directory(ies), the dirs must already exist
         on target
     - good to know for sftp management of web hosts
+# SQL
+## Get column names
+    - select * from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'{table name here';
 # TAR
 ## list files in a tarball
     - -t
@@ -602,6 +656,9 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## replace tabs with spaces
+    - :ret aka :retab
+    -
 ## if vim freezes, try Ctrl-Q to unfreeze
     - technically this is a shell / tty problem.  Ctrl-S stops output, ^Q
         restores it
@@ -707,9 +764,14 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - open new tab in background:
         - modify plain json in settings, for "F", to include:
         - "background": true
+# Webp
+## convery webp to another format
+    - install webp package
+    - dwebp file.webp -o file.png
 # X11
     - xprop - get window manager class name
 # XTERM
 ## resize font temporarily
     - ctrl right-click
+
 

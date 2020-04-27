@@ -79,6 +79,8 @@ case "$extension" in
         try 7z -p l "$path" && { dump | trim; exit 0; } || exit 1;;
     # PDF documents:
     pdf)
+        # pdftoppm works on Debian
+        # evince-thumbnailer throwing a "Synctex" error ???
         try pdftoppm -jpeg -singlefile "$path" "$cached" -scale-to-x -1 && mv "$cached.jpg" "$cached" && exit 6 || exit 1;;
         # try pdftoppm -png "$path" && { dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
         # try pdftoppm -jpeg -singlefile "$path" "${cached//.jpg}" && exit 6 || exit 1;;

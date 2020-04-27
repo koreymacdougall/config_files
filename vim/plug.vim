@@ -23,7 +23,7 @@ call plug#begin()
     " gitgutter tracks lines that have been added/removed/changed
     Plug 'airblade/vim-gitgutter'
     " autoclose completes brackets, quotes, etc
-    Plug 'vim-scripts/AutoClose'
+    " Plug 'vim-scripts/AutoClose'
     " Goyo and limelight are for minimalist writing views
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
@@ -51,10 +51,13 @@ call plug#begin()
     Plug 'koreymacdougall/dracula'
     " molokai colortheme
     Plug 'koreymacdougall/molokai'
+    " solarized colortheme
+    Plug 'altercation/vim-colors-solarized'
     " Calendar mode
     Plug 'mattn/calendar-vim'
     " speed up folding
     Plug 'Konfekt/FastFold'
+    " sol"
 
     " ------------------------------------- "
     " ---- Javascript-specific plugins ---- "

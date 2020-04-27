@@ -10,6 +10,6 @@
 
 " autoclose plugin makes right brackets jump out of current bracket
 " makes it very annoying to add brackets inline
-iunmap )
-iunmap ]
-iunmap }
+" iunmap )
+" iunmap ]
+" iunmap }

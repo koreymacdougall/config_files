@@ -8,7 +8,7 @@ autocmd BufEnter *.md setlocal foldexpr=MarkdownLevel()              "custom fol
 autocmd BufEnter *.md setlocal foldtext=MyFoldText()                 "apply foldtext pattern
 
 "----for these ft's, use 2 spaces for tab
-autocmd FileType ruby,eruby,css,scss,javascript set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType ruby,eruby,css,scss,javascript,js,yml,yaml set tabstop=2 shiftwidth=2 expandtab
 
 "--omnicomplete engine
 autocmd FileType php                setlocal omnifunc=phpcomplete#CompletePHP
@@ -59,3 +59,5 @@ autocmd! User GoyoLeave Limelight!
 
 "--assorted
 autocmd FileType ruby nnoremap <leader>r :! clear &&  ruby %<CR>|    "execute ruby file and show output
+
+autocmd FileType python set sw=4 ts=4 sts=4

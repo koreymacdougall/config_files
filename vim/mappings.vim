@@ -24,27 +24,38 @@ nnoremap <leader>t :! rails test<CR>|                                           
 nnoremap <leader>gg :setl nosmd nosc nocul nocuc nosi nolist <cr>|                   "disable displays for writing"
 nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                                "reenable displays"
 nnoremap <leader>!p :!python3 %<cr>|                                                     "shell out to run this program in python3
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>                  "change pwd and print
+
+"-- seeing is believing commands
 "-- run seeing_is_ believing on current buffer
 nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
 "-- clear seeing is believing in current buffer
 nnoremap <leader>c :%.!seeing_is_believing --clean<CR>;
+
 "--quick file editing
 nnoremap <leader>ev :e $MYVIMRC<cr>|                                                 "edit vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>|                                            "source vimrc
 nnoremap <leader>eb :e ~/.bashrc<cr>|                                                "edit bashrc
 nnoremap <leader>ez :e ~/.zshrc<cr>|                                                 "edit zshrc
 nnoremap <leader>ec :e ~/config_files/notes/cheatsheet.md<cr>|                       "edit cheat.sheet
 nnoremap <leader>em :e ~/mail_configs/.muttrc<cr>|                                   "edit muttrc
 nnoremap <leader>ei :e ~/config_files/i3/i3_config<cr>|                              "edit i3 config
-nnoremap <leader>et :e ~/config_files/.tmux.conf<cr>|                                    "edit tmux config
-nnoremap <leader>en :e ~/notes.md<cr>|                                         "edit notes file
+nnoremap <leader>et :e ~/config_files/.tmux.conf<cr>|                                "edit tmux config
+nnoremap <leader>en :e ~/notes.md<cr>|                                               "edit notes file
 nnoremap <leader>es :UltiSnipsEdit<CR>|                                              "edit snippets file
-nnoremap <leader>eq :e ~/config_files/quotes.md<CR>|                                    "edit quotes file
-nnoremap <leader>ex :e ~/config_files/.Xresources<CR>|                                    "edit quotes file
+nnoremap <leader>eq :e ~/config_files/quotes.md<CR>|                                 "edit quotes file
+nnoremap <leader>ex :e ~/config_files/.Xresources<CR>|                               "edit quotes file
 
+nnoremap <leader>sl :set background=light\|colorscheme solarized<CR>|              "enable solarized light
 
 "--buffer navigation
 nnoremap <leader>l :bnext<cr>|                                                       "move to the next buffer
 nnoremap <leader>h :bprevious<cr>|                                                   "move to the previous buffer
+
+"--ctrl=-
+nnoremap <c-p> ::CtrlPMixed<cr>|                                                     "open ctrl-p in mixed mode, search Files/Buffers/MRU files 
+" note: MRU = most recently used
+
 "--navigate quickfix list,; also found in tpope's unimpaired
 nnoremap [q :cprevious<CR>|                                                          "previous quickfix item
 nnoremap ]q :cnext<CR>|                                                              "next quickfix item
@@ -72,4 +83,5 @@ vnoremap ; :|                                                                   
 "INSERT MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'|               "tab out of closures; thanks to Ingo Karkat
-inoremap <C-d> <esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>a <C-r>x| "insert date inline
+inoremap <C-d> <esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>i <C-r>x| "insert date inline
+inoremap <C-t> <esc>:let @x = system('date +"%H:%M" \| xargs echo -n ')<cr>i <C-r>x| "insert time inline

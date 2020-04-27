@@ -10,7 +10,8 @@ set number                  "enable line numbering
 set relativenumber          "relative line numbering
 set hidden                  "allows buffer to be hidden if modified
 set smartindent autoindent  "smart indent and autoindent
-set autochdir               "change pwd when opening a file
+set noautochdir              "change pwd when opening a file
+                            " makes project navigation harder
 set wrap linebreak tw=80    "window wrap, linebreak, textwidth
 set breakindent             "indent multi-line wrapped lines
 " set cursorline              "highlight active line
