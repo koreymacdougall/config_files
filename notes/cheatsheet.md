@@ -127,6 +127,8 @@
     - git reset
 ## abort failed merge (e.g., pulling from wrong branch, now merge conflicts)
     - git merge --abort
+## use vimdiff for git difftool
+    - git config diff.tool vimdiff
 # Javascript
 ## Run Prettier for code formatting, w/in vim
     - :Prettier
@@ -135,6 +137,8 @@
         - x <enter>
 
 # LINUX
+## crontab and mysqldump gotcha - escaping percent sign
+    - \% for dates and such
 ## printing  (CUPS - common unix print system)
     - start daemon on openRC
         - rc-service cupsd start
@@ -225,6 +229,14 @@
   - strip with id3lib
   - $ id3convert -s {filename}
 # MUTT
+## mass clearing flags (e.g., O for Old)
+  - l to filter (i.e., set tag pattern)
+  - ~O matches all old messages
+  - ; performs action on all tagged messages
+  - W clears flag (w sets)
+  - enter flag to clear (here, O)
+  - taken from 
+    -  https://brianbuccola.com/how-to-mark-all-emails-as-read-in-mutt/
 ## cancel prompt
     - ctrl-g
 ## view other mailboxes
@@ -492,13 +504,16 @@
 - multiple fixes on SO
 - my fix - move or delete Gemfile.lock 
 # SHELL / UNIX
-    ## list all 256 colors
-        for i in {0..255} ; do
-          printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
-            if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
-              printf "\n";
-            fi
-        done
+## interpret commands as in-line variables
+    - echo $(some command)
+    - e.g., mysqldump __ __ __ $(date +"%F)
+## list all 256 colors
+    for i in {0..255} ; do
+      printf "\x1b[48;5;%sm%3d\e[0m " "$i" "$i"
+        if (( i == 15 )) || (( i > 15 )) && (( (i-15) % 6 == 0 )); then
+          printf "\n";
+        fi
+    done
 ## show all man pages for a given command
     - whatis {command}
         - will list all available man pages
@@ -662,6 +677,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## if vim freezes, try Ctrl-Q to unfreeze
     - technically this is a shell / tty problem.  Ctrl-S stops output, ^Q
         restores it
+## use vimdiff for git difftool
+    - git config diff.tool vimdiff
 ## preview method/class definition (via ctags)
     - ^W }
     - this will pop up the definition in a small-ish split
