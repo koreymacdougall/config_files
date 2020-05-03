@@ -15,7 +15,7 @@ set noautochdir              "change pwd when opening a file
 set wrap linebreak tw=80    "window wrap, linebreak, textwidth
 set breakindent             "indent multi-line wrapped lines
 " set cursorline              "highlight active line
-set cursorcolumn            "cursorcolumn highlight
+" set cursorcolumn            "cursorcolumn highlight
 " the two settings below will make highlighted row use underline, not bg color"
 " they need to be sourced after colorscheme... so change main vimrc if using
 " highlight clear Cursorline
@@ -23,7 +23,7 @@ set cursorcolumn            "cursorcolumn highlight
 set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 set laststatus=2            "always show statusline
 set showcmd                 "show command while typing it
-set background=dark         "dark background
+" set background=dark         "dark background; currently setting in main vimrc, " for visibility
 set term=$TERM
 set t_Co=256                "set terminal to 256 colors
 set hlsearch                "highlight serarch results

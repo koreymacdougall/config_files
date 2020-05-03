@@ -13,13 +13,13 @@ xterm*termName: xterm-256color
 ! XTerm.vt100.font: 7x13
 XTerm.vt100.translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
-  Ctrl <Key> plus: larger-vt-font()
 
-! gruvbox Xresources palette
-*.background: #000000
+! gruvbox Xresources palette,
+! using a solarized blue bg
+*.background: #002b36
 *.foreground: #FFFFFF
 *.cursorColor: #d0d0d0
-*.color0: #000000
+*.color0: #002b36
 *.color1: #ff0090
 *.color2: #66aa11
 *.color3: #c47f2c
@@ -35,7 +35,3 @@ XTerm.vt100.translations: #override \n\
 *.color13: #bb88dd
 *.color14: #4eb4fa
 *.color15: #FFFFFF
-
-! original bg color
-!*.color0: #262626
-!*.background: #282828

@@ -18,7 +18,3 @@
 *xterm*color13: #bb88dd
 *xterm*color14: #4eb4fa
 *xterm*color15: #d0d0d0
-
-! original bg color
-!*xterm*background: #101010
-!*xterm*color0: #101010

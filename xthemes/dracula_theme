@@ -17,7 +17,3 @@
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-
-! original bg color
-!*.background: #282A36
-!*.color0:     #282A36
