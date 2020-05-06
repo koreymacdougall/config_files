@@ -505,7 +505,8 @@
 - my fix - move or delete Gemfile.lock 
 # SHELL / UNIX
 ## paste args from previous command
-    - alt + .
+    - esc + .  (zsh in viins)
+    - alt + .  (emacs binding)
 ## regain shell after ssh drops
     - ~.
 ## interpret commands as in-line variables
