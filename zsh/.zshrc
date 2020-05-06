@@ -10,7 +10,9 @@ source ~/config_files/zsh/zsh_aliases
 autoload -Uz compinit && compinit        # the completion engine
 autoload -U colors && colors
 autoload -Uz vcs_info
+autoload -U edit-command-line
 
+# Vi style:
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
@@ -63,11 +65,15 @@ bindkey -M viins "^U" backward-kill-line
 bindkey -M vicmd "^U" backward-kill-line
 bindkey -M viins "^A" beginning-of-line
 bindkey -M vicmd "^A" beginning-of-line
+bindkey -M vicmd "v"  edit-command-line
+bindkey -M viins '\e.' insert-last-word   # will paste laste word from last command
+
 bindkey -v                  # use vi mode
 
 #  VI-mode tweaks
 zle -N zle-line-init
 zle -N zle-keymap-select
+zle -N edit-command-line  # enable edit-command-line (edit command in $EDITOR)
 
 # source fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -88,5 +94,6 @@ PATH="$PATH:/home/km/.local/bin";export PATH
 # on load, change to specified ruby (i.e., my current default is 2.5.1)
 # chruby 2.5.1
 
-export LESS=r
-export LESS=R
+# use source-highlight in place of less, to get syntax coloring
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '

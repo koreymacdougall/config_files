@@ -504,6 +504,10 @@
 - multiple fixes on SO
 - my fix - move or delete Gemfile.lock 
 # SHELL / UNIX
+## paste args from previous command
+    - alt + .
+## regain shell after ssh drops
+    - ~.
 ## interpret commands as in-line variables
     - echo $(some command)
     - e.g., mysqldump __ __ __ $(date +"%F)
