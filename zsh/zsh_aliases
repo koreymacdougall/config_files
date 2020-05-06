@@ -76,7 +76,7 @@ alias 9='cd ~9'
 
 alias pw="/home/km/kttk/pman "
 
-# quickly open various config files
+# quickly file editing (mostly config files)
 alias v='vim'
 alias vv='vim ~/.vimrc'
 alias vc='vim ~/config_files/notes/cheatsheet.md'

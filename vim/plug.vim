@@ -23,7 +23,7 @@ call plug#begin()
     " gitgutter tracks lines that have been added/removed/changed
     Plug 'airblade/vim-gitgutter'
     " autoclose completes brackets, quotes, etc
-    " Plug 'vim-scripts/AutoClose'
+    Plug 'vim-scripts/AutoClose'
     " Goyo and limelight are for minimalist writing views
     Plug 'junegunn/goyo.vim'
     Plug 'junegunn/limelight.vim'
@@ -42,7 +42,7 @@ call plug#begin()
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
     " syntax highlighting for solidity
-    Plug 'tomlion/vim-solidity'
+    " Plug 'tomlion/vim-solidity'
     " generate markdown table of contents
     Plug 'mzlogin/vim-markdown-toc'
     " gruvbox colortheme
@@ -54,10 +54,14 @@ call plug#begin()
     " solarized colortheme
     Plug 'altercation/vim-colors-solarized'
     " Calendar mode
-    Plug 'mattn/calendar-vim'
+    " Plug 'mattn/calendar-vim'
     " speed up folding
     Plug 'Konfekt/FastFold'
-    " sol"
+    " NERDtree
+    Plug 'preservim/nerdtree'
+    " NERDtree plugin to show git status flags
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+
 
     " ------------------------------------- "
     " ---- Javascript-specific plugins ---- "

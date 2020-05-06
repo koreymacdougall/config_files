@@ -16,7 +16,8 @@ nnoremap <leader>ns :r !notmuch search|                                         
 nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt|           "notmuch show
 nnoremap <leader>cc :set cursorcolumn! cursorline! <CR>|                             "cursorcolumn
 nnoremap <leader>nh :nohlsearch<CR>|                                                 "turn off search highlight
-nnoremap <leader>f :Vex<cr>|                                                         "open netrw/file broswer in vsplit 
+" nnoremap <leader>f :Vex<cr>|                                                         "open netrw/file broswer in vsplit 
+nnoremap <leader>f :NERDTree<cr>|                                                         "open NERDtree (netrw giving issues with orphan buffers)
 nnoremap <buffer> <leader>u :edit %:h<CR>|                                           "move up one level in fugitive
 nnoremap <leader>tm :TableModeToggle<CR>|                                            "toggle tablemode plugin
 nnoremap <leader>rw :%s/\s\+$//e<CR>|                                                     "clear trailing whitespace

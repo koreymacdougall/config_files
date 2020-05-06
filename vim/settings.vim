@@ -10,8 +10,9 @@ set number                  "enable line numbering
 set relativenumber          "relative line numbering
 set hidden                  "allows buffer to be hidden if modified
 set smartindent autoindent  "smart indent and autoindent
-set noautochdir              "change pwd when opening a file
-                            " makes project navigation harder
+set autochdir               "change pwd when opening a file
+" set noautochdir             "dont' change pwd when opening a file
+"                             " changing makes project navigation harder
 set wrap linebreak tw=80    "window wrap, linebreak, textwidth
 set breakindent             "indent multi-line wrapped lines
 
@@ -21,9 +22,8 @@ colorscheme solarized
 
 set nocursorcolumn
 set cursorline
-highlight clear SignColumn|               "don't highlight the git gutter or Cursorline
+highlight clear SignColumn|                          "don't highlight the git gutter or Cursorline
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
-
 
 set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 set laststatus=2            "always show statusline
@@ -60,11 +60,17 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_rails = 1
 
 "netrw
+" trying to fix an issue with orphan netrw issues
+" see https://github.com/tpope/vim-vinegar/issues/13
 let g:netrw_liststyle=3     "show netrw split in tree style
-let g:netrw_banner=0        "hide the netrw shortcut banner
+"let g:netrw_banner=0        "hide the netrw shortcut banner
 let g:netrw_winsize=25      "set split width to 25%
 let g:netrw_browse_split=4  "when opening a file, show it in previous pane
-let g:netrw_altv = 1        "shows browser pane on left (I think)
+let g:netrw_altv=1          "shows browser pane on left (I think)
+let g:netrw_fastbrowse = 0
+
+" NERDTree (sorry netrw)
+let NERDTreeShowHidden = 1
 
 " latex helpers; specifically vimtex plugin options
 let g:vimtex_view_method = 'mupdf'
