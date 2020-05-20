@@ -19,7 +19,7 @@ XTerm.vt100.translations: #override \n\
 *.background: #282828
 *.foreground: #EBDBB2
 *.cursorColor: #d0d0d0
-*.color0: #000000
+*.color0: #282828
 *.color1: #ff0090
 *.color2: #66aa11
 *.color3: #c47f2c
