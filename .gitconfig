@@ -17,7 +17,7 @@
     # username = kmac
 [github]
     user = koreymacdougall
-    # for token, use an env variable; scary intern3ts
+    # token = %<ENV_someting>%
 [web]
     browser = firefox
 [push]

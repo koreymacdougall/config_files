@@ -38,12 +38,14 @@
 
 ## detach from running container
     - ^P ^Q
-## remove dangling images
-    - is this deprecated by --remove-orphans?
-    - note: docker docs refer to these as both orphans and dangling
-        - https://forums.docker.com/t/how-do-i-remove-orphaned-images/1172
-    where dangling = you've created a new build of an image, but it wasn't named
-    see: https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
+## clean up / remove dangling images
+    - docker prune  (prune -a; for more deletion)
+    - WARNING! This will remove:
+      - all stopped containers
+      - all networks not used by at least one container
+      - all dangling images
+      - all dangling build cache
+
         -
         - or (according to my understanding of
           http://www.projectatomic.io/blog/2015/07/what-are-docker-none-none-images/),
@@ -53,8 +55,11 @@
           fedora layer for the hello world image no longer points to any
           child/final image.  I think...
     - sudo docker rmi $(sudo docker images -a --filter=dangling=true -q)
-    - possible alternative, but check docs
-        = sudo docker system prune -a
+        - where dangling = you've created a new build of an image, but it wasn't named
+        - see: https://stackoverflow.com/questions/45142528/docker-what-is-a-dangling-image-and-what-is-an-unused-image)
+        - is this deprecated by --remove-orphans?
+        - note: docker docs refer to these as both orphans and dangling
+        - https://forums.docker.com/t/how-do-i-remove-orphaned-images/1172
 ## run container with interactive shell (first create if needed)
     docker run -i -t {image name} /bin/bash
         // i - interactive

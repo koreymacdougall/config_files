@@ -38,11 +38,13 @@ export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresou
 setopt auto_pushd           # keep a stack of recent dirs
 setopt complete_aliases     # autocomplete aliases
 setopt pushd_ignore_dups    # ignore duplicate dirs
+setopt HIST_IGNORE_DUPS     # don't store duplicates of commands
 setopt extended_glob        # expand wildcards and suchlike
 setopt transientrprompt     # transient right prompt
 setopt prompt_subst         # allow string subs
 setopt nocasematch          # case insensitive
 setopt share_history        # share history between shells
+setopt auto_cd              # change dir without cd
 
 # settings
 DIRSTACKSIZE=20             # number to keep in dir stack

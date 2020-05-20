@@ -86,3 +86,5 @@ vnoremap ; :|                                                                   
 inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'|               "tab out of closures; thanks to Ingo Karkat
 inoremap <C-d> <esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>i <C-r>x| "insert date inline
 inoremap <C-t> <esc>:let @x = system('date +"%H:%M" \| xargs echo -n ')<cr>i <C-r>x| "insert time inline
+" inoremap <space><space> .<space><esc>a
+inoremap <leader><space> .<space><esc>a

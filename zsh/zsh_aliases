@@ -3,7 +3,7 @@ alias lk='sudo loadkeys ~/config_files/.swap_esc_capslock.kmap'
 
 alias ls='ls --color=auto --group-directories-first'
 alias l='ls --color=auto --group-directories-first'
-alias ll='ls -al --color=auto --group-directories-first'
+alias ll='ls -alh --color=auto --group-directories-first'
 
 # grepping aliases
 alias grep='grep --color=always'
@@ -77,8 +77,8 @@ alias 9='cd ~9'
 alias pw="/home/km/kttk/pman "
 
 # quickly file editing (mostly config files)
+alias v='vim .'
 alias v.='vim .'
-alias v='vim'
 alias vv='vim ~/.vimrc'
 alias vc='vim ~/config_files/notes/cheatsheet.md'
 alias vz='vim ~/.zshrc'
@@ -90,6 +90,10 @@ alias vt='vim ~/.tmux.conf'
 alias vn='vim ~/notes.md'
 alias vq="vim ~/config_files/quotes.md"
 alias vx="vim ~/.Xresources"
+# not sure why I took this out... not working?  'docker system prune -a' is # a nuke.
+# alias docker-clean='sudo docker stop \$(sudo docker ps -a -q) && sudo docker rm \$(sudo docker ps -a -q)'
+#
+alias sdr='sudo docker rm '
 
 alias k="~/source_packes/kalendar-master/src/Kalendar"
 

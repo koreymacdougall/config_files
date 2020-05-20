@@ -18,7 +18,7 @@ set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 set nocursorcolumn
 set cursorline
@@ -43,8 +43,9 @@ let g:gitgutter_override_sign_column_highlight = 1           "tell git-gutter to
 let g:limelight_conceal_ctermfg = 'gray'                     "set limelight dim color
 " let g:ycm_server_python_interpreter = '/usr/bin/python2'   "set youcompleteme interpreter
 " let g:ycm_seed_identifiers_with_syntax = 1
-exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"       
-
+" exec "set listchars=tab:\uBB\uBB,nbsp:~,trail:\u2022"       
+exec "set listchars=tab:>-,nbsp:~,trail:\u2022"       
+        
 "syntax folding
 let javaScript_fold=1       "JavaScript
 let php_folding=1           "PHP
