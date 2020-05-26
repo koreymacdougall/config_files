@@ -34,7 +34,7 @@ call plug#begin()
     Plug 'airblade/vim-gitgutter'
 
     " autoclose completes brackets, quotes, etc
-    "Plug 'vim-scripts/AutoClose'
+    Plug 'vim-scripts/AutoClose'
     "
     " Goyo and limelight are for minimalist writing views
     Plug 'junegunn/goyo.vim'

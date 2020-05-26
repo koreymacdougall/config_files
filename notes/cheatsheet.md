@@ -32,6 +32,12 @@
 ### start the development webserver
 - python manage.py runserver
 # DOCKER
+## running aws cli with credentials 
+- #thanks to https://github.com/mikesir87/aws-cli-docker
+    - generate config and credentials files
+        - docker run --rm -tiv $HOME/.aws:/root/.aws amazon/aws-cli configure
+    - run container with those files
+        - docker run --rm -v $HOME/.aws:/root/.aws amazon/aws-cli describe instances
 ## stop and delete all containers
 - sudo docker stop $(sudo docker ps -a -q)
 - sudo docker rm $(sudo docker ps -a -q)
