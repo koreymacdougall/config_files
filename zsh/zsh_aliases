@@ -10,6 +10,7 @@ alias grep='grep --color=always'
 alias hg='history | grep -i'
 alias pg='ps aux | grep -i'
 alias lg='ls -al | grep -i'
+alias eg='env | grep -i'
 alias ag='alias | grep -i'
 
 alias e='exit'
@@ -90,12 +91,14 @@ alias vt='vim ~/.tmux.conf'
 alias vn='vim ~/notes.md'
 alias vq="vim ~/config_files/quotes.md"
 alias vx="vim ~/.Xresources"
-# not sure why I took this out... not working?  'docker system prune -a' is # a nuke.
+# not sure why I took this out... not working?  
+# 'docker system prune -a' is a nuke.
 # alias docker-clean='sudo docker stop \$(sudo docker ps -a -q) && sudo docker rm \$(sudo docker ps -a -q)'
-#
-alias sdr='sudo docker rm '
 
-alias k="~/source_packes/kalendar-master/src/Kalendar"
+# aws-cli docker
+alias aws-cli="sudo docker run --rm --interactive --tty -v $HOME/.aws:/root/.aws amazon/aws-cli"
+
+# alias k="~/source_packes/kalendar-master/src/Kalendar"
 
 # launch x server
 alias x='startx'
@@ -122,7 +125,8 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # grab mail alias
-alias gm='getmail -d'
+alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
+# alias gm='getmail -d && notmuch new'
 # alias gm='cd ~/mail_configs && bash ./cryptscript.sh && cd -'
 # alias gmf='cd ~/mail_configs && bash ./cryptscript_full.sh && cd -'
 alias m='neomutt'
