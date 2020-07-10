@@ -1,7 +1,3 @@
-# remap caps to escape <3 vim
-xmodmap .Xmodmap
-
-
 # load .Xresources
 #[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 xrdb -load ~/config_files/.Xresources
@@ -24,6 +20,9 @@ hsetroot -solid $bg_color
 # swap caps and escape
 # using xkbmap may be redundant...
 setxkbmap -option "caps:escape"
+
+# remap caps to escape <3 vim
+xmodmap .Xmodmap
 
 # set bg as last image set with feh
 source '/home/km/.fehbg'

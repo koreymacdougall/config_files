@@ -33,6 +33,7 @@ ln -sf ~/config_files/.elinks_conf ~/.elinks/elinks.conf
 
 #xinit symlink
 ln -sf ~/config_files/.xinitrc ~/.xinitrc
+ln -sf ~/config_files/.xinitrc ~/.xsessionrc  #for lightdm w/ debian
 
 #xmodmap symlink - for caps/esc
 ln -sf ~/config_files/.xmodmap_custom_mappings ~/.Xmodmap
@@ -80,6 +81,9 @@ ln -sf ~/config_files/.fzf.zsh ~/.fzf.zsh
 
 # libinput - trackpad config
 sudo ln -sf ~/config_files/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+# backlight control
+sudo ln -sf ~/config_files/10-backlight.conf /etc/X11/xorg.conf.d/10-backlight.conf
 
 # pman symlink
 echo "Make the pman symlink manually"

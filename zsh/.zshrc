@@ -78,7 +78,7 @@ zle -N zle-keymap-select
 zle -N edit-command-line  # enable edit-command-line (edit command in $EDITOR)
 
 # source fuzzy finder
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"

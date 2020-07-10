@@ -56,7 +56,7 @@ call plug#begin()
     Plug 'ctrlpvim/ctrlp.vim'
 
     " ultisnips inserts snippets, i.e., predefined chunks
-    Plug 'SirVer/ultisnips'
+    " Plug 'SirVer/ultisnips'
 
     " TableMode for easily generating tables
     Plug 'dhruvasagar/vim-table-mode'
@@ -89,9 +89,11 @@ call plug#begin()
     " NERDtree (sorry netrw. ghost buffer trees RIP)
     Plug 'preservim/nerdtree'
 
-    " NERDtree plugin to show git status flags
+    " NERDtree plugin to show git status flags - 2020-05-06
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
+    "  vim-indent-guides to show indentation levels - 2020-06-04 
+    Plug 'nathanaelkane/vim-indent-guides'
 
     " ------------------------------------- "
     " ---- Javascript-specific plugins ---- "

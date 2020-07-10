@@ -687,6 +687,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## sessions  - save and restore:
+        - save: mksession ~/session.vim 
+        - reload: ~/session.vim
+        - open vim with session - vim -S ~/mysession.vim
 ## replace tabs with spaces
     - :ret aka :retab
     -
@@ -733,6 +737,8 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - works anywhere on line (sometimes?)
 ## check which options vim was compiled with
     - :version
+## install vim with script support (e.g., python), 
+    - can use vim-nox (at least on debian)
 ## show loaded plugins
     - :scriptnames
 ## redirect output of a command to a buffer

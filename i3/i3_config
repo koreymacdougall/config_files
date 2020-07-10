@@ -130,11 +130,13 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# convenenience shortcut for suspend
+bindsym $mod+x exec systemctl suspend
 
 # increase /decrease size of gaps
 # tips and inspiration thanks to lukesmith.xyz's dotfiles
-bindsym $mod+g  gaps inner current plus 5
-bindsym $mod+shift+G  gaps inner current minus 5
+# bindsym $mod+g  gaps inner current plus 5
+# bindsym $mod+shift+G  gaps inner current minus 5
 
 ####################
 # end i3 CONTROLS  #
@@ -157,7 +159,7 @@ bindsym $mod+minus scratchpad show
 for_window [title="kalendar"] floating enable
 for_window [title="kalendar"] move scratchpad
 
-# nm-applet when needed
+# network manager applet when needed
 exec --no-startup-id nm-applet --sm-disable &
 
 # pulseaudio system tray
@@ -200,12 +202,9 @@ bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 ########################################
 
 # compton for compositing
-exec --no-startup-id compton --config ~/.config/compton.conf -bc &
-# TODO toggle transparency
-#bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
+# exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 
-# netowrk manager applet; only for physical machine
-#exec --no-startup-id nm-applet --sm-disable
+#bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 
 # title bars for apps, pixel 0 = for no title; normal = basic title bar
 # new_window pixel 0
@@ -220,8 +219,8 @@ client.focused          #4c7899 #285577 #ffffff #ffa500   #ffa500
 hide_edge_borders smart
 
 #i3 gaps settings
-gaps inner 0
-gaps outer 0
+# gaps inner 0
+# gaps outer 0
 #
 ################################################################################
 # Deprecated Settings

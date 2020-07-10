@@ -54,7 +54,7 @@ nnoremap <leader>l :bnext<cr>|                                                  
 nnoremap <leader>h :bprevious<cr>|                                                   "move to the previous buffer
 
 "--ctrl=-
-nnoremap <c-p> ::CtrlPMixed<cr>|                                                     "open ctrl-p in mixed mode, search Files/Buffers/MRU files 
+nnoremap <c-p> :CtrlPMixed<cr>|                                                     "open ctrl-p in mixed mode, search Files/Buffers/MRU files 
 " note: MRU = most recently used
 
 "--navigate quickfix list,; also found in tpope's unimpaired
