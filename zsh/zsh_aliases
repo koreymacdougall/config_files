@@ -18,6 +18,9 @@ alias a='arandr'
 # history 1 will grab all history; without the 1, only last 16
 alias history='history 1'
 
+# start kaggle venv and export KAGGLE_CONFIG_DIR
+alias kag='cd ~/dev/kaggle && source venv_kaggle/bin/activate && export KAGGLE_CONFIG_DIR=~/dev/kaggle'
+
 # resolution shortcuts
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
 alias 2560="
@@ -75,7 +78,7 @@ alias 7='cd ~7'
 alias 8='cd ~8'
 alias 9='cd ~9'
 
-alias pw="/home/km/kttk/pman "
+alias pw="~/kttk/pman "
 
 # quickly file editing (mostly config files)
 alias v='vim .'
@@ -140,16 +143,11 @@ alias gitrev="sh ~/config_files/git_revision_script"
 # generate blog
 alias gb="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/HumbleBlog/scripts && sh generate_blog.sh && cp -r ../output ../assets ~/Downloads && cd -"
 # generate ncs site
-alias gncs="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/ncs/scripts && sh generate_website.sh && cp -r ../output ../assets ~/Downloads && cd -"
+# alias gncs="rm -rf ~/Downloads/output ~/Downloads/assets && cd ~/dev/websites/ncs/scripts && sh generate_website.sh && cp -r ../output ../assets ~/Downloads && cd -"
 
 alias sz='source ~/.zshrc'
 
-alias z="/home/km/source_packages/Zotero_linux-x86_64/zotero & disown"
+alias z="~/source_packages/Zotero_linux-x86_64/zotero & disown"
 
 alias ppv='source ~/dev/podcast_project/audio_extraction_subproject/podcast_project_venv/bin/activate'
 alias mpp='cd ~/dev/podcast_project/ && ppv'
-
-# formid aliases, move, UwTerminal, stop
-alias mf="cd /home/km/projects/formid_project/"
-alias uw="cd /home/km/projects/formid_project/UwTerminalX/ && ./UwTerminalX accept & disown"
-#alias s="python3 /home/km/projects/formid_project/dev/python_hfs_code/stop.py"
