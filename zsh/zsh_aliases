@@ -20,6 +20,7 @@ alias history='history 1'
 
 # start kaggle venv and export KAGGLE_CONFIG_DIR
 alias kag='cd ~/dev/kaggle && source venv_kaggle/bin/activate && export KAGGLE_CONFIG_DIR=~/dev/kaggle'
+alias vet='cd ~/dev/kaggle/veterinary_radiography/ && source ../venv_kaggle/bin/activate'
 
 # resolution shortcuts
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'

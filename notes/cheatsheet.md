@@ -148,6 +148,8 @@
         - x <enter>
 
 # LINUX
+## set default web browser (particularly in Debian sytems)
+    - xdg-settings set default-web-browser firefox-esr.desktop
 ## crontab and mysqldump gotcha - escaping percent sign
     - \% for dates and such
 ## printing  (CUPS - common unix print system)
@@ -807,6 +809,13 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 ## convery webp to another format
     - install webp package
     - dwebp file.webp -o file.png
+# Wordpress
+    - DIVI - uploading will initially fail, show an error message "Link you
+      requested is no longer valid"
+        - this is a limit on upload size and execution time
+        - fix by modifying wordpress file, wp-config.php, and then
+          (importantly), restarting php-fpm.service (at least on aws ec2 amazon
+          linux 2 ami)
 # X11
     - xprop - get window manager class name
 # XTERM

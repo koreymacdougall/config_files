@@ -207,8 +207,11 @@ bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 #bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 
 # title bars for apps, pixel 0 = for no title; normal = basic title bar
-# new_window pixel 0
-default_border pixel 1
+# default_border normal  # show titlebars
+new_window pixel 1
+# default_border pixel 1
+
+
 #for_window [class="^.*"] border pixel 0
 # i3 upstream (not gaps atm, has default_border to replace new_window)
 
