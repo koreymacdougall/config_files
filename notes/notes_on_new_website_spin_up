@@ -1,0 +1,21 @@
+Steps in launching a new website
+
+launch instance
+update packages
+install lamp stack
+configure mariadb
+install wordpress
+upload divi theme
+customize theme
+provision and asssociate elastic ip addr
+set domain name to point to EIP address
+setup ssl/tls
+
+setup email address(es)
+- if wordpress, connect forms to mail (smtp) service
+
+If wordpress - 
+    fix mixed content issue (plugin, manual replace)
+    hide header (divi)
+    set static homepage
+

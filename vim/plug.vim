@@ -9,7 +9,7 @@ endif
 call plug#begin()
     " List of Plugins"
     " note that { 'on': []}  is syntax for lazy loading
-    "
+
     Plug 'tpope/vim-surround'
 
     " repeat mainly for vim-surround
@@ -94,6 +94,12 @@ call plug#begin()
 
     "  vim-indent-guides to show indentation levels - 2020-06-04 
     Plug 'nathanaelkane/vim-indent-guides'
+
+    " autocompletion
+    " Plug 'ycm-core/YouCompleteMe'
+
+    " " autocompletion for python
+    Plug 'davidhalter/jedi-vim'
 
     " ------------------------------------- "
     " ---- Javascript-specific plugins ---- "

@@ -21,7 +21,10 @@ bindsym $mod+Return                     exec /usr/bin/xterm
 bindsym $mod+d                          exec dmenu_run
 
 # ranger
-bindsym $mod+r                      exec /usr/bin/xterm -e ranger
+bindsym $mod+r                          exec /usr/bin/xterm -e ranger
+
+# thunderbird
+bindsym $mod+t                          exec /usr/bin/thunderbird
 
 # browser
 set $browser "firejail firefox"
@@ -80,7 +83,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
+# bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -202,7 +205,7 @@ bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 ########################################
 
 # compton for compositing
-# exec --no-startup-id compton --config ~/.config/compton.conf -bc &
+exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 
 #bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 

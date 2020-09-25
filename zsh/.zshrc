@@ -88,6 +88,8 @@ export GPODDER_DOWNLOAD_DIR=~/podcasts
 
 # add youtube-dl to path
 PATH="$PATH:/home/km/.local/bin";export PATH
+# add go to path
+PATH="$PATH:/usr/local/go/bin";export PATH
 
 # source chruby
 # source /usr/local/share/chruby/chruby.sh

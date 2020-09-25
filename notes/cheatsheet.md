@@ -243,11 +243,13 @@
   - $ id3convert -s {filename}
 # MUTT
 ## mass clearing flags (e.g., O for Old)
-  - l to filter (i.e., set tag pattern)
-  - ~O matches all old messages
-  - ; performs action on all tagged messages
-  - W clears flag (w sets)
-  - enter flag to clear (here, O)
+  1. tag with 'T'
+  2. l to filter (i.e., set tag pattern)
+    - ~O matches all old messages
+  3. ';' performs action on all tagged messages
+  4.  W clears flag (w sets)
+  5.  enter flag to clear (here, O)
+
   - taken from 
     -  https://brianbuccola.com/how-to-mark-all-emails-as-read-in-mutt/
 ## cancel prompt

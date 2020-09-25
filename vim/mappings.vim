@@ -6,7 +6,7 @@ nnoremap ; :|                                                                   
 nnoremap : ;|                                                                        "remap colon to semi-colon
 nnoremap <CR> :nohlsearch<CR>|                                                       "use enter to clear search hl
 nnoremap Y y$|                                                                       "Y to behave as D and C do
-nnoremap <c-n> :%s///g<left><left>|                                                  "use ctrl-n to replace all star-searched terms
+" nnoremap <c-n> :%s///g<left><left>|                                                  "use ctrl-n to replace all star-searched terms
 nnoremap <space> za|                                                                 "use spacebar to toggle folding
 nnoremap <leader><leader> z=i1<cr><cr>|                                              "quick spell check; take first suggestion
 nnoremap <leader>d :read ! date --iso-8601<cr>|                                      "insert date YYYY-MM-DD

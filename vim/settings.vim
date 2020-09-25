@@ -18,7 +18,7 @@ set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
 set background=dark
-colorscheme gruvbox
+colorscheme solarized
 
 set nocursorcolumn
 set cursorline
@@ -103,3 +103,6 @@ let g:ale_fixers = {
 let g:ale_sign_error = 'N'
 let g:ale_sign_warning = 'O'
 let g:ale_fix_on_save = 1
+
+" Jedi-vim"
+let g:jedi#completions_command = "<C-N>"             "use ctrl-n to trigger autocompletion in jedi-vim

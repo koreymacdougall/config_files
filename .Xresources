@@ -15,12 +15,14 @@ XTerm.vt100.translations: #override \n\
   Ctrl <Key> minus: smaller-vt-font() \n\
   Ctrl <Key> plus: larger-vt-font() \n\
 
-! gruvbox Xresources palette
-*.background: #262626
-*.foreground: #EBDBB2
+
+! gruvbox Xresources palette,
+! using a solarized blue bg
+*.background: #002b36
+*.foreground: #FFFFFF
 *.cursorColor: #d0d0d0
-*.color0: #262626
-*.color1: #FB4934
+*.color0: #002b36
+*.color1: #ff0090
 *.color2: #66aa11
 *.color3: #c47f2c
 *.color4: #AA0000
@@ -28,8 +30,7 @@ XTerm.vt100.translations: #override \n\
 *.color6: #3579a8
 *.color7: #9999aa
 *.color8: #303030
-*.color9: #FB4934
-!ff6666
+*.color9: #ff6666
 *.color10: #80ff00
 *.color11: #ffba68
 *.color12: #fabd2f

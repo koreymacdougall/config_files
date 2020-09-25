@@ -21,6 +21,8 @@ alias history='history 1'
 # start kaggle venv and export KAGGLE_CONFIG_DIR
 alias kag='cd ~/dev/kaggle && source venv_kaggle/bin/activate && export KAGGLE_CONFIG_DIR=~/dev/kaggle'
 alias vet='cd ~/dev/kaggle/veterinary_radiography/ && source ../venv_kaggle/bin/activate'
+alias c='cd ~/dev/kaggle/COVID-19 && ts'
+alias cc='source ../fastai2_venv/bin/activate && jupyter lab'
 
 # resolution shortcuts
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
@@ -112,7 +114,7 @@ alias ns='notmuch search'
 alias nsh='notmuch show'
 
 # calcurse launcher alias
-alias c='calcurse'
+# alias c='calcurse'
 
 # rails aliases
 alias rs='rails server'
