@@ -18,7 +18,7 @@ set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 set nocursorcolumn
 set cursorline

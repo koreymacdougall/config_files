@@ -62,6 +62,9 @@ ln -sf ~/config_files/ranger/commands.py ~/.config/ranger/commands.py
 # ranger scope symlink (scope controls external scripts) ; mainly changing to enable pdf previews
 ln -sf ~/config_files/ranger/scope.sh ~/.config/ranger/scope.sh
 
+# rifle symlink
+ln -sf ~/config_files/ranger/rifle.conf ~/.config/ranger/rifle.conf
+
 # tmux symlink
 ln -sf ~/config_files/.tmux.conf ~/.tmux.conf
 

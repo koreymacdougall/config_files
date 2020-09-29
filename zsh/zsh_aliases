@@ -22,7 +22,8 @@ alias history='history 1'
 alias kag='cd ~/dev/kaggle && source venv_kaggle/bin/activate && export KAGGLE_CONFIG_DIR=~/dev/kaggle'
 alias vet='cd ~/dev/kaggle/veterinary_radiography/ && source ../venv_kaggle/bin/activate'
 alias c='cd ~/dev/kaggle/COVID-19 && ts'
-alias cc='source ../fastai2_venv/bin/activate && jupyter lab'
+# alias cc='source ../fastai2_venv/bin/activate && jupyter lab'
+alias cc='source ~/dev/kaggle/fastai2_venv/bin/activate'
 
 # resolution shortcuts
 alias 1920='xrandr --output Virtual-1 --mode 1920x1080'
