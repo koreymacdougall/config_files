@@ -13,6 +13,11 @@
 # Audio
 - To find the duration of all audio files in a directory,use this command:
     - soxi -D /path/to/files/* | awk 'a+=$1; END{print a}'
+## ALSA / PulseAudio / Debian / Sound / Audio
+- Was having issues getting sound to play on Debian10 (buster)
+- Fixed with 'sudo alsactl init'
+    - alsactl -h  / shows commands
+    - help screen showed that alsactl init returns driver to a default state
 # CALCURSE
 ## to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
@@ -276,6 +281,26 @@
     - ? to choose mailbox
 ## redraw screen (clear artifacts)
     - Ctrl-t (function is redraw-screen in index)
+# MYSQL
+## Reset a lost root pw
+    - shutdown db service, start in safe mode, connect as root, change pw, restart
+        $ sudo systemctl stop mariadb
+        $ sudo mysqld_safe --skip-grant-tables --skip-networking &
+        $ mysql -u root
+
+        mysql> use mysql;
+        mysql> UPDATE user SET password=PASSWORD('YourPasswordHere') WHERE User='root' AND Host = 'localhost';
+        mysql> flush privileges;
+        mysql> quit
+        
+        (alternate syntax for update command)
+        mysql> update user set authentication_string=password('NEWPASSWORD') where user='root';
+
+## kill running mysql service
+    - /usr/bin/mysqladmin -u root -p shutdown
+        - mysqladmin binary may be elsewhere
+    - can always use 'kill -9'
+
 # NODE, NPM, NVM
 ## install nvm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
