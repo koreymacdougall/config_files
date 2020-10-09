@@ -148,11 +148,30 @@
 # Javascript
 ## Run Prettier for code formatting, w/in vim
     - :Prettier
+# Jupyter
+- autoreload modules:
+    - %load_ext autoreload
+    - %autoreload 2
+
+    - the first command 'loads extension' autoreload, which is disabled by default
+    - '2' means reload everything; 0 means nothing; 1 is only for modules loaded via %aimport
+    - see: https://switowski.com/blog/ipython-autoreload
+- install vim keybindings:
+    - jupyter labextension install @axlair/jupyterlab_vim
+    - using this specific repo/version because the newest (2020-09-30) version
+      of jupyterlab doesn't support newest version of the extension
+        - see: https://github.com/jwkvam/jupyterlab-vim/issues/118
 # LaTeX
     - cancel a compilation: 
         - x <enter>
 
+# LibreOffice
+- Fix fonts and icons, when installing on debian based system, by installing libreoffice-gtk3
+    - This helped a great deal with an i3-based install, anyway
+
 # LINUX
+## determine file type in terminal
+file -i {filename}
 ## set default web browser (particularly in Debian sytems)
     - xdg-settings set default-web-browser firefox-esr.desktop
 ## crontab and mysqldump gotcha - escaping percent sign
@@ -254,6 +273,9 @@
   3. ';' performs action on all tagged messages
   4.  W clears flag (w sets)
   5.  enter flag to clear (here, O)
+
+  example: inbox full of read messages, just want to archive:
+  commands: T ~O ; W O
 
   - taken from 
     -  https://brianbuccola.com/how-to-mark-all-emails-as-read-in-mutt/
@@ -827,6 +849,15 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - vim -u {filename}
     - vim -u NONE    #don't load vimrc or plugins
     - vim -u NORC    #load plugins but not vimrc
+
+## view hex/binary files:
+
+    - vi your_filename
+
+    - esc
+
+    - :%!xxd - to view the hex strings
+        - then :%!xxd -r to return to normal editing.
 
 # Vim Vixen (Firefox add-on)
     - open new tab in background:
