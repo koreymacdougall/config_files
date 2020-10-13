@@ -7,7 +7,7 @@ cluttered with duplicates.
 from pathlib import Path        # for getting homedir
 from shutil import copyfile     # for making a backup of hist file
 
-home = str(Path.home())
+home = str(Path.home())  # TODO: using Path and str together is ... meme-able?
 history_file = home + '/.zsh_history'
 history_file_bk = home + '/.zsh_history_bk'
 
