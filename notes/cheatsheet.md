@@ -18,6 +18,27 @@
 - Fixed with 'sudo alsactl init'
     - alsactl -h  / shows commands
     - help screen showed that alsactl init returns driver to a default state
+# AWS
+## deleting s3 buckets that have had improper policies attached to them
+- need to use use the aws cli to run 's3api delete-bucket-policy --bucket {bucket name}'
+    - can't use aws console, also can't delete bucket before deleting policy
+- need to use access keys of root account
+    - log in as root acct, generate new pair of access/secret access keys, use it to configure
+      aws-cli in docker, delete key pair, re-config the image to use iam user
+      creds,
+    - see steps below to configure/run docker aws-cli
+- adapting example below, command will be:
+    - (first run config with root creds)
+    - docker run --rm -v $HOME/.aws:/root/.aws amazon/aws-cli s3api delete-bucket-policy --bucket {bucket name}
+## uploading cors configurations
+    - the xml syntax appears to be deprecated?  Though I didn't see this
+      mentioned anywhere.
+    - using the cli put-bucket-cors command solved the issue
+    - sudo docker run --rm -tiv $HOME/.aws:/root/.aws amazon/aws-cli s3api put-bucket-cors --bucket {bucket name} --cors-configuration file:///root/.aws/{config file name}.json
+        - note the triple slash after file
+        - I think 'file://' is needed to indicate a fileread, rather than
+          reading a string from stdin
+
 # CALCURSE
 ## to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
@@ -28,6 +49,8 @@
 ## remove cached metadata (e.g., after running id3convert -s **/*)
     - :update-cache
     - can use -f flag if not co-operating
+## repeat current song
+    - ^C
 # DJANGO
 ## commands
 ### create a new project
@@ -127,6 +150,17 @@
     * for full system/world update: 
         * sudo emerge --update --changed-use --deep --ask --with-bdeps=y @world
 # GIT
+## delete files from history (specifically large files)
+### using bfg - recommended for removing large files
+- https://rtyley.github.io/bfg-repo-cleaner/
+    - download file
+-  java -jar ~/source_packages/bfg-1.13.1.jar --strip-blobs-bigger-than 40M repo_name.git
+### using filter-brach
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch unwanted_file_or_dir' --prune-empty
+
+## view files on a different branch without switching branches
+git show branch:filepath/filename
+    - e.g., git show master:README.md
 ## to sync a forked, local repo, can use the rebase command, which will avoid the ugly merge commit added when doing a normal pull.
     - git pull --rebase <remote name> <branch name>
 ## rename a local branch
@@ -145,22 +179,33 @@
     - git merge --abort
 ## use vimdiff for git difftool
     - git config diff.tool vimdiff
+    - also: Gdiffsplit (from fugitive)
+    - once split, :diffget and :diffput make editing a diff really easy
+# GPG
+## reset gpg-connect-agent / when borking pw entry 
+    - echo RELOADAGENT | gpg-connect-agent
 # Javascript
 ## Run Prettier for code formatting, w/in vim
     - :Prettier
-# Jupyter
-- autoreload modules:
+# Jupyter and jupyterlab
+## autoreload modules:
     - %load_ext autoreload
     - %autoreload 2
 
     - the first command 'loads extension' autoreload, which is disabled by default
     - '2' means reload everything; 0 means nothing; 1 is only for modules loaded via %aimport
     - see: https://switowski.com/blog/ipython-autoreload
-- install vim keybindings:
+## install vim keybindings:
     - jupyter labextension install @axlair/jupyterlab_vim
     - using this specific repo/version because the newest (2020-09-30) version
       of jupyterlab doesn't support newest version of the extension
         - see: https://github.com/jwkvam/jupyterlab-vim/issues/118
+## matplotlib integration
+pip install ipympl
+pip install nodejs
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install jupyter-matplotlib
+
 # LaTeX
     - cancel a compilation: 
         - x <enter>
@@ -170,10 +215,25 @@
     - This helped a great deal with an i3-based install, anyway
 
 # LINUX
+## installing with dpkg when dependencies missing
+- if running 'sudo dpkg -i {filename}.deb' and hitting a missing dependency
+  error, do the following to use 'fix-missing' functionality:
+    - # apt-get update --fix-missing
+    - sudo apt-get update -f
+        - long-form (apt-get update --fix-broken)
+## customize desktop and icons (themes)
+- lxappearance is an easy gui tool
 ## determine file type in terminal
 file -i {filename}
 ## set default web browser (particularly in Debian sytems)
     - xdg-settings set default-web-browser firefox-esr.desktop
+## set default applications
+- xdg-mime --help
+    - not optimal??
+- to set default file manager:
+    - edit ~/.config/mimeapps.list
+- NOTE: firefox cannot launch an external application like thunar/nautilus if
+  it's running under firejail    
 ## crontab and mysqldump gotcha - escaping percent sign
     - \% for dates and such
 ## printing  (CUPS - common unix print system)
@@ -260,7 +320,8 @@ file -i {filename}
 
     - check dmesg logs for messages
     - remove/re-add kernel module - # rmmod brcmfmac & # modprobe brcmfmac
-
+## add user to group (e.g., sudo group)
+    - usermod -aG sudo km
 # METADATA
 ## mp3 files
   - strip with id3lib
@@ -598,6 +659,8 @@ file -i {filename}
     - ^Z        - suspend process
     - bg        - continue running process in background
     - fg        - foreground process
+        - e.g., if accidentally press ^Z, can resume with 'fg %', as
+          % represents last suspended job
     - jobs      - list all jobs
 
     - reptyr - utility to reparent a process
@@ -653,6 +716,9 @@ file -i {filename}
 ## list files in a tarball
     - -t
 # TMUX
+## to get true color support working
+- tmux set-option -ga terminal-overrides ",xterm-256color:Tc"
+    - detach then reattach
 ## make selected pane full screen temporarily
     - leader-z  (for zoom)
 ## renumber windows
@@ -738,6 +804,16 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+## view where a binding came from - :map
+- :nmap {command of interest}
+- :imap
+- etc
+## copy to system clipboard
+- ensure :echo has('clipboard') returns 1
+    - can do this with vim-gtk3
+- use "+yG  (for example) to yank into + register
+- can paste normally from there
+
 ## sessions  - save and restore:
         - save: mksession ~/session.vim 
         - reload: ~/session.vim
@@ -868,16 +944,53 @@ prefix M-5  = tile, new panes on bottom, same height before same width
     - install webp package
     - dwebp file.webp -o file.png
 # Wordpress
-    - DIVI - uploading will initially fail, show an error message "Link you
-      requested is no longer valid"
-        - this is a limit on upload size and execution time
-        - fix by modifying wordpress file, wp-config.php, and then
-          (importantly), restarting php-fpm.service (at least on aws ec2 amazon
-          linux 2 ami)
+## DIVI 
+- uploading will initially fail, show an error message "Link you
+  requested is no longer valid"
+    - this is a limit on upload size and execution time
+    - fix by modifying wordpress file, wp-config.php, and then
+      (importantly), restarting php-fpm.service (at least on aws ec2 amazon
+      linux 2 ami)
+
+- hide header
+   - in Divi -> Theme Options -> CSS (not quite this path, but close) 
+        - note - remove the dashes before the hashes
+    - #main-header { 
+     display: none; 
+    }
+
+    - #page-container {
+     padding-top: 0px !important;
+     margin-top: -1px !important;
+    }
+## Bitnami on AWS
+
+- total time to restore from a backup - 20 mins (!!)
+- spin up instance (takes a few minutes to launch)
+    - when first connecting, may need to correct host identified in ssh/known_hosts (if re-using elasticIP)
+- attach elastic IP to VM/instance
+- point DNS to elasticIP
+- ssh into bitnami instance, generate cert
+    - sudo /opt/bitnami/bncert-tool
+    - quite handy, as it auto-configures apache settings for ssl certs w/
+      LetsEncrypt, configures servername, sets up renewal cronjob, and sets up
+      http->https redirects)
+- install plugin UpdraftPlus
+    - import backup files (5 of them, db, uploads, etc)
+    - run backup
+    - this will change username and pw to what was set in db (i.e, main creds)
+
+
+
 # X11
     - xprop - get window manager class name
+# XPS 13
+- intel firmware for wifi card:
+    - firmware-iwlwifi_20190114-2_all.deb
+- download from non-free debian archive, install with 'dpkg -i {fname}'
 # XTERM
 ## resize font temporarily
     - ctrl right-click
+
 
 

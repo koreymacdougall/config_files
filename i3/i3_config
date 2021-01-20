@@ -205,7 +205,7 @@ bindsym XF86AudioPlay exec --no-startup-id cmus-remote -u
 ########################################
 
 # compton for compositing
-exec --no-startup-id compton --config ~/.config/compton.conf -bc &
+# exec --no-startup-id compton --config ~/.config/compton.conf -bc &
 
 #bindsym $mod+control+t exec --no-startup-id /usr/bin/pulseaudio-ctl down
 

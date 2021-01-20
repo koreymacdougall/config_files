@@ -56,10 +56,10 @@ call plug#begin()
     Plug 'ctrlpvim/ctrlp.vim'
 
     " ultisnips inserts snippets, i.e., predefined chunks
-    " Plug 'SirVer/ultisnips'
+    Plug 'SirVer/ultisnips'
 
     " TableMode for easily generating tables
-    Plug 'dhruvasagar/vim-table-mode'
+    " Plug 'dhruvasagar/vim-table-mode'
 
     " syntax highlighting for solidity
     " Plug 'tomlion/vim-solidity'

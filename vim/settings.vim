@@ -4,21 +4,21 @@ set wildmenu                "turn on the autocomplete menu
 set ignorecase              "ignore case in searches, unless ...
 set smartcase               " ...there are caps in the search string
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab   "tab key indent 4 spaces
-set foldmethod=manual       "use manual folding
+set foldmethod=indent       "use manual folding
 set foldlevelstart=1        "set default foldlevel to 1
 set number                  "enable line numbering
 set relativenumber          "relative line numbering
 set hidden                  "allows buffer to be hidden if modified
-set smartindent autoindent  "smart indent and autoindent
+set nosmartindent noautoindent  "smart indent and autoindent
 set autochdir               "change pwd when opening a file
 " set noautochdir             "dont' change pwd when opening a file
 "                             " changing makes project navigation harder
-set wrap linebreak tw=80    "window wrap, linebreak, textwidth
-set breakindent             "indent multi-line wrapped lines
+set wrap linebreak tw=90    "window wrap, linebreak, textwidth
+""set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
-set background=light
-colorscheme solarized
+colorscheme gruvbox
+set background=dark
 
 set nocursorcolumn
 set cursorline
@@ -29,6 +29,7 @@ set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\
 set laststatus=2            "always show statusline
 set showcmd                 "show command while typing it
 set term=$TERM
+set term=xterm-256color
 set t_Co=256                "set terminal to 256 colors
 set hlsearch                "highlight serarch results
 set termguicolors           "enable support for truecolor
@@ -80,12 +81,23 @@ let g:vimtex_quickfix_latexlog = { 'overfull' : 0}
 "let g:vimtex_view_forward_search_on_start = 1
 "
 " ultisnips
-" let g:UltiSnipsExpandTrigger="<leader>u"            "shift-tab has stopped working for some reason (sept 25, 2018)
+" let g:UltiSnipsExpandTrigger="<c-tab>"            "shift-tab has stopped working for some reason (sept 25, 2018)
 let g:UltiSnipsExpandTrigger="<s-tab>"            "shift-tab has stopped working for some reason (sept 25, 2018)
 let g:UltiSnipsJumpForwardTrigger="<c-j>"       "move to next field
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"      "move to previous field
 let g:UltiSnipsSnippetDirectories=['/home/km/config_files/vim/UltiSnips/']    "use custom dir for snippets
+"
+" let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<c-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" let g:UltiSnipsListSnippets="<c-h>"
 
+" let g:ycm_complete_in_comments = 1
+" let g:ycm_seed_identifiers_with_syntax = 1
+" let g:ycm_collect_identifiers_from_comments_and_strings = 1
+"
 "ctrlp
 let g:ctrlp_use_caching = 1|                    "cache filelist
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'|  "store cache in home

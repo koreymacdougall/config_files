@@ -28,6 +28,7 @@ precmd() { vcs_info RPROMPT="" }
 
 # exports
 export TERMINAL=/usr/bin/xterm
+export TERM=xterm-256color
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1         # delay btwn mode switches

@@ -11,8 +11,9 @@ ln -sf ~/config_files/vim/.vimrc ~/.vimrc
 ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim
 
 #.vim/after symlink
-mkdir -p ~/.vim/after/plugin
-ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
+ln -sf ~/config_files/vim/after/ ~/.vim/
+# mkdir -p ~/.vim/after/plugin
+# ln -sf ~/config_files/vim/after/plugin/disable_mappings.vim ~/.vim/after/plugin/disable_mappings.vim
 
 #dracula theme
 ln -sf ~/config_files/vim/dracula.vim  ~/.vim/plugged/vim/colors/dracula.vim
