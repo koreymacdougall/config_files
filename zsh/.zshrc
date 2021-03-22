@@ -2,10 +2,6 @@
 #### SETTINGS ######
 ####################
 
-# source other files
-source ~/config_files/zsh/functions
-source ~/config_files/zsh/styles
-source ~/config_files/zsh/zsh_aliases
 
 autoload -Uz compinit && compinit        # the completion engine
 autoload -U colors && colors
@@ -34,6 +30,9 @@ export VISUAL=/usr/bin/vim
 export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
 export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
+export GPODDER_DOWNLOAD_DIR=~/podcasts  # set gPodder download dir
+export APP_NAME=legible
+
 
 # setopts
 setopt auto_pushd           # keep a stack of recent dirs
@@ -84,9 +83,6 @@ zle -N edit-command-line  # enable edit-command-line (edit command in $EDITOR)
 # re-source dircolors...b/c tmux is not picking up LS_COLORS
 eval "$(dircolors ~/config_files/dircolors)"
 
-# set gPodder to download to my podcasts dir
-export GPODDER_DOWNLOAD_DIR=~/podcasts
-
 # add youtube-dl to path
 PATH="$PATH:/home/km/.local/bin";export PATH
 # add go to path
@@ -102,3 +98,9 @@ PATH="$PATH:/usr/local/go/bin";export PATH
 # use source-highlight in place of less, to get syntax coloring
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+
+# source other files
+source ~/config_files/zsh/functions
+source ~/config_files/zsh/styles
+# import to source aliases after exports, if any env vars are used in aliases
+source ~/config_files/zsh/zsh_aliases   

@@ -1,5 +1,11 @@
 # dircolors specification
 # lifted from: Sebastian Tramp - http://sebastian.tramp.name
+#
+# Note - each field in colors below has various fields separated by semi-colons
+# example:
+# NORMAL 00;38;5;14       
+# 38;5;colorN escape sequence for foreground colors 
+# 48;5;colorN escape sequence for background colors
 
 # Term Section
 TERM Eterm
@@ -89,15 +95,15 @@ TERM tmux-256color
 
 ## Special files
 
-NORMAL 00;38;5;15       # use color 15 (the bright foreground)
-# NORMAL 00;38;5;0       # use color 15 (the bright foreground)
+NORMAL 00;38;5;14       # use color 15 (the bright foreground)
 FILE 00                 # regular file: use no color at all
 RESET 0                 # reset to "normal" color
-DIR 00;38;5;12          # directory
+DIR 00;38;5;4         # directory
 LINK 00;38;5;37         # symbolic link
 EXEC 00;38;5;160        # This is for files with execute permission:
 
 ## Archives or compressed (violet + bold for compression)
+#
 .tar    00;38;5;231
 .tgz    00;38;5;231
 .arj    00;38;5;231
@@ -161,8 +167,8 @@ EXEC 00;38;5;160        # This is for files with execute permission:
 .eps    00;38;5;201
 
 # config files (light gren)
-*rc              38;5;122
-*conf            38;5;122
+*rc              38;5;05
+*conf            38;5;05
 
 # Audio formats (blue)
 .aac    00;38;5;69

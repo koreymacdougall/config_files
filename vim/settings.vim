@@ -17,15 +17,16 @@ set wrap linebreak tw=90    "window wrap, linebreak, textwidth
 ""set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
-colorscheme gruvbox
-set background=dark
+colorscheme solarized
+" set background=default
 
 set nocursorcolumn
 set cursorline
 highlight clear SignColumn|                          "don't highlight the git gutter or Cursorline
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
 
-set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
+set statusline=%t\ [%n]\ (%F)\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
+" set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 set laststatus=2            "always show statusline
 set showcmd                 "show command while typing it
 set term=$TERM
@@ -99,6 +100,8 @@ let g:UltiSnipsSnippetDirectories=['/home/km/config_files/vim/UltiSnips/']    "u
 " let g:ycm_collect_identifiers_from_comments_and_strings = 1
 "
 "ctrlp
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_map = '<C-p>'
 let g:ctrlp_use_caching = 1|                    "cache filelist
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'|  "store cache in home
 let g:ctrlp_clear_cache_on_exit = 0|            "clear cache

@@ -19,6 +19,25 @@
     - alsactl -h  / shows commands
     - help screen showed that alsactl init returns driver to a default state
 # AWS
+## Viewing logs from CLI
+- aws logs commands:
+    - combined command, to get most recent log stream for a log group:
+        -  aws logs describe-log-streams --log-group-name /aws/lambda/{fn name} --query 'logStreams[*].logStreamName' --max-items 1 --order-by LastEventTime --descending |  awk -F'"' '$0=$2' | xargs aws logs get-log-events --log-group-name /aws/lambda/{fn_name } --log-stream-name | jq
+    - breakdown:
+        - specify log group name based on fn name
+        - query for 1 item, sorted by most recent
+        - take val between two ""
+        - pass name to xargs to get-log-events
+        - jq to format json
+
+    - commands:
+        - describe-log-groups
+        - describe-log-streams --{log group name}
+        - get-log-events --{log group name} -{log stream name}
+## Run/invoke lambda function from CLI
+- aws lambda invoke --invocation-type RequestResponse --function-name {fn_name} --region ca-central-1 --cli-binary-format raw-in-base64-out --payload fileb:///code/{fn_name}/payload.json response.json
+- NOTE: running through a docker container will fail silently on AWS side; hash returned
+  is just the docker id
 ## deleting s3 buckets that have had improper policies attached to them
 - need to use use the aws cli to run 's3api delete-bucket-policy --bucket {bucket name}'
     - can't use aws console, also can't delete bucket before deleting policy
@@ -181,6 +200,8 @@ git show branch:filepath/filename
     - git config diff.tool vimdiff
     - also: Gdiffsplit (from fugitive)
     - once split, :diffget and :diffput make editing a diff really easy
+## grep / search history of files (source code)
+git grep {regex to search} $(git rev-list --all)
 # GPG
 ## reset gpg-connect-agent / when borking pw entry 
     - echo RELOADAGENT | gpg-connect-agent
@@ -215,6 +236,10 @@ jupyter labextension install jupyter-matplotlib
     - This helped a great deal with an i3-based install, anyway
 
 # LINUX
+## toggle between ttys (e.g., between term and xorg):
+    - ctrl+atl+{f1-f7}
+    - OR  alt+left or alt+right
+        - this latter works to get back to a running xorg session
 ## installing with dpkg when dependencies missing
 - if running 'sudo dpkg -i {filename}.deb' and hitting a missing dependency
   error, do the following to use 'fix-missing' functionality:
@@ -627,6 +652,9 @@ file -i {filename}
 - multiple fixes on SO
 - my fix - move or delete Gemfile.lock 
 # SHELL / UNIX
+## Get name of current dir, with just basename:
+    - PWD##*/
+    - in command, e.g., echo ${PWD##*/}
 ## paste args from previous command
     - esc + .  (zsh in viins)
     - alt + .  (emacs binding)

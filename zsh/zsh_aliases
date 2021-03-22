@@ -12,7 +12,7 @@ alias pg='ps aux | grep -i'
 alias lg='ls -al | grep -i'
 alias eg='env | grep -i'
 alias ag='alias | grep -i'
-alias kg='cd ~/kttk && gpg -d kttk.gpg | grep'
+alias kg='gpg -d ~/kttk/kttk.gpg | grep'
 alias cg='cat ~/config_files/notes/cheatsheet.md | grep'
 
 alias e='exit'
@@ -101,14 +101,16 @@ alias vt='vim ~/.tmux.conf'
 alias vn='vim ~/notes.md'
 alias vq="vim ~/config_files/quotes.md"
 alias vx="vim ~/.Xresources"
+alias vl="vim ~/day_log.md"
 # not sure why I took this out... not working?  
 # 'docker system prune -a' is a nuke.
 # alias docker-clean='sudo docker stop \$(sudo docker ps -a -q) && sudo docker rm \$(sudo docker ps -a -q)'
 
 # aws-cli docker
 # alias aws-cli-run="sudo docker run --rm --interactive --tty -v $HOME/.aws:/root/.aws amazon/aws-cli"
-alias aws-cli-run="sudo docker run --rm -it -v $HOME/.aws:/root/.aws -v $HOME/dev/aws/{APP_NAME}/aws_lambda_functions/:/code/ amazon/aws-cli"
-alias aws-cli-up="sudo docker run --rm -it -d --name aws_cli_container -v $HOME/.aws:/root/.aws -v $HOME/dev/aws/{APP_NAME}/aws_lambda_functions/:/code/ amazon/aws-cli help && sudo docker exec -it aws_cli_container bash"
+alias aws-cli-run="sudo docker run --rm -it -d -v $HOME/.aws:/root/.aws -v $HOME/dev/$APP_NAME/aws_code/aws_lambda_functions/:/code/ amazon/aws-cli"
+# alias aws-cli-up="sudo docker run --rm -it -d --name aws_cli_container -v $HOME/.aws:/root/.aws -v $HOME/dev/$APP_NAME/aws_code/aws_lambda_functions/:/code/ amazon/aws-cli && sudo docker exec -it aws_cli_container bash"
+alias aws-cli-up="sudo docker run --rm -it -d --name aws_cli_container -v $HOME/.aws:/root/.aws -v $HOME/dev/$APP_NAME/aws_code/aws_lambda_functions/:/code/ amazon/aws-cli help && sudo docker exec -it aws_cli_container bash"
 
 # alias k="~/source_packes/kalendar-master/src/Kalendar"
 

@@ -14,7 +14,7 @@ nnoremap <leader>p :%s/print(/#print(/<CR>|                                     
 nnoremap <leader>P :%s/#print(/print(/<CR>|                                         "uncomment all prints
 nnoremap <leader>ns :r !notmuch search|                                             "notmuchsearch
 nnoremap <leader>nn 0 qnq "nyiW :new \| r ! notmuch show <C-r>n<CR>gg4jzt|          "notmuch show
-nnoremap <leader>cc :set cursorcolumn! cursorline! <CR>|                            "cursorcolumn
+nnoremap <leader>cc :set cursorline! <CR>|                            "cursorcolumn
 nnoremap <leader>nh :nohlsearch<CR>|                                                "turn off search highlight
 " nnoremap <leader>f :Vex<cr>|                                                      "open netrw/file broswer in vsplit 
 nnoremap <leader>f :NERDTree<cr>|                                                   "open NERDtree (netrw giving issues with orphan buffers)
@@ -85,8 +85,28 @@ vnoremap ; :|                                                                   
 "INSERT MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <expr> <Tab> search('\%#[]>)}''"]', 'n') ? '<Right>' : '<Tab>'|            "tab out of closures; thanks to Ingo Karkat
-inoremap <C-d> <esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>i <C-r>x| "insert date inline
-inoremap <C-t> <esc>:let @x = system('date +"%H:%M" \| xargs echo -n ')<cr>i <C-r>x| "insert time inline
+inoremap <C-d> (<esc>:let @x = system('date --iso-8601 \| xargs echo -n ')<cr>a<C-r>x)| "insert date inline
+inoremap <C-t> (<esc>:let @x = system('date +"%H:%M" \| xargs echo -n ')<cr>a<C-r>x)| "insert time inline
 " first causes weird lag. second is a needed patter. to make a comma...
 " inoremap <space><space> .<space><esc>a
 " inoremap <leader><space> .<space><esc>a
+
+" function to hide all messages...similar to Goyo?
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
