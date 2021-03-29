@@ -4,12 +4,16 @@
 
 choices="Laptop\nBenq\nDual"
 
-chosen=$(echo -e "$choices" | dmenu -i)
+
+chosen=$(echo "$choices" | dmenu -i)
+# -e for echo is to recognize new lines, but it was messing up script
+# keeping for posterity / troubleshooting (2021-03-29)
+# chosen=$(echo -e "$choices" | dmenu -i)
 
 case "$chosen" in
-    Laptop) xrandr --output LVDS1 --auto --output VGA1 --off;;
-    Benq) xrandr --output LVDS1 --off --output VGA1 --auto;;
-    Dual) xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1;;
+    Laptop) xrandr --output eDP1 --auto --output DP1 --off;;
+    Benq) xrandr --output eDP1 --off --output DP1 --auto;;
+    Dual) xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1;;
 esac
 
 sh ~/.fehbg

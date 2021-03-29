@@ -17,13 +17,16 @@ set wrap linebreak tw=90    "window wrap, linebreak, textwidth
 ""set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme
-colorscheme solarized
+colorscheme dracula
 " set background=default
 
 set nocursorcolumn
 set cursorline
 highlight clear SignColumn|                          "don't highlight the git gutter or Cursorline
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
+
+" add parent dir for tags
+set tags+=../tags
 
 set statusline=%t\ [%n]\ (%F)\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 " set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
