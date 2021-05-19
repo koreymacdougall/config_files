@@ -162,3 +162,5 @@ alias z="~/source_packages/Zotero_linux-x86_64/zotero & disown"
 
 alias ppv='source ~/dev/podcast_project/audio_extraction_subproject/podcast_project_venv/bin/activate'
 alias mpp='cd ~/dev/podcast_project/ && ppv'
+
+alias pdf='~/source_packages/pdfstudio2018/pdfstudio2018 & disown'

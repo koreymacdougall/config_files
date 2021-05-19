@@ -31,7 +31,7 @@ export KEYTIMEOUT=1         # delay btwn mode switches
 export GPG_TTY=$(tty)       # this is for neomutt
 export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
 export GPODDER_DOWNLOAD_DIR=~/podcasts  # set gPodder download dir
-export APP_NAME=legible
+export APP_NAME=launchable.ai
 
 
 # setopts
@@ -103,4 +103,4 @@ export LESS=' -R '
 source ~/config_files/zsh/functions
 source ~/config_files/zsh/styles
 # import to source aliases after exports, if any env vars are used in aliases
-source ~/config_files/zsh/zsh_aliases   
+source ~/config_files/zsh/zsh_aliases

@@ -11,6 +11,13 @@
 ## view dep tree
     - pactree
 # Audio
+- if volume levels keep resetting to 100% on each new song / video, add this line to
+  /etc/pulse/daemon.conf
+flat-volumes = no
+- for refs:
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837637
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837637
+
 - To find the duration of all audio files in a directory,use this command:
     - soxi -D /path/to/files/* | awk 'a+=$1; END{print a}'
 ## ALSA / PulseAudio / Debian / Sound / Audio
@@ -236,6 +243,24 @@ jupyter labextension install jupyter-matplotlib
     - This helped a great deal with an i3-based install, anyway
 
 # LINUX
+## toggle caps lock when xmm applied recklessly... locking CAPS LOCK on
+- xdotool key Caps_Lock
+## Webcam/sound Recording tips
+- record webcam embedded in screen:
+    - mplayer tv:// -tv driver=v4l2:width=320:height=240 -vo xv
+    - mplay has been easier to use.  Can also use ffmpeg:
+    - ffplay -f v4l2 /dev/video0
+- eliminate static from mic when recording:
+    - sudo bash ~/noise_cancellation_script.sh && pulseaudio -k
+    - noise_cancellation_script.sh (see file for attribution):
+        sudo cp /etc/pulse/default.pa /etc/pulse/default.pa.bak
+        sudo cat <<EOT >> /etc/pulse/default.pa
+        load-module module-echo-cancel source_name=noechosource sink_name=noechosink
+        set-default-source noechosource
+        set-default-sink noechosink
+        EOT
+    
+
 ## toggle between ttys (e.g., between term and xorg):
     - ctrl+atl+{f1-f7}
     - OR  alt+left or alt+right
