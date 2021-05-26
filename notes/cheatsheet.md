@@ -26,6 +26,25 @@ https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837637
     - alsactl -h  / shows commands
     - help screen showed that alsactl init returns driver to a default state
 # AWS
+## enabling https on EC2 Amazon Linux AMI
+- https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html
+    - important: need to install mod24_ssl, not mod_ssl
+
+    - [ec2-user ~]$ cd /etc/pki/tls/certs
+    sudo ./make-dummy-cert localhost.crt
+
+    - in /etc/httpd/conf.d/ssl.conf, comment out 
+    SSLCertificateKeyFile /etc/pki/tls/private/localhost.key
+
+    - restart httpd
+    sudo /etc/init.d/httpd restart
+
+## enable theme changes/updates on wordpress
+https://stackoverflow.com/questions/8686125/update-wordpress-theme-on-ec2
+sudo chown -R apache:ec2-user path/to/wordpress
+or
+sudo chown -R apache:apache path/to/wordpress
+
 ## Viewing logs from CLI
 - aws logs commands:
     - combined command, to get most recent log stream for a log group:
@@ -234,6 +253,14 @@ pip install nodejs
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 jupyter labextension install jupyter-matplotlib
 
+# KVM / QEMU / virt-manager
+- to mount host dir and share files with guest
+    1. create dir to mount (e.g., /tmp/share)
+    2 Add shareable filesystem via virt-manager
+        - Hardware (lightbulb) -> +Add Hardware -> Filesystem -> Driver=Default,
+          Mode=Squashed, set source path and target path
+    3. mount shared dir in guest:
+        - sudo mount -t 9p -o trans=virtio,version=9p2000.L /hostshare /tmp/hostshare
 # LaTeX
     - cancel a compilation: 
         - x <enter>

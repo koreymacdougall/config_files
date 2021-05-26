@@ -6,6 +6,9 @@ ln -sf ~/config_files/.bashrc ~/.bashrc
 #vimrc symlink
 ln -sf ~/config_files/vim/.vimrc ~/.vimrc
 
+#.emacs symlink
+ln -sf ~/config_files/emacs/.emacs ~/.emacs
+
 #for xmledit in vim, link the xml.vim file to html.vim
 #otherwise, tag completions won't work in erb and the like
 ln -sf ~/.vim/plugged/xmledit/ftplugin/xml.vim ~/.vim/plugged/xmledit/ftplugin/html.vim

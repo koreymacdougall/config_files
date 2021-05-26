@@ -30,6 +30,9 @@ bindsym $mod+t                          exec /usr/bin/thunderbird
 set $browser "firejail firefox"
 bindsym $mod+w                          exec $browser
 
+# emacs
+bindsym $mod+e                          exec /usr/bin/emacs
+
 # vim
 bindsym $mod+Control+v                  exec /usr/bin/xterm -e vim
 
@@ -84,7 +87,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 # bindsym $mod+t layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -134,7 +137,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # convenenience shortcut for suspend
-bindsym $mod+x exec systemctl suspend
+bindsym $mod+Shift+x exec systemctl suspend
 
 # increase /decrease size of gaps
 # tips and inspiration thanks to lukesmith.xyz's dotfiles
