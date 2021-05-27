@@ -1,11 +1,23 @@
 ;; link to notes file:
 ;; ~/config_files/emacs/initial_notes.org
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+;;{{{ Set up package and use-package
 
-(unless (package-installed-p 'use-packages)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Bootstrap 'use-package'
+(eval-after-load 'gnutls
+  '(add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem"))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(setq use-package-always-ensure t)
+
 
 ;; (desktop-save-mode 1)
 ;; this will ensure that packages are always installed if not present
@@ -166,7 +178,7 @@
 
     (use-package evil-collection
       :after evil
-      :config
+      config
       (evil-collection-init))
       
 
