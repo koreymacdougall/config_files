@@ -2,7 +2,6 @@
 #### SETTINGS ######
 ####################
 
-
 autoload -Uz compinit && compinit        # the completion engine
 autoload -U colors && colors
 autoload -Uz vcs_info
@@ -32,7 +31,7 @@ export GPG_TTY=$(tty)       # this is for neomutt
 export bg_color="$(awk -F':' '/background/{gsub(" |\t",""); print $2}' ~/.Xresources)"
 export GPODDER_DOWNLOAD_DIR=~/podcasts  # set gPodder download dir
 export APP_NAME=launchable.ai
-
+export SAM_CLI_TELEMETRY=0
 
 # setopts
 setopt auto_pushd           # keep a stack of recent dirs
