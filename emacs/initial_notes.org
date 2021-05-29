@@ -27,3 +27,5 @@ C-x Right  / C-x Left
 (note: should remap forward/backward dir nav to h/l, or C-h/C-l)
 * Dired mode, refresh directory (if changed on disk
 gr
+* For doom-mode-line, and all-the-icons, must install fonts
+M-x all-the-icons-install-fonts

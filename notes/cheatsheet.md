@@ -765,6 +765,10 @@ file -i {filename}
 
 ## view active shell
     - echo $0
+## use root but keep path (start login shell)
+su -
+- note that "su" or "su root", then trying 'usermod -aG sudo {username}' will fail, b/c
+  $PATH is no longer defined, and shell can't find usermod command
 ## change to new user and move to their home dir
     - su - {uname}
         - note the dash
