@@ -520,6 +520,26 @@ file -i {filename}
 ## change user/role pw:
     - \password {username}
 # PYTHON
+## install alternate version
+### update, install deps
+$ sudo apt update
+$ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev
+
+### get source
+- get archive,from https://www.python.org/downloads/source/
+$ curl -O https://www.python.org/ftp/python/{version here}/filename
+e.g.
+$ curl -O https://www.python.org/ftp/python/3.8.2/Python-3.8.2.tar.xz
+
+### configure, compile, install
+tar -xf Python-3.8.2.tar.xz
+cd Python-3.8.2
+./configure --enable-optimizations
+make -j 4
+sudo make altinstall
+python3.8 --version
+
+
 ## create virtual env
     - python 3.6+
         - python3 -m venv {env name}
