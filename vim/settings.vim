@@ -13,7 +13,7 @@ set nosmartindent noautoindent  "smart indent and autoindent
 set autochdir               "change pwd when opening a file
 " set noautochdir             "dont' change pwd when opening a file
 "                             " changing makes project navigation harder
-set wrap linebreak tw=90    "window wrap, linebreak, textwidth
+set wrap linebreak tw=80    "window wrap, linebreak, textwidth
 ""set breakindent             "indent multi-line wrapped lines
 
 " note that light themes don't work well if xresources not using a light theme

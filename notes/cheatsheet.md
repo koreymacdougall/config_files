@@ -194,6 +194,13 @@ sudo chown -R apache:apache path/to/wordpress
     * --jobs=X to run parallel installs
     * for full system/world update: 
         * sudo emerge --update --changed-use --deep --ask --with-bdeps=y @world
+# GIMP
+## Highlight a section of an image
+- Select a brush
+- choose "Darken Only" mode.
+- Set size and color of brush
+- Click start of area to highlight.  Hold shift.  Click end of area.
+
 # GIT
 ## delete files from history (specifically large files)
 ### using bfg - recommended for removing large files
@@ -229,7 +236,7 @@ git show branch:filepath/filename
 ## grep / search history of files (source code)
 git grep {regex to search} $(git rev-list --all)
 # GPG
-## reset gpg-connect-agent / when borking pw entry 
+## reset gpg-connect-agent / clear stored passwords
     - echo RELOADAGENT | gpg-connect-agent
 # Javascript
 ## Run Prettier for code formatting, w/in vim
@@ -270,6 +277,10 @@ jupyter labextension install jupyter-matplotlib
     - This helped a great deal with an i3-based install, anyway
 
 # LINUX
+## OCR (extract text from image)
+- use tesseract-ocr
+- tesseract-ocr input.png output.txt
+
 ## toggle caps lock when xmm applied recklessly... locking CAPS LOCK on
 - xdotool key Caps_Lock
 ## Webcam/sound Recording tips
@@ -462,6 +473,8 @@ file -i {filename}
     - can always use 'kill -9'
 
 # NODE, NPM, NVM
+## Remap port 80 to port 3000, to access express app
+sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
 ## install nvm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ## nvm - install node
@@ -520,6 +533,10 @@ file -i {filename}
 ## change user/role pw:
     - \password {username}
 # PYTHON
+## super simple http server (!!)
+python3 -m http.server 1337
+- 1337 = port, optional
+
 ## install alternate version
 ### update, install deps
 $ sudo apt update

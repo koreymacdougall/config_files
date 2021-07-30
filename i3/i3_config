@@ -30,6 +30,10 @@ bindsym $mod+t                          exec /usr/bin/thunderbird
 set $browser "firejail firefox"
 bindsym $mod+w                          exec $browser
 
+# set $browser "firejail brave-browser --incognito"
+set $browser "firejail brave-browser"
+bindsym $mod+b                          exec $browser
+
 # emacs
 bindsym $mod+e                          exec /usr/bin/emacs
 
@@ -47,6 +51,9 @@ bindsym $mod+p                          exec ~/source_packages/kalendar-master/s
 
 # run display select script
 bindsym $mod+F5                         exec --no-startup-id ~/config_files/dmenu_scripts/display_select.sh
+
+# take a screenshot with scrot
+bindsym --release Print exec scrot '%T_%d-%m-%Y'.png -s -e 'mv -n $f ~/screenshots/'
 
 ####################
 ## END LAUNCHERS ###

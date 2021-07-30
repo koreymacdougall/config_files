@@ -10,6 +10,13 @@ call plug#begin()
     " List of Plugins"
     " note that { 'on': []}  is syntax for lazy loading
 
+    Plug 'sheerun/vim-polyglot'
+
+
+
+    " For JSX highlighting
+    Plug 'maxmellon/vim-jsx-pretty'
+
     Plug 'tpope/vim-surround'
 
     " repeat mainly for vim-surround
@@ -93,13 +100,16 @@ call plug#begin()
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
     "  vim-indent-guides to show indentation levels - 2020-06-04 
-    Plug 'nathanaelkane/vim-indent-guides'
+    " Plug 'nathanaelkane/vim-indent-guides'
+    "
+    "Indentline for showing bars where code is indented
+    Plug 'Yggdroot/indentLine'
 
     " autocompletion
     " Plug 'ycm-core/YouCompleteMe'
 
     " " autocompletion for python
-    Plug 'davidhalter/jedi-vim'
+    " Plug 'davidhalter/jedi-vim'
 
     " ------------------------------------- "
     " ---- Javascript-specific plugins ---- "

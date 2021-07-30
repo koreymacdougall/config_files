@@ -28,8 +28,16 @@ nnoremap <leader>GG :setl smd sc cul cuc si list<cr>|                           
 nnoremap <leader>!p :!python3 %<cr>|                                                "shell out to run this program in python3
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>                                           "change pwd and print
 
-"-- seeing is believing commands
+" Commands to move lines up or down
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-j> :m .+1<CR>==
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+vnoremap <C-j> :m '>+1<CR>gv=gv
+
 "-- run seeing_is_ believing on current buffer
+"-- seeing is believing commands
 nnoremap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
 "-- clear seeing is believing in current buffer
 nnoremap <leader>c :%.!seeing_is_believing --clean<CR>;
