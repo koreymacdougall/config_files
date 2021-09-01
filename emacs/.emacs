@@ -235,7 +235,7 @@
  '(org-agenda-files (quote ("~/TODO.org")))
  '(package-selected-packages
    (quote
-    (darkroom projectile evil-collection markdown-mode ivy-avy org-bullets doom-themes all-the-icons-ivy all-the-icons-gnus doom-modeline zenburn-theme lorem-ipsum ## powerline use-package evil-commentary undo-fu undo-tree evil notmuch)))
+    (zetteldeft exwm-surf zprint-format darkroom projectile evil-collection markdown-mode ivy-avy org-bullets doom-themes all-the-icons-ivy all-the-icons-gnus doom-modeline zenburn-theme lorem-ipsum ## powerline use-package evil-commentary undo-fu undo-tree evil notmuch)))
  '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
  '(rustic-ansi-faces
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])

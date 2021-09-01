@@ -1,11 +1,32 @@
 ;; link to notes file:
 ;; ~/config_files/emacs/initial_notes.org
-(package-initialize)
-(unless package-archive-contents
-  (package-refresh-contents))
+;;{{{ Set up package and use-package
 
-(unless (package-installed-p 'use-packages)
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Bootstrap 'use-package'
+(eval-after-load 'gnutls
+  '(add-to-list 'gnutls-trustfiles "/etc/ssl/cert.pem"))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
   (package-install 'use-package))
+(eval-when-compile
+  (require 'use-package))
+(require 'bind-key)
+(setq use-package-always-ensure t)
+
+;; enable time tracking in org-mode
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+(use-package ivy :demand
+  :config
+  (setq ivy-use-virtual-buffers t
+	ivy-count-format "%d/%d "))
+(ivy-mode 1)
 
 ;; (desktop-save-mode 1)
 ;; this will ensure that packages are always installed if not present
@@ -19,9 +40,12 @@
 ;; make escape key escape commands anywhere
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-(use-package projectile)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(use-package projectile
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
@@ -69,11 +93,20 @@
 ;;(setq package-enable-at-startup nil)
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-;; Org Mode Settings
+;; org-mode Settings
 ;; set up an agenda keybind
 (use-package org
   :config
-  (setq org-ellipsis "  ▼"))
+  (setq org-ellipsis "  ▼")
+  ;; set image width for inline images to nil, so they can be resized inline
+  (setq org-image-actual-width nil)
+  ;; make boldface font show red (useful for important/urgent)
+  (add-to-list 'org-emphasis-alist
+             '("*" (:foreground "red")
+               ))
+  )
+
+
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 ;; enable org-bullet-mode, replace asterisks with bullets
@@ -163,7 +196,7 @@
 
     (use-package evil-collection
       :after evil
-      :config
+      config
       (evil-collection-init))
       
 
@@ -202,7 +235,7 @@
  '(org-agenda-files (quote ("~/TODO.org")))
  '(package-selected-packages
    (quote
-    (projectile evil-collection markdown-mode ivy-avy org-bullets doom-themes all-the-icons-ivy all-the-icons-gnus doom-modeline zenburn-theme lorem-ipsum ## powerline use-package evil-commentary undo-fu undo-tree evil notmuch)))
+    (darkroom projectile evil-collection markdown-mode ivy-avy org-bullets doom-themes all-the-icons-ivy all-the-icons-gnus doom-modeline zenburn-theme lorem-ipsum ## powerline use-package evil-commentary undo-fu undo-tree evil notmuch)))
  '(pdf-view-midnight-colors (cons "#EEFFFF" "#292D3E"))
  '(rustic-ansi-faces
    ["#292D3E" "#ff5370" "#c3e88d" "#ffcb6b" "#82aaff" "#c792ea" "#89DDFF" "#EEFFFF"])

@@ -45,6 +45,14 @@ sudo chown -R apache:ec2-user path/to/wordpress
 or
 sudo chown -R apache:apache path/to/wordpress
 
+## Lambda
+### Creating a Lambda function (with cli IAM role creation)
+- first, create trust-policy.json
+- second, create role
+    - aws iam create-role --role-name {some role name} --assume-role-policy-document file://trust-policy.json
+- third, attach permissions
+    - aws iam attach-role-policy --role-name {some role name} --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
 ## Viewing logs from CLI
 - aws logs commands:
     - combined command, to get most recent log stream for a log group:
@@ -238,6 +246,13 @@ git grep {regex to search} $(git rev-list --all)
 # GPG
 ## reset gpg-connect-agent / clear stored passwords
     - echo RELOADAGENT | gpg-connect-agent
+# I3 (i3wm, window manager )
+## Move a window to a named workspace:
+- (mod+d to bring up dmenu) -  i3-msg move container to workspace number 1 firefox
+## open a named workspace
+- (mod+d to bring up dmenu) -  i3-msg workspace number 1 firefox
+
+
 # Javascript
 ## Run Prettier for code formatting, w/in vim
     - :Prettier
@@ -277,6 +292,8 @@ jupyter labextension install jupyter-matplotlib
     - This helped a great deal with an i3-based install, anyway
 
 # LINUX
+## install .deb package
+sudo dpkg -i filename.deb
 ## OCR (extract text from image)
 - use tesseract-ocr
 - tesseract-ocr input.png output.txt

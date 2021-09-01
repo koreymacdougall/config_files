@@ -25,6 +25,9 @@ set cursorline
 highlight clear SignColumn|                          "don't highlight the git gutter or Cursorline
 highlight Search ctermfg=green ctermbg=red|          "search highlighting colours
 
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 " add parent dir for tags
 set tags+=../tags
 

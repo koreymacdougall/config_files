@@ -1,10 +1,12 @@
 * Edit hyperlink under point (or view it)
 C-c C-l
+
 * Expand / Collapse inline images
 C-c C-x C-v
+
 * Open file under cursor
 M-x find-file-at-point
-  
+
 * List all keybinds
 C-h b (opens in minibuffer)
 
@@ -29,15 +31,16 @@ C-x Right  / C-x Left
 * Dired mode, up a directory
 ^
 (note: should remap forward/backward dir nav to h/l, or C-h/C-l)
+
 * Dired mode, refresh directory (if changed on disk
 gr
+
 * For doom-mode-line, and all-the-icons, must install fonts
 M-x all-the-icons-install-fonts
+
 * Clocking / Logging time in org-mode
 ** Clock in - C-c C-x C-i
 ** Clock out - C-c C-x C-o
 ** Adjust timestamp - S-up / S-down
    - note that this is org-mode more generally
-
-
 ** Show clock report - M-x org-clock-report

@@ -48,7 +48,7 @@ call plug#begin()
     Plug 'junegunn/limelight.vim'
 
     " Provide some functionality for markdown editing
-    ""Plug 'plasticboy/vim-markdown'
+    Plug 'plasticboy/vim-markdown'
 
     " tcomment toggles comments (gcc)
     Plug 'tomtom/tcomment_vim'
