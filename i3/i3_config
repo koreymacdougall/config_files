@@ -8,7 +8,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 ####################
 #### LAUNCHERS ####
@@ -52,8 +52,9 @@ bindsym $mod+p                          exec ~/source_packages/kalendar-master/s
 # run display select script
 bindsym $mod+F5                         exec --no-startup-id ~/config_files/dmenu_scripts/display_select.sh
 
-# take a screenshot with scrot
+# take a screenshot of selection with scrot
 bindsym --release Print exec scrot '%T_%d-%m-%Y'.png -s -e 'mv -n $f ~/screenshots/'
+# take a screenshot of screen with scrot
 bindsym $mod+Print exec scrot '%T_%d-%m-%Y'.png -e 'mv -n $f ~/screenshots/'
 
 ####################

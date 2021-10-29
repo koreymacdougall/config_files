@@ -781,6 +781,9 @@ python3.8 --version
         - will list all available man pages
     - man -a {command}
         - will show all available man pages
+## grep and cut/exclude long lines of output
+grep -r pattern . | cut -c1-"$COLUMNS"
+
 ## grep with context
     - -C [n] switch
     - e.g., grep -C 2 cool_phrase cool_file
@@ -854,6 +857,10 @@ su -
 ## list files in a tarball
     - -t
 # TMUX
+## change sessions name
+- leader + $  (i.e., ctrl_space, $)
+- or, leader + :, type 'rename-sessions [-t current name] [new name]'
+    - if ommitting [-t current name], renames current session
 ## to get true color support working
 - tmux set-option -ga terminal-overrides ",xterm-256color:Tc"
     - detach then reattach
@@ -942,6 +949,7 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
+
 ## view where a binding came from - :map
 - :nmap {command of interest}
 - :imap
@@ -950,6 +958,7 @@ prefix M-5  = tile, new panes on bottom, same height before same width
 - ensure :echo has('clipboard') returns 1
     - can do this with vim-gtk3
 - use "+yG  (for example) to yank into + register
+    - or "+y for visual selection
 - can paste normally from there
 
 ## sessions  - save and restore:

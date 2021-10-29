@@ -30,16 +30,11 @@ alias l='ls --color=auto --group-directories-first'
 alias ll='ls -al --color=auto --group-directories-first'
 
 #Prompt options
-export PS1="\e[1;33m\u@\h \w $ \n--> \e[m"
-
-function cd_up(){
-    cd $(printf "%0.0s../" $(seq 1 $1));
-}
-alias 'cd..'='cd_up'
+#export PS1="\e[1;33m\u@\h \w $ \n--> \e[m"
 
 #set terminal colour; is overridden if using a terminal 
 #emulator such as terminator (useful for arch)
-setterm -foreground yellow --bold on --store
+# setterm -foreground yellow --bold on --store
 
 #git command tab completion
 if [ -f ~/.git-completion.bash ]; then
@@ -61,6 +56,8 @@ fi
 #export PATH="$PATH:$HOME/.rvm/bin"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# (2021-10-28) Below has been long inactive
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#. "$HOME/.cargo/env"
