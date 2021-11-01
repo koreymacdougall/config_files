@@ -27,10 +27,8 @@ bindsym $mod+r                          exec /usr/bin/xterm -e ranger
 bindsym $mod+t                          exec /usr/bin/thunderbird
 
 # browser
-set $browser "firejail firefox"
-bindsym $mod+w                          exec $browser
-
 # set $browser "firejail brave-browser --incognito"
+# set $browser "firejail firefox"
 set $browser "firejail brave-browser"
 bindsym $mod+b                          exec $browser
 
@@ -192,6 +190,7 @@ bar {
     status_command i3status
     #mode dock
     mode hide
+    modifier $mod
 }
 
 # ALSA audio controls
