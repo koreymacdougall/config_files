@@ -550,6 +550,7 @@ sudo iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-po
 ## change user/role pw:
     - \password {username}
 # PYTHON
+## pip install --no-cache-dir - when memory constrained
 ## super simple http server (!!)
 python3 -m http.server 1337
 - 1337 = port, optional

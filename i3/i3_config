@@ -30,7 +30,7 @@ bindsym $mod+t                          exec /usr/bin/thunderbird
 # set $browser "firejail brave-browser --incognito"
 # set $browser "firejail firefox"
 set $browser "firejail brave-browser"
-bindsym $mod+b                          exec $browser
+bindsym $mod+w                          exec $browser
 
 # emacs
 bindsym $mod+e                          exec /usr/bin/emacs

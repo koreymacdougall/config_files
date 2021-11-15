@@ -1,4 +1,4 @@
-source ~/config_files/vim/plug.vim
+" source ~/config_files/vim/plug.vim
 source ~/config_files/vim/functions.vim
 source ~/config_files/vim/settings.vim
 source ~/config_files/vim/mappings.vim
