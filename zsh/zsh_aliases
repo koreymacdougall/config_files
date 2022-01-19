@@ -12,7 +12,7 @@ alias pg='ps aux | grep -i'
 alias lg='ls -al | grep -i'
 alias eg='env | grep -i'
 alias ag='alias | grep -i'
-alias kg='gpg -d ~/kttk/kttk.gpg | grep'
+alias kg='gpg -d ~/ais/ais.gpg | grep'
 alias cg='cat ~/config_files/notes/cheatsheet.md | grep'
 
 alias e='exit'

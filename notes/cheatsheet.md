@@ -26,6 +26,8 @@ https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=837637
     - alsactl -h  / shows commands
     - help screen showed that alsactl init returns driver to a default state
 # AWS
+## list instances, compact
+- aws ec2 describe-instances --query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name,InstanceType:InstanceType, ID: InstanceId}"
 ## enabling https on EC2 Amazon Linux AMI
 - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html
     - important: need to install mod24_ssl, not mod_ssl
@@ -92,6 +94,8 @@ sudo chown -R apache:apache path/to/wordpress
         - I think 'file://' is needed to indicate a fileread, rather than
           reading a string from stdin
 
+# Bluetooth
+blueman applet - will launch gui in taskbar
 # CALCURSE
 ## to move date of appt:
     -specify date as month/day (e.g., 1/1 for jan 1)
@@ -858,6 +862,10 @@ su -
 ## list files in a tarball
     - -t
 # TMUX
+## view pane nums
+-Ctrl-q
+# Switch to pane nume
+- Ctrl-
 ## change sessions name
 - leader + $  (i.e., ctrl_space, $)
 - or, leader + :, type 'rename-sessions [-t current name] [new name]'
@@ -880,7 +888,8 @@ su -
     !   -   break pane into its own window
     V   -   horizontal stack / vert split
     S   -   vertical stack /horizontal split
-    q   -   show pane numbers
+    q   -   show pane numbers / view pane nums
+            - press number of pane to go there when its showing
 space   -   next layout
  UDLR   -   move to pane, up/down/left/right
 ## change bg color
@@ -950,7 +959,10 @@ prefix M-5  = tile, new panes on bottom, same height before same width
         - migrate will run compile first (saving a step)
         - after running this, may need to restart console session
 # VIM
-
+## Zoom split (like tmux leader-z)
+- Ctrl-w |  (makes current vert split expand)
+- Ctrl-w _  (makes current horiz split expand)
+- Ctrl-w =  (restore splits)
 ## view where a binding came from - :map
 - :nmap {command of interest}
 - :imap

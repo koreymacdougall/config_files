@@ -31,7 +31,7 @@ let g:vim_markdown_conceal_code_blocks = 0
 " add parent dir for tags
 set tags+=../tags
 
-set statusline=%t\ [%n]\ (%F)\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
+"set statusline=%t\ [%n]\ (%F)\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 " set statusline=[%n]\ %<%.99f\ %{fugitive#statusline()[4:-2]}\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P  "apapted from tpope
 set laststatus=2            "always show statusline
 set showcmd                 "show command while typing it

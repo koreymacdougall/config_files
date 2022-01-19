@@ -1,5 +1,7 @@
 # met modifier key to windoze key
+# Mod4 is windows, Mod1 is alt
 set $mod Mod4
+#set $mod Mod1
 
 #font pango:monospace 8
 font pango:DejaVu Sans Mono 8
